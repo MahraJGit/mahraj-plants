@@ -2,10 +2,12 @@ import Image from "next/image";
 import { cn } from "@/app/lib/utils";
 
 export type Service = {
+    slug?: string;
     title: string;
     description: string;
     image: string;
     alt: string;
+    icon?: string;
     features: string[];
 };
 
@@ -54,9 +56,21 @@ export default function ServiceCard({
                     sizes="(max-width: 1024px) 100vw, 33vw"
                     className="object-cover"
                 />
+                {service.icon && (
+                    <div className="absolute bottom-3 right-3 flex size-11 items-center justify-center rounded-xl bg-primary shadow-md sm:size-12">
+                        <Image
+                            src={service.icon}
+                            alt=""
+                            width={24}
+                            height={24}
+                            unoptimized
+                            className="h-6 w-auto brightness-0 invert"
+                        />
+                    </div>
+                )}
             </div>
 
-            <div className="flex flex-1 flex-col px-6 pb-6 pt-5 sm:px-7 sm:pb-7 sm:pt-6">
+            <div className="flex flex-1 flex-col bg-gradient-to-b from-secondary/5 to-white px-6 pb-6 pt-5 sm:px-7 sm:pb-7 sm:pt-6">
                 <h3 className="text-lg font-bold leading-snug text-primary sm:text-xl">
                     {service.title}
                 </h3>

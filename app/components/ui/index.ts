@@ -16,4 +16,7 @@ export type { Category } from "./CategoryCard";
 export { default as ProcessCard } from "./ProcessCard";
 export type { ProcessStep } from "./ProcessCard";
 
+export { default as FeatureHighlights } from "./FeatureHighlights";
+export type { FeatureHighlight } from "./FeatureHighlights";
+
 export { default as Button } from "./Button";

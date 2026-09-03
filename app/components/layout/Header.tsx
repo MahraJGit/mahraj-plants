@@ -29,7 +29,7 @@ const plantCategories = [
 const navLinks = [
     { label: "Home", href: "/#hero" },
     { label: "Plants Category", href: "/#categories", dropdown: plantCategories },
-    { label: "Services", href: "/#services" },
+    { label: "Services", href: "/services" },
     { label: "Blogs", href: "/#blogs" },
     { label: "About us", href: "/#about" },
     { label: "Contact us", href: "/#consultation" },
@@ -138,10 +138,16 @@ export default function Header() {
     }, [mobileOpen]);
 
     function isActive(href: string) {
+        if (href === "/services") {
+            return pathname === "/services";
+        }
         if (href === "/#hero") {
             return pathname === "/" && (!activeHash || activeHash === "#hero");
         }
-        return activeHash === href.replace("/", "");
+        if (href.startsWith("/#")) {
+            return pathname === "/" && activeHash === href.slice(1);
+        }
+        return pathname === href;
     }
 
     return (

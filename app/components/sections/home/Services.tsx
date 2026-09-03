@@ -1,43 +1,6 @@
-import { Button, ServiceCard, type Service } from "@/app/components/ui";
-
-const services: Service[] = [
-    {
-        title: "Landscape Design & Planning",
-        description:
-            "Thoughtfully designed outdoor spaces that blend beauty, function, and nature—tailored just for you.",
-        image: "/images/home/m-landscaping.webp",
-        alt: "Landscaper working on a garden bed with flowering plants",
-        features: [
-            "Custom garden layouts",
-            "3D visual planning",
-            "Plant Selection & Placement",
-        ],
-    },
-    {
-        title: "Irrigation & Drainage Solutions",
-        description:
-            "Smart watering and drainage systems designed to keep your garden green, healthy, and flood-free.",
-        image: "/images/home/m-outdoor.webp",
-        alt: "Garden sprinkler watering a lush green lawn",
-        features: [
-            "Automatic Irrigation Systems",
-            "Smart Water Scheduling",
-            "Garden Drainage Planning",
-        ],
-    },
-    {
-        title: "Green Maintenance Packages",
-        description:
-            "Year-round garden care made easy — from trimming to pest control, we keep your green space healthy.",
-        image: "/images/home/hero-bg-3.jpg",
-        alt: "Gardener trimming hedges in a landscaped garden",
-        features: [
-            "Seasonal Lawn Care",
-            "Pruning & Trimming Services",
-            "Weed & Pest Management",
-        ],
-    },
-];
+import Link from "next/link";
+import { ServiceCard } from "@/app/components/ui";
+import { services } from "@/app/lib/services";
 
 export default function Services() {
     return (
@@ -95,18 +58,21 @@ export default function Services() {
                         </div>
                     </div>
 
-                    <Button
-                        variant="secondary"
-                        className="w-fit shrink-0 self-start rounded-lg px-8 py-3.5 lg:mt-2"
+                    <Link
+                        href="/services"
+                        className="w-fit shrink-0 self-start rounded-lg bg-secondary px-8 py-3.5 text-base font-medium leading-[100%] tracking-[-1%] text-white transition-colors hover:bg-secondary/90 lg:mt-2"
                     >
                         View All Services →
-                    </Button>
+                    </Link>
                 </header>
 
                 <ul className="mt-12 grid gap-6 lg:mt-14 lg:grid-cols-3 lg:gap-7">
-                    {services.map((service) => (
+                    {services.slice(0, 3).map((service) => (
                         <li key={service.title}>
-                            <ServiceCard service={service} />
+                            <ServiceCard
+                                service={service}
+                                href={`/services#${service.slug}`}
+                            />
                         </li>
                     ))}
                 </ul>
