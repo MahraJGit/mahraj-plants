@@ -1,18 +1,21 @@
 import Image from "next/image";
 import FeatureHighlights from "@/app/components/ui/FeatureHighlights";
 import Reveal from "@/app/components/ui/Reveal";
-import { serviceHighlights } from "@/app/lib/services";
+import { serviceHighlights, type ServiceDetail } from "@/app/lib/services";
 
-export default function ServicesHero() {
+type ServiceDetailHeroProps = {
+    service: ServiceDetail;
+};
+
+export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
     return (
         <section
-            id="services-hero"
-            aria-labelledby="services-hero-heading"
-            className="relative isolate flex min-h-[32rem] w-full flex-col overflow-visible sm:min-h-[36rem] lg:min-h-[42rem]"
+            aria-labelledby="service-detail-heading"
+            className="relative isolate flex min-h-[32rem] w-full flex-col overflow-visible sm:min-h-[36rem] lg:min-h-[40rem]"
         >
-            <div className="relative isolate flex min-h-[28rem] flex-1 flex-col overflow-hidden sm:min-h-[32rem]">
+            <div className="relative isolate flex min-h-[26rem] flex-1 flex-col overflow-hidden sm:min-h-[30rem]">
                 <Image
-                    src="/images/home/hero-bg-1.jpg"
+                    src={service.image}
                     alt=""
                     fill
                     sizes="100vw"
@@ -20,28 +23,23 @@ export default function ServicesHero() {
                     className="object-cover will-change-transform hero-zoom-in"
                     aria-hidden
                 />
-                <div
-                    aria-hidden
-                    className="absolute inset-0 bg-primary/45"
-                />
+                <div aria-hidden className="absolute inset-0 bg-primary/50" />
 
                 <div className="hero-content relative z-10 my-auto w-full pb-8 sm:pb-10">
                     <div className="hero-copy-in mx-auto w-full max-w-4xl px-6 text-center sm:px-10">
                         <p className="font-script text-[22px] leading-tight text-white sm:text-[28px] lg:text-[32px]">
-                            Let&apos;s Build Your Dream Garden
+                            Best Services For You
                         </p>
 
                         <h1
-                            id="services-hero-heading"
+                            id="service-detail-heading"
                             className="mt-4 text-balance"
                         >
-                            Beautiful Spaces, Naturally Created
+                            {service.title}
                         </h1>
 
                         <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
-                            We design, build, and care for gardens and landscapes with
-                            passion. Let&apos;s turn your outdoor area into something
-                            truly special.
+                            {service.heroDescription}
                         </p>
                     </div>
                 </div>

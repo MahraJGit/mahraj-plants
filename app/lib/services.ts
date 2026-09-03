@@ -1,11 +1,72 @@
 import type { Service } from "@/app/components/ui";
 
-export const services: Service[] = [
+export type ServiceFaq = {
+    question: string;
+    answer: string;
+};
+
+export type ServiceProcessStep = {
+    number: string;
+    title: string;
+    description: string;
+};
+
+export type ServiceDetail = Service & {
+    slug: string;
+    heroDescription: string;
+    introTitle: string;
+    introBody: string[];
+    includedTitle: string;
+    includedDescription: string;
+    includedItems: string[];
+    processTitle: string;
+    processDescription: string;
+    processSteps: ServiceProcessStep[];
+    faqTitle: string;
+    faqDescription: string;
+    faqs: ServiceFaq[];
+    gallery: { src: string; alt: string }[];
+};
+
+const galleryPool = [
+    {
+        src: "/images/home/m-landscaping.webp",
+        alt: "Landscaper working on a garden bed",
+    },
+    {
+        src: "/images/home/hero-bg-3.jpg",
+        alt: "Gardener trimming hedges",
+    },
+    {
+        src: "/images/home/m-outdoor.webp",
+        alt: "Garden lawn and outdoor greenery",
+    },
+    {
+        src: "/images/home/aboutImg.webp",
+        alt: "Team caring for garden plants",
+    },
+    {
+        src: "/images/home/our-mission.webp",
+        alt: "Professional outdoor maintenance",
+    },
+    {
+        src: "/images/home/hero-bg-2.jpg",
+        alt: "Landscaped garden seating area",
+    },
+];
+
+function galleryFor(...indexes: number[]) {
+    return indexes.map((i) => galleryPool[i % galleryPool.length]);
+}
+
+export const services: ServiceDetail[] = [
     {
         slug: "landscape-design-planning",
         title: "Landscape Design & Planning",
         description:
             "Thoughtfully designed outdoor spaces that blend beauty, function, and nature—tailored just for you.",
+        heroDescription:
+            "Year-round garden care made easy — from trimming to pest control, we keep your green space healthy.",
         image: "/images/home/m-landscaping.webp",
         alt: "Landscaper working on a garden bed with flowering plants",
         icon: "/icons/consultation.svg",
@@ -14,11 +75,81 @@ export const services: Service[] = [
             "3D visual planning",
             "Plant Selection & Placement",
         ],
+        introTitle:
+            "Keeping gardens beautiful, healthy, and eco-conscious—season after season.",
+        introBody: [
+            "Our Landscape Design & Planning service turns outdoor ideas into clear, buildable plans. We assess your space, lifestyle, and local climate to craft layouts that balance beauty, function, and long-term growth.",
+            "Perfect for homeowners and businesses seeking a thoughtful redesign or a brand-new outdoor vision. Every plan is backed by expert horticultural insight and a dependable delivery process from concept to planting.",
+        ],
+        includedTitle: "What’s Included in Landscape Design & Planning",
+        includedDescription:
+            "Our design package covers the essentials to shape your outdoor space—layouts, plant selection, visuals, and practical planning. Everything is handled by our expert team with a focus on sustainability.",
+        includedItems: [
+            "Custom Garden Layouts",
+            "3D Visual Planning",
+            "Plant Selection & Placement",
+            "Soil & Site Assessment",
+            "Seasonal Planting Plans",
+            "Implementation Roadmap",
+        ],
+        processTitle: "Our Design Process",
+        processDescription:
+            "We make landscaping design clear and collaborative. Here’s how our planning process works—from first walk-through to a ready-to-build outdoor vision.",
+        processSteps: [
+            {
+                number: "01",
+                title: "Site Assessment & Planning",
+                description:
+                    "Our experts evaluate your landscape’s unique conditions, considering soil, sunlight, and water needs to design a tailored, sustainable care plan.",
+            },
+            {
+                number: "02",
+                title: "Concept & Visual Design",
+                description:
+                    "We develop layouts and visuals that capture your style, then refine plant choices and hardscape details until the plan feels right.",
+            },
+            {
+                number: "03",
+                title: "Final Plan & Handoff",
+                description:
+                    "You receive a clear implementation plan so planting and construction can move forward with confidence and minimal rework.",
+            },
+        ],
+        faqTitle: "Landscape Design FAQs",
+        faqDescription:
+            "Have questions about how our Landscape Design & Planning service works? Here are some of the most common things clients ask us—answered simply and clearly.",
+        faqs: [
+            {
+                question:
+                    "How long does the design and planning process usually take?",
+                answer: "Most residential projects take 1–3 weeks from first visit to final plan, depending on garden size and how many design revisions you need.",
+            },
+            {
+                question:
+                    "Can you design for smaller gardens or urban spaces?",
+                answer: "Yes. Our plans adapt to compact courtyards, rooftops, and larger estates alike—maximizing beauty and function in every square meter.",
+            },
+            {
+                question: "Do you include plant lists and maintenance guidance?",
+                answer: "Absolutely. Every plan includes plant recommendations suited to your climate, plus practical notes so your garden stays healthy after installation.",
+            },
+            {
+                question: "Can you also handle installation after the design?",
+                answer: "Yes—we can continue from design into execution and ongoing care, or hand off a clear plan if you prefer another installer.",
+            },
+            {
+                question: "What happens during the first site visit?",
+                answer: "We walk your space, discuss goals and budget, note light and soil conditions, and outline next steps for your custom design.",
+            },
+        ],
+        gallery: galleryFor(0, 1, 2),
     },
     {
         slug: "irrigation-drainage-solutions",
         title: "Irrigation & Drainage Solutions",
         description:
+            "Smart watering and drainage systems designed to keep your garden green, healthy, and flood-free.",
+        heroDescription:
             "Smart watering and drainage systems designed to keep your garden green, healthy, and flood-free.",
         image: "/images/home/m-outdoor.webp",
         alt: "Garden sprinkler watering a lush green lawn",
@@ -28,11 +159,79 @@ export const services: Service[] = [
             "Smart Water Scheduling",
             "Garden Drainage Planning",
         ],
+        introTitle:
+            "Efficient water systems that protect plants and property—season after season.",
+        introBody: [
+            "Our Irrigation & Drainage Solutions keep landscapes hydrated without waste and protect outdoor spaces from pooling and runoff. We design systems around your soil, plant types, and water goals.",
+            "Ideal for lawns, beds, rooftops, and commercial grounds that need reliable watering and clean drainage with minimal ongoing effort.",
+        ],
+        includedTitle: "What’s Included in Irrigation & Drainage",
+        includedDescription:
+            "From automatic irrigation to smart scheduling and drainage planning, we cover the full water-management toolkit for a healthier garden.",
+        includedItems: [
+            "Automatic Irrigation Systems",
+            "Smart Water Scheduling",
+            "Garden Drainage Planning",
+            "Drip & Sprinkler Setup",
+            "Leak Checks & Adjustments",
+            "Seasonal System Tuning",
+        ],
+        processTitle: "Our Irrigation Process",
+        processDescription:
+            "We design water systems that are efficient, reliable, and easy to live with. Here’s how we approach irrigation and drainage projects.",
+        processSteps: [
+            {
+                number: "01",
+                title: "Site Water Assessment",
+                description:
+                    "We map slopes, soil absorption, and plant zones to understand where water is needed—and where it must be redirected.",
+            },
+            {
+                number: "02",
+                title: "System Design & Install",
+                description:
+                    "Our team installs irrigation and drainage components with clean routing, proper coverage, and efficient controls.",
+            },
+            {
+                number: "03",
+                title: "Testing & Fine-Tuning",
+                description:
+                    "We test schedules and flow, then fine-tune coverage so plants thrive without overwatering or standing water.",
+            },
+        ],
+        faqTitle: "Irrigation & Drainage FAQs",
+        faqDescription:
+            "Have questions about our irrigation and drainage services? Here are clear answers to the most common client questions.",
+        faqs: [
+            {
+                question: "Will an automatic system save water?",
+                answer: "Yes—zoned scheduling and efficient emitters reduce waste by watering only where and when plants need it.",
+            },
+            {
+                question: "Can you fix drainage issues in existing gardens?",
+                answer: "We assess runoff paths and install solutions such as French drains, grading tweaks, and channel drains where needed.",
+            },
+            {
+                question: "Do you support smart controllers?",
+                answer: "We can set up weather-aware and app-controlled systems so watering adjusts to conditions automatically.",
+            },
+            {
+                question: "How often should irrigation be serviced?",
+                answer: "A seasonal check—especially before peak summer and after winter—keeps heads aligned and schedules accurate.",
+            },
+            {
+                question: "Is this suitable for rooftop gardens?",
+                answer: "Yes. We design lightweight, controlled systems with careful drainage to protect both plants and structure.",
+            },
+        ],
+        gallery: galleryFor(2, 0, 4),
     },
     {
         slug: "green-maintenance-packages",
         title: "Green Maintenance Packages",
         description:
+            "Year-round garden care made easy — from trimming to pest control, we keep your green space healthy.",
+        heroDescription:
             "Year-round garden care made easy — from trimming to pest control, we keep your green space healthy.",
         image: "/images/home/hero-bg-3.jpg",
         alt: "Gardener trimming hedges in a landscaped garden",
@@ -42,12 +241,85 @@ export const services: Service[] = [
             "Pruning & Trimming Services",
             "Weed & Pest Management",
         ],
+        introTitle:
+            "Keeping gardens beautiful, healthy, and eco-conscious—season after season.",
+        introBody: [
+            "Our Green Maintenance service offers ongoing, professional landscape care with a strong focus on sustainability. Using eco-friendly methods like organic fertilization, low-impact pest control, and water-efficient practices, we help your garden thrive while protecting the environment.",
+            "Perfect for busy homeowners, residential estates, and businesses that want a lush, healthy landscape without the stress of upkeep. This package ensures long-term beauty, low maintenance, and peace of mind—all backed by a skilled, dependable team.",
+        ],
+        includedTitle: "What’s Included in Green Maintenance",
+        includedDescription:
+            "Our Green Maintenance service covers all the essentials to keep your garden thriving—lawn care, pruning, eco-friendly treatments, and seasonal updates. Everything is handled by our expert team with a focus on sustainability.",
+        includedItems: [
+            "Seasonal Lawn Care",
+            "Pruning & Trimming Services",
+            "Organic Fertilization",
+            "Weed & Pest Management",
+            "Irrigation Monitoring",
+            "Eco Waste Removal",
+        ],
+        processTitle: "Our Maintenance Process",
+        processDescription:
+            "We make garden care simple, sustainable, and stress-free. Here’s how our Green Maintenance process works—designed to keep your landscape thriving through every season.",
+        processSteps: [
+            {
+                number: "01",
+                title: "Site Assessment & Planning",
+                description:
+                    "Our experts evaluate your landscape’s unique conditions, considering soil, sunlight, and water needs to design a tailored, sustainable care plan.",
+            },
+            {
+                number: "02",
+                title: "Scheduled Eco-Friendly Care",
+                description:
+                    "Our team carries out routine tasks like mowing, pruning, fertilizing, and pest control using sustainable methods.",
+            },
+            {
+                number: "03",
+                title: "Ongoing Monitoring & Adjustments",
+                description:
+                    "We regularly track plant health and site conditions, making timely adjustments to ensure long-term growth and ecological balance.",
+            },
+        ],
+        faqTitle: "Green Maintenance FAQs",
+        faqDescription:
+            "Have questions about how our Green Maintenance service works? Here are some of the most common things clients ask us—answered simply and clearly.",
+        faqs: [
+            {
+                question:
+                    "How frequently will your team visit my garden for maintenance?",
+                answer: "We offer flexible scheduling—most clients prefer weekly or bi-weekly visits. During our first assessment, we’ll help you decide the best frequency based on your space and seasonal needs.",
+            },
+            {
+                question:
+                    "Is the Green Maintenance service suitable for smaller gardens or urban spaces?",
+                answer: "Yes! Our service is designed to adapt to gardens of all sizes, including compact urban spaces. We’ll tailor the care plan to maximize beauty and functionality in your unique environment.",
+            },
+            {
+                question:
+                    "Do you use environmentally friendly products and methods in this service?",
+                answer: "Absolutely—we prioritize eco-conscious practices in every visit. From non-toxic treatments to sustainable tools, our methods protect both your garden’s health and the surrounding ecosystem.",
+            },
+            {
+                question:
+                    "What if I need to change, pause, or cancel my maintenance plan?",
+                answer: "We keep things flexible—you can adjust, pause, or cancel your plan at any time. Simply let us know, and we’ll make the changes without hassle to fit your schedule and needs.",
+            },
+            {
+                question:
+                    "What can I expect during the very first visit from your team?",
+                answer: "Your first visit starts with a detailed walk-through of your garden. Our team will assess current conditions, discuss your goals, and create a personalized maintenance plan to get started right away.",
+            },
+        ],
+        gallery: galleryFor(1, 4, 3),
     },
     {
         slug: "hardscaping-lighting",
         title: "Hardscaping & Lighting",
         description:
             "Elegant pathways, patios, and lighting that add structure, safety, and ambiance to your outdoor space.",
+        heroDescription:
+            "Add style and function to your garden with beautiful hardscapes and lighting for day and night appeal.",
         image: "/images/home/hero-bg-2.jpg",
         alt: "Stone patio pathway with garden lighting at dusk",
         icon: "/icons/execution.svg",
@@ -56,11 +328,79 @@ export const services: Service[] = [
             "Garden Lighting Design",
             "Stone & Paver Installation",
         ],
+        introTitle:
+            "Structure, ambiance, and lasting outdoor style—built to complement your greenery.",
+        introBody: [
+            "Hardscaping & Lighting brings form and evening beauty to your landscape. We design pathways, patios, and lighting schemes that guide movement, create gathering spaces, and highlight plants after dark.",
+            "Whether you need a new patio, refined stone accents, or a full lighting plan, our team balances craftsmanship with outdoor living comfort.",
+        ],
+        includedTitle: "What’s Included in Hardscaping & Lighting",
+        includedDescription:
+            "From durable paving to atmospheric lighting, we deliver the structural and evening elements that complete a polished outdoor space.",
+        includedItems: [
+            "Patios & Pathways",
+            "Outdoor Lighting",
+            "Water Features & Stone Accents",
+            "Paver & Edge Installation",
+            "Path & Accent Lighting",
+            "Evening Ambiance Planning",
+        ],
+        processTitle: "Our Hardscape Process",
+        processDescription:
+            "We build outdoor structure with care—from layout decisions to finished surfaces and lighting that works day and night.",
+        processSteps: [
+            {
+                number: "01",
+                title: "Layout & Material Selection",
+                description:
+                    "We plan circulation, seating zones, and materials that match your architecture and garden style.",
+            },
+            {
+                number: "02",
+                title: "Construction & Installation",
+                description:
+                    "Our crew installs hardscape elements with solid base work, clean edges, and careful detailing.",
+            },
+            {
+                number: "03",
+                title: "Lighting & Finishing",
+                description:
+                    "We place lighting for safety and atmosphere, then finish the space so it feels complete after dark.",
+            },
+        ],
+        faqTitle: "Hardscaping & Lighting FAQs",
+        faqDescription:
+            "Common questions about our hardscaping and outdoor lighting services—answered clearly.",
+        faqs: [
+            {
+                question: "What materials do you typically use for pathways?",
+                answer: "We work with stone, pavers, and durable outdoor finishes selected for climate, style, and long-term wear.",
+            },
+            {
+                question: "Can lighting be added to an existing garden?",
+                answer: "Yes—we can retrofit path, accent, and feature lighting with minimal disruption to established planting.",
+            },
+            {
+                question: "Do you handle water features as part of hardscaping?",
+                answer: "We can include ponds, fountains, and stone accents when they fit the design and site conditions.",
+            },
+            {
+                question: "How long does a typical patio project take?",
+                answer: "Timelines vary by size, but most residential patios are completed within a few days to a couple of weeks.",
+            },
+            {
+                question: "Is outdoor lighting energy efficient?",
+                answer: "We prioritize efficient fixtures and thoughtful placement so you get ambiance without unnecessary energy use.",
+            },
+        ],
+        gallery: galleryFor(5, 0, 1),
     },
     {
         slug: "gardening-plant-upgrade",
         title: "Gardening & Plant Upgrade",
         description:
+            "Refresh your garden with curated plants, seasonal upgrades, and expert planting for lasting vibrancy.",
+        heroDescription:
             "Refresh your garden with curated plants, seasonal upgrades, and expert planting for lasting vibrancy.",
         image: "/images/home/m-indoor.webp",
         alt: "Modern rooftop patio with wooden furniture and planters",
@@ -70,11 +410,79 @@ export const services: Service[] = [
             "Garden Bed Renovation",
             "Premium Plant Selection",
         ],
+        introTitle:
+            "Fresh planting, richer color, and healthier beds—updated for every season.",
+        introBody: [
+            "Gardening & Plant Upgrade renews tired beds and sparse corners with carefully chosen plants. We match species to light, soil, and your preferred look so new planting thrives.",
+            "Great for seasonal refreshes, rooftop containers, and full bed renovations that bring new life without a complete landscape rebuild.",
+        ],
+        includedTitle: "What’s Included in Gardening & Plant Upgrade",
+        includedDescription:
+            "From seasonal planting plans to bed renovation and premium plant selection, we handle the green refresh end to end.",
+        includedItems: [
+            "Seasonal Planting Plans",
+            "Garden Bed Renovation",
+            "Premium Plant Selection",
+            "Soil Improvement",
+            "Container & Pot Styling",
+            "Aftercare Guidance",
+        ],
+        processTitle: "Our Planting Process",
+        processDescription:
+            "We refresh gardens with a clear planting workflow—so upgrades look intentional and last through the seasons.",
+        processSteps: [
+            {
+                number: "01",
+                title: "Garden Review & Plant Plan",
+                description:
+                    "We review existing beds, light conditions, and your style goals, then propose a planting plan that fits.",
+            },
+            {
+                number: "02",
+                title: "Bed Prep & Planting",
+                description:
+                    "Soil is improved, plants are placed with proper spacing, and beds are finished for healthy establishment.",
+            },
+            {
+                number: "03",
+                title: "Care Tips & Follow-Up",
+                description:
+                    "You receive aftercare guidance, and we can schedule follow-up visits to keep new planting on track.",
+            },
+        ],
+        faqTitle: "Plant Upgrade FAQs",
+        faqDescription:
+            "Answers to common questions about refreshing and upgrading your garden planting.",
+        faqs: [
+            {
+                question: "When is the best time for a planting upgrade?",
+                answer: "Mild seasons are ideal, but we plan around your climate and plant types so establishment stays strong.",
+            },
+            {
+                question: "Can you work with existing plants I want to keep?",
+                answer: "Yes—we design around keepers, relocate where sensible, and fill gaps with complementary species.",
+            },
+            {
+                question: "Do you supply the plants?",
+                answer: "We source healthy, climate-suitable plants and can also work with selections you already prefer.",
+            },
+            {
+                question: "Is this suitable for rooftops and containers?",
+                answer: "Absolutely. We specialize in lightweight, well-drained planting solutions for elevated and compact spaces.",
+            },
+            {
+                question: "Will you remove old plants and debris?",
+                answer: "Yes—cleanup and tidy finishing are part of the upgrade so the space looks fresh immediately.",
+            },
+        ],
+        gallery: galleryFor(3, 2, 0),
     },
     {
         slug: "outdoor-maintenance-finishing",
         title: "Outdoor Maintenance & Finishing",
         description:
+            "Complete outdoor care from cleanup to final touches — keeping every corner of your landscape pristine.",
+        heroDescription:
             "Complete outdoor care from cleanup to final touches — keeping every corner of your landscape pristine.",
         image: "/images/home/our-mission.webp",
         alt: "Professional gardener trimming a tall hedge",
@@ -84,8 +492,82 @@ export const services: Service[] = [
             "Mulching & Edging",
             "Final Landscape Finishing",
         ],
+        introTitle:
+            "Polished outdoor spaces—from seasonal cleanup to the finishing details that make a garden feel complete.",
+        introBody: [
+            "Outdoor Maintenance & Finishing covers the care and detailing that keep landscapes looking intentional. We handle cleanups, edges, mulch, and final styling so every corner feels finished.",
+            "Ideal after a redesign, before an event, or as recurring care that keeps your property guest-ready year-round.",
+        ],
+        includedTitle: "What’s Included in Outdoor Maintenance & Finishing",
+        includedDescription:
+            "Seasonal cleanups, crisp edging, mulching, and finishing touches—delivered with a professional, tidy result.",
+        includedItems: [
+            "Seasonal Cleanups",
+            "Mulching & Edging",
+            "Final Landscape Finishing",
+            "Debris & Leaf Removal",
+            "Bed Refresh & Tidying",
+            "Pre-Event Polish",
+        ],
+        processTitle: "Our Finishing Process",
+        processDescription:
+            "We bring outdoor spaces to a clean, finished standard through a simple, reliable workflow.",
+        processSteps: [
+            {
+                number: "01",
+                title: "Walk-Through & Scope",
+                description:
+                    "We review the site, prioritize cleanup zones, and confirm the finishing level you want.",
+            },
+            {
+                number: "02",
+                title: "Cleanup & Detail Work",
+                description:
+                    "Our team clears debris, refreshes edges and mulch, and addresses the details that elevate presentation.",
+            },
+            {
+                number: "03",
+                title: "Final Review",
+                description:
+                    "We do a final pass so paths, beds, and features look cohesive and ready to enjoy.",
+            },
+        ],
+        faqTitle: "Outdoor Finishing FAQs",
+        faqDescription:
+            "Quick answers about our outdoor maintenance and finishing services.",
+        faqs: [
+            {
+                question: "Is this a one-time service or recurring?",
+                answer: "Both. We offer single cleanups and finishing visits, plus recurring schedules for ongoing polish.",
+            },
+            {
+                question: "Can you prepare a garden before an event?",
+                answer: "Yes—pre-event finishing is one of our most requested services for homes and commercial spaces.",
+            },
+            {
+                question: "Do you haul away green waste?",
+                answer: "We remove debris as part of the service so your site is left clean and clear.",
+            },
+            {
+                question: "Will finishing disturb newly planted areas?",
+                answer: "We work carefully around new planting and adjust methods to protect establishing beds.",
+            },
+            {
+                question: "How do I book a finishing visit?",
+                answer: "Contact us with your address and preferred timing—we’ll confirm scope and schedule promptly.",
+            },
+        ],
+        gallery: galleryFor(4, 1, 5),
     },
 ];
+
+export function getServiceBySlug(slug: string): ServiceDetail | undefined {
+    return services.find((service) => service.slug === slug);
+}
+
+export function getAllServiceSlugs(): string[] {
+    return services.map((service) => service.slug);
+}
 
 export const serviceHighlights = [
     {

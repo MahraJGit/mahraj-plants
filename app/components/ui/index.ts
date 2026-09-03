@@ -19,4 +19,6 @@ export type { ProcessStep } from "./ProcessCard";
 export { default as FeatureHighlights } from "./FeatureHighlights";
 export type { FeatureHighlight } from "./FeatureHighlights";
 
+export { default as Reveal } from "./Reveal";
+
 export { default as Button } from "./Button";

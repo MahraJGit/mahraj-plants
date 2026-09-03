@@ -10,11 +10,11 @@ import { MdSupportAgent } from "react-icons/md";
 import { cn } from "@/app/lib/utils";
 
 const services = [
-    { label: "Landscape Design & Planning", href: "/services#landscape-design-planning" },
-    { label: "Irrigation & Drainage Solutions", href: "/services#irrigation-drainage-solutions" },
-    { label: "Green Maintenance Packages", href: "/services#green-maintenance-packages" },
-    { label: "Hardscaping & Lighting", href: "/services#hardscaping-lighting" },
-    { label: "Gardening & Plant Upgrade", href: "/services#gardening-plant-upgrade" },
+    { label: "Landscape Design & Planning", href: "/services/landscape-design-planning" },
+    { label: "Irrigation & Drainage Solutions", href: "/services/irrigation-drainage-solutions" },
+    { label: "Green Maintenance Packages", href: "/services/green-maintenance-packages" },
+    { label: "Hardscaping & Lighting", href: "/services/hardscaping-lighting" },
+    { label: "Gardening & Plant Upgrade", href: "/services/gardening-plant-upgrade" },
 ];
 
 const usefulLinks = [

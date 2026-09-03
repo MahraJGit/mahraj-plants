@@ -71,7 +71,7 @@ export default function Services() {
                         <li key={service.title}>
                             <ServiceCard
                                 service={service}
-                                href={`/services#${service.slug}`}
+                                href={`/services/${service.slug}`}
                             />
                         </li>
                     ))}

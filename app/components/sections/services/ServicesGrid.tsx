@@ -1,4 +1,4 @@
-import { ServiceCard } from "@/app/components/ui";
+import { Reveal, ServiceCard } from "@/app/components/ui";
 import { services } from "@/app/lib/services";
 
 export default function ServicesGrid() {
@@ -14,7 +14,7 @@ export default function ServicesGrid() {
             />
 
             <div className="section-container relative">
-                <header className="mx-auto max-w-3xl text-center">
+                <Reveal as="header" className="mx-auto max-w-3xl text-center">
                     <p className="flex items-center justify-center gap-2">
                         <svg
                             viewBox="0 0 14 21"
@@ -44,16 +44,21 @@ export default function ServicesGrid() {
                         ongoing garden care — ensuring beauty and vitality in every
                         project.
                     </p>
-                </header>
+                </Reveal>
 
                 <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-7">
-                    {services.map((service) => (
-                        <li key={service.slug ?? service.title} id={service.slug}>
+                    {services.map((service, index) => (
+                        <Reveal
+                            key={service.slug ?? service.title}
+                            as="li"
+                            id={service.slug}
+                            delayMs={index * 80}
+                        >
                             <ServiceCard
                                 service={service}
-                                href={`/services#${service.slug}`}
+                                href={`/services/${service.slug}`}
                             />
-                        </li>
+                        </Reveal>
                     ))}
                 </ul>
             </div>

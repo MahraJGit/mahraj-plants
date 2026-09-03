@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Button } from "@/app/components/ui";
+import { Button, Reveal } from "@/app/components/ui";
 import { servicesTestimonials } from "@/app/lib/services";
 import { cn } from "@/app/lib/utils";
 
@@ -88,96 +88,100 @@ export default function ServicesTestimonials() {
             />
 
             <div className="section-container relative">
-                <header className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
-                    <div className="max-w-2xl">
-                        <p className="flex items-center gap-2">
-                            <Image
-                                src="/icons/leaf.svg"
-                                alt=""
-                                width={24}
-                                height={18}
-                                unoptimized
-                                className="h-4 w-auto brightness-0 invert"
-                            />
-                            <span className="font-script text-[28px] leading-none text-white sm:text-[32px]">
-                                Testimonials
-                            </span>
-                        </p>
-
-                        <h2
-                            id="services-testimonials-heading"
-                            className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-4xl lg:text-[42px]"
-                        >
-                            Words From Our Happy Gardeners
-                        </h2>
-
-                        <p className="mt-4 text-sm leading-relaxed text-white/80 sm:text-base">
-                            Real feedback from customers who trusted us to transform
-                            their outdoor living
-                        </p>
-                    </div>
-
-                    <Button
-                        variant="secondary"
-                        className="w-fit shrink-0 rounded-lg px-8 py-3.5"
-                    >
-                        View All Testimonials
-                    </Button>
-                </header>
-
-                <div className="mt-10 flex flex-wrap justify-center gap-3 sm:mt-12 sm:gap-4">
-                    {servicesTestimonials.map((item, index) => {
-                        const isActive = index === activeIndex;
-
-                        return (
-                            <button
-                                key={item.name}
-                                type="button"
-                                aria-label={`Show testimonial from ${item.name}`}
-                                aria-current={isActive}
-                                onClick={() => setActiveIndex(index)}
-                                className={cn(
-                                    "relative size-12 cursor-pointer overflow-hidden rounded-full border-2 transition-all duration-300 sm:size-14",
-                                    isActive
-                                        ? "scale-110 border-white shadow-[0_0_0_4px_rgba(255,255,255,0.25)]"
-                                        : "border-white/40 opacity-80 hover:opacity-100",
-                                )}
-                            >
+                <Reveal>
+                    <header className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+                        <div className="max-w-2xl">
+                            <p className="flex items-center gap-2">
                                 <Image
-                                    src={item.image}
-                                    alt={item.name}
-                                    fill
-                                    sizes="56px"
-                                    className="object-cover"
+                                    src="/icons/leaf.svg"
+                                    alt=""
+                                    width={24}
+                                    height={18}
+                                    unoptimized
+                                    className="h-4 w-auto brightness-0 invert"
                                 />
-                            </button>
-                        );
-                    })}
-                </div>
+                                <span className="font-script text-[28px] leading-none text-white sm:text-[32px]">
+                                    Testimonials
+                                </span>
+                            </p>
 
-                <div
-                    key={activeIndex}
-                    className="mx-auto mt-10 max-w-3xl text-center sm:mt-12"
-                >
-                    <span
-                        aria-hidden
-                        className="font-serif text-6xl leading-none text-white/30 sm:text-7xl"
-                    >
-                        &ldquo;
-                    </span>
+                            <h2
+                                id="services-testimonials-heading"
+                                className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-4xl lg:text-[42px]"
+                            >
+                                Words From Our Happy Gardeners
+                            </h2>
 
-                    <blockquote className="mt-2 text-base leading-relaxed text-white/95 sm:text-lg lg:text-xl">
-                        {testimonial.quote}
-                    </blockquote>
+                            <p className="mt-4 text-sm leading-relaxed text-white/80 sm:text-base">
+                                Real feedback from customers who trusted us to transform
+                                their outdoor living
+                            </p>
+                        </div>
 
-                    <p className="mt-6 text-xs font-semibold tracking-[0.15em] text-white uppercase sm:text-sm">
-                        {testimonial.name}, {testimonial.location}
-                    </p>
+                        <Button
+                            variant="secondary"
+                            className="w-fit shrink-0 rounded-lg px-8 py-3.5"
+                        >
+                            View All Testimonials
+                        </Button>
+                    </header>
+                </Reveal>
 
-                    <div className="mt-4">
-                        <StarRating />
+                <Reveal delayMs={120}>
+                    <div className="mt-10 flex flex-wrap justify-center gap-3 sm:mt-12 sm:gap-4">
+                        {servicesTestimonials.map((item, index) => {
+                            const isActive = index === activeIndex;
+
+                            return (
+                                <button
+                                    key={item.name}
+                                    type="button"
+                                    aria-label={`Show testimonial from ${item.name}`}
+                                    aria-current={isActive}
+                                    onClick={() => setActiveIndex(index)}
+                                    className={cn(
+                                        "relative size-12 cursor-pointer overflow-hidden rounded-full border-2 transition-all duration-300 sm:size-14",
+                                        isActive
+                                            ? "scale-110 border-white shadow-[0_0_0_4px_rgba(255,255,255,0.25)]"
+                                            : "border-white/40 opacity-80 hover:opacity-100",
+                                    )}
+                                >
+                                    <Image
+                                        src={item.image}
+                                        alt={item.name}
+                                        fill
+                                        sizes="56px"
+                                        className="object-cover"
+                                    />
+                                </button>
+                            );
+                        })}
                     </div>
-                </div>
+
+                    <div
+                        key={activeIndex}
+                        className="hero-copy-in mx-auto mt-10 max-w-3xl text-center sm:mt-12"
+                    >
+                        <span
+                            aria-hidden
+                            className="font-serif text-6xl leading-none text-white/30 sm:text-7xl"
+                        >
+                            &ldquo;
+                        </span>
+
+                        <blockquote className="mt-2 text-base leading-relaxed text-white/95 sm:text-lg lg:text-xl">
+                            {testimonial.quote}
+                        </blockquote>
+
+                        <p className="mt-6 text-xs font-semibold tracking-[0.15em] text-white uppercase sm:text-sm">
+                            {testimonial.name}, {testimonial.location}
+                        </p>
+
+                        <div className="mt-4">
+                            <StarRating />
+                        </div>
+                    </div>
+                </Reveal>
 
                 <div className="sr-only" aria-live="polite">
                     Testimonial {activeIndex + 1} of {servicesTestimonials.length}:{" "}

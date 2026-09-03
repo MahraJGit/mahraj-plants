@@ -5,7 +5,7 @@ export type ProcessStep = {
     number: string;
     title: string;
     description: string;
-    icon: string;
+    icon?: string;
 };
 
 type ProcessCardProps = {
@@ -20,7 +20,7 @@ export default function ProcessCard({ step, className }: ProcessCardProps) {
     return (
         <div
             className={cn(
-                "group mx-auto h-[21rem] w-full max-w-[16.5rem] sm:h-[22.5rem] sm:max-w-[17.5rem] [perspective:1200px]",
+                "group mx-auto h-[20rem] w-full min-w-0 shrink-0 [perspective:1200px] sm:h-[22rem]",
                 className,
             )}
             tabIndex={0}
@@ -31,9 +31,10 @@ export default function ProcessCard({ step, className }: ProcessCardProps) {
                     "group-hover:[transform:rotateY(180deg)] group-focus-visible:[transform:rotateY(180deg)]",
                 )}
             >
+                {/* Front — number + gold line + title */}
                 <div
                     className={cn(
-                        "absolute inset-0 flex flex-col bg-secondary p-6 [backface-visibility:hidden]",
+                        "absolute inset-0 flex flex-col bg-linear-to-b from-primary to-[#14351A] px-5 py-8 shadow-[0_18px_40px_rgba(10,37,14,0.22)] [backface-visibility:hidden] sm:px-6",
                         cardShape,
                     )}
                 >
@@ -41,29 +42,20 @@ export default function ProcessCard({ step, className }: ProcessCardProps) {
                         {step.number}
                     </span>
 
-                    <div className="flex flex-1 items-center justify-center">
-                        <div className="flex size-28 items-center justify-center rounded-full border border-dashed border-white/70 sm:size-[7.5rem]">
-                            <div className="flex size-[4.5rem] items-center justify-center rounded-full bg-primary sm:size-20">
-                                <Image
-                                    src={step.icon}
-                                    alt=""
-                                    width={36}
-                                    height={36}
-                                    unoptimized
-                                    className="h-8 w-auto brightness-0 invert sm:h-9"
-                                />
-                            </div>
-                        </div>
-                    </div>
+                    <span
+                        aria-hidden
+                        className="mx-auto mt-5 block h-0.5 w-12 rounded-full bg-[#C4A862]"
+                    />
 
-                    <h3 className="text-center text-base font-bold leading-snug text-white sm:text-lg">
+                    <h3 className="mt-auto text-center text-base font-bold leading-snug text-white sm:text-lg">
                         {step.title}
                     </h3>
                 </div>
 
+                {/* Back — title + leaf + description */}
                 <div
                     className={cn(
-                        "absolute inset-0 flex flex-col items-center justify-center bg-white px-5 py-6 text-center shadow-[0_0_60px_rgba(255,255,255,0.45)] [backface-visibility:hidden] [transform:rotateY(180deg)] sm:px-6",
+                        "absolute inset-0 flex flex-col items-center justify-center bg-cream px-5 py-6 text-center shadow-[0_18px_40px_rgba(10,37,14,0.12)] [backface-visibility:hidden] [transform:rotateY(180deg)] sm:px-6",
                         cardShape,
                     )}
                 >
@@ -72,10 +64,10 @@ export default function ProcessCard({ step, className }: ProcessCardProps) {
                     </h3>
 
                     <Image
-                        src="/icons/singleLeaf.svg"
+                        src={step.icon ?? "/icons/singleLeaf.svg"}
                         alt=""
-                        width={14}
-                        height={21}
+                        width={28}
+                        height={28}
                         unoptimized
                         className="mt-4 h-6 w-auto"
                     />

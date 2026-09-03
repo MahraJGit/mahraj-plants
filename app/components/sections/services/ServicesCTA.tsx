@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FormEvent, useState } from "react";
 import { HiOutlinePhone } from "react-icons/hi";
 import Button from "@/app/components/ui/Button";
+import Reveal from "@/app/components/ui/Reveal";
 
 export default function ServicesCTA() {
     const [email, setEmail] = useState("");
@@ -33,33 +34,35 @@ export default function ServicesCTA() {
                 />
 
                 <div className="section-container relative py-12 lg:py-16">
-                    <h2
-                        id="services-cta-heading"
-                        className="max-w-md text-[26px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-3xl lg:text-[34px]"
-                    >
-                        Ready To Elevate Your Landscape With Mahraj Plants?
-                    </h2>
-
-                    <div className="mt-8 flex flex-wrap items-center gap-4">
-                        <Button
-                            variant="secondary"
-                            className="rounded-lg px-8 py-3.5"
+                    <Reveal>
+                        <h2
+                            id="services-cta-heading"
+                            className="max-w-md text-[26px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-3xl lg:text-[34px]"
                         >
-                            Get a Free Consultation
-                        </Button>
+                            Ready To Elevate Your Landscape With Mahraj Plants?
+                        </h2>
 
-                        <a
-                            href="tel:+966556891877"
-                            className="inline-flex items-center gap-3 text-white transition hover:text-secondary"
-                        >
-                            <span className="flex size-11 items-center justify-center rounded-full bg-secondary text-white">
-                                <HiOutlinePhone aria-hidden className="size-5" />
-                            </span>
-                            <span className="text-sm font-medium sm:text-base">
-                                +966 55 689 1877
-                            </span>
-                        </a>
-                    </div>
+                        <div className="mt-8 flex flex-wrap items-center gap-4">
+                            <Button
+                                variant="secondary"
+                                className="rounded-lg px-8 py-3.5"
+                            >
+                                Get a Free Consultation
+                            </Button>
+
+                            <a
+                                href="tel:+966556891877"
+                                className="inline-flex items-center gap-3 text-white transition hover:text-secondary"
+                            >
+                                <span className="flex size-11 items-center justify-center rounded-full bg-secondary text-white">
+                                    <HiOutlinePhone aria-hidden className="size-5" />
+                                </span>
+                                <span className="text-sm font-medium sm:text-base">
+                                    +966 55 689 1877
+                                </span>
+                            </a>
+                        </div>
+                    </Reveal>
                 </div>
             </div>
 
@@ -78,68 +81,70 @@ export default function ServicesCTA() {
                 />
 
                 <div className="section-container relative py-12 lg:py-16">
-                    <p className="flex items-center gap-2">
-                        <Image
-                            src="/icons/leaf.svg"
-                            alt=""
-                            width={24}
-                            height={18}
-                            unoptimized
-                            className="h-4 w-auto brightness-0 invert"
-                        />
-                        <span className="font-script text-[26px] leading-none text-white sm:text-[30px]">
-                            Expert Gardening &amp; Sustainable Living
-                        </span>
-                    </p>
+                    <Reveal delayMs={100}>
+                        <p className="flex items-center gap-2">
+                            <Image
+                                src="/icons/leaf.svg"
+                                alt=""
+                                width={24}
+                                height={18}
+                                unoptimized
+                                className="h-4 w-auto brightness-0 invert"
+                            />
+                            <span className="font-script text-[26px] leading-none text-white sm:text-[30px]">
+                                Expert Gardening &amp; Sustainable Living
+                            </span>
+                        </p>
 
-                    <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-                        Insights
-                    </h3>
+                        <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+                            Insights
+                        </h3>
 
-                    <p className="mt-4 max-w-md text-sm leading-relaxed text-white/80 sm:text-[15px]">
-                        Receive curated gardening strategies, seasonal planting guides,
-                        and practical eco-friendly updates. Stay ahead with
-                        expert-backed sustainable practices delivered straight to your
-                        inbox.
-                    </p>
+                        <p className="mt-4 max-w-md text-sm leading-relaxed text-white/80 sm:text-[15px]">
+                            Receive curated gardening strategies, seasonal planting guides,
+                            and practical eco-friendly updates. Stay ahead with
+                            expert-backed sustainable practices delivered straight to your
+                            inbox.
+                        </p>
 
-                    <form
-                        onSubmit={handleSubmit}
-                        className="mt-8 flex max-w-md overflow-hidden rounded-full bg-white shadow-lg"
-                    >
-                        <label htmlFor="newsletter-email" className="sr-only">
-                            Email address
-                        </label>
-                        <input
-                            id="newsletter-email"
-                            type="email"
-                            required
-                            value={email}
-                            onChange={(event) => setEmail(event.target.value)}
-                            placeholder="Enter your email here ..."
-                            className="min-w-0 flex-1 bg-transparent px-5 py-3.5 text-sm text-primary outline-none placeholder:text-primary/45"
-                        />
-                        <button
-                            type="submit"
-                            className="flex shrink-0 cursor-pointer items-center gap-2 bg-secondary px-6 py-3.5 text-sm font-medium text-white transition hover:bg-secondary/90"
+                        <form
+                            onSubmit={handleSubmit}
+                            className="mt-8 flex max-w-md overflow-hidden rounded-full bg-white shadow-lg"
                         >
-                            Submit
-                            <svg
-                                viewBox="0 0 16 16"
-                                fill="none"
-                                aria-hidden
-                                className="size-3.5"
+                            <label htmlFor="newsletter-email" className="sr-only">
+                                Email address
+                            </label>
+                            <input
+                                id="newsletter-email"
+                                type="email"
+                                required
+                                value={email}
+                                onChange={(event) => setEmail(event.target.value)}
+                                placeholder="Enter your email here ..."
+                                className="min-w-0 flex-1 bg-transparent px-5 py-3.5 text-sm text-primary outline-none placeholder:text-primary/45"
+                            />
+                            <button
+                                type="submit"
+                                className="flex shrink-0 cursor-pointer items-center gap-2 bg-secondary px-6 py-3.5 text-sm font-medium text-white transition hover:bg-secondary/90"
                             >
-                                <path
-                                    d="M3 8h10M9 4l4 4-4 4"
-                                    stroke="currentColor"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </button>
-                    </form>
+                                Submit
+                                <svg
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                    aria-hidden
+                                    className="size-3.5"
+                                >
+                                    <path
+                                        d="M3 8h10M9 4l4 4-4 4"
+                                        stroke="currentColor"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    />
+                                </svg>
+                            </button>
+                        </form>
+                    </Reveal>
                 </div>
             </div>
         </section>

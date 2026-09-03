@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/app/components/ui/Reveal";
 import { whyChooseFeatures, teamFeatures } from "@/app/lib/services";
 import { cn } from "@/app/lib/utils";
 
@@ -86,63 +87,65 @@ export default function WhyChooseTeam() {
             </div>
 
             <div className="section-container relative">
-                <div className="rounded-[1.75rem] border border-primary/15 bg-white/40 px-5 py-10 sm:rounded-[2.25rem] sm:px-8 sm:py-12 lg:px-12 lg:py-14">
-                    <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-                        <Image
-                            src="/icons/long-term.svg"
-                            alt=""
-                            width={48}
-                            height={48}
-                            unoptimized
-                            className="h-11 w-auto sm:h-12"
-                        />
-
-                        <blockquote className="mt-6 font-script text-[22px] leading-[1.45] text-primary sm:text-[26px] lg:text-[30px]">
-                            &ldquo;In every thoughtfully crafted garden, nature and
-                            human creativity blend, turning ordinary spaces into
-                            timeless landscapes where beauty grows with every
-                            season.&rdquo;
-                        </blockquote>
-                    </div>
-
-                    <div className="mt-10 grid gap-5 sm:mt-12 lg:grid-cols-2 lg:gap-6">
-                        <article className="rounded-[1.5rem] bg-primary px-6 py-8 shadow-[0_18px_44px_rgba(10,37,14,0.16)] sm:rounded-[1.75rem] sm:px-8 sm:py-9 lg:px-9">
-                            <h2
-                                id="why-choose-heading"
-                                className="flex items-center gap-2.5 text-xl font-bold text-white sm:text-2xl"
-                            >
-                                <LeafIcon className="text-white" />
-                                Why Choose Us
-                            </h2>
-                            <p className="mt-4 text-sm leading-relaxed text-white/80 sm:text-[15px]">
-                                Blending creativity, care, and craftsmanship, we
-                                transform garden dreams into lush, lasting realities —
-                                driven by a true passion for greenery.
-                            </p>
-                            <FeatureGrid
-                                items={whyChooseFeatures}
-                                iconBg="bg-[#1F3D24]"
+                <Reveal>
+                    <div className="rounded-[1.75rem] border border-primary/15 bg-white/40 px-5 py-10 sm:rounded-[2.25rem] sm:px-8 sm:py-12 lg:px-12 lg:py-14">
+                        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+                            <Image
+                                src="/icons/long-term.svg"
+                                alt=""
+                                width={48}
+                                height={48}
+                                unoptimized
+                                className="h-11 w-auto sm:h-12"
                             />
-                        </article>
 
-                        <article className="rounded-[1.5rem] bg-secondary px-6 py-8 shadow-[0_18px_44px_rgba(10,37,14,0.12)] sm:rounded-[1.75rem] sm:px-8 sm:py-9 lg:px-9">
-                            <h2 className="flex items-center gap-2.5 text-xl font-bold text-white sm:text-2xl">
-                                <LeafIcon className="text-white" />
-                                Meet The Landscaping Team
-                            </h2>
-                            <p className="mt-4 text-sm leading-relaxed text-white/90 sm:text-[15px]">
-                                At Mahraj Plants, our passionate team of designers and
-                                landscapers work together to create beautiful, lasting
-                                outdoor spaces. Each project is crafted with care,
-                                creativity, and a shared love for nature.
-                            </p>
-                            <FeatureGrid
-                                items={teamFeatures}
-                                iconBg="bg-white/20"
-                            />
-                        </article>
+                            <blockquote className="mt-6 font-script text-[22px] leading-[1.45] text-primary sm:text-[26px] lg:text-[30px]">
+                                &ldquo;In every thoughtfully crafted garden, nature and
+                                human creativity blend, turning ordinary spaces into
+                                timeless landscapes where beauty grows with every
+                                season.&rdquo;
+                            </blockquote>
+                        </div>
+
+                        <div className="mt-10 grid gap-5 sm:mt-12 lg:grid-cols-2 lg:gap-6">
+                            <article className="rounded-[1.5rem] bg-primary px-6 py-8 shadow-[0_18px_44px_rgba(10,37,14,0.16)] sm:rounded-[1.75rem] sm:px-8 sm:py-9 lg:px-9">
+                                <h2
+                                    id="why-choose-heading"
+                                    className="flex items-center gap-2.5 text-xl font-bold text-white sm:text-2xl"
+                                >
+                                    <LeafIcon className="text-white" />
+                                    Why Choose Us
+                                </h2>
+                                <p className="mt-4 text-sm leading-relaxed text-white/80 sm:text-[15px]">
+                                    Blending creativity, care, and craftsmanship, we
+                                    transform garden dreams into lush, lasting realities —
+                                    driven by a true passion for greenery.
+                                </p>
+                                <FeatureGrid
+                                    items={whyChooseFeatures}
+                                    iconBg="bg-[#1F3D24]"
+                                />
+                            </article>
+
+                            <article className="rounded-[1.5rem] bg-secondary px-6 py-8 shadow-[0_18px_44px_rgba(10,37,14,0.12)] sm:rounded-[1.75rem] sm:px-8 sm:py-9 lg:px-9">
+                                <h2 className="flex items-center gap-2.5 text-xl font-bold text-white sm:text-2xl">
+                                    <LeafIcon className="text-white" />
+                                    Meet The Landscaping Team
+                                </h2>
+                                <p className="mt-4 text-sm leading-relaxed text-white/90 sm:text-[15px]">
+                                    At Mahraj Plants, our passionate team of designers and
+                                    landscapers work together to create beautiful, lasting
+                                    outdoor spaces. Each project is crafted with care,
+                                    creativity, and a shared love for nature.
+                                </p>
+                                <FeatureGrid
+                                    items={teamFeatures}
+                                    iconBg="bg-white/20"
+                                />
+                            </article>
+                        </div>
                     </div>
-                </div>
+                </Reveal>
             </div>
         </section>
     );

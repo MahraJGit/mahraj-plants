@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/app/lib/utils";
 
 export type Service = {
@@ -44,7 +45,7 @@ export default function ServiceCard({
     return (
         <article
             className={cn(
-                "flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-[0_16px_48px_rgba(0,0,0,0.18)]",
+                "group/card flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-[0_16px_48px_rgba(0,0,0,0.18)]",
                 className,
             )}
         >
@@ -54,7 +55,7 @@ export default function ServiceCard({
                     alt={service.alt}
                     fill
                     sizes="(max-width: 1024px) 100vw, 33vw"
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 ease-out group-hover/card:scale-105 motion-reduce:transition-none motion-reduce:group-hover/card:scale-100"
                 />
                 {service.icon && (
                     <div className="absolute bottom-3 right-3 flex size-11 items-center justify-center rounded-xl bg-primary shadow-md sm:size-12">
@@ -91,7 +92,7 @@ export default function ServiceCard({
                 </ul>
 
                 <div className="mt-auto border-t border-dashed border-primary/20 pt-5">
-                    <a
+                    <Link
                         href={href}
                         className="group flex items-center justify-between gap-4 outline-none"
                     >
@@ -114,7 +115,7 @@ export default function ServiceCard({
                                 />
                             </svg>
                         </span>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </article>

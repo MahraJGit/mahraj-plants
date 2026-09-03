@@ -70,12 +70,32 @@
   animation: hero-zoom-in 2s ease-out forwards;
 }
 
+.reveal-up {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-up-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-copy-in,
   .hero-zoom-in,
   .portfolio-marquee-track,
   .logo-marquee-track {
     animation: none;
+  }
+
+  .reveal-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 

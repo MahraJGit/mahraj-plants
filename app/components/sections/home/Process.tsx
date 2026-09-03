@@ -76,7 +76,10 @@ export default function Process() {
                 <div className="mt-12 hidden items-center justify-center gap-2 xl:mt-14 xl:flex xl:gap-3">
                     {steps.map((step, index) => (
                         <div key={step.number} className="contents">
-                            <ProcessCard step={step} />
+                            <ProcessCard
+                                step={step}
+                                className="max-w-[16.5rem]"
+                            />
                             {index < steps.length - 1 && (
                                 <div className="flex w-10 shrink-0 items-center justify-center xl:w-12">
                                     <Image
@@ -95,13 +98,21 @@ export default function Process() {
 
                 <div className="mt-12 hidden gap-8 sm:grid sm:grid-cols-2 xl:hidden">
                     {steps.map((step) => (
-                        <ProcessCard key={step.number} step={step} />
+                        <ProcessCard
+                            key={step.number}
+                            step={step}
+                            className="max-w-[16.5rem]"
+                        />
                     ))}
                 </div>
 
                 <div className="mt-12 flex flex-col items-center gap-8 sm:hidden">
                     {steps.map((step) => (
-                        <ProcessCard key={step.number} step={step} />
+                        <ProcessCard
+                            key={step.number}
+                            step={step}
+                            className="max-w-[16.5rem]"
+                        />
                     ))}
                 </div>
             </div>

@@ -139,7 +139,7 @@ export default function Header() {
 
     function isActive(href: string) {
         if (href === "/services") {
-            return pathname === "/services";
+            return pathname === "/services" || pathname.startsWith("/services/");
         }
         if (href === "/#hero") {
             return pathname === "/" && (!activeHash || activeHash === "#hero");
