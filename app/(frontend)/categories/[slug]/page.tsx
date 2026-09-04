@@ -6,7 +6,7 @@ import {
     getAllCategorySlugs,
     getCategoryBySlug,
 } from "@/app/lib/categories";
-import Consultation from "@/app/components/sections/home/Consultation";
+import SiteCTA from "@/app/components/sections/shared/SiteCTA";
 
 type CategoryPageProps = {
     params: Promise<{ slug: string }>;
@@ -43,7 +43,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <CategoryHero category={category} />
             <CategoryStats />
             <CategoryListing category={category} />
-            <Consultation variant="newsletter" />
+            <SiteCTA />
         </>
     );
 }

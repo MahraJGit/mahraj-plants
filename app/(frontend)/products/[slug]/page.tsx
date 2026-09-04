@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Consultation from "@/app/components/sections/home/Consultation";
+import SiteCTA from "@/app/components/sections/shared/SiteCTA";
 import ProductDetails from "@/app/components/sections/product/ProductDetails";
 import ProductHero from "@/app/components/sections/product/ProductHero";
 import RelatedProducts from "@/app/components/sections/product/RelatedProducts";
@@ -56,7 +56,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 products={related}
                 categoryLabel={category.label}
             />
-            <Consultation variant="newsletter" />
+            <SiteCTA />
         </>
     );
 }

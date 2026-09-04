@@ -6,7 +6,7 @@ import { HiOutlinePhone } from "react-icons/hi";
 import Button from "@/app/components/ui/Button";
 import Reveal from "@/app/components/ui/Reveal";
 
-export default function ServicesCTA() {
+export default function SiteCTA() {
     const [email, setEmail] = useState("");
 
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -16,7 +16,8 @@ export default function ServicesCTA() {
 
     return (
         <section
-            aria-labelledby="services-cta-heading"
+            id="consultation"
+            aria-labelledby="site-cta-heading"
             className="grid lg:grid-cols-2"
         >
             <div className="relative isolate flex min-h-[20rem] items-center overflow-hidden sm:min-h-[22rem]">
@@ -36,7 +37,7 @@ export default function ServicesCTA() {
                 <div className="section-container relative py-12 lg:py-16">
                     <Reveal>
                         <h2
-                            id="services-cta-heading"
+                            id="site-cta-heading"
                             className="max-w-md text-[26px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-3xl lg:text-[34px]"
                         >
                             Ready To Elevate Your Landscape With Mahraj Plants?
@@ -111,11 +112,11 @@ export default function ServicesCTA() {
                             onSubmit={handleSubmit}
                             className="mt-8 flex max-w-md overflow-hidden rounded-full bg-white shadow-lg"
                         >
-                            <label htmlFor="newsletter-email" className="sr-only">
+                            <label htmlFor="site-newsletter-email" className="sr-only">
                                 Email address
                             </label>
                             <input
-                                id="newsletter-email"
+                                id="site-newsletter-email"
                                 type="email"
                                 required
                                 value={email}

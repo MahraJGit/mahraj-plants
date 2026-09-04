@@ -10,7 +10,7 @@ import AboutTeam from "../../components/sections/about/AboutTeam";
 import Features, {
     type FeatureCard,
 } from "../../components/sections/home/Features";
-import Consultation from "../../components/sections/home/Consultation";
+import SiteCTA from "../../components/sections/shared/SiteCTA";
 
 export const metadata: Metadata = {
     title: "About Us | Mahraj Plants",
@@ -61,7 +61,7 @@ export default function AboutPage() {
             <AboutCounters />
             <AboutWhyChooseUs />
             <AboutTeam />
-            <Consultation variant="newsletter" />
+            <SiteCTA />
         </>
     );
 }

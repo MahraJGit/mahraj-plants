@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import BlogHero from "../../components/sections/blog/BlogHero";
 import BlogContent from "../../components/sections/blog/BlogContent";
-import Consultation from "../../components/sections/home/Consultation";
+import SiteCTA from "../../components/sections/shared/SiteCTA";
 
 export const metadata: Metadata = {
     title: "Blogs & News | Mahraj Plants",
@@ -14,7 +14,7 @@ export default function BlogsPage() {
         <>
             <BlogHero />
             <BlogContent />
-            <Consultation variant="newsletter" />
+            <SiteCTA />
         </>
     );
 }

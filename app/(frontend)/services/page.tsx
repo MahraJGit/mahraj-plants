@@ -4,7 +4,7 @@ import WhyChooseTeam from "@/app/components/sections/services/WhyChooseTeam";
 import ServicesGrid from "@/app/components/sections/services/ServicesGrid";
 import ServicesTestimonials from "@/app/components/sections/services/ServicesTestimonials";
 import ServicesPricing from "@/app/components/sections/services/ServicesPricing";
-import ServicesCTA from "@/app/components/sections/services/ServicesCTA";
+import SiteCTA from "@/app/components/sections/shared/SiteCTA";
 
 export const metadata: Metadata = {
     title: "Services | Mahraj Plants",
@@ -20,7 +20,7 @@ export default function ServicesPage() {
             <ServicesGrid />
             <ServicesTestimonials />
             {/* <ServicesPricing /> */}
-            <ServicesCTA />
+            <SiteCTA />
         </>
     );
 }

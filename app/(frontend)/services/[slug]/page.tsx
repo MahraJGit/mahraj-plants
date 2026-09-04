@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import ServiceDetailHero from "@/app/components/sections/service-detail/ServiceDetailHero";
 import ServiceDetailGallery from "@/app/components/sections/service-detail/ServiceDetailGallery";
 import ServiceDetailContent from "@/app/components/sections/service-detail/ServiceDetailContent";
-import ServicesCTA from "@/app/components/sections/services/ServicesCTA";
+import SiteCTA from "@/app/components/sections/shared/SiteCTA";
 import {
     getAllServiceSlugs,
     getServiceBySlug,
@@ -48,7 +48,7 @@ export default async function ServiceDetailPage({
             <ServiceDetailHero service={service} />
             <ServiceDetailGallery images={service.gallery} />
             <ServiceDetailContent service={service} />
-            <ServicesCTA />
+            <SiteCTA />
         </>
     );
 }

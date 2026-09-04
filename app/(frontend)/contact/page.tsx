@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ContactHero from "../../components/sections/contact/ContactHero";
 import ContactFormSection from "../../components/sections/contact/ContactFormSection";
 import ContactMap from "../../components/sections/contact/ContactMap";
-import Consultation from "@/app/components/sections/home/Consultation";
+import SiteCTA from "@/app/components/sections/shared/SiteCTA";
 
 export const metadata: Metadata = {
     title: "Contact Us | Mahraj Plants",
@@ -16,7 +16,7 @@ export default function ContactPage() {
             <ContactHero />
             <ContactFormSection />
             <ContactMap />
-            <Consultation variant="newsletter" />
+            <SiteCTA />
         </>
     );
 }
