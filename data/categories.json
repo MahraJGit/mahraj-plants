@@ -1,0 +1,32 @@
+[
+  {
+    "id": "6f151000-fc98-5f15-bc10-da647e52f354",
+    "slug": "garden-tools",
+    "name": "Garden Tools"
+  },
+  {
+    "id": "83e5f83d-e941-58d9-a5ad-6a73090a1b18",
+    "slug": "indoor-plants",
+    "name": "Indoor Plants"
+  },
+  {
+    "id": "da15c371-90ff-5786-b953-402e647c066b",
+    "slug": "outdoor-plants",
+    "name": "Outdoor Plants"
+  },
+  {
+    "id": "bff7c7a0-3953-59ea-9ec0-d64605826e9f",
+    "slug": "pots-and-planters",
+    "name": "Pots and Planters"
+  },
+  {
+    "id": "9e413ed4-4add-5cd5-bbb0-f19d30df9bc4",
+    "slug": "seasonal-flowers",
+    "name": "Seasonal Flowers"
+  },
+  {
+    "id": "932447b4-098d-5ab1-8d31-57ee4e22085b",
+    "slug": "vegetables",
+    "name": "Vegetables"
+  }
+]

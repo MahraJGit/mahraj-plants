@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/app/lib/utils";
 
 export type Category = {
@@ -6,22 +7,21 @@ export type Category = {
     image: string;
     alt: string;
     tagline: string;
+    href: string;
 };
 
 type CategoryCardProps = {
     category: Category;
-    href?: string;
     className?: string;
 };
 
 export default function CategoryCard({
     category,
-    href = "#",
     className,
 }: CategoryCardProps) {
     return (
-        <a
-            href={href}
+        <Link
+            href={category.href}
             className={cn(
                 "group flex flex-col items-center text-center outline-none",
                 className,
@@ -76,6 +76,6 @@ export default function CategoryCard({
                     />
                 </svg>
             </span>
-        </a>
+        </Link>
     );
 }

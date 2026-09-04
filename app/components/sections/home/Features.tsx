@@ -2,7 +2,13 @@
 
 import FeatureHighlights from "../../ui/FeatureHighlights";
 
-const cards = [
+export type FeatureCard = {
+    icon: string;
+    title: string;
+    description: string;
+};
+
+const defaultCards: FeatureCard[] = [
     {
         icon: "/icons/consultation.svg",
         title: "Free Expert Consultation",
@@ -29,11 +35,21 @@ const cards = [
     },
 ];
 
-export default function Features() {
+type FeaturesProps = {
+    cards?: FeatureCard[];
+    id?: string;
+    "aria-label"?: string;
+};
+
+export default function Features({
+    cards = defaultCards,
+    id = "features",
+    "aria-label": ariaLabel = "Why choose Mahraj Plants",
+}: FeaturesProps) {
     return (
         <section
-            id="features"
-            aria-label="Why choose Mahraj Plants"
+            id={id}
+            aria-label={ariaLabel}
             className="relative z-20 overflow-visible"
         >
             <div className="section-container pt-0">

@@ -19,7 +19,7 @@ const services = [
 
 const usefulLinks = [
     { label: "Home", href: "/#hero", highlighted: true },
-    { label: "About us", href: "/#about" },
+    { label: "About us", href: "/about" },
     { label: "Why choose us", href: "/#why-us" },
     { label: "Feature Projects", href: "/#portfolio" },
     { label: "Gallery", href: "/#portfolio" },
@@ -87,7 +87,7 @@ function LinkArrow() {
 
 export default function Footer() {
     return (
-        <footer className="mt-auto bg-primary text-white">
+        <footer className="mt-auto bg-section text-white">
             <div className="section-container pb-10 pt-12 lg:pb-14 lg:pt-16">
                 <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 xl:gap-12">
                     <div className="sm:col-span-2 lg:col-span-1">

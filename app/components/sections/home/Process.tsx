@@ -37,7 +37,7 @@ export default function Process() {
         <section
             id="process"
             aria-labelledby="process-heading"
-            className="relative isolate overflow-hidden bg-primary"
+            className="relative isolate overflow-hidden bg-section"
         >
             <div
                 aria-hidden

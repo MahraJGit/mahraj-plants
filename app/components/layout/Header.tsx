@@ -18,21 +18,17 @@ import {
     HiOutlineSearch,
 } from "react-icons/hi";
 import { cn } from "@/app/lib/utils";
+import { plantCategoryNav } from "@/app/lib/categories";
 
-const plantCategories = [
-    { label: "Mahraj Indoor Plants", href: "/#categories" },
-    { label: "Mahraj Outdoor Plants", href: "/#categories" },
-    { label: "Mahraj Trees", href: "/#categories" },
-    { label: "Mahraj Garden Landscaping", href: "/#categories" },
-];
+const plantCategories = plantCategoryNav;
 
 const navLinks = [
     { label: "Home", href: "/#hero" },
     { label: "Plants Category", href: "/#categories", dropdown: plantCategories },
     { label: "Services", href: "/services" },
-    { label: "Blogs", href: "/#blogs" },
-    { label: "About us", href: "/#about" },
-    { label: "Contact us", href: "/#consultation" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "About us", href: "/about" },
+    { label: "Contact us", href: "/contact" },
 ];
 
 const socialLinks = [
@@ -51,7 +47,6 @@ type LanguageCode = (typeof languages)[number]["code"];
 
 function FlagIcon({ src, className }: { src: string; className?: string }) {
     return (
-        // eslint-disable-next-line @next/next/no-img-element -- static SVG flags bypass Image optimizer
         <img
             src={src}
             alt=""
@@ -138,11 +133,26 @@ export default function Header() {
     }, [mobileOpen]);
 
     function isActive(href: string) {
+        if (href === "/blogs") {
+            return pathname === "/blogs";
+        }
+        if (href === "/about") {
+            return pathname === "/about";
+        }
+        if (href === "/contact") {
+            return pathname === "/contact";
+        }
         if (href === "/services") {
             return pathname === "/services" || pathname.startsWith("/services/");
         }
         if (href === "/#hero") {
             return pathname === "/" && (!activeHash || activeHash === "#hero");
+        }
+        if (href === "/#categories") {
+            return (
+                pathname.startsWith("/categories") ||
+                pathname.startsWith("/products")
+            );
         }
         if (href.startsWith("/#")) {
             return pathname === "/" && activeHash === href.slice(1);
@@ -152,7 +162,7 @@ export default function Header() {
 
     return (
         <header className="fixed inset-x-0 top-0 z-50">
-            <div className="hidden bg-primary text-white lg:block">
+            <div className="hidden bg-section text-white lg:block">
                 <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 text-[11px] leading-none lg:px-8 xl:text-xs">
                     <div className="flex min-w-0 items-center gap-2">
                         <HiOutlineLocationMarker
@@ -208,7 +218,7 @@ export default function Header() {
                                 <ul
                                     role="listbox"
                                     aria-label="Select language"
-                                    className="absolute top-[calc(100%+0.4rem)] right-0 z-50 min-w-[9.5rem] overflow-hidden rounded-xl border border-white/15 bg-primary py-1 shadow-xl"
+                                    className="absolute top-[calc(100%+0.4rem)] right-0 z-50 min-w-[9.5rem] overflow-hidden rounded-xl border border-white/15 bg-section py-1 shadow-xl"
                                 >
                                     {languages.map((item) => {
                                         const selected =
@@ -260,8 +270,8 @@ export default function Header() {
                     className={cn(
                         "mx-auto flex max-w-7xl items-center gap-3 rounded-full border px-3 py-2.5 transition-all duration-300 lg:gap-4 lg:px-5 lg:py-3",
                         scrolled
-                            ? "border-primary/30 bg-primary shadow-[0_10px_40px_rgba(10,37,14,0.28)] backdrop-blur-md"
-                            : "border-white/30 bg-primary/88 shadow-[0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-xl",
+                            ? "border-primary/30 bg-section shadow-[0_10px_40px_rgba(10,37,14,0.28)] backdrop-blur-md"
+                            : "border-white/30 bg-section/88 shadow-[0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-xl",
                     )}
                 >
                     <Link
@@ -318,7 +328,7 @@ export default function Header() {
                                         </button>
 
                                         {plantsOpen && (
-                                            <div className="absolute top-[calc(100%+0.65rem)] left-0 min-w-[15rem] overflow-hidden rounded-2xl border border-white/15 bg-primary py-2 shadow-xl">
+                                            <div className="absolute top-[calc(100%+0.65rem)] left-0 min-w-[15rem] overflow-hidden rounded-2xl border border-white/15 bg-section py-2 shadow-xl">
                                                 {link.dropdown.map((item) => (
                                                     <Link
                                                         key={item.label}
@@ -401,7 +411,7 @@ export default function Header() {
                 <div className="px-4 pt-3 xl:hidden">
                     <nav
                         aria-label="Mobile navigation"
-                        className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-primary/20 bg-primary p-4 shadow-xl"
+                        className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-primary/20 bg-section p-4 shadow-xl"
                     >
                         <ul className="space-y-1">
                             {navLinks.map((link) => (
