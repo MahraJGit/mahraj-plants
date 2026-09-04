@@ -4,6 +4,8 @@ export type { BlogPost } from "./BlogCard";
 export { default as PortfolioCard } from "./PortfolioCard";
 export type { PortfolioProject } from "./PortfolioCard";
 
+export { default as ProjectCard } from "./ProjectCard";
+
 export { default as TestimonialCard } from "./TestimonialCard";
 export type { Testimonial } from "./TestimonialCard";
 
