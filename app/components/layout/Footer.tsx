@@ -22,8 +22,8 @@ const usefulLinks = [
     { label: "Home", href: "/#hero", highlighted: true },
     { label: "About us", href: "/about" },
     { label: "Why choose us", href: "/#why-us" },
-    { label: "Feature Projects", href: "/#portfolio" },
-    { label: "Gallery", href: "/#portfolio" },
+    { label: "Feature Projects", href: "/projects" },
+    { label: "Gallery", href: "/projects" },
     { label: "Pricing Packages", href: "/#consultation" },
 ];
 

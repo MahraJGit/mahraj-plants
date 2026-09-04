@@ -26,6 +26,7 @@ const navLinks = [
     { label: "Home", href: "/#hero" },
     { label: "Plants Category", href: "/#categories", dropdown: plantCategories },
     { label: "Services", href: "/services" },
+    { label: "Projects", href: "/projects" },
     { label: "Blogs", href: "/blogs" },
     { label: "About us", href: "/about" },
     { label: "Contact us", href: "/contact" },
@@ -144,6 +145,9 @@ export default function Header() {
         }
         if (href === "/services") {
             return pathname === "/services" || pathname.startsWith("/services/");
+        }
+        if (href === "/projects") {
+            return pathname === "/projects" || pathname.startsWith("/projects/");
         }
         if (href === "/#hero") {
             return pathname === "/" && (!activeHash || activeHash === "#hero");

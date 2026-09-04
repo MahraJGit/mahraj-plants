@@ -1,86 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useState } from "react";
+import { PortfolioCard } from "@/app/components/ui";
 import {
-    Button,
-    PortfolioCard,
-    type PortfolioProject,
-} from "@/app/components/ui";
+    projectFilters as filters,
+    projects,
+    type ProjectFilter,
+} from "@/app/lib/projects";
 import { cn } from "@/app/lib/utils";
-
-const filters = [
-    "All",
-    "Landscape Design",
-    "Outdoor Lighting",
-    "Rooftop Garden",
-    "Urban Farming",
-] as const;
-
-type Filter = (typeof filters)[number];
-
-const projects: PortfolioProject[] = [
-    {
-        title: "Soft Greens & Stunning City Views",
-        description:
-            "Striking building entrance with a lush vertical garden, integrated LED strips, and modern seating for a vibrant first impression.",
-        image: "/images/home/hero-bg-2.jpg",
-        alt: "City skyline viewed through lush rooftop greenery at dusk",
-        tags: ["Landscape Design", "Outdoor Lighting"],
-        client: "Westminster",
-        address: "200 Parkside, London",
-    },
-    {
-        title: "Stone Path Garden Revival",
-        description:
-            "A refreshed courtyard with natural stone pathways, layered planting beds, and drought-tolerant greenery for year-round appeal.",
-        image: "/images/home/m-landscaping.webp",
-        alt: "Landscaper laying stone pavers in a garden courtyard",
-        tags: ["Landscape Design"],
-        client: "Greenfield Estate",
-        address: "14 Willow Lane, Manchester",
-    },
-    {
-        title: "Trellis & Vine Sanctuary",
-        description:
-            "A rooftop retreat framed by wooden trellises, climbing vines, and soft ambient lighting for quiet evening gatherings.",
-        image: "/images/home/m-outdoor.webp",
-        alt: "Garden trellis covered in climbing vines and greenery",
-        tags: ["Rooftop Garden"],
-        client: "Skyline Residences",
-        address: "88 Horizon Terrace, Birmingham",
-    },
-    {
-        title: "Urban Farming Terrace",
-        description:
-            "Productive raised beds and herb gardens designed for city living, combining edible planting with elegant landscape structure.",
-        image: "/images/home/m-trees.webp",
-        alt: "Urban terrace garden with trees and raised planting beds",
-        tags: ["Urban Farming", "Rooftop Garden"],
-        client: "Harbor District",
-        address: "5 Canal View, Bristol",
-    },
-    {
-        title: "Illuminated Garden Walkway",
-        description:
-            "Warm pathway lighting woven through sculpted hedges and seasonal blooms, creating a welcoming route after sunset.",
-        image: "/images/home/hero-bg-3.jpg",
-        alt: "Garden walkway with professional landscape lighting at dusk",
-        tags: ["Outdoor Lighting", "Landscape Design"],
-        client: "Oakwood Manor",
-        address: "31 Elm Grove, Leeds",
-    },
-    {
-        title: "Corporate Green Entrance",
-        description:
-            "A polished office arrival experience with layered planters, native species, and low-maintenance irrigation for busy teams.",
-        image: "/images/home/our-mission.webp",
-        alt: "Corporate building entrance with landscaped green planters",
-        tags: ["Landscape Design"],
-        client: "Northgate Offices",
-        address: "120 Commerce Road, London",
-    },
-];
 
 const CARD_HEIGHT = 370;
 
@@ -89,7 +18,7 @@ type PortfolioProps = {
 };
 
 export default function Portfolio({ variant = "white" }: PortfolioProps) {
-    const [filter, setFilter] = useState<Filter>("All");
+    const [filter, setFilter] = useState<ProjectFilter>("All");
 
     const filteredProjects = useMemo(() => {
         if (filter === "All") return projects;
@@ -164,12 +93,12 @@ export default function Portfolio({ variant = "white" }: PortfolioProps) {
                         })}
                     </div>
 
-                    <Button
-                        variant="secondary"
-                        className="w-fit shrink-0 self-start rounded-lg px-7 py-3 lg:self-auto"
+                    <Link
+                        href="/projects"
+                        className="w-fit shrink-0 self-start rounded-lg bg-secondary px-7 py-3 text-base font-medium leading-[100%] tracking-[-1%] text-white transition-colors hover:bg-secondary/90 lg:self-auto"
                     >
                         View All Projects
-                    </Button>
+                    </Link>
                 </div>
             </div>
 
@@ -185,8 +114,9 @@ export default function Portfolio({ variant = "white" }: PortfolioProps) {
                     >
                         {marqueeProjects.map((project, index) => (
                             <PortfolioCard
-                                key={`${project.title}-${index}`}
+                                key={`${project.slug}-${index}`}
                                 project={project}
+                                href={`/projects/${project.slug}`}
                             />
                         ))}
                     </div>

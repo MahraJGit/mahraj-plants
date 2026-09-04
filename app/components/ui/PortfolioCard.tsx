@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/app/lib/utils";
 
 export type PortfolioProject = {
+    slug?: string;
     title: string;
     description: string;
     image: string;
@@ -37,7 +39,7 @@ export default function PortfolioCard({
                 className="object-cover"
             />
 
-            <a
+            <Link
                 href={href}
                 aria-label={`View ${project.title}`}
                 className={cn(
@@ -60,7 +62,7 @@ export default function PortfolioCard({
                         strokeLinejoin="round"
                     />
                 </svg>
-            </a>
+            </Link>
 
             <div
                 className={cn(
