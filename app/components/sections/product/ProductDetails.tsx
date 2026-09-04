@@ -2,9 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { PlantCategory } from "@/app/lib/categories";
 import type { Product } from "@/data/types";
+import { getWhatsAppHref } from "@/app/lib/contact";
 import ProductImageZoom from "./ProductImageZoom";
-
-const WHATSAPP_NUMBER = "966556891877";
 
 type ProductDetailsProps = {
     product: Product;
@@ -15,7 +14,7 @@ export default function ProductDetails({
     product,
     category,
 }: ProductDetailsProps) {
-    const whatsappMessage = encodeURIComponent(
+    const whatsappHref = getWhatsAppHref(
         `Hello, I would like to inquire about ${product.title} from Mahraj Plants.`,
     );
 
@@ -93,7 +92,7 @@ export default function ProductDetails({
 
                         <div className="mt-8 flex flex-wrap gap-3 sm:mt-10">
                             <a
-                                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
+                                href={whatsappHref}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex cursor-pointer items-center justify-center rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-primary/90 sm:px-8 sm:text-base"

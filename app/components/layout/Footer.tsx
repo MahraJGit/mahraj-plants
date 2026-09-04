@@ -7,6 +7,7 @@ import {
     FaTwitter,
 } from "react-icons/fa";
 import { MdSupportAgent } from "react-icons/md";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/app/lib/contact";
 import { cn } from "@/app/lib/utils";
 
 const services = [
@@ -139,7 +140,7 @@ export default function Footer() {
                         </ul>
 
                         <a
-                            href="tel:+966500000000"
+                            href={PHONE_HREF}
                             className="mt-6 inline-flex max-w-full items-center gap-3 rounded-full bg-white py-2 pl-2 pr-5 shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition hover:shadow-[0_12px_28px_rgba(0,0,0,0.22)] sm:pr-6"
                         >
                             <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
@@ -150,7 +151,7 @@ export default function Footer() {
                                     Call Us Support 24/7
                                 </span>
                                 <span className="block text-xl font-bold leading-tight text-primary sm:text-2xl">
-                                    0896 123 456
+                                    {PHONE_DISPLAY}
                                 </span>
                             </span>
                         </a>

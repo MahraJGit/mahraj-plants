@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import { services } from "@/app/lib/services";
+import { CONSULTATION_WHATSAPP_HREF, PHONE_DISPLAY, PHONE_HREF } from "@/app/lib/contact";
 import { cn } from "@/app/lib/utils";
 
 type ServiceDetailSidebarProps = {
@@ -134,10 +135,10 @@ export default function ServiceDetailSidebar({
                         <span>
                             Call Us Support 24/7:
                             <a
-                                href="tel:+966556891877"
+                                href={PHONE_HREF}
                                 className="mt-0.5 block font-medium text-white transition hover:text-secondary"
                             >
-                                +966 55 689 1877
+                                {PHONE_DISPLAY}
                             </a>
                         </span>
                     </li>
@@ -162,12 +163,14 @@ export default function ServiceDetailSidebar({
                     </li>
                 </ul>
 
-                <Link
-                    href="/#consultation"
+                <a
+                    href={CONSULTATION_WHATSAPP_HREF}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="relative z-10 mt-8 flex w-full items-center justify-center rounded-xl bg-secondary px-5 py-3.5 text-sm font-medium text-white transition hover:bg-secondary/90"
                 >
                     Get in Touch Today →
-                </Link>
+                </a>
             </div>
         </aside>
     );

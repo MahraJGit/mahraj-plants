@@ -5,9 +5,9 @@ import { createPortal } from "react-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import { HiArrowUp } from "react-icons/hi";
 import { cn } from "@/app/lib/utils";
+import { getWhatsAppHref } from "@/app/lib/contact";
 
-const WHATSAPP_NUMBER = "966500000000";
-const WHATSAPP_MESSAGE = encodeURIComponent(
+const WHATSAPP_HREF = getWhatsAppHref(
     "Hello, I would like to inquire about Mahraj Plants.",
 );
 
@@ -50,7 +50,7 @@ export default function FloatingActions() {
     return createPortal(
         <>
             <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+                href={WHATSAPP_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"

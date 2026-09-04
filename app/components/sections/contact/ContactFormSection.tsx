@@ -17,6 +17,7 @@ import {
     HiOutlineMail,
 } from "react-icons/hi";
 import { cn } from "@/app/lib/utils";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/app/lib/contact";
 
 const contactDetails = [
     {
@@ -26,8 +27,8 @@ const contactDetails = [
     },
     {
         label: "Phone Number",
-        value: "Call Us Support 24/7",
-        href: "tel:+966556891877",
+        value: PHONE_DISPLAY,
+        href: PHONE_HREF,
         Icon: FaPhoneAlt,
     },
     {

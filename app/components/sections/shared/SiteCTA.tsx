@@ -5,6 +5,7 @@ import { FormEvent, useState } from "react";
 import { HiOutlinePhone } from "react-icons/hi";
 import Button from "@/app/components/ui/Button";
 import Reveal from "@/app/components/ui/Reveal";
+import { PHONE_DISPLAY, PHONE_HREF, CONSULTATION_WHATSAPP_HREF } from "@/app/lib/contact";
 
 export default function SiteCTA() {
     const [email, setEmail] = useState("");
@@ -46,20 +47,23 @@ export default function SiteCTA() {
                         <div className="mt-8 flex flex-wrap items-center gap-4">
                             <Button
                                 variant="secondary"
+                                href={CONSULTATION_WHATSAPP_HREF}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="rounded-lg px-8 py-3.5"
                             >
                                 Get a Free Consultation
                             </Button>
 
                             <a
-                                href="tel:+966556891877"
+                                href={PHONE_HREF}
                                 className="inline-flex items-center gap-3 text-white transition hover:text-secondary"
                             >
                                 <span className="flex size-11 items-center justify-center rounded-full bg-secondary text-white">
                                     <HiOutlinePhone aria-hidden className="size-5" />
                                 </span>
                                 <span className="text-sm font-medium sm:text-base">
-                                    +966 55 689 1877
+                                    {PHONE_DISPLAY}
                                 </span>
                             </a>
                         </div>

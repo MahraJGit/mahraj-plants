@@ -1,7 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import Button from "../../ui/Button";
+import { CONSULTATION_WHATSAPP_HREF } from "@/app/lib/contact";
 
 export default function Consultation() {
     return (
@@ -41,6 +40,9 @@ export default function Consultation() {
 
                     <Button
                         variant="primary"
+                        href={CONSULTATION_WHATSAPP_HREF}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="mt-8 rounded-lg px-8 py-3.5 sm:mt-10"
                     >
                         Get a Free Consultation

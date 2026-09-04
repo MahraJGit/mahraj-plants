@@ -84,7 +84,11 @@ const projects: PortfolioProject[] = [
 
 const CARD_HEIGHT = 370;
 
-export default function Portfolio() {
+type PortfolioProps = {
+    variant?: "white" | "cream";
+};
+
+export default function Portfolio({ variant = "white" }: PortfolioProps) {
     const [filter, setFilter] = useState<Filter>("All");
 
     const filteredProjects = useMemo(() => {
@@ -101,7 +105,10 @@ export default function Portfolio() {
         <section
             id="portfolio"
             aria-labelledby="portfolio-heading"
-            className="overflow-hidden bg-white"
+            className={cn(
+                "overflow-hidden",
+                variant === "cream" ? "bg-cream/40" : "bg-white",
+            )}
         >
             <div className="section-container">
                 <header className="mx-auto max-w-4xl text-center">

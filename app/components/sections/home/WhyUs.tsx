@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Button from "../../ui/Button";
+import Link from "next/link";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/app/lib/contact";
 
 const highlights = [
     "Tailored landscaping solutions designed around your space and lifestyle",
@@ -187,8 +189,8 @@ export default function WhyUs() {
                                 </div>
 
                                 <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end">
-                                    <button
-                                        type="button"
+                                    <Link
+                                        href="/working-process"
                                         className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-primary transition hover:bg-white/90"
                                     >
                                         How We Work
@@ -206,7 +208,7 @@ export default function WhyUs() {
                                                 strokeLinejoin="round"
                                             />
                                         </svg>
-                                    </button>
+                                    </Link>
                                     <span className="font-script text-2xl text-white/90">
                                         Anish
                                     </span>
@@ -225,7 +227,7 @@ export default function WhyUs() {
 
                             <div className="mt-6 space-y-3">
                                 <a
-                                    href="tel:+1234567890"
+                                    href={PHONE_HREF}
                                     className="flex items-center gap-3 rounded-full bg-white px-4 py-3 text-sm text-primary shadow-sm transition hover:shadow-md"
                                 >
                                     <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary/15 text-secondary">
@@ -243,7 +245,7 @@ export default function WhyUs() {
                                             />
                                         </svg>
                                     </span>
-                                    +1 (234) 567-890
+                                    {PHONE_DISPLAY}
                                 </a>
                                 <a
                                     href="mailto:info@mahrajplants.com"
