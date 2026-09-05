@@ -1,5 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { useMemo } from "react";
 import type { PlantCategory } from "@/app/lib/categories";
+import {
+    localizeCategory,
+    useLocale,
+    useTranslations,
+    type CategoryPageCopy,
+} from "@/app/lib/i18n";
 
 type CategoryHeroProps = {
     category: PlantCategory;
@@ -19,6 +28,14 @@ function GinkgoLeaf({ className }: { className?: string }) {
 }
 
 export default function CategoryHero({ category }: CategoryHeroProps) {
+    const { locale } = useLocale();
+    const { tObject } = useTranslations("categoriesPage");
+
+    const localized = useMemo(() => {
+        const copy = tObject<CategoryPageCopy>(`bySlug.${category.slug}`);
+        return localizeCategory(category, copy, locale);
+    }, [category, locale, tObject]);
+
     return (
         <section
             aria-labelledby="category-hero-heading"
@@ -54,18 +71,18 @@ export default function CategoryHero({ category }: CategoryHeroProps) {
                     />
 
                     <p className="mt-4 font-script text-[26px] leading-none text-white sm:text-[32px] lg:text-[36px]">
-                        {category.hero.tagline}
+                        {localized.hero.tagline}
                     </p>
 
                     <h1
                         id="category-hero-heading"
                         className="mt-4 text-[32px] font-bold leading-tight text-white sm:text-[40px] lg:text-[48px]"
                     >
-                        {category.hero.title}
+                        {localized.hero.title}
                     </h1>
 
                     <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
-                        {category.hero.description}
+                        {localized.hero.description}
                     </p>
                 </div>
             </div>

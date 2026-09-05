@@ -12,6 +12,7 @@
   --color-cream: #EAF0DA;
   --font-poppins: var(--font-poppins);
   --font-script: var(--font-great-vibes);
+  --font-arabic: var(--font-cairo);
 }
 
 @layer base {
@@ -33,6 +34,15 @@
 
   body {
     @apply font-poppins;
+  }
+
+  body.font-arabic {
+    font-family: var(--font-cairo), var(--font-poppins), sans-serif;
+  }
+
+  [dir="rtl"] .font-script {
+    font-family: var(--font-cairo), sans-serif;
+    font-weight: 600;
   }
 
   h1 {
@@ -100,37 +110,41 @@
   }
 }
 
-@keyframes portfolio-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-50% - 12px));
-  }
-}
-
-.portfolio-marquee-track {
-  animation: portfolio-marquee 45s linear infinite;
-}
-
-.portfolio-marquee-track:hover {
-  animation-play-state: paused;
-}
-
 @keyframes logo-marquee {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(calc(-50% - 48px));
+    transform: translate3d(calc(-50% - 48px), 0, 0);
   }
 }
 
 .logo-marquee-track {
   animation: logo-marquee 18s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .logo-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes portfolio-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-50% - 12px), 0, 0);
+  }
+}
+
+.portfolio-marquee-track {
+  animation: portfolio-marquee 45s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.portfolio-marquee-track:hover {
   animation-play-state: paused;
 }
 

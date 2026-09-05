@@ -1,0 +1,424 @@
+{
+  "meta": {
+    "title": "Mahraj Plants",
+    "description": "Mahraj Plants is a plant store that sells plants and plant related products."
+  },
+  "common": {
+    "readMore": "Read More",
+    "ourServices": "Our Services",
+    "viewAllServices": "View All Services →",
+    "viewAllProjects": "View All Projects",
+    "viewAllTestimonials": "View All Testimonials",
+    "freeQuote": "Free Quote Now!",
+    "howWeWork": "How We Work",
+    "getConsultation": "Get a Free Consultation"
+  },
+  "nav": {
+    "home": "Home",
+    "plantsCategory": "Plants Category",
+    "services": "Services",
+    "projects": "Projects",
+    "blogs": "Blogs",
+    "about": "About us",
+    "contact": "Contact us",
+    "changeLanguage": "Change language",
+    "selectLanguage": "Select language",
+    "nurseryAddress": "Nursery: Heet, Old Al kharj Road, Riyadh, KSA",
+    "exploreCta": "Explore Mahraj Agriculture",
+    "hours": "Wed: 9:00 - 12:00 / Morning | 1:00 PM — 6:00 PM / Evening",
+    "categories": {
+      "garden-tools": "Garden Tools",
+      "indoor-plants": "Indoor Plants",
+      "outdoor-plants": "Outdoor Plants",
+      "pots-and-planters": "Pots and Planters",
+      "seasonal-flowers": "Seasonal Flowers",
+      "vegetables": "Vegetables"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Welcome to Mahraj Plants Landscaping",
+      "carouselLabel": "Mahraj Plants highlights",
+      "prevSlide": "Previous slide",
+      "nextSlide": "Next slide",
+      "slideStatus": "Slide {current} of {total}",
+      "slides": [
+        {
+          "alt": "Gardener watering flowers in a lush garden",
+          "title": "Welcome to Mahraj\nLandscaping",
+          "description": "We create elegant, personalized outdoor spaces from thoughtful design to expert garden care always with heart and precision"
+        },
+        {
+          "alt": "Landscaped garden seating area surrounded by hedges and trees",
+          "title": "Come for the greenery\nStay for the expert care",
+          "description": "We believe people and plants belong together. Since city living often cuts us off from nature, we're here to make bringing greenery home and keeping it thriving effortless."
+        },
+        {
+          "alt": "Landscaper trimming a hedge with professional equipment",
+          "title": "Fair pricing. Simple care.\nDelivered to your door.",
+          "description": "Our custom eco-packaging ensures every plant arrives fresh, healthy, and perfectly protected, making greenery effortless for your space."
+        }
+      ]
+    },
+    "features": {
+      "ariaLabel": "Why choose Mahraj Plants",
+      "cards": [
+        {
+          "title": "Free Expert Consultation",
+          "description": "Share your vision with our horticultural specialists. We'll assess your space and recommend the best plants and outdoor designs at no cost."
+        },
+        {
+          "title": "Flawless Landscaping Execution",
+          "description": "Our skilled gardeners handle everything from soil preparation to expert planting ensuring your outdoor space is crafted to perfection."
+        },
+        {
+          "title": "Healthy Plant Guarantee",
+          "description": "We stand behind the quality of our greenery. Enjoy total peace of mind with guaranteed healthy, vibrant plants that are built to thrive."
+        },
+        {
+          "title": "Punctual & Reliable Service",
+          "description": "We deliver and transform your green space on schedule, maintaining clean work sites and respecting your time every step of the way."
+        }
+      ]
+    },
+    "categories": {
+      "eyebrow": "Explore our collections",
+      "titleBefore": "Mahraj Plants",
+      "titleAfter": " Your Trusted Greenery & Landscaping Partner",
+      "description": "Our curated collection of vibrant plants and custom landscaping solutions. From budget-friendly greens to statement plants that transform your home, garden, or commercial space, we deliver health, beauty, and expert care right to your doorstep.",
+      "items": [
+        {
+          "title": "Mahraj Indoor Plants",
+          "alt": "Lush indoor plants with dew on the leaves",
+          "tagline": "Fresh greens for homes, offices, and bright indoor spaces."
+        },
+        {
+          "title": "Mahraj Outdoor Plants",
+          "alt": "Vibrant outdoor plants in natural sunlight",
+          "tagline": "Hardy selections built to thrive in open air and seasonal sun."
+        },
+        {
+          "title": "Mahraj Pots and Planters",
+          "alt": "Decorative pots and planters arranged in a garden setting",
+          "tagline": "Stylish pots and planters for every indoor and outdoor space."
+        },
+        {
+          "title": "Mahraj Seasonal Flowers",
+          "alt": "Colourful seasonal flowers in full bloom",
+          "tagline": "Rotating seasonal blooms to keep your garden vibrant all year."
+        }
+      ]
+    },
+    "about": {
+      "imageAlt": "Mahraj Plants team caring for garden flowers together",
+      "yearsLabel": "Years of Gardening",
+      "eyebrow": "Who We Are",
+      "title": "Mahraj Plants & Landscaping",
+      "paragraphs": [
+        "At Mahraj Plants, we bring life, greenery, and timeless beauty to modern living and outdoor spaces.",
+        "With years of horticultural experience, we craft custom landscaping solutions tailored to bring your vision to life."
+      ],
+      "highlights": [
+        "A True Passion for Nature",
+        "Proven Expertise in Landscaping & Care",
+        "End-to-End Maintenance & Plant Guarantee",
+        "Custom Garden & Landscape Design",
+        "Personalized, Thoughtful Customer Service",
+        "Curated Selection of Healthy Plants"
+      ]
+    },
+    "mission": {
+      "visionTitle": "Our Vision",
+      "visionBody": "To be the leading name in sustainable green design, transforming urban and suburban spaces into thriving, vibrant eco-sanctuaries that connect people back to nature.",
+      "missionTitle": "Our Mission",
+      "missionBody": "At Mahraj Plants & Landscaping, our mission is to deliver exceptional botanical quality and custom outdoor design through expert craftsmanship, eco-friendly irrigation, and dedicated plant care making beautiful green spaces accessible, effortless, and lasting for every client.",
+      "imageAlt": "Mahraj Plants team working on sustainable garden landscaping"
+    },
+    "stats": {
+      "ariaLabel": "Mahraj Plants by the numbers",
+      "items": [
+        {
+          "title": "Projects Completed",
+          "description": "Over 200 custom landscaping and plant projects thoughtfully completed for our valued clients and partners."
+        },
+        {
+          "title": "Trees & Plants Selected",
+          "description": "A curated collection of over 300 plant and tree varieties, thoughtfully handpicked to complement every landscape style."
+        },
+        {
+          "title": "Client Satisfaction",
+          "description": "98% of clients reported high satisfaction with our professional garden plants services."
+        },
+        {
+          "title": "Expert Team",
+          "description": "Our team of over 10 designers, gardeners, and technicians work together to bring your vision to life."
+        }
+      ]
+    },
+    "services": {
+      "eyebrow": "Best Offer for You",
+      "title": "Transforming Your Garden Space Into A Natural Masterpiece",
+      "paragraphs": [
+        "We specialize in creating stunning outdoor environments that reflect your unique style and enhance your daily life. From initial concept to final planting, every detail is handled with care.",
+        "Whether you need a complete landscape transformation or ongoing garden maintenance, our expert team delivers healthy, thriving green spaces you'll love for years to come."
+      ]
+    },
+    "portfolio": {
+      "eyebrow": "Natural Green Plants",
+      "title": "Our Latest Green Creations Just Finished!",
+      "description": "Explore a selection of our standout garden projects each one a unique blend of thoughtful design, quality craftsmanship, and a deep love for green spaces.",
+      "ariaLabel": "Featured garden projects",
+      "filters": {
+        "All": "All",
+        "Landscape Design": "Landscape Design",
+        "Outdoor Lighting": "Outdoor Lighting",
+        "Rooftop Garden": "Rooftop Garden",
+        "Urban Farming": "Urban Farming"
+      }
+    },
+    "whyUs": {
+      "eyebrow": "Natural green Plants",
+      "title": "Why Choose Mahraj Plants?",
+      "description": "We combine thoughtful design, expert planting, and dependable care to create outdoor spaces that feel natural, balanced, and built to last. Every project is handled with the same attention to detail—from the first consultation to long-term maintenance.",
+      "highlights": [
+        "Tailored landscaping solutions designed around your space and lifestyle",
+        "A practical, hands-on approach from design to ongoing care",
+        "Integrated services from planting to irrigation and maintenance",
+        "Clear communication and reliable project delivery every step of the way"
+      ],
+      "imageAlt": "Mahraj Plants landscaping team standing together in front of a greenhouse",
+      "sinceTitle": "We Are Since 2023!",
+      "sinceBody": "Built on a passion for greenery and sustainable outdoor living, we've grown into a trusted partner for homeowners and businesses seeking beautiful, healthy landscapes.",
+      "featureIcons": [
+        "Pesticide-Free Practices",
+        "Long-Term Green Solutions"
+      ],
+      "commitmentTitle": "Our Commitment",
+      "commitmentQuote": "Every garden we create reflects our promise to nurture nature responsibly—delivering lasting beauty, healthier environments, and spaces our clients are proud to call their own.",
+      "ceoRole": "CEO / Company",
+      "talkTitle": "Let's Talk Today!",
+      "talkBody": "We're here to help! Reach out anytime our friendly team is happy to assist."
+    },
+    "process": {
+      "eyebrow": "Our Working Process",
+      "title": "Growing Ideas Into Living Spaces",
+      "description": "We make landscaping easy with a clear, step-by-step process designed to turn your ideas into thriving green spaces.",
+      "steps": [
+        {
+          "title": "Consultation & Planning",
+          "description": "We listen closely to your vision, assess your space, and craft a personalized plan that blends beauty, functionality, and long-term growth."
+        },
+        {
+          "title": "Create your garden",
+          "description": "We bring your design to life with expert craftmanship, quality materials, and thoughtful planting that transforms your space into a living sanctuary."
+        },
+        {
+          "title": "Finishing Touches & Styling",
+          "description": "We refine every detail with decor, lighting, and layout elements to bring out the garden's full charm and character"
+        },
+        {
+          "title": "Garden care & maintenance",
+          "description": "We keep your garden thriving year-round with routine care, seasonal updates, and responsive support tailored to its evolving needs."
+        }
+      ]
+    },
+    "testimonials": {
+      "eyebrow": "Testimonials",
+      "title": "What our clients say about our service",
+      "description": "Our clients' words speak for the quality and care we put into every project. Discover how we've helped turn outdoor dreams into reality one garden at a time.",
+      "carouselLabel": "Client testimonials",
+      "prev": "Previous testimonial",
+      "next": "Next testimonial",
+      "goToSlide": "Go to slide {n}",
+      "items": [
+        {
+          "quote": "Mahraj Plants transformed our backyard into a peaceful retreat. The team listened to every detail and delivered beyond what we imagined.",
+          "name": "Sarah Mitchell",
+          "role": "Homeowner, London"
+        },
+        {
+          "quote": "Professional from start to finish. Our commercial entrance looks welcoming year-round, and maintenance has been effortless.",
+          "name": "James Porter",
+          "role": "Property Manager"
+        },
+        {
+          "quote": "The rooftop garden they designed for our restaurant has become the highlight of the space. Guests compliment it every evening.",
+          "name": "Emma Clarke",
+          "role": "Restaurant Owner"
+        },
+        {
+          "quote": "We needed a full landscape overhaul before selling. Their design added real curb appeal and the plants are thriving months later.",
+          "name": "David Khan",
+          "role": "Villa Owner, Manchester"
+        },
+        {
+          "quote": "Reliable, punctual, and genuinely passionate about plants. Our office courtyard finally feels like a place employees want to spend time.",
+          "name": "Lisa Nguyen",
+          "role": "Office Park Manager"
+        }
+      ]
+    },
+    "blogs": {
+      "eyebrow": "Our Blogs",
+      "title": "Insights, Stories & Updates From Our Green World",
+      "description": "Explore expert insights, practical ideas, and fresh inspiration for better gardening and sustainable living.",
+      "ariaLabel": "Blog posts",
+      "items": [
+        {
+          "title": "Behind The Green: Meet Our Talented Team",
+          "excerpt": "Get to know the passionate, skilled people behind Mahraj Plants' green transformations. From designers to gardeners, our team is dedicated to turning outdoor dreams into lush reality.",
+          "alt": "Mahraj Plants team working together in a garden nursery",
+          "month": "AUG"
+        },
+        {
+          "title": "Balcony Makeovers Decoded: From Tiny Urban Space To Pocket-Sized Paradise",
+          "excerpt": "Small balconies can feel like full gardens with the right layout, planters, and plant choices. Here is how we turn compact urban spaces into calming green retreats.",
+          "alt": "Balcony garden overlooking a city skyline at sunset",
+          "month": "AUG"
+        },
+        {
+          "title": "Garden Privacy: Shielding Your Space While Staying Truly Connected",
+          "excerpt": "Privacy planting does not mean closing off your garden. Learn how hedges, trellises, and layered greenery create seclusion without losing light or openness.",
+          "alt": "Private garden with lush lawn and wooden seating",
+          "month": "AUG"
+        },
+        {
+          "title": "Seasonal Plant Care: Keeping Your Garden Thriving All Year",
+          "excerpt": "From spring planting to winter protection, a seasonal rhythm keeps gardens healthy. Our practical checklist covers watering, pruning, and soil care month by month.",
+          "alt": "Gardener tending plants in a landscaped outdoor space",
+          "month": "JUL"
+        },
+        {
+          "title": "Sustainable Garden Design Ideas For Modern Homes",
+          "excerpt": "Eco-friendly gardens combine native species, smart irrigation, and low-maintenance layouts. Discover design choices that look beautiful and respect the environment.",
+          "alt": "Sustainable garden with native trees and natural planting",
+          "month": "JUL"
+        }
+      ]
+    },
+    "logos": {
+      "ariaLabel": "Partner logos"
+    },
+    "consultation": {
+      "title": "Ready To Elevate Your Landscape With Mahraj Plants?",
+      "description": "From custom garden design to ongoing care, our experts are here to turn your vision into a thriving green oasis."
+    }
+  },
+  "footer": {
+    "logoAlt": "Mahraj Landscaping",
+    "nurseryAddress": "Nursery: Heet, Old Al kharj Road, Riyadh, KSA",
+    "hours": "Wed: 9:00 – 12:00 / Morning | 1:00 PM – 6:00 PM / Evening",
+    "callSupport": "Call Us Support 24/7",
+    "servicesHeading": "Our Services",
+    "usefulLinksHeading": "Useful Links",
+    "newsletterHeading": "Get Our Newsletter",
+    "newsletterBody": "Garden tips, ideas & offers—straight to your inbox.",
+    "copyright": "© 2026 Mahraj Plants & Landscaping. All Rights Reserved.",
+    "legalNavLabel": "Legal links",
+    "services": [
+      { "label": "Landscape Design & Planning", "href": "/services/landscape-design-planning" },
+      { "label": "Irrigation & Drainage Solutions", "href": "/services/irrigation-drainage-solutions" },
+      { "label": "Green Maintenance Packages", "href": "/services/green-maintenance-packages" },
+      { "label": "Hardscaping & Lighting", "href": "/services/hardscaping-lighting" },
+      { "label": "Gardening & Plant Upgrade", "href": "/services/gardening-plant-upgrade" }
+    ],
+    "usefulLinks": [
+      { "label": "Home", "href": "/#hero", "highlighted": true },
+      { "label": "About us", "href": "/about" },
+      { "label": "Why choose us", "href": "/#why-us" },
+      { "label": "Feature Projects", "href": "/projects" },
+      { "label": "Gallery", "href": "/projects" },
+      { "label": "Pricing Packages", "href": "/#consultation" }
+    ],
+    "legalLinks": [
+      { "label": "Privacy Policy", "href": "#" },
+      { "label": "Terms & Condition", "href": "#" },
+      { "label": "Site Map", "href": "#" },
+      { "label": "Support", "href": "/#consultation" }
+    ]
+  },
+  "siteCta": {
+    "title": "Ready To Elevate Your Landscape With Mahraj Plants?",
+    "consultation": "Get a Free Consultation",
+    "insightsEyebrow": "Expert Gardening & Sustainable Living",
+    "insightsTitle": "Insights",
+    "insightsBody": "Receive curated gardening strategies, seasonal planting guides, and practical eco-friendly updates. Stay ahead with expert-backed sustainable practices delivered straight to your inbox.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "Enter your email here ...",
+    "submit": "Submit"
+  },
+  "categoriesPage": {
+    "notFoundTitle": "Category Not Found | Mahraj Plants",
+    "metaTitle": "{category} | Mahraj Plants",
+    "statsAriaLabel": "Mahraj Plants highlights",
+    "stats": [
+      { "value": "500+", "label": "Projects Complete" },
+      { "value": "300+", "label": "Trees & Plants Selected" },
+      { "value": "98%", "label": "Client Satisfaction" },
+      { "value": "20+", "label": "Expert Team" }
+    ],
+    "listing": {
+      "eyebrow": "Our Collection",
+      "title": "Browse {category}",
+      "description": "Handpicked {category} from Mahraj Plants — quality you can see and care you can trust.",
+      "showing": "Showing {range} of {total} products",
+      "sortBy": "Sort by",
+      "sortAriaLabel": "Sort products",
+      "sortDefault": "Default",
+      "sortNameAsc": "Name: A to Z",
+      "sortNameDesc": "Name: Z to A",
+      "paginationLabel": "Product pagination",
+      "prevPage": "Previous page",
+      "nextPage": "Next page",
+      "pageLabel": "Page {n}"
+    },
+    "bySlug": {
+      "garden-tools": {
+        "label": "Garden Tools",
+        "tagline": "Tools for Every Gardener",
+        "description": "Durable hand tools and garden equipment to make planting, pruning, and maintenance easier."
+      },
+      "indoor-plants": {
+        "label": "Indoor Plants",
+        "tagline": "Bring Nature Indoors",
+        "description": "Refresh your space with beautiful indoor plants that bring life, freshness, and style to every room."
+      },
+      "outdoor-plants": {
+        "label": "Outdoor Plants",
+        "tagline": "Grow Outdoors with Confidence",
+        "description": "Hardy outdoor plants selected to thrive in sun, shade, and seasonal weather across Saudi gardens."
+      },
+      "pots-and-planters": {
+        "label": "Pots and Planters",
+        "tagline": "Style Meets Function",
+        "description": "Browse decorative pots and planters in ceramic, terracotta, and modern finishes for every space."
+      },
+      "seasonal-flowers": {
+        "label": "Seasonal Flowers",
+        "tagline": "Colour for Every Season",
+        "description": "Discover rotating seasonal blooms that keep your garden fresh, fragrant, and full of life all year."
+      },
+      "vegetables": {
+        "label": "Vegetables",
+        "tagline": "From Garden to Table",
+        "description": "Grow fresh, healthy produce at home with vegetable plants and seedlings suited to local growing conditions."
+      }
+    }
+  },
+  "productPage": {
+    "notFoundTitle": "Product Not Found | Mahraj Plants",
+    "metaTitle": "{product} | Mahraj Plants",
+    "hero": {
+      "eyebrow": "Garden Shop",
+      "title": "Tools, Plants & Green Essentials",
+      "description": "Find tools, care products, and garden accessories to help your green space thrive — practical, stylish, and nature-friendly."
+    },
+    "breadcrumb": "Breadcrumb",
+    "home": "Home",
+    "inquireWhatsApp": "Inquire on WhatsApp",
+    "backTo": "Back to {category}",
+    "whatsappMessage": "Hello, I would like to inquire about {product} from Mahraj Plants.",
+    "relatedEyebrow": "You May Also Like",
+    "relatedTitle": "More {category}"
+  }
+}

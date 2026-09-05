@@ -1,41 +1,39 @@
-import Image from "next/image";
+"use client";
 
-const stats = [
-    {
-        value: "200+",
-        title: "Projects Completed",
-        description:
-            "Over 200 custom landscaping and plant projects thoughtfully completed for our valued clients and partners.",
-        icon: "/icons/projects-completed.svg",
-    },
-    {
-        value: "300+",
-        title: "Trees & Plants Selected",
-        description:
-            "A curated collection of over 300 plant and tree varieties, thoughtfully handpicked to complement every landscape style.",
-        icon: "/icons/trees-plants.svg",
-    },
-    {
-        value: "98%",
-        title: "Client Satisfaction",
-        description:
-            "98% of clients reported high satisfaction with our professional garden plants services.",
-        icon: "/icons/client-satisfaction.svg",
-    },
-    {
-        value: "20+",
-        title: "Expert Team",
-        description:
-            "Our team of over 10 designers, gardeners, and technicians work together to bring your vision to life.",
-        icon: "/icons/expert-team.svg",
-    },
+import Image from "next/image";
+import { useMemo } from "react";
+import { useTranslations } from "@/app/lib/i18n";
+
+const statsMeta = [
+    { value: "200+", icon: "/icons/projects-completed.svg" },
+    { value: "300+", icon: "/icons/trees-plants.svg" },
+    { value: "98%", icon: "/icons/client-satisfaction.svg" },
+    { value: "20+", icon: "/icons/expert-team.svg" },
 ];
 
+type StatCopy = {
+    title: string;
+    description: string;
+};
+
 export default function Stats() {
+    const { t, tObject, locale } = useTranslations("home.stats");
+
+    const stats = useMemo(() => {
+        const items = tObject<StatCopy[]>("items");
+        if (!Array.isArray(items)) return [];
+
+        return items.map((item, index) => ({
+            ...statsMeta[index],
+            title: item.title,
+            description: item.description,
+        }));
+    }, [tObject, locale]);
+
     return (
         <section
             id="stats"
-            aria-label="Mahraj Plants by the numbers"
+            aria-label={t("ariaLabel")}
             className="relative isolate overflow-hidden"
         >
             <Image

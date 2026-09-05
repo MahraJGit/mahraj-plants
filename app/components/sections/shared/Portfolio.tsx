@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { PortfolioCard } from "@/app/components/ui";
+import { useTranslations } from "@/app/lib/i18n";
 import {
     projectFilters as filters,
     projects,
@@ -18,6 +19,8 @@ type PortfolioProps = {
 };
 
 export default function Portfolio({ variant = "white" }: PortfolioProps) {
+    const { t } = useTranslations("home.portfolio");
+    const { t: tCommon } = useTranslations("common");
     const [filter, setFilter] = useState<ProjectFilter>("All");
 
     const filteredProjects = useMemo(() => {
@@ -52,7 +55,7 @@ export default function Portfolio({ variant = "white" }: PortfolioProps) {
                             aria-hidden
                         />
                         <span className="font-script text-[28px] leading-none text-secondary sm:text-[32px]">
-                            Natural Green Plants
+                            {t("eyebrow")}
                         </span>
                     </p>
 
@@ -60,13 +63,11 @@ export default function Portfolio({ variant = "white" }: PortfolioProps) {
                         id="portfolio-heading"
                         className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-primary sm:text-4xl lg:text-[42px]"
                     >
-                        Our Latest Green Creations Just Finished!
+                        {t("title")}
                     </h2>
 
                     <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-primary/65 sm:text-base">
-                        Explore a selection of our standout garden projects each one a
-                        unique blend of thoughtful design, quality craftsmanship, and a
-                        deep love for green spaces.
+                        {t("description")}
                     </p>
                 </header>
 
@@ -87,7 +88,7 @@ export default function Portfolio({ variant = "white" }: PortfolioProps) {
                                             : "border-primary/15 bg-white text-primary hover:border-primary/30",
                                     )}
                                 >
-                                    {item}
+                                    {t(`filters.${item}`)}
                                 </button>
                             );
                         })}
@@ -97,7 +98,7 @@ export default function Portfolio({ variant = "white" }: PortfolioProps) {
                         href="/projects"
                         className="w-fit shrink-0 self-start rounded-lg bg-secondary px-7 py-3 text-base font-medium leading-[100%] tracking-[-1%] text-white transition-colors hover:bg-secondary/90 lg:self-auto"
                     >
-                        View All Projects
+                        {tCommon("viewAllProjects")}
                     </Link>
                 </div>
             </div>
@@ -106,7 +107,8 @@ export default function Portfolio({ variant = "white" }: PortfolioProps) {
                 <div
                     className="relative left-1/2 mt-10 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden lg:mt-12"
                     style={{ height: CARD_HEIGHT }}
-                    aria-label="Featured garden projects"
+                    aria-label={t("ariaLabel")}
+                    dir="ltr"
                 >
                     <div
                         key={filter}

@@ -1,7 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useMemo } from "react";
 import { cn } from "@/app/lib/utils";
 import type { Product } from "@/data/types";
+import {
+    localizeProduct,
+    useLocale,
+    useTranslations,
+} from "@/app/lib/i18n";
 
 type RelatedProductsProps = {
     products: Product[];
@@ -12,7 +20,15 @@ export default function RelatedProducts({
     products,
     categoryLabel,
 }: RelatedProductsProps) {
-    if (products.length === 0) {
+    const { locale } = useLocale();
+    const { t } = useTranslations("productPage");
+
+    const localizedProducts = useMemo(
+        () => products.map((product) => localizeProduct(product, locale)),
+        [products, locale],
+    );
+
+    if (localizedProducts.length === 0) {
         return null;
     }
 
@@ -24,18 +40,18 @@ export default function RelatedProducts({
             <div className="section-container pt-0">
                 <header className="mx-auto max-w-3xl text-center">
                     <p className="text-sm font-medium tracking-[0.2em] text-secondary uppercase">
-                        You May Also Like
+                        {t("relatedEyebrow")}
                     </p>
                     <h2
                         id="related-products-heading"
                         className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-primary sm:text-4xl"
                     >
-                        More {categoryLabel}
+                        {t("relatedTitle", { category: categoryLabel })}
                     </h2>
                 </header>
 
                 <ul className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-7">
-                    {products.map((product) => (
+                    {localizedProducts.map((product) => (
                         <li key={product.id}>
                             <Link
                                 href={`/products/${product.slug}`}
@@ -46,7 +62,7 @@ export default function RelatedProducts({
                                     alt={product.title}
                                     fill
                                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105"
+                                    className="object-contain transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105"
                                 />
                                 <div
                                     className={cn(

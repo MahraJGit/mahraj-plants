@@ -69,7 +69,7 @@ export default function BlogListCard({ post }: BlogListCardProps) {
 
                 <div className="mt-5 flex justify-end border-t border-dotted border-primary/20 pt-5">
                     <Link
-                        href="#"
+                        href={`/blogs/${post.slug}`}
                         aria-label={`Read ${post.title}`}
                         className="inline-flex w-fit items-center gap-3 outline-none transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
                     >

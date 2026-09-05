@@ -17,7 +17,12 @@ import {
     HiOutlineMail,
 } from "react-icons/hi";
 import { cn } from "@/app/lib/utils";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/app/lib/contact";
+import {
+    FACEBOOK_HREF,
+    INSTAGRAM_HREF,
+    PHONE_DISPLAY,
+    PHONE_HREF,
+} from "@/app/lib/contact";
 
 const contactDetails = [
     {
@@ -45,9 +50,9 @@ const contactDetails = [
 ] as const;
 
 const socialLinks = [
-    { label: "Facebook", href: "#", Icon: FaFacebookF },
-    { label: "Instagram", href: "#", Icon: FaInstagram },
-    { label: "LinkedIn", href: "#", Icon: FaLinkedinIn },
+    { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true },
+    { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true },
+    { label: "LinkedIn", href: "#", Icon: FaLinkedinIn, external: false },
 ] as const;
 
 const inputClassName =
@@ -181,11 +186,17 @@ export default function ContactFormSection() {
                                 Social Media
                             </p>
                             <div className="flex items-center gap-3 sm:gap-4">
-                                {socialLinks.map(({ label, href, Icon }) => (
+                                {socialLinks.map(({ label, href, Icon, external }) => (
                                     <Link
                                         key={label}
                                         href={href}
                                         aria-label={label}
+                                        {...(external
+                                            ? {
+                                                  target: "_blank",
+                                                  rel: "noopener noreferrer",
+                                              }
+                                            : {})}
                                         className="text-section transition hover:text-secondary"
                                     >
                                         <Icon aria-hidden className="size-4 sm:size-[1.125rem]" />

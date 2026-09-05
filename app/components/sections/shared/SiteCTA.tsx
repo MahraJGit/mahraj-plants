@@ -5,10 +5,16 @@ import { FormEvent, useState } from "react";
 import { HiOutlinePhone } from "react-icons/hi";
 import Button from "@/app/components/ui/Button";
 import Reveal from "@/app/components/ui/Reveal";
-import { PHONE_DISPLAY, PHONE_HREF, CONSULTATION_WHATSAPP_HREF } from "@/app/lib/contact";
+import {
+    PHONE_DISPLAY,
+    PHONE_HREF,
+    CONSULTATION_WHATSAPP_HREF,
+} from "@/app/lib/contact";
+import { useTranslations } from "@/app/lib/i18n";
 
 export default function SiteCTA() {
     const [email, setEmail] = useState("");
+    const { t } = useTranslations("siteCta");
 
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -41,7 +47,7 @@ export default function SiteCTA() {
                             id="site-cta-heading"
                             className="max-w-md text-[26px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-3xl lg:text-[34px]"
                         >
-                            Ready To Elevate Your Landscape With Mahraj Plants?
+                            {t("title")}
                         </h2>
 
                         <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -52,7 +58,7 @@ export default function SiteCTA() {
                                 rel="noopener noreferrer"
                                 className="rounded-lg px-8 py-3.5"
                             >
-                                Get a Free Consultation
+                                {t("consultation")}
                             </Button>
 
                             <a
@@ -62,7 +68,10 @@ export default function SiteCTA() {
                                 <span className="flex size-11 items-center justify-center rounded-full bg-secondary text-white">
                                     <HiOutlinePhone aria-hidden className="size-5" />
                                 </span>
-                                <span className="text-sm font-medium sm:text-base">
+                                <span
+                                    dir="ltr"
+                                    className="text-sm font-medium sm:text-base"
+                                >
                                     {PHONE_DISPLAY}
                                 </span>
                             </a>
@@ -97,19 +106,16 @@ export default function SiteCTA() {
                                 className="h-4 w-auto brightness-0 invert"
                             />
                             <span className="font-script text-[26px] leading-none text-white sm:text-[30px]">
-                                Expert Gardening &amp; Sustainable Living
+                                {t("insightsEyebrow")}
                             </span>
                         </p>
 
                         <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-                            Insights
+                            {t("insightsTitle")}
                         </h3>
 
                         <p className="mt-4 max-w-md text-sm leading-relaxed text-white/80 sm:text-[15px]">
-                            Receive curated gardening strategies, seasonal planting guides,
-                            and practical eco-friendly updates. Stay ahead with
-                            expert-backed sustainable practices delivered straight to your
-                            inbox.
+                            {t("insightsBody")}
                         </p>
 
                         <form
@@ -117,7 +123,7 @@ export default function SiteCTA() {
                             className="mt-8 flex max-w-md overflow-hidden rounded-full bg-white shadow-lg"
                         >
                             <label htmlFor="site-newsletter-email" className="sr-only">
-                                Email address
+                                {t("emailLabel")}
                             </label>
                             <input
                                 id="site-newsletter-email"
@@ -125,19 +131,19 @@ export default function SiteCTA() {
                                 required
                                 value={email}
                                 onChange={(event) => setEmail(event.target.value)}
-                                placeholder="Enter your email here ..."
+                                placeholder={t("emailPlaceholder")}
                                 className="min-w-0 flex-1 bg-transparent px-5 py-3.5 text-sm text-primary outline-none placeholder:text-primary/45"
                             />
                             <button
                                 type="submit"
                                 className="flex shrink-0 cursor-pointer items-center gap-2 bg-secondary px-6 py-3.5 text-sm font-medium text-white transition hover:bg-secondary/90"
                             >
-                                Submit
+                                {t("submit")}
                                 <svg
                                     viewBox="0 0 16 16"
                                     fill="none"
                                     aria-hidden
-                                    className="size-3.5"
+                                    className="size-3.5 rtl:rotate-180"
                                 >
                                     <path
                                         d="M3 8h10M9 4l4 4-4 4"

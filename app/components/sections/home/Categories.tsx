@@ -1,37 +1,50 @@
-import { CategoryCard, type Category } from "@/app/components/ui";
+"use client";
 
-const categories: Category[] = [
+import { useMemo } from "react";
+import { CategoryCard, type Category } from "@/app/components/ui";
+import { useTranslations } from "@/app/lib/i18n";
+
+const categoryMeta = [
     {
-        title: "Mahraj Indoor Plants",
         image: "/images/home/m-indoor.webp",
-        alt: "Lush indoor plants with dew on the leaves",
-        tagline: "Fresh greens for homes, offices, and bright indoor spaces.",
         href: "/categories/indoor-plants",
     },
     {
-        title: "Mahraj Outdoor Plants",
         image: "/images/home/m-outdoor.webp",
-        alt: "Vibrant outdoor plants in natural sunlight",
-        tagline: "Hardy selections built to thrive in open air and seasonal sun.",
         href: "/categories/outdoor-plants",
     },
     {
-        title: "Mahraj Pots and Planters",
         image: "/images/home/m-trees.webp",
-        alt: "Decorative pots and planters arranged in a garden setting",
-        tagline: "Stylish pots and planters for every indoor and outdoor space.",
         href: "/categories/pots-and-planters",
     },
     {
-        title: "Mahraj Seasonal Flowers",
         image: "/images/home/hero-bg-1.jpg",
-        alt: "Colourful seasonal flowers in full bloom",
-        tagline: "Rotating seasonal blooms to keep your garden vibrant all year.",
         href: "/categories/seasonal-flowers",
     },
 ];
 
+type CategoryCopy = {
+    title: string;
+    alt: string;
+    tagline: string;
+};
+
 export default function Categories() {
+    const { t, tObject, locale } = useTranslations("home.categories");
+
+    const categories = useMemo(() => {
+        const items = tObject<CategoryCopy[]>("items");
+        if (!Array.isArray(items)) return [] as Category[];
+
+        return items.map((item, index) => ({
+            title: item.title,
+            image: categoryMeta[index].image,
+            alt: item.alt,
+            tagline: item.tagline,
+            href: categoryMeta[index].href,
+        }));
+    }, [tObject, locale]);
+
     return (
         <section
             id="categories"
@@ -46,28 +59,25 @@ export default function Categories() {
             <div className="section-container relative">
                 <header className="mx-auto max-w-4xl text-center">
                     <p className="text-sm font-medium tracking-[0.2em] text-secondary uppercase">
-                        Explore our collections
+                        {t("eyebrow")}
                     </p>
 
                     <h2
                         id="categories-heading"
                         className="mt-4 text-[28px] leading-[1.15] font-semibold tracking-[-2%] text-primary sm:text-4xl lg:text-[42px]"
                     >
-                        <span className="text-secondary">Mahraj Plants</span> Your Trusted
-                        Greenery &amp; Landscaping Partner
+                        <span className="text-secondary">{t("titleBefore")}</span>
+                        {t("titleAfter")}
                     </h2>
 
                     <p className="mx-auto mt-6 max-w-3xl text-sm leading-relaxed text-primary/65 sm:text-base">
-                        Our curated collection of vibrant plants and custom landscaping
-                        solutions. From budget-friendly greens to statement plants that
-                        transform your home, garden, or commercial space, we deliver
-                        health, beauty, and expert care right to your doorstep.
+                        {t("description")}
                     </p>
                 </header>
 
                 <ul className="mt-14 grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:mt-16 lg:grid-cols-4 lg:gap-x-10">
                     {categories.map((category) => (
-                        <li key={category.title}>
+                        <li key={category.href}>
                             <CategoryCard category={category} />
                         </li>
                     ))}

@@ -1,74 +1,70 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Button from "../../ui/Button";
+import { useTranslations } from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 
-const slides = [
+const slideMeta = [
     {
         image: "/images/home/hero-bg-1.jpg",
-        alt: "Gardener watering flowers in a lush garden",
         align: "left" as const,
         objectPosition: "object-[70%_center]",
         overlay: "bg-gradient-to-r from-primary via-primary/55 to-transparent",
-        title: (
-            <>
-                Welcome to Mahraj
-                <br />
-                Landscaping
-            </>
-        ),
-        description:
-            "We create elegant, personalized outdoor spaces from thoughtful design to expert garden care always with heart and precision",
     },
     {
         image: "/images/home/hero-bg-2.jpg",
-        alt: "Landscaped garden seating area surrounded by hedges and trees",
         align: "center" as const,
         objectPosition: "object-center",
         overlay: "bg-primary/50",
-        title: (
-            <>
-                Come for the greenery
-                <br />
-                Stay for the expert care
-            </>
-        ),
-        description:
-            "We believe people and plants belong together. Since city living often cuts us off from nature, we're here to make bringing greenery home and keeping it thriving effortless.",
     },
     {
         image: "/images/home/hero-bg-3.jpg",
-        alt: "Landscaper trimming a hedge with professional equipment",
         align: "right" as const,
         objectPosition: "object-[30%_center]",
         overlay: "bg-gradient-to-l from-primary via-primary/55 to-transparent",
-        title: (
-            <>
-                Fair pricing. Simple care.
-                <br />
-                Delivered to your door.
-            </>
-        ),
-        description:
-            "Our custom eco-packaging ensures every plant arrives fresh, healthy, and perfectly protected, making greenery effortless for your space.",
     },
 ];
 
+/* Physical left/center/right — tied to image composition, must not flip in RTL */
 const alignContent = {
     left: "items-start text-left mr-auto max-w-xl lg:max-w-2xl",
     center: "items-center text-center mx-auto max-w-3xl lg:max-w-5xl",
     right: "items-end text-right ml-auto max-w-xl lg:max-w-4xl",
 };
 
+type SlideCopy = {
+    alt: string;
+    title: string;
+    description: string;
+};
+
 export default function Hero() {
+    const { t, tObject, locale } = useTranslations("home.hero");
+    const { t: tCommon } = useTranslations("common");
     const [index, setIndex] = useState(0);
     const touchStartX = useRef(0);
 
+    const slideCopy = useMemo(() => {
+        const items = tObject<SlideCopy[]>("slides");
+        return Array.isArray(items) ? items : [];
+    }, [tObject, locale]);
+
+    const slides = useMemo(
+        () =>
+            slideMeta.map((meta, i) => ({
+                ...meta,
+                alt: slideCopy[i]?.alt ?? "",
+                title: slideCopy[i]?.title ?? "",
+                description: slideCopy[i]?.description ?? "",
+            })),
+        [slideCopy],
+    );
+
     const goTo = useCallback((next: number) => {
         setIndex((next + slides.length) % slides.length);
-    }, []);
+    }, [slides.length]);
 
     const next = useCallback(() => goTo(index + 1), [goTo, index]);
     const prev = useCallback(() => goTo(index - 1), [goTo, index]);
@@ -81,7 +77,7 @@ export default function Hero() {
         }, 5000);
 
         return () => window.clearInterval(id);
-    }, [index]);
+    }, [index, slides.length]);
 
     useEffect(() => {
         function onKeyDown(event: KeyboardEvent) {
@@ -93,13 +89,14 @@ export default function Hero() {
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [next, prev]);
 
-    const slide = slides[index];
+    const slide = slides[index] ?? slides[0];
+    if (!slide) return null;
 
     return (
         <section
             id="hero"
             aria-roledescription="carousel"
-            aria-label="Mahraj Plants highlights"
+            aria-label={t("carouselLabel")}
             className="relative isolate flex min-h-screen w-full flex-col overflow-hidden"
             onPointerDown={(event) => {
                 if ((event.target as HTMLElement).closest("button")) return;
@@ -141,7 +138,8 @@ export default function Hero() {
             <div className="hero-content relative z-10 my-auto w-full">
                 <div className="mx-auto w-full max-w-7xl px-8 sm:px-16 lg:px-24">
                     <div
-                        key={index}
+                        key={`${locale}-${index}`}
+                        dir="ltr"
                         className={cn(
                             "hero-copy-in flex w-full flex-col gap-5 sm:gap-6",
                             alignContent[slide.align],
@@ -163,58 +161,76 @@ export default function Hero() {
                                 loading="eager"
                                 className="h-6 w-auto shrink-0 sm:h-[30px]"
                             />
-                            <span className="font-script min-w-0 text-[20px] leading-tight text-white sm:text-[28px] lg:text-[32px]">
-                                Welcome to Mahraj Plants Landscaping
+                            <span
+                                dir={locale === "ar" ? "rtl" : "ltr"}
+                                className="font-script min-w-0 text-[20px] leading-tight text-white sm:text-[28px] lg:text-[32px]"
+                            >
+                                {t("eyebrow")}
                             </span>
                         </p>
 
-                        <h1>{slide.title}</h1>
+                        <h1 dir={locale === "ar" ? "rtl" : "ltr"}>
+                            {slide.title.split("\n").map((line, lineIndex) => (
+                                <Fragment key={lineIndex}>
+                                    {lineIndex > 0 && <br />}
+                                    {line}
+                                </Fragment>
+                            ))}
+                        </h1>
 
                         <p
+                            dir={locale === "ar" ? "rtl" : "ltr"}
                             className={cn(
                                 "text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg",
-                                slide.align === "center" ? "max-w-2xl" : "max-w-lg",
+                                slide.align === "center"
+                                    ? "max-w-2xl"
+                                    : "max-w-lg",
                             )}
                         >
                             {slide.description}
                         </p>
 
-                        <Button>Our Services</Button>
+                        <Button href="/services">
+                            {tCommon("ourServices")}
+                        </Button>
                     </div>
                 </div>
             </div>
 
             <button
                 type="button"
-                aria-label="Previous slide"
+                aria-label={t("prevSlide")}
                 onClick={prev}
                 className="absolute top-1/2 left-3 z-20 flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black/35 text-white transition hover:bg-black/55 sm:left-5 sm:size-12 lg:left-8"
             >
-                <Chevron direction="left" />
+                <Chevron direction="prev" />
             </button>
             <button
                 type="button"
-                aria-label="Next slide"
+                aria-label={t("nextSlide")}
                 onClick={next}
                 className="absolute top-1/2 right-3 z-20 flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black/35 text-white transition hover:bg-black/55 sm:right-5 sm:size-12 lg:right-8"
             >
-                <Chevron direction="right" />
+                <Chevron direction="next" />
             </button>
 
             <div className="sr-only" aria-live="polite">
-                Slide {index + 1} of {slides.length}
+                {t("slideStatus", {
+                    current: index + 1,
+                    total: slides.length,
+                })}
             </div>
         </section>
     );
 }
 
-function Chevron({ direction }: { direction: "left" | "right" }) {
+function Chevron({ direction }: { direction: "prev" | "next" }) {
     return (
         <svg
             viewBox="0 0 24 24"
             fill="none"
             aria-hidden="true"
-            className={cn("size-5", direction === "left" && "rotate-180")}
+            className={cn("size-5", direction === "prev" && "rotate-180")}
         >
             <path
                 d="M9 6l6 6-6 6"

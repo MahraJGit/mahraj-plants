@@ -57,7 +57,7 @@ export default function ProjectDetailHero({ project }: ProjectDetailHeroProps) {
                     </div>
                 </div>
 
-                <div
+                {/* <div
                     aria-hidden
                     className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 text-white sm:h-20"
                 >
@@ -69,7 +69,7 @@ export default function ProjectDetailHero({ project }: ProjectDetailHeroProps) {
                     >
                         <path d="M0 80V40c80-8 160-24 240-28s160 12 240 16 160-20 240-24 160 16 240 20 160-12 240-16 160 20 240 16V80H0Z" />
                     </svg>
-                </div>
+                </div> */}
             </div>
 
             <div className="relative z-20 -mt-16 sm:-mt-20">

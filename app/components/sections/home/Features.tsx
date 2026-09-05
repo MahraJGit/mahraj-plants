@@ -1,6 +1,8 @@
 "use client";
 
+import { useMemo } from "react";
 import FeatureHighlights from "../../ui/FeatureHighlights";
+import { useTranslations } from "@/app/lib/i18n";
 
 export type FeatureCard = {
     icon: string;
@@ -8,31 +10,11 @@ export type FeatureCard = {
     description: string;
 };
 
-const defaultCards: FeatureCard[] = [
-    {
-        icon: "/icons/consultation.svg",
-        title: "Free Expert Consultation",
-        description:
-            "Share your vision with our horticultural specialists. We'll assess your space and recommend the best plants and outdoor designs at no cost.",
-    },
-    {
-        icon: "/icons/execution.svg",
-        title: "Flawless Landscaping Execution",
-        description:
-            "Our skilled gardeners handle everything from soil preparation to expert planting ensuring your outdoor space is crafted to perfection.",
-    },
-    {
-        icon: "/icons/gurantee.svg",
-        title: "Healthy Plant Guarantee",
-        description:
-            "We stand behind the quality of our greenery. Enjoy total peace of mind with guaranteed healthy, vibrant plants that are built to thrive.",
-    },
-    {
-        icon: "/icons/reliable.svg",
-        title: "Punctual & Reliable Service",
-        description:
-            "We deliver and transform your green space on schedule, maintaining clean work sites and respecting your time every step of the way.",
-    },
+const featureIcons = [
+    "/icons/consultation.svg",
+    "/icons/execution.svg",
+    "/icons/gurantee.svg",
+    "/icons/reliable.svg",
 ];
 
 type FeaturesProps = {
@@ -41,20 +23,38 @@ type FeaturesProps = {
     "aria-label"?: string;
 };
 
+type FeatureCopy = {
+    title: string;
+    description: string;
+};
+
 export default function Features({
-    cards = defaultCards,
+    cards,
     id = "features",
-    "aria-label": ariaLabel = "Why choose Mahraj Plants",
+    "aria-label": ariaLabel,
 }: FeaturesProps) {
+    const { t, tObject, locale } = useTranslations("home.features");
+
+    const defaultCards = useMemo(() => {
+        const copy = tObject<FeatureCopy[]>("cards");
+        if (!Array.isArray(copy)) return [];
+
+        return copy.map((card, index) => ({
+            icon: featureIcons[index] ?? featureIcons[0],
+            title: card.title,
+            description: card.description,
+        }));
+    }, [tObject, locale]);
+
     return (
         <section
             id={id}
-            aria-label={ariaLabel}
+            aria-label={ariaLabel ?? t("ariaLabel")}
             className="relative z-20 overflow-visible"
         >
             <div className="section-container pt-0">
                 <div className="relative -mt-20 sm:-mt-24">
-                    <FeatureHighlights items={cards} />
+                    <FeatureHighlights items={cards ?? defaultCards} />
                 </div>
             </div>
         </section>

@@ -1,9 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ServiceCard } from "@/app/components/ui";
+import { useTranslations } from "@/app/lib/i18n";
 import { services } from "@/app/lib/services";
 
 export default function Services() {
+    const { t, tArray } = useTranslations("home.services");
+    const { t: tCommon } = useTranslations("common");
+    const paragraphs = tArray("paragraphs");
+
     return (
         <section
             id="services"
@@ -29,7 +36,7 @@ export default function Services() {
                                 aria-hidden
                             />
                             <span className="font-script text-[28px] leading-none text-white sm:text-[32px]">
-                                Best Offer for You
+                                {t("eyebrow")}
                             </span>
                         </p>
 
@@ -37,23 +44,13 @@ export default function Services() {
                             id="services-heading"
                             className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-4xl lg:text-[42px]"
                         >
-                            Transforming Your Garden Space Into A Natural
-                            Masterpiece
+                            {t("title")}
                         </h2>
 
                         <div className="mt-5 space-y-4 text-sm leading-relaxed text-white/75 sm:text-base">
-                            <p>
-                                We specialize in creating stunning outdoor
-                                environments that reflect your unique style and
-                                enhance your daily life. From initial concept to
-                                final planting, every detail is handled with care.
-                            </p>
-                            <p>
-                                Whether you need a complete landscape
-                                transformation or ongoing garden maintenance, our
-                                expert team delivers healthy, thriving green
-                                spaces you&apos;ll love for years to come.
-                            </p>
+                            {paragraphs.map((paragraph) => (
+                                <p key={paragraph}>{paragraph}</p>
+                            ))}
                         </div>
                     </div>
 
@@ -61,7 +58,7 @@ export default function Services() {
                         href="/services"
                         className="w-fit shrink-0 self-start rounded-lg bg-secondary px-8 py-3.5 text-base font-medium leading-[100%] tracking-[-1%] text-white transition-colors hover:bg-secondary/90 lg:mt-2"
                     >
-                        View All Services →
+                        {tCommon("viewAllServices")}
                     </Link>
                 </header>
 

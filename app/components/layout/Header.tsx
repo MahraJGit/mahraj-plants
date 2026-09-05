@@ -17,34 +17,22 @@ import {
     HiOutlineMail,
     HiOutlineSearch,
 } from "react-icons/hi";
+import { FACEBOOK_HREF, INSTAGRAM_HREF } from "@/app/lib/contact";
+import { useTranslations, type Locale } from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 import { plantCategoryNav } from "@/app/lib/categories";
 
-const plantCategories = plantCategoryNav;
-
-const navLinks = [
-    { label: "Home", href: "/#hero" },
-    { label: "Plants Category", href: "/#categories", dropdown: plantCategories },
-    { label: "Services", href: "/services" },
-    { label: "Projects", href: "/projects" },
-    { label: "Blogs", href: "/blogs" },
-    { label: "About us", href: "/about" },
-    { label: "Contact us", href: "/contact" },
-];
-
 const socialLinks = [
-    { label: "Facebook", href: "#", Icon: FaFacebookF },
-    { label: "Twitter", href: "#", Icon: FaTwitter },
-    { label: "Instagram", href: "#", Icon: FaInstagram },
-    { label: "Google Plus", href: "#", Icon: FaGooglePlusG },
+    { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true },
+    { label: "Twitter", href: "#", Icon: FaTwitter, external: false },
+    { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true },
+    { label: "Google Plus", href: "#", Icon: FaGooglePlusG, external: false },
 ];
 
 const languages = [
-    { code: "en", label: "English", flag: "/icons/flag-gb.svg" },
-    { code: "ar", label: "Arabic", flag: "/icons/flag-sa.svg" },
-] as const;
-
-type LanguageCode = (typeof languages)[number]["code"];
+    { code: "en" as const, label: "English", flag: "/icons/flag-gb.svg" },
+    { code: "ar" as const, label: "Arabic", flag: "/icons/flag-sa.svg" },
+];
 
 function FlagIcon({ src, className }: { src: string; className?: string }) {
     return (
@@ -80,17 +68,39 @@ function NavLink({
 
 export default function Header() {
     const pathname = usePathname();
+    const { t, locale, setLocale } = useTranslations("nav");
     const [mobileOpen, setMobileOpen] = useState(false);
     const [plantsOpen, setPlantsOpen] = useState(false);
     const [languageOpen, setLanguageOpen] = useState(false);
-    const [language, setLanguage] = useState<LanguageCode>("en");
     const [activeHash, setActiveHash] = useState("");
     const [scrolled, setScrolled] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const languageRef = useRef<HTMLDivElement>(null);
 
+    const plantCategories = plantCategoryNav.map((item) => {
+        const slug = item.href.replace("/categories/", "");
+        return {
+            ...item,
+            label: t(`categories.${slug}`),
+        };
+    });
+
+    const navLinks = [
+        { label: t("home"), href: "/#hero" },
+        {
+            label: t("plantsCategory"),
+            href: "/#categories",
+            dropdown: plantCategories,
+        },
+        { label: t("services"), href: "/services" },
+        { label: t("projects"), href: "/projects" },
+        { label: t("blogs"), href: "/blogs" },
+        { label: t("about"), href: "/about" },
+        { label: t("contact"), href: "/contact" },
+    ];
+
     const currentLanguage =
-        languages.find((item) => item.code === language) ?? languages[0];
+        languages.find((item) => item.code === locale) ?? languages[0];
 
     useEffect(() => {
         const syncHash = () => setActiveHash(window.location.hash);
@@ -174,7 +184,7 @@ export default function Header() {
                             className="size-4 shrink-0"
                         />
                         <span className="truncate">
-                            Nursery: Heet, Old Al kharj Road, Riyadh, KSA
+                            {t("nurseryAddress")}
                         </span>
                         <Link
                             href="mailto:info@mahrajplants.com"
@@ -187,17 +197,14 @@ export default function Header() {
 
                     <div className="hidden items-center gap-2 xl:flex">
                         <HiOutlineClock aria-hidden className="size-4 shrink-0" />
-                        <span>
-                            Wed: 9:00 - 12:00 / Morning | 1:00 PM — 6:00 PM /
-                            Evening
-                        </span>
+                        <span>{t("hours")}</span>
                     </div>
 
                     <div className="flex shrink-0 items-center gap-2.5">
                         <div ref={languageRef} className="relative">
                             <button
                                 type="button"
-                                aria-label="Change language"
+                                aria-label={t("changeLanguage")}
                                 aria-expanded={languageOpen}
                                 aria-haspopup="listbox"
                                 onClick={() =>
@@ -221,23 +228,22 @@ export default function Header() {
                             {languageOpen && (
                                 <ul
                                     role="listbox"
-                                    aria-label="Select language"
-                                    className="absolute top-[calc(100%+0.4rem)] right-0 z-50 min-w-[9.5rem] overflow-hidden rounded-xl border border-white/15 bg-section py-1 shadow-xl"
+                                    aria-label={t("selectLanguage")}
+                                    className="absolute top-[calc(100%+0.4rem)] end-0 z-50 min-w-[9.5rem] overflow-hidden rounded-xl border border-white/15 bg-section py-1 shadow-xl"
                                 >
                                     {languages.map((item) => {
-                                        const selected =
-                                            language === item.code;
+                                        const selected = locale === item.code;
 
                                         return (
                                             <li key={item.code} role="option" aria-selected={selected}>
                                                 <button
                                                     type="button"
                                                     onClick={() => {
-                                                        setLanguage(item.code);
+                                                        setLocale(item.code as Locale);
                                                         setLanguageOpen(false);
                                                     }}
                                                     className={cn(
-                                                        "flex w-full cursor-pointer items-center gap-2.5 px-3 py-2 text-left text-[11px] transition hover:bg-white/10",
+                                                        "flex w-full cursor-pointer items-center gap-2.5 px-3 py-2 text-start text-[11px] transition hover:bg-white/10",
                                                         selected
                                                             ? "text-secondary"
                                                             : "text-white/90",
@@ -254,11 +260,17 @@ export default function Header() {
                         </div>
 
                         <div className="ml-1 flex items-center gap-1.5">
-                            {socialLinks.map(({ label, href, Icon }) => (
+                            {socialLinks.map(({ label, href, Icon, external }) => (
                                 <Link
                                     key={label}
                                     href={href}
                                     aria-label={label}
+                                    {...(external
+                                        ? {
+                                              target: "_blank",
+                                              rel: "noopener noreferrer",
+                                          }
+                                        : {})}
                                     className="flex size-7 items-center justify-center rounded-full bg-[#C4A862] text-white transition hover:bg-[#b39655]"
                                 >
                                     <Icon aria-hidden className="size-3.5" />
@@ -378,7 +390,7 @@ export default function Header() {
                             className="hidden rounded-full bg-white px-4 py-2.5 text-sm font-medium text-primary transition hover:bg-cream sm:inline-flex lg:px-5"
                             onClick={() => setMobileOpen(false)}
                         >
-                            Explore Mahraj Agriculture
+                            {t("exploreCta")}
                         </Link>
 
                         <button
@@ -469,7 +481,7 @@ export default function Header() {
                                 className="flex flex-1 items-center justify-center rounded-full bg-white px-4 py-3 text-sm font-medium text-primary"
                                 onClick={() => setMobileOpen(false)}
                             >
-                                Explore Mahraj Agriculture
+                                {t("exploreCta")}
                             </Link>
                         </div>
                     </nav>

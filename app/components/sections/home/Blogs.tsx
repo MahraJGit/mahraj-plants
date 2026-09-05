@@ -1,63 +1,39 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { BlogCard, type BlogPost } from "@/app/components/ui";
+import { useTranslations } from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 
-const blogs: BlogPost[] = [
+const blogMeta = [
     {
-        title: "Behind The Green: Meet Our Talented Team",
-        excerpt:
-            "Get to know the passionate, skilled people behind Mahraj Plants' green transformations. From designers to gardeners, our team is dedicated to turning outdoor dreams into lush reality.",
         image: "/images/home/hero-bg-2.jpg",
-        alt: "Mahraj Plants team working together in a garden nursery",
         day: "23",
-        month: "AUG",
         author: "mahrajplant",
         comments: 0,
     },
     {
-        title: "Balcony Makeovers Decoded: From Tiny Urban Space To Pocket-Sized Paradise",
-        excerpt:
-            "Small balconies can feel like full gardens with the right layout, planters, and plant choices. Here is how we turn compact urban spaces into calming green retreats.",
         image: "/images/home/m-outdoor.webp",
-        alt: "Balcony garden overlooking a city skyline at sunset",
         day: "23",
-        month: "AUG",
         author: "mahrajplant",
         comments: 0,
     },
     {
-        title: "Garden Privacy: Shielding Your Space While Staying Truly Connected",
-        excerpt:
-            "Privacy planting does not mean closing off your garden. Learn how hedges, trellises, and layered greenery create seclusion without losing light or openness.",
         image: "/images/home/m-landscaping.webp",
-        alt: "Private garden with lush lawn and wooden seating",
         day: "23",
-        month: "AUG",
         author: "mahrajplant",
         comments: 0,
     },
     {
-        title: "Seasonal Plant Care: Keeping Your Garden Thriving All Year",
-        excerpt:
-            "From spring planting to winter protection, a seasonal rhythm keeps gardens healthy. Our practical checklist covers watering, pruning, and soil care month by month.",
         image: "/images/home/hero-bg-3.jpg",
-        alt: "Gardener tending plants in a landscaped outdoor space",
         day: "18",
-        month: "JUL",
         author: "mahrajplant",
         comments: 2,
     },
     {
-        title: "Sustainable Garden Design Ideas For Modern Homes",
-        excerpt:
-            "Eco-friendly gardens combine native species, smart irrigation, and low-maintenance layouts. Discover design choices that look beautiful and respect the environment.",
         image: "/images/home/m-trees.webp",
-        alt: "Sustainable garden with native trees and natural planting",
         day: "05",
-        month: "JUL",
         author: "mahrajplant",
         comments: 1,
     },
@@ -66,12 +42,36 @@ const blogs: BlogPost[] = [
 const CARD_GAP = 24;
 const CARD_HEIGHT = 380;
 
+type BlogCopy = {
+    title: string;
+    excerpt: string;
+    alt: string;
+    month: string;
+};
+
 export default function Blogs() {
+    const { t, tObject, locale } = useTranslations("home.blogs");
     const scrollRef = useRef<HTMLDivElement>(null);
     const isDragging = useRef(false);
     const dragMoved = useRef(false);
     const pointerStartX = useRef(0);
     const scrollStartLeft = useRef(0);
+
+    const blogs = useMemo(() => {
+        const items = tObject<BlogCopy[]>("items");
+        if (!Array.isArray(items)) return [] as BlogPost[];
+
+        return items.map((item, index) => ({
+            title: item.title,
+            excerpt: item.excerpt,
+            image: blogMeta[index].image,
+            alt: item.alt,
+            day: blogMeta[index].day,
+            month: item.month,
+            author: blogMeta[index].author,
+            comments: blogMeta[index].comments,
+        }));
+    }, [tObject, locale]);
 
     function handlePointerDown(event: React.PointerEvent<HTMLDivElement>) {
         if ((event.target as HTMLElement).closest("a, button")) return;
@@ -122,7 +122,7 @@ export default function Blogs() {
                             className="h-5 w-3.5 shrink-0"
                         />
                         <span className="font-script text-[28px] leading-none text-secondary sm:text-[32px]">
-                            Our Blogs
+                            {t("eyebrow")}
                         </span>
                     </p>
 
@@ -130,12 +130,11 @@ export default function Blogs() {
                         id="blogs-heading"
                         className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-primary sm:text-4xl lg:text-[42px]"
                     >
-                        Insights, Stories &amp; Updates From Our Green World
+                        {t("title")}
                     </h2>
 
                     <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-primary/65 sm:text-base">
-                        Explore expert insights, practical ideas, and fresh
-                        inspiration for better gardening and sustainable living.
+                        {t("description")}
                     </p>
                 </header>
 
@@ -149,7 +148,7 @@ export default function Blogs() {
                             "select-none motion-reduce:scroll-auto",
                         )}
                         style={{ gap: CARD_GAP }}
-                        aria-label="Blog posts"
+                        aria-label={t("ariaLabel")}
                         onPointerDown={handlePointerDown}
                         onPointerMove={handlePointerMove}
                         onPointerUp={endDrag}

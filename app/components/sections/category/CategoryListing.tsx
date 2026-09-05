@@ -9,6 +9,12 @@ import {
     HiChevronRight,
 } from "react-icons/hi";
 import type { CategoryListingItem, PlantCategory } from "@/app/lib/categories";
+import {
+    localizeCategory,
+    useLocale,
+    useTranslations,
+    type CategoryPageCopy,
+} from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 
 type CategoryListingProps = {
@@ -18,22 +24,18 @@ type CategoryListingProps = {
 type SortOption = "default" | "name-asc" | "name-desc";
 
 const PAGE_SIZE = 8;
-const SORT_OPTIONS: { value: SortOption; label: string }[] = [
-    { value: "default", label: "Default" },
-    { value: "name-asc", label: "Name: A to Z" },
-    { value: "name-desc", label: "Name: Z to A" },
-];
 
 function sortListings(
     items: CategoryListingItem[],
     sort: SortOption,
+    locale: string,
 ): CategoryListingItem[] {
     if (sort === "default") {
         return items;
     }
 
     const sorted = [...items].sort((a, b) =>
-        a.name.localeCompare(b.name, undefined, { sensitivity: "base" }),
+        a.name.localeCompare(b.name, locale, { sensitivity: "base" }),
     );
 
     return sort === "name-desc" ? sorted.reverse() : sorted;
@@ -46,12 +48,19 @@ function SortDropdown({
     value: SortOption;
     onChange: (value: SortOption) => void;
 }) {
+    const { t } = useTranslations("categoriesPage.listing");
     const [open, setOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
+    const sortOptions = [
+        { value: "default" as const, label: t("sortDefault") },
+        { value: "name-asc" as const, label: t("sortNameAsc") },
+        { value: "name-desc" as const, label: t("sortNameDesc") },
+    ];
+
     const selectedLabel =
-        SORT_OPTIONS.find((option) => option.value === value)?.label ??
-        "Default";
+        sortOptions.find((option) => option.value === value)?.label ??
+        t("sortDefault");
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
@@ -71,7 +80,7 @@ function SortDropdown({
     return (
         <div ref={dropdownRef} className="relative">
             <span className="mb-2 block text-xs font-medium tracking-wide text-primary/55 uppercase sm:mb-0 sm:sr-only">
-                Sort by
+                {t("sortBy")}
             </span>
 
             <button
@@ -94,10 +103,10 @@ function SortDropdown({
             {open && (
                 <ul
                     role="listbox"
-                    aria-label="Sort products"
-                    className="absolute top-[calc(100%+0.5rem)] right-0 z-20 min-w-full overflow-hidden rounded-2xl border border-primary/10 bg-white py-1.5 shadow-[0_16px_40px_rgba(10,37,14,0.14)]"
+                    aria-label={t("sortAriaLabel")}
+                    className="absolute top-[calc(100%+0.5rem)] end-0 z-20 min-w-full overflow-hidden rounded-2xl border border-primary/10 bg-white py-1.5 shadow-[0_16px_40px_rgba(10,37,14,0.14)]"
                 >
-                    {SORT_OPTIONS.map((option) => {
+                    {sortOptions.map((option) => {
                         const selected = option.value === value;
 
                         return (
@@ -109,7 +118,7 @@ function SortDropdown({
                                         setOpen(false);
                                     }}
                                     className={cn(
-                                        "flex w-full cursor-pointer items-center justify-between px-4 py-2.5 text-left text-sm transition hover:bg-cream/80",
+                                        "flex w-full cursor-pointer items-center justify-between px-4 py-2.5 text-start text-sm transition hover:bg-cream/80",
                                         selected
                                             ? "font-semibold text-secondary"
                                             : "font-medium text-primary/80",
@@ -143,7 +152,7 @@ function CategoryProductCard({ item }: { item: CategoryListingItem }) {
                 alt={item.alt}
                 fill
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105"
+                className="object-contain transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105"
             />
 
             <div
@@ -162,12 +171,20 @@ function CategoryProductCard({ item }: { item: CategoryListingItem }) {
 }
 
 export default function CategoryListing({ category }: CategoryListingProps) {
+    const { locale } = useLocale();
+    const { tObject } = useTranslations("categoriesPage");
+    const { t: tListing } = useTranslations("categoriesPage.listing");
     const [sort, setSort] = useState<SortOption>("default");
     const [page, setPage] = useState(1);
 
+    const localized = useMemo(() => {
+        const copy = tObject<CategoryPageCopy>(`bySlug.${category.slug}`);
+        return localizeCategory(category, copy, locale);
+    }, [category, locale, tObject]);
+
     const sortedListings = useMemo(
-        () => sortListings(category.listings, sort),
-        [category.listings, sort],
+        () => sortListings(localized.listings, sort, locale),
+        [localized.listings, sort, locale],
     );
 
     const totalProducts = sortedListings.length;
@@ -189,6 +206,9 @@ export default function CategoryListing({ category }: CategoryListingProps) {
 
     const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
 
+    const rangeLabel =
+        totalProducts === 0 ? "0" : `${startIndex + 1}-${endIndex}`;
+
     return (
         <section
             aria-labelledby="category-listing-heading"
@@ -197,33 +217,27 @@ export default function CategoryListing({ category }: CategoryListingProps) {
             <div className="section-container">
                 <header className="mx-auto max-w-3xl text-center">
                     <p className="text-sm font-medium tracking-[0.2em] text-secondary uppercase">
-                        Our Collection
+                        {tListing("eyebrow")}
                     </p>
                     <h2
                         id="category-listing-heading"
                         className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-primary sm:text-4xl"
                     >
-                        Browse {category.hero.title}
+                        {tListing("title", { category: localized.hero.title })}
                     </h2>
                     <p className="mt-4 text-sm leading-relaxed text-primary/65 sm:text-base">
-                        Handpicked {category.label.toLowerCase()} from Mahraj
-                        Plants — quality you can see and care you can trust.
+                        {tListing("description", {
+                            category: localized.label,
+                        })}
                     </p>
                 </header>
 
                 <div className="mt-10 flex flex-col gap-5 sm:mt-12 sm:flex-row sm:items-end sm:justify-between">
                     <p className="text-sm text-primary/70">
-                        Showing{" "}
-                        <span className="font-semibold text-primary">
-                            {totalProducts === 0
-                                ? "0"
-                                : `${startIndex + 1}-${endIndex}`}
-                        </span>{" "}
-                        of{" "}
-                        <span className="font-semibold text-primary">
-                            {totalProducts}
-                        </span>{" "}
-                        products
+                        {tListing("showing", {
+                            range: rangeLabel,
+                            total: totalProducts,
+                        })}
                     </p>
 
                     <SortDropdown value={sort} onChange={setSort} />
@@ -239,17 +253,20 @@ export default function CategoryListing({ category }: CategoryListingProps) {
 
                 {totalPages > 1 && (
                     <nav
-                        aria-label="Product pagination"
+                        aria-label={tListing("paginationLabel")}
                         className="mt-10 flex flex-wrap items-center justify-center gap-2"
                     >
                         <button
                             type="button"
                             onClick={() => setPage((current) => current - 1)}
                             disabled={page === 1}
-                            aria-label="Previous page"
+                            aria-label={tListing("prevPage")}
                             className="inline-flex size-10 cursor-pointer items-center justify-center rounded-full border border-primary/15 bg-white text-primary transition hover:border-secondary hover:text-secondary disabled:cursor-not-allowed disabled:opacity-40"
                         >
-                            <HiChevronLeft className="size-5" aria-hidden />
+                            <HiChevronLeft
+                                className="size-5 rtl:rotate-180"
+                                aria-hidden
+                            />
                         </button>
 
                         {pageNumbers.map((pageNumber) => (
@@ -257,7 +274,9 @@ export default function CategoryListing({ category }: CategoryListingProps) {
                                 key={pageNumber}
                                 type="button"
                                 onClick={() => setPage(pageNumber)}
-                                aria-label={`Page ${pageNumber}`}
+                                aria-label={tListing("pageLabel", {
+                                    n: pageNumber,
+                                })}
                                 aria-current={
                                     pageNumber === page ? "page" : undefined
                                 }
@@ -276,10 +295,13 @@ export default function CategoryListing({ category }: CategoryListingProps) {
                             type="button"
                             onClick={() => setPage((current) => current + 1)}
                             disabled={page === totalPages}
-                            aria-label="Next page"
+                            aria-label={tListing("nextPage")}
                             className="inline-flex size-10 cursor-pointer items-center justify-center rounded-full border border-primary/15 bg-white text-primary transition hover:border-secondary hover:text-secondary disabled:cursor-not-allowed disabled:opacity-40"
                         >
-                            <HiChevronRight className="size-5" aria-hidden />
+                            <HiChevronRight
+                                className="size-5 rtl:rotate-180"
+                                aria-hidden
+                            />
                         </button>
                     </nav>
                 )}

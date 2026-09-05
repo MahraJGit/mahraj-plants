@@ -1,27 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import Button from "../../ui/Button";
 import Link from "next/link";
 import { PHONE_DISPLAY, PHONE_HREF } from "@/app/lib/contact";
+import { useTranslations } from "@/app/lib/i18n";
 
-const highlights = [
-    "Tailored landscaping solutions designed around your space and lifestyle",
-    "A practical, hands-on approach from design to ongoing care",
-    "Integrated services from planting to irrigation and maintenance",
-    "Clear communication and reliable project delivery every step of the way",
-];
-
-const featureIcons = [
-    {
-        icon: "/icons/pesticide.svg",
-        label: "Pesticide-Free Practices",
-    },
-    {
-        icon: "/icons/green-solutions.svg",
-        label: "Long-Term Green Solutions",
-    },
+const featureIconSrcs = [
+    "/icons/pesticide.svg",
+    "/icons/green-solutions.svg",
 ];
 
 export default function WhyUs() {
+    const { t, tArray } = useTranslations("home.whyUs");
+    const { t: tCommon } = useTranslations("common");
+    const highlights = tArray("highlights");
+    const featureIcons = tArray("featureIcons");
+
     return (
         <section
             id="why-us"
@@ -56,7 +51,7 @@ export default function WhyUs() {
                                     aria-hidden
                                 />
                                 <span className="font-script text-[28px] leading-none text-secondary sm:text-[32px]">
-                                    Natural green Plants
+                                    {t("eyebrow")}
                                 </span>
                             </p>
 
@@ -64,15 +59,11 @@ export default function WhyUs() {
                                 id="why-us-heading"
                                 className="mt-4 text-[28px] leading-tight font-bold tracking-[-2%] text-primary sm:text-4xl lg:text-[42px]"
                             >
-                                Why Choose Mahraj Plants?
+                                {t("title")}
                             </h2>
 
                             <p className="mt-5 text-sm leading-relaxed text-primary/70 sm:text-base">
-                                We combine thoughtful design, expert planting, and
-                                dependable care to create outdoor spaces that feel
-                                natural, balanced, and built to last. Every project is
-                                handled with the same attention to detail—from the first
-                                consultation to long-term maintenance.
+                                {t("description")}
                             </p>
 
                             <ul className="mt-6 space-y-3.5 sm:space-y-4">
@@ -106,9 +97,10 @@ export default function WhyUs() {
 
                             <Button
                                 variant="secondary"
+                                href="/about"
                                 className="mt-8 w-fit rounded-lg px-10 py-3.5 sm:mt-10"
                             >
-                                Read More
+                                {tCommon("readMore")}
                             </Button>
                         </div>
 
@@ -116,7 +108,7 @@ export default function WhyUs() {
                             <div className="relative aspect-[5/4] overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(10,37,14,0.12)] sm:rounded-[1.75rem] lg:aspect-auto lg:min-h-[22rem]">
                                 <Image
                                     src="/images/home/why-us-content-img.webp"
-                                    alt="Mahraj Plants landscaping team standing together in front of a greenhouse"
+                                    alt={t("imageAlt")}
                                     fill
                                     sizes="(max-width: 1024px) 100vw, 45vw"
                                     className="object-cover"
@@ -128,24 +120,21 @@ export default function WhyUs() {
                     <div className="grid border-t border-primary/8 md:grid-cols-3">
                         <article className="flex flex-col bg-cream px-6 py-8 sm:px-8 sm:py-9 lg:px-9">
                             <h3 className="text-xl font-bold text-primary sm:text-2xl">
-                                We Are Since 2023!
+                                {t("sinceTitle")}
                             </h3>
                             <p className="mt-3 text-sm leading-relaxed text-primary/70 sm:text-[15px]">
-                                Built on a passion for greenery and sustainable outdoor
-                                living, we&apos;ve grown into a trusted partner for
-                                homeowners and businesses seeking beautiful, healthy
-                                landscapes.
+                                {t("sinceBody")}
                             </p>
 
                             <div className="mt-auto flex flex-col gap-5 pt-8 sm:flex-row sm:gap-6">
-                                {featureIcons.map((item) => (
+                                {featureIcons.map((label, index) => (
                                     <div
-                                        key={item.label}
+                                        key={label}
                                         className="flex flex-1 flex-col items-center text-center"
                                     >
                                         <div className="flex size-[4.5rem] items-center justify-center rounded-full bg-white shadow-sm">
                                             <Image
-                                                src={item.icon}
+                                                src={featureIconSrcs[index]}
                                                 alt=""
                                                 width={40}
                                                 height={40}
@@ -154,7 +143,7 @@ export default function WhyUs() {
                                             />
                                         </div>
                                         <p className="mt-3 text-xs font-medium leading-snug text-primary sm:text-sm">
-                                            {item.label}
+                                            {label}
                                         </p>
                                     </div>
                                 ))}
@@ -163,14 +152,11 @@ export default function WhyUs() {
 
                         <article className="flex flex-col bg-section px-6 py-8 text-white sm:px-8 sm:py-9 lg:px-9">
                             <h3 className="text-xl font-bold sm:text-2xl">
-                                Our Commitment
+                                {t("commitmentTitle")}
                             </h3>
 
                             <blockquote className="mt-5 flex-1 text-sm italic leading-relaxed text-white/90 sm:text-[15px]">
-                                &ldquo;Every garden we create reflects our promise to
-                                nurture nature responsibly—delivering lasting beauty,
-                                healthier environments, and spaces our clients are proud
-                                to call their own.&rdquo;
+                                &ldquo;{t("commitmentQuote")}&rdquo;
                             </blockquote>
 
                             <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
@@ -183,7 +169,7 @@ export default function WhyUs() {
                                     <div>
                                         <p className="text-sm font-semibold">Anish</p>
                                         <p className="text-xs text-white/70">
-                                            CEO / Company
+                                            {t("ceoRole")}
                                         </p>
                                     </div>
                                 </div>
@@ -193,12 +179,12 @@ export default function WhyUs() {
                                         href="/working-process"
                                         className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-primary transition hover:bg-white/90"
                                     >
-                                        How We Work
+                                        {tCommon("howWeWork")}
                                         <svg
                                             viewBox="0 0 16 16"
                                             fill="none"
                                             aria-hidden
-                                            className="size-3.5"
+                                            className="size-3.5 rtl:rotate-180"
                                         >
                                             <path
                                                 d="M3 8h10M9 4l4 4-4 4"
@@ -218,11 +204,10 @@ export default function WhyUs() {
 
                         <article className="flex flex-col bg-cream px-6 py-8 sm:px-8 sm:py-9 lg:px-9">
                             <h3 className="text-xl font-bold text-primary sm:text-2xl">
-                                Let&apos;s Talk Today!
+                                {t("talkTitle")}
                             </h3>
                             <p className="mt-3 text-sm leading-relaxed text-primary/70 sm:text-[15px]">
-                                We&apos;re here to help! Reach out anytime our friendly
-                                team is happy to assist.
+                                {t("talkBody")}
                             </p>
 
                             <div className="mt-6 space-y-3">
@@ -280,7 +265,7 @@ export default function WhyUs() {
                                 type="button"
                                 className="w-full cursor-pointer rounded-lg bg-primary px-6 py-3.5 text-sm font-medium text-white transition hover:bg-primary/90 sm:mt-auto"
                             >
-                                Free Quote Now!
+                                {tCommon("freeQuote")}
                             </button>
                         </article>
                     </div>

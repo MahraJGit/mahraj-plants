@@ -1,50 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
     Button,
     TestimonialCard,
     type Testimonial,
 } from "@/app/components/ui";
+import { useTranslations } from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
-
-const testimonials: Testimonial[] = [
-    {
-        quote: "Mahraj Plants transformed our backyard into a peaceful retreat. The team listened to every detail and delivered beyond what we imagined.",
-        name: "Sarah Mitchell",
-        role: "Homeowner, London",
-        initials: "SM",
-    },
-    {
-        quote: "Professional from start to finish. Our commercial entrance looks welcoming year-round, and maintenance has been effortless.",
-        name: "James Porter",
-        role: "Property Manager",
-        initials: "JP",
-    },
-    {
-        quote: "The rooftop garden they designed for our restaurant has become the highlight of the space. Guests compliment it every evening.",
-        name: "Emma Clarke",
-        role: "Restaurant Owner",
-        initials: "EC",
-    },
-    {
-        quote: "We needed a full landscape overhaul before selling. Their design added real curb appeal and the plants are thriving months later.",
-        name: "David Khan",
-        role: "Villa Owner, Manchester",
-        initials: "DK",
-    },
-    {
-        quote: "Reliable, punctual, and genuinely passionate about plants. Our office courtyard finally feels like a place employees want to spend time.",
-        name: "Lisa Nguyen",
-        role: "Office Park Manager",
-        initials: "LN",
-    },
-];
 
 const CARD_GAP = 24;
 
-function Chevron({ direction }: { direction: "left" | "right" }) {
+const initials = ["SM", "JP", "EC", "DK", "LN"];
+
+type TestimonialCopy = {
+    quote: string;
+    name: string;
+    role: string;
+};
+
+function Chevron({ direction }: { direction: "prev" | "next" }) {
     return (
         <Image
             src="/icons/chevron-right.svg"
@@ -52,17 +28,35 @@ function Chevron({ direction }: { direction: "left" | "right" }) {
             width={20}
             height={20}
             aria-hidden
-            className={cn("size-5", direction === "left" && "rotate-180")}
+            className={cn(
+                "size-5",
+                direction === "prev" && "rotate-180 rtl:rotate-0",
+                direction === "next" && "rtl:rotate-180",
+            )}
         />
     );
 }
 
 export default function Testimonials() {
+    const { t, tObject, locale } = useTranslations("home.testimonials");
+    const { t: tCommon } = useTranslations("common");
     const [activeIndex, setActiveIndex] = useState(0);
     const [visibleCount, setVisibleCount] = useState(1);
     const [slideWidth, setSlideWidth] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
     const touchStartX = useRef(0);
+
+    const testimonials = useMemo(() => {
+        const items = tObject<TestimonialCopy[]>("items");
+        if (!Array.isArray(items)) return [] as Testimonial[];
+
+        return items.map((item, index) => ({
+            quote: item.quote,
+            name: item.name,
+            role: item.role,
+            initials: initials[index] ?? item.name.slice(0, 2).toUpperCase(),
+        }));
+    }, [tObject, locale]);
 
     const maxIndex = Math.max(testimonials.length - visibleCount, 0);
 
@@ -98,7 +92,7 @@ export default function Testimonials() {
         measure();
         window.addEventListener("resize", measure);
         return () => window.removeEventListener("resize", measure);
-    }, []);
+    }, [testimonials.length]);
 
     useEffect(() => {
         function onKeyDown(event: KeyboardEvent) {
@@ -124,20 +118,18 @@ export default function Testimonials() {
                 <header className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
                     <div className="max-w-3xl">
                         <p className="text-sm font-medium tracking-[0.2em] text-secondary uppercase">
-                            Testimonials
+                            {t("eyebrow")}
                         </p>
 
                         <h2
                             id="testimonials-heading"
                             className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-primary sm:text-4xl lg:text-[42px]"
                         >
-                            What our clients say about our service
+                            {t("title")}
                         </h2>
 
                         <p className="mt-5 text-sm leading-relaxed text-primary/65 sm:text-base">
-                            Our clients&apos; words speak for the quality and care we
-                            put into every project. Discover how we&apos;ve helped turn
-                            outdoor dreams into reality one garden at a time.
+                            {t("description")}
                         </p>
                     </div>
 
@@ -145,7 +137,7 @@ export default function Testimonials() {
                         variant="secondary"
                         className="w-fit shrink-0 rounded-lg px-8 py-3.5"
                     >
-                        View All Testimonials
+                        {tCommon("viewAllTestimonials")}
                     </Button>
                 </header>
 
@@ -154,7 +146,7 @@ export default function Testimonials() {
                         ref={containerRef}
                         className="overflow-hidden"
                         aria-roledescription="carousel"
-                        aria-label="Client testimonials"
+                        aria-label={t("carouselLabel")}
                         onPointerDown={(event) => {
                             if ((event.target as HTMLElement).closest("button")) return;
                             touchStartX.current = event.clientX;
@@ -176,6 +168,7 @@ export default function Testimonials() {
                             {testimonials.map((testimonial) => (
                                 <div
                                     key={testimonial.name}
+                                    data-slide
                                     className="w-full shrink-0 sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                                 >
                                     <TestimonialCard testimonial={testimonial} />
@@ -186,21 +179,21 @@ export default function Testimonials() {
 
                     <button
                         type="button"
-                        aria-label="Previous testimonial"
+                        aria-label={t("prev")}
                         onClick={prev}
                         disabled={activeIndex === 0}
-                        className="absolute top-1/2 -left-2 z-10 flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-primary/10 bg-white text-primary shadow-md transition hover:bg-cream disabled:cursor-not-allowed disabled:opacity-40 sm:-left-4"
+                        className="absolute top-1/2 -start-2 z-10 flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-primary/10 bg-white text-primary shadow-md transition hover:bg-cream disabled:cursor-not-allowed disabled:opacity-40 sm:-start-4"
                     >
-                        <Chevron direction="left" />
+                        <Chevron direction="prev" />
                     </button>
                     <button
                         type="button"
-                        aria-label="Next testimonial"
+                        aria-label={t("next")}
                         onClick={next}
                         disabled={activeIndex === maxIndex}
-                        className="absolute top-1/2 -right-2 z-10 flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-primary/10 bg-white text-primary shadow-md transition hover:bg-cream disabled:cursor-not-allowed disabled:opacity-40 sm:-right-4"
+                        className="absolute top-1/2 -end-2 z-10 flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-primary/10 bg-white text-primary shadow-md transition hover:bg-cream disabled:cursor-not-allowed disabled:opacity-40 sm:-end-4"
                     >
-                        <Chevron direction="right" />
+                        <Chevron direction="next" />
                     </button>
 
                     <div className="mt-8 flex justify-center gap-2">
@@ -208,7 +201,7 @@ export default function Testimonials() {
                             <button
                                 key={index}
                                 type="button"
-                                aria-label={`Go to slide ${index + 1}`}
+                                aria-label={t("goToSlide", { n: index + 1 })}
                                 onClick={() => goTo(index)}
                                 className={cn(
                                     "h-2 cursor-pointer rounded-full transition-all",
@@ -218,12 +211,6 @@ export default function Testimonials() {
                                 )}
                             />
                         ))}
-                    </div>
-
-                    <div className="sr-only" aria-live="polite">
-                        Showing testimonials {activeIndex + 1} to{" "}
-                        {Math.min(activeIndex + visibleCount, testimonials.length)} of{" "}
-                        {testimonials.length}
                     </div>
                 </div>
             </div>

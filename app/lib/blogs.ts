@@ -163,3 +163,32 @@ export const blogArticles: BlogArticle[] = [
 export function getLatestBlogArticles(limit = 3): BlogArticle[] {
     return blogArticles.slice(0, limit);
 }
+
+export function getBlogBySlug(slug: string): BlogArticle | undefined {
+    return blogArticles.find((article) => article.slug === slug);
+}
+
+export function getAllBlogSlugs(): string[] {
+    return blogArticles.map((article) => article.slug);
+}
+
+const monthLabels: Record<string, string> = {
+    JAN: "January",
+    FEB: "February",
+    MAR: "March",
+    APR: "April",
+    MAY: "May",
+    JUN: "June",
+    JUL: "July",
+    AUG: "August",
+    SEP: "September",
+    OCT: "October",
+    NOV: "November",
+    DEC: "December",
+};
+
+export function formatBlogDate(article: BlogArticle, year = 2025): string {
+    const month = monthLabels[article.month.toUpperCase()] ?? article.month;
+    return `${month} ${Number(article.day)}, ${year}`;
+}
+

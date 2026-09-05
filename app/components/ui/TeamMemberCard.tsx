@@ -10,6 +10,7 @@ import {
     FaTwitter,
 } from "react-icons/fa";
 import { HiPlus } from "react-icons/hi";
+import { FACEBOOK_HREF, INSTAGRAM_HREF } from "@/app/lib/contact";
 import { cn } from "@/app/lib/utils";
 
 export type TeamMember = {
@@ -20,10 +21,10 @@ export type TeamMember = {
 };
 
 const socialLinks = [
-    { label: "Facebook", href: "#", Icon: FaFacebookF },
-    { label: "Instagram", href: "#", Icon: FaInstagram },
-    { label: "Twitter", href: "#", Icon: FaTwitter },
-    { label: "LinkedIn", href: "#", Icon: FaLinkedinIn },
+    { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true },
+    { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true },
+    { label: "Twitter", href: "#", Icon: FaTwitter, external: false },
+    { label: "LinkedIn", href: "#", Icon: FaLinkedinIn, external: false },
 ] as const;
 
 type TeamMemberCardProps = {
@@ -74,11 +75,17 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
                         "motion-reduce:transition-none",
                     )}
                 >
-                    {socialLinks.map(({ label, href, Icon }) => (
+                    {socialLinks.map(({ label, href, Icon, external }) => (
                         <a
                             key={label}
                             href={href}
                             aria-label={`${member.name} on ${label}`}
+                            {...(external
+                                ? {
+                                      target: "_blank",
+                                      rel: "noopener noreferrer",
+                                  }
+                                : {})}
                             className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-white text-primary shadow-sm transition hover:bg-cream sm:size-10"
                         >
                             <Icon aria-hidden className="size-3.5 sm:size-4" />

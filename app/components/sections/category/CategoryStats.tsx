@@ -1,13 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { categoryStats } from "@/app/lib/categories";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useTranslations } from "@/app/lib/i18n";
 
 type ParsedStat = {
     target: number;
     suffix: string;
 };
+
+type StatCopy = {
+    value: string;
+    label: string;
+};
+
+const statIcons = [
+    "/icons/projects-completed.svg",
+    "/icons/trees-plants.svg",
+    "/icons/client-satisfaction.svg",
+    "/icons/expert-team.svg",
+];
 
 function parseStatValue(value: string): ParsedStat {
     const match = value.match(/^(\d+)(.*)$/);
@@ -71,6 +83,17 @@ function AnimatedStatValue({
 export default function CategoryStats() {
     const sectionRef = useRef<HTMLElement>(null);
     const [inView, setInView] = useState(false);
+    const { t, tObject, locale } = useTranslations("categoriesPage");
+
+    const stats = useMemo(() => {
+        const items = tObject<StatCopy[]>("stats");
+        if (!Array.isArray(items)) return [];
+
+        return items.map((item, index) => ({
+            ...item,
+            icon: statIcons[index] ?? statIcons[0],
+        }));
+    }, [tObject, locale]);
 
     useEffect(() => {
         const node = sectionRef.current;
@@ -96,12 +119,12 @@ export default function CategoryStats() {
     return (
         <section
             ref={sectionRef}
-            aria-label="Mahraj Plants highlights"
+            aria-label={t("statsAriaLabel")}
             className="bg-white"
         >
             <div className="section-container pt-0">
                 <ul className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
-                    {categoryStats.map((stat) => (
+                    {stats.map((stat) => (
                         <li key={stat.label}>
                             <article className="relative overflow-hidden rounded-2xl bg-secondary px-6 py-7 sm:px-7 sm:py-8">
                                 <div className="relative z-10">
@@ -123,7 +146,7 @@ export default function CategoryStats() {
                                     height={88}
                                     unoptimized
                                     aria-hidden
-                                    className="pointer-events-none absolute right-4 bottom-4 h-16 w-auto opacity-20 brightness-0 invert sm:h-20"
+                                    className="pointer-events-none absolute end-4 bottom-4 h-16 w-auto opacity-20 brightness-0 invert sm:h-20"
                                 />
                             </article>
                         </li>

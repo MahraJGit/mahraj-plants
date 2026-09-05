@@ -1,3 +1,7 @@
+"use client";
+
+import { useTranslations } from "@/app/lib/i18n";
+
 const logos = [
     {
         src: "/icons/cytozyme.svg",
@@ -72,16 +76,18 @@ function LogoMark({
 }
 
 export default function LogoMarquee() {
+    const { t } = useTranslations("home.logos");
     const marqueeLogos = [...logos, ...logos];
 
     return (
         <section
-            aria-label="Partner logos"
+            aria-label={t("ariaLabel")}
             className="overflow-hidden bg-white py-10 lg:py-14"
         >
             <div
                 className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden"
                 aria-hidden
+                dir="ltr"
             >
                 <div
                     className="logo-marquee-track flex w-max items-center"

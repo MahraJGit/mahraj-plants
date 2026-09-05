@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "@/app/lib/i18n";
 
 export default function ProductHero() {
+    const { t } = useTranslations("productPage.hero");
+
     return (
         <section
             aria-labelledby="product-hero-heading"
@@ -30,20 +35,18 @@ export default function ProductHero() {
                     />
 
                     <p className="mt-4 font-script text-[26px] leading-none text-white sm:text-[32px] lg:text-[36px]">
-                        Garden Shop
+                        {t("eyebrow")}
                     </p>
 
                     <p
                         id="product-hero-heading"
                         className="mt-4 text-[32px] font-bold leading-tight text-white sm:text-[40px] lg:text-[48px]"
                     >
-                        Tools, Plants &amp; Green Essentials
+                        {t("title")}
                     </p>
 
                     <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
-                        Find tools, care products, and garden accessories to
-                        help your green space thrive — practical, stylish, and
-                        nature-friendly.
+                        {t("description")}
                     </p>
                 </div>
             </div>

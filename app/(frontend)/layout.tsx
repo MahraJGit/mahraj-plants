@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Great_Vibes, Poppins } from "next/font/google";
+import { Cairo, Great_Vibes, Poppins } from "next/font/google";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import FloatingActions from "../components/layout/FloatingActions";
+import {
+  localeDirection,
+  LocaleProvider,
+} from "../lib/i18n";
+import { getDictionary } from "../lib/i18n/get-dictionary";
+import { getLocale } from "../lib/i18n/get-locale";
 import "../globals.css";
 
 const poppins = Poppins({
@@ -17,23 +23,44 @@ const greatVibes = Great_Vibes({
   weight: "400",
 });
 
-export const metadata: Metadata = {
-  title: "Mahraj Plants",
-  description: "Mahraj Plants is a plant store that sells plants and plant related products.",
-};
+const cairo = Cairo({
+  variable: "--font-cairo",
+  subsets: ["arabic", "latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const dictionary = await getDictionary(locale);
+
+  return {
+    title: dictionary.meta.title,
+    description: dictionary.meta.description,
+  };
+}
+
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const locale = await getLocale();
+  const messages = await getDictionary(locale);
+  const dir = localeDirection(locale);
+
   return (
     <html
-      lang="en"
-      className={`${poppins.variable} ${greatVibes.variable} h-full antialiased`}
+      lang={locale}
+      dir={dir}
+      className={`${poppins.variable} ${greatVibes.variable} ${cairo.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>
-        <Header />
-        {children}
-        <Footer />
-        <FloatingActions />
+      <body
+        className={`min-h-full flex flex-col ${locale === "ar" ? "font-arabic" : ""}`}
+        suppressHydrationWarning
+      >
+        <LocaleProvider locale={locale} messages={messages}>
+          <Header />
+          {children}
+          <Footer />
+          <FloatingActions />
+        </LocaleProvider>
       </body>
     </html>
   );

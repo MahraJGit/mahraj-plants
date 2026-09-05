@@ -1,16 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Button from "../../ui/Button";
-
-const highlights = [
-    "A True Passion for Nature",
-    "Proven Expertise in Landscaping & Care",
-    "End-to-End Maintenance & Plant Guarantee",
-    "Custom Garden & Landscape Design",
-    "Personalized, Thoughtful Customer Service",
-    "Curated Selection of Healthy Plants",
-];
+import { useTranslations } from "@/app/lib/i18n";
 
 export default function About() {
+    const { t, tArray } = useTranslations("home.about");
+    const { t: tCommon } = useTranslations("common");
+    const highlights = tArray("highlights");
+    const paragraphs = tArray("paragraphs");
+
     return (
         <section
             id="about"
@@ -20,17 +19,17 @@ export default function About() {
             <div className="section-container">
                 <div className="grid items-stretch gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14 xl:gap-16">
                     <div className="relative mx-auto h-full min-h-[22rem] w-full sm:min-h-[24rem] lg:mx-0">
-                        <div className="absolute inset-0 overflow-hidden rounded-tl-[2.5rem] rounded-br-[2.5rem] shadow-[0_20px_50px_rgba(10,37,14,0.12)] sm:rounded-tl-[3rem] sm:rounded-br-[3rem]">
+                        <div className="absolute inset-0 overflow-hidden rounded-ss-[2.5rem] rounded-ee-[2.5rem] shadow-[0_20px_50px_rgba(10,37,14,0.12)] sm:rounded-ss-[3rem] sm:rounded-ee-[3rem]">
                             <Image
                                 src="/images/home/aboutImg.webp"
-                                alt="Mahraj Plants team caring for garden flowers together"
+                                alt={t("imageAlt")}
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                                 className="object-cover"
                             />
                         </div>
 
-                        <div className="absolute -top-4 right-0 z-10 w-[9.5rem] rounded-tl-[1.75rem] rounded-br-[1.75rem] bg-section px-5 py-7 text-center text-white shadow-lg sm:-top-6 sm:right-2 sm:w-[10.5rem] sm:px-6 sm:py-8 lg:-right-4">
+                        <div className="absolute -top-4 end-0 z-10 w-[9.5rem] rounded-ss-[1.75rem] rounded-ee-[1.75rem] bg-section px-5 py-7 text-center text-white shadow-lg sm:-top-6 sm:end-2 sm:w-[10.5rem] sm:px-6 sm:py-8 lg:-end-4">
                             <Image
                                 src="/icons/leaf.svg"
                                 alt=""
@@ -43,7 +42,7 @@ export default function About() {
                                 35+
                             </p>
                             <p className="mt-2 text-sm leading-snug font-light sm:text-base">
-                                Years of Gardening
+                                {t("yearsLabel")}
                             </p>
                         </div>
                     </div>
@@ -60,7 +59,7 @@ export default function About() {
                                 aria-hidden
                             />
                             <span className="font-script text-[28px] leading-none text-primary sm:text-[32px]">
-                                Who We Are
+                                {t("eyebrow")}
                             </span>
                         </p>
 
@@ -68,18 +67,13 @@ export default function About() {
                             id="about-heading"
                             className="mt-4 text-[28px] leading-tight font-bold tracking-[-2%] text-primary sm:text-4xl lg:text-[42px]"
                         >
-                            Mahraj Plants &amp; Landscaping
+                            {t("title")}
                         </h2>
 
                         <div className="mt-5 space-y-4 text-sm leading-relaxed text-primary/70 sm:text-base">
-                            <p>
-                                At Mahraj Plants, we bring life, greenery, and timeless
-                                beauty to modern living and outdoor spaces.
-                            </p>
-                            <p>
-                                With years of horticultural experience, we craft custom
-                                landscaping solutions tailored to bring your vision to life.
-                            </p>
+                            {paragraphs.map((paragraph) => (
+                                <p key={paragraph}>{paragraph}</p>
+                            ))}
                         </div>
 
                         <div
@@ -115,9 +109,10 @@ export default function About() {
 
                         <Button
                             variant="secondary"
+                            href="/about"
                             className="mt-8 w-fit self-start rounded-lg px-10 py-3.5 sm:mt-10"
                         >
-                            Read More
+                            {tCommon("readMore")}
                         </Button>
                     </div>
                 </div>

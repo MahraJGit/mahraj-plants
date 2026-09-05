@@ -1,8 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useMemo } from "react";
 import type { PlantCategory } from "@/app/lib/categories";
 import type { Product } from "@/data/types";
 import { getWhatsAppHref } from "@/app/lib/contact";
+import {
+    localizeCategory,
+    localizeProduct,
+    useLocale,
+    useTranslations,
+    type CategoryPageCopy,
+} from "@/app/lib/i18n";
 import ProductImageZoom from "./ProductImageZoom";
 
 type ProductDetailsProps = {
@@ -14,8 +24,22 @@ export default function ProductDetails({
     product,
     category,
 }: ProductDetailsProps) {
+    const { locale } = useLocale();
+    const { t } = useTranslations("productPage");
+    const { tObject } = useTranslations("categoriesPage");
+
+    const localizedCategory = useMemo(() => {
+        const copy = tObject<CategoryPageCopy>(`bySlug.${category.slug}`);
+        return localizeCategory(category, copy, locale);
+    }, [category, locale, tObject]);
+
+    const localizedProduct = useMemo(
+        () => localizeProduct(product, locale),
+        [product, locale],
+    );
+
     const whatsappHref = getWhatsAppHref(
-        `Hello, I would like to inquire about ${product.title} from Mahraj Plants.`,
+        t("whatsappMessage", { product: localizedProduct.title }),
     );
 
     return (
@@ -25,7 +49,7 @@ export default function ProductDetails({
         >
             <div className="section-container">
                 <nav
-                    aria-label="Breadcrumb"
+                    aria-label={t("breadcrumb")}
                     className="mb-8 text-sm text-primary/55 sm:mb-10"
                 >
                     <ol className="flex flex-wrap items-center gap-2">
@@ -34,7 +58,7 @@ export default function ProductDetails({
                                 href="/"
                                 className="transition hover:text-secondary"
                             >
-                                Home
+                                {t("home")}
                             </Link>
                         </li>
                         <li aria-hidden className="text-primary/30">
@@ -42,23 +66,26 @@ export default function ProductDetails({
                         </li>
                         <li>
                             <Link
-                                href={`/categories/${category.slug}`}
+                                href={`/categories/${localizedCategory.slug}`}
                                 className="transition hover:text-secondary"
                             >
-                                {category.label}
+                                {localizedCategory.label}
                             </Link>
                         </li>
                         <li aria-hidden className="text-primary/30">
                             /
                         </li>
                         <li className="font-medium text-primary">
-                            {product.title}
+                            {localizedProduct.title}
                         </li>
                     </ol>
                 </nav>
 
                 <div className="grid items-start gap-8 lg:grid-cols-[24rem_minmax(0,1fr)] lg:gap-14">
-                    <ProductImageZoom src={product.image} alt={product.title} />
+                    <ProductImageZoom
+                        src={localizedProduct.image}
+                        alt={localizedProduct.title}
+                    />
 
                     <div className="flex flex-col justify-center py-2 lg:py-6">
                         <p className="flex items-center gap-2">
@@ -72,10 +99,10 @@ export default function ProductDetails({
                                 aria-hidden
                             />
                             <Link
-                                href={`/categories/${category.slug}`}
+                                href={`/categories/${localizedCategory.slug}`}
                                 className="font-script text-[28px] leading-none text-secondary transition hover:text-primary sm:text-[32px]"
                             >
-                                {category.label}
+                                {localizedCategory.label}
                             </Link>
                         </p>
 
@@ -83,11 +110,11 @@ export default function ProductDetails({
                             id="product-heading"
                             className="mt-4 text-[28px] leading-tight font-bold tracking-[-2%] text-primary sm:text-4xl lg:text-[42px]"
                         >
-                            {product.title}
+                            {localizedProduct.title}
                         </h1>
 
                         <p className="mt-5 text-sm leading-relaxed text-primary/70 sm:text-base">
-                            {product.description}
+                            {localizedProduct.description}
                         </p>
 
                         <div className="mt-8 flex flex-wrap gap-3 sm:mt-10">
@@ -97,13 +124,15 @@ export default function ProductDetails({
                                 rel="noopener noreferrer"
                                 className="inline-flex cursor-pointer items-center justify-center rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-primary/90 sm:px-8 sm:text-base"
                             >
-                                Inquire on WhatsApp
+                                {t("inquireWhatsApp")}
                             </a>
                             <Link
-                                href={`/categories/${category.slug}`}
+                                href={`/categories/${localizedCategory.slug}`}
                                 className="inline-flex cursor-pointer items-center justify-center rounded-full border border-primary/15 bg-white px-7 py-3.5 text-sm font-medium text-primary transition-colors hover:border-secondary hover:text-secondary sm:px-8 sm:text-base"
                             >
-                                Back to {category.label}
+                                {t("backTo", {
+                                    category: localizedCategory.label,
+                                })}
                             </Link>
                         </div>
                     </div>

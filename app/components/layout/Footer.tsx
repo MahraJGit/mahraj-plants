@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -7,39 +9,27 @@ import {
     FaTwitter,
 } from "react-icons/fa";
 import { MdSupportAgent } from "react-icons/md";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/app/lib/contact";
+import {
+    FACEBOOK_HREF,
+    INSTAGRAM_HREF,
+    PHONE_DISPLAY,
+    PHONE_HREF,
+} from "@/app/lib/contact";
+import { useTranslations } from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 
-const services = [
-    { label: "Landscape Design & Planning", href: "/services/landscape-design-planning" },
-    { label: "Irrigation & Drainage Solutions", href: "/services/irrigation-drainage-solutions" },
-    { label: "Green Maintenance Packages", href: "/services/green-maintenance-packages" },
-    { label: "Hardscaping & Lighting", href: "/services/hardscaping-lighting" },
-    { label: "Gardening & Plant Upgrade", href: "/services/gardening-plant-upgrade" },
-];
-
-const usefulLinks = [
-    { label: "Home", href: "/#hero", highlighted: true },
-    { label: "About us", href: "/about" },
-    { label: "Why choose us", href: "/#why-us" },
-    { label: "Feature Projects", href: "/projects" },
-    { label: "Gallery", href: "/projects" },
-    { label: "Pricing Packages", href: "/#consultation" },
-];
-
 const socialLinks = [
-    { label: "Facebook", href: "#", Icon: FaFacebookF },
-    { label: "Twitter", href: "#", Icon: FaTwitter },
-    { label: "Instagram", href: "#", Icon: FaInstagram },
-    { label: "Google Plus", href: "#", Icon: FaGooglePlusG },
+    { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true },
+    { label: "Twitter", href: "#", Icon: FaTwitter, external: false },
+    { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true },
+    { label: "Google Plus", href: "#", Icon: FaGooglePlusG, external: false },
 ];
 
-const legalLinks = [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms & Condition", href: "#" },
-    { label: "Site Map", href: "#" },
-    { label: "Support", href: "/#consultation" },
-];
+type FooterLink = {
+    label: string;
+    href: string;
+    highlighted?: boolean;
+};
 
 function FooterHeading({ children }: { children: React.ReactNode }) {
     return (
@@ -53,13 +43,7 @@ function FooterHeading({ children }: { children: React.ReactNode }) {
     );
 }
 
-function ContactIcon({
-    src,
-    alt,
-}: {
-    src: string;
-    alt: string;
-}) {
+function ContactIcon({ src }: { src: string }) {
     return (
         <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#C4A862]">
             <Image src={src} alt="" width={16} height={16} aria-hidden />
@@ -73,7 +57,7 @@ function LinkArrow() {
             viewBox="0 0 12 12"
             fill="none"
             aria-hidden
-            className="size-3 shrink-0 text-[#C4A862]"
+            className="size-3 shrink-0 text-[#C4A862] rtl:rotate-180"
         >
             <path
                 d="M4.5 2.5 8 6l-3.5 3.5"
@@ -87,6 +71,12 @@ function LinkArrow() {
 }
 
 export default function Footer() {
+    const { t, tObject, locale } = useTranslations("footer");
+
+    const services = tObject<FooterLink[]>("services") ?? [];
+    const usefulLinks = tObject<FooterLink[]>("usefulLinks") ?? [];
+    const legalLinks = tObject<FooterLink[]>("legalLinks") ?? [];
+
     return (
         <footer className="mt-auto bg-section text-white">
             <div className="section-container pb-10 pt-12 lg:pb-14 lg:pt-16">
@@ -98,59 +88,49 @@ export default function Footer() {
                         >
                             <Image
                                 src="/mahraj-landscaping-logo.webp"
-                                alt="Mahraj Landscaping"
+                                alt={t("logoAlt")}
                                 fill
                                 sizes="168px"
-                                className="object-contain object-left"
+                                className="object-contain object-left rtl:object-right"
                             />
                         </Link>
 
                         <ul className="mt-6 space-y-4 text-sm leading-relaxed text-white/85">
                             <li className="flex items-start gap-3">
-                                <ContactIcon
-                                    src="/icons/location-white.svg"
-                                    alt="Location"
-                                />
-                                <span>
-                                    Nursery: Heet, Old Al kharj Road, Riyadh, KSA
-                                </span>
+                                <ContactIcon src="/icons/location-white.svg" />
+                                <span>{t("nurseryAddress")}</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <ContactIcon
-                                    src="/icons/email-white.svg"
-                                    alt="Email"
-                                />
+                                <ContactIcon src="/icons/email-white.svg" />
                                 <Link
                                     href="mailto:info@mahrajplants.com"
                                     className="transition hover:text-secondary"
+                                    dir="ltr"
                                 >
                                     info@mahrajplants.com
                                 </Link>
                             </li>
                             <li className="flex items-start gap-3">
-                                <ContactIcon
-                                    src="/icons/clock-white.svg"
-                                    alt="Hours"
-                                />
-                                <span>
-                                    Wed: 9:00 – 12:00 / Morning | 1:00 PM – 6:00
-                                    PM / Evening
-                                </span>
+                                <ContactIcon src="/icons/clock-white.svg" />
+                                <span>{t("hours")}</span>
                             </li>
                         </ul>
 
                         <a
                             href={PHONE_HREF}
-                            className="mt-6 inline-flex max-w-full items-center gap-3 rounded-full bg-white py-2 pl-2 pr-5 shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition hover:shadow-[0_12px_28px_rgba(0,0,0,0.22)] sm:pr-6"
+                            className="mt-6 inline-flex w-max min-w-[17.5rem] max-w-none items-center gap-3.5 rounded-full bg-white py-2.5 pe-7 ps-2.5 shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition hover:shadow-[0_12px_28px_rgba(0,0,0,0.22)] sm:min-w-[19rem] sm:pe-8"
                         >
-                            <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
+                            <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-secondary text-white sm:size-[3.75rem]">
                                 <MdSupportAgent aria-hidden className="size-8" />
                             </span>
-                            <span className="min-w-0">
-                                <span className="block text-[11px] font-medium uppercase tracking-wide text-primary/55">
-                                    Call Us Support 24/7
+                            <span className="pe-1">
+                                <span className="block whitespace-nowrap text-[11px] font-medium uppercase tracking-wide text-primary/55">
+                                    {t("callSupport")}
                                 </span>
-                                <span className="block text-xl font-bold leading-tight text-primary sm:text-2xl">
+                                <span
+                                    dir="ltr"
+                                    className="mt-0.5 block whitespace-nowrap text-xl font-bold leading-none text-primary sm:text-2xl"
+                                >
                                     {PHONE_DISPLAY}
                                 </span>
                             </span>
@@ -158,10 +138,10 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <FooterHeading>Our Services</FooterHeading>
+                        <FooterHeading>{t("servicesHeading")}</FooterHeading>
                         <ul className="mt-5 space-y-3">
                             {services.map((item) => (
-                                <li key={item.label}>
+                                <li key={item.href}>
                                     <Link
                                         href={item.href}
                                         className="text-sm text-white/80 transition hover:text-secondary"
@@ -174,10 +154,10 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <FooterHeading>Useful Links</FooterHeading>
+                        <FooterHeading>{t("usefulLinksHeading")}</FooterHeading>
                         <ul className="mt-5 space-y-3">
                             {usefulLinks.map((item) => (
-                                <li key={item.label}>
+                                <li key={`${item.href}-${item.label}`}>
                                     <Link
                                         href={item.href}
                                         className={cn(
@@ -196,17 +176,23 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <FooterHeading>Get Our Newsletter</FooterHeading>
+                        <FooterHeading>{t("newsletterHeading")}</FooterHeading>
                         <p className="mt-5 text-sm leading-relaxed text-white/80">
-                            Garden tips, ideas &amp; offers—straight to your inbox.
+                            {t("newsletterBody")}
                         </p>
 
                         <div className="mt-6 flex flex-wrap items-center gap-2.5">
-                            {socialLinks.map(({ label, href, Icon }) => (
+                            {socialLinks.map(({ label, href, Icon, external }) => (
                                 <Link
                                     key={label}
                                     href={href}
                                     aria-label={label}
+                                    {...(external
+                                        ? {
+                                              target: "_blank",
+                                              rel: "noopener noreferrer",
+                                          }
+                                        : {})}
                                     className="flex size-9 items-center justify-center rounded-full bg-white/12 text-white/85 transition hover:bg-secondary hover:text-white"
                                 >
                                     <Icon aria-hidden className="size-3.5" />
@@ -218,21 +204,27 @@ export default function Footer() {
             </div>
 
             <div className="border-t border-white/10 bg-[#061409]">
-                <div className="section-container flex flex-col items-center justify-between gap-4 py-5 text-center text-xs text-white/75 sm:flex-row sm:text-left sm:text-sm">
-                    <p>
-                        © 2026 Mahraj Plants &amp; Landscaping. All Rights Reserved.
-                    </p>
+                <div
+                    className={cn(
+                        "section-container flex flex-col items-center justify-between gap-4 py-5 text-center text-xs text-white/75 sm:flex-row sm:text-sm",
+                        locale === "ar" ? "sm:text-right" : "sm:text-left",
+                    )}
+                >
+                    <p>{t("copyright")}</p>
 
                     <nav
-                        aria-label="Legal links"
+                        aria-label={t("legalNavLabel")}
                         className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2"
                     >
                         {legalLinks.map((item, index) => (
-                            <span key={item.label} className="inline-flex items-center">
+                            <span
+                                key={item.label}
+                                className="inline-flex items-center"
+                            >
                                 {index > 0 && (
                                     <span
                                         aria-hidden
-                                        className="mr-3 text-white/35"
+                                        className="me-3 text-white/35"
                                     >
                                         |
                                     </span>

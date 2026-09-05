@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { FormEvent } from "react";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import type { BlogArticle } from "@/app/lib/blogs";
 import { cn } from "@/app/lib/utils";
@@ -16,6 +18,8 @@ type BlogSidebarProps = {
     onCategoryChange: (category: string | null) => void;
     activeTag: string | null;
     onTagChange: (tag: string | null) => void;
+    /** `filter` = interactive filters on listing. `links` = navigate to /blogs (detail pages). */
+    variant?: "filter" | "links";
 };
 
 function SidebarWidget({
@@ -28,7 +32,12 @@ function SidebarWidget({
     className?: string;
 }) {
     return (
-        <section className={cn("overflow-hidden rounded-2xl bg-white shadow-[0_12px_40px_rgba(10,37,14,0.08)]", className)}>
+        <section
+            className={cn(
+                "overflow-hidden rounded-2xl bg-white shadow-[0_12px_40px_rgba(10,37,14,0.08)]",
+                className,
+            )}
+        >
             <div className="bg-section px-5 py-3.5">
                 <h2 className="text-sm font-bold tracking-wide text-white uppercase sm:text-base">
                     {title}
@@ -49,32 +58,61 @@ export default function BlogSidebar({
     onCategoryChange,
     activeTag,
     onTagChange,
+    variant = "filter",
 }: BlogSidebarProps) {
+    const router = useRouter();
+    const isLinks = variant === "links";
+
+    function handleSearchSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        if (isLinks) {
+            router.push("/blogs");
+        }
+    }
+
     return (
         <aside aria-label="Blog sidebar" className="space-y-6">
             <SidebarWidget title="Search">
-                <label className="relative block">
-                    <span className="sr-only">Search blog posts</span>
-                    <input
-                        type="search"
-                        value={searchQuery}
-                        onChange={(event) =>
-                            onSearchChange(event.target.value)
-                        }
-                        placeholder="Search articles..."
-                        className="w-full rounded-xl border border-primary/12 bg-cream/30 py-3 pr-11 pl-4 text-sm text-primary outline-none transition placeholder:text-primary/40 focus:border-secondary focus:ring-2 focus:ring-secondary/20"
-                    />
-                    <HiOutlineMagnifyingGlass
-                        aria-hidden
-                        className="pointer-events-none absolute top-1/2 right-4 size-5 -translate-y-1/2 text-primary/45"
-                    />
-                </label>
+                <form onSubmit={handleSearchSubmit}>
+                    <label className="relative block">
+                        <span className="sr-only">Search blog posts</span>
+                        <input
+                            type="search"
+                            value={searchQuery}
+                            onChange={(event) =>
+                                onSearchChange(event.target.value)
+                            }
+                            placeholder="Search here"
+                            className="w-full rounded-xl border border-primary/12 bg-cream/30 py-3 pr-11 pl-4 text-sm text-primary outline-none transition placeholder:text-primary/40 focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+                        />
+                        <HiOutlineMagnifyingGlass
+                            aria-hidden
+                            className="pointer-events-none absolute top-1/2 right-4 size-5 -translate-y-1/2 text-primary/45"
+                        />
+                    </label>
+                </form>
             </SidebarWidget>
 
             <SidebarWidget title="Categories">
                 <ul className="divide-y divide-primary/8">
                     {categories.map((category) => {
                         const active = activeCategory === category;
+
+                        if (isLinks) {
+                            return (
+                                <li key={category}>
+                                    <Link
+                                        href="/blogs"
+                                        className="flex w-full items-center justify-between py-3 text-left text-sm text-primary/75 transition hover:text-secondary"
+                                    >
+                                        {category}
+                                        <span aria-hidden className="text-secondary">
+                                            ›
+                                        </span>
+                                    </Link>
+                                </li>
+                            );
+                        }
 
                         return (
                             <li key={category}>
@@ -105,7 +143,7 @@ export default function BlogSidebar({
                     {latestPosts.map((post) => (
                         <li key={post.slug}>
                             <Link
-                                href="#"
+                                href={`/blogs/${post.slug}`}
                                 className="group flex gap-3 outline-none"
                             >
                                 <div className="relative size-16 shrink-0 overflow-hidden rounded-xl">
@@ -136,6 +174,19 @@ export default function BlogSidebar({
                 <ul className="flex flex-wrap gap-2">
                     {tags.map((tag) => {
                         const active = activeTag === tag;
+
+                        if (isLinks) {
+                            return (
+                                <li key={tag}>
+                                    <Link
+                                        href="/blogs"
+                                        className="inline-block rounded-full bg-cream px-3.5 py-1.5 text-xs font-medium text-primary/75 transition hover:bg-secondary/15 hover:text-secondary"
+                                    >
+                                        {tag}
+                                    </Link>
+                                </li>
+                            );
+                        }
 
                         return (
                             <li key={tag}>
