@@ -121,6 +121,7 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
                     height={40}
                     unoptimized
                     draggable={false}
+                    style={{ width: "auto" }}
                     className="h-9 w-auto shrink-0 sm:h-10"
                     aria-hidden
                 />

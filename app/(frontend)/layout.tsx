@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cairo, Great_Vibes, Poppins } from "next/font/google";
+import { Great_Vibes, Noto_Sans_Arabic, Poppins } from "next/font/google";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import FloatingActions from "../components/layout/FloatingActions";
@@ -23,10 +23,10 @@ const greatVibes = Great_Vibes({
   weight: "400",
 });
 
-const cairo = Cairo({
-  variable: "--font-cairo",
+const notoSansArabic = Noto_Sans_Arabic({
+  variable: "--font-noto-sans-arabic",
   subsets: ["arabic", "latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -52,7 +52,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang={locale}
       dir={dir}
-      className={`${poppins.variable} ${greatVibes.variable} ${cairo.variable} h-full antialiased`}
+      className={`${poppins.variable} ${greatVibes.variable} ${notoSansArabic.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body

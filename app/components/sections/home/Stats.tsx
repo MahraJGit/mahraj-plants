@@ -61,6 +61,7 @@ export default function Stats() {
                                         width={40}
                                         height={40}
                                         unoptimized
+                                        style={{ width: "auto" }}
                                         className="h-9 w-auto"
                                     />
                                 </div>

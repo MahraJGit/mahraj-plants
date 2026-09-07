@@ -64,6 +64,7 @@ export default function FeatureHighlights({
                                     width={40}
                                     height={40}
                                     unoptimized
+                                    style={{ width: "auto" }}
                                     className={cn("h-9 w-auto", card.iconClassName)}
                                 />
                             </div>

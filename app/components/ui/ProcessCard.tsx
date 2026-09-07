@@ -69,6 +69,7 @@ export default function ProcessCard({ step, className }: ProcessCardProps) {
                         width={28}
                         height={28}
                         unoptimized
+                        style={{ width: "auto" }}
                         className="mt-4 h-6 w-auto"
                     />
 

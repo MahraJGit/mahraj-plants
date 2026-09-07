@@ -6,8 +6,8 @@ import {
     FaFacebookF,
     FaGooglePlusG,
     FaInstagram,
-    FaTwitter,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { MdSupportAgent } from "react-icons/md";
 import {
     FACEBOOK_HREF,
@@ -16,6 +16,7 @@ import {
     EMAIL_HREF,
     PHONE_DISPLAY,
     PHONE_HREF,
+    X_HREF,
 } from "@/app/lib/contact";
 import { useTranslations } from "@/app/lib/i18n";
 import { useTodayOperatingHoursLabel } from "@/app/lib/i18n/use-operating-hours";
@@ -23,7 +24,7 @@ import { cn } from "@/app/lib/utils";
 
 const socialLinks = [
     { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true },
-    { label: "Twitter", href: "#", Icon: FaTwitter, external: false },
+    { label: "Twitter", href: X_HREF, Icon: FaXTwitter, external: false },
     { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true },
     { label: "Google Plus", href: "#", Icon: FaGooglePlusG, external: false },
 ];

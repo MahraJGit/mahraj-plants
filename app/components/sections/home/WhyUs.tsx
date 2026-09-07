@@ -47,6 +47,7 @@ export default function WhyUs() {
                                     width={14}
                                     height={21}
                                     unoptimized
+                                    style={{ width: "auto" }}
                                     className="h-5 w-auto shrink-0"
                                     aria-hidden
                                 />
@@ -139,6 +140,7 @@ export default function WhyUs() {
                                                 width={40}
                                                 height={40}
                                                 unoptimized
+                                                style={{ width: "auto" }}
                                                 className="h-9 w-auto"
                                             />
                                         </div>

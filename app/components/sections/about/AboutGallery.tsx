@@ -1,55 +1,38 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { HiChevronLeft, HiChevronRight, HiPlus, HiX } from "react-icons/hi";
+import { useTranslations } from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 import AboutTimeline from "./AboutTimeline";
 
-type GalleryImage = {
-    src: string;
-    alt: string;
-};
-
-const galleryImages: GalleryImage[] = [
-    {
-        src: "/images/home/m-landscaping.webp",
-        alt: "Landscaper working on a flowering garden bed",
-    },
-    {
-        src: "/images/home/m-outdoor.webp",
-        alt: "Lush outdoor garden with green lawn and plants",
-    },
-    {
-        src: "/images/home/hero-bg-2.jpg",
-        alt: "Rooftop garden overlooking a city skyline",
-    },
-    {
-        src: "/images/home/m-trees.webp",
-        alt: "Garden terrace with trees and raised planting beds",
-    },
-    {
-        src: "/images/home/hero-bg-3.jpg",
-        alt: "Gardener trimming hedges in a landscaped space",
-    },
-    {
-        src: "/images/home/our-mission.webp",
-        alt: "Team working on sustainable garden landscaping",
-    },
-    {
-        src: "/images/home/aboutImg.webp",
-        alt: "Mahraj Plants team caring for garden flowers",
-    },
-    {
-        src: "/images/home/m-indoor.webp",
-        alt: "Indoor greenery and plant arrangements",
-    },
+const gallerySources = [
+    "/images/home/m-landscaping.webp",
+    "/images/home/m-outdoor.webp",
+    "/images/home/hero-bg-2.jpg",
+    "/images/home/m-trees.webp",
+    "/images/home/hero-bg-3.jpg",
+    "/images/home/our-mission.webp",
+    "/images/home/aboutImg.webp",
+    "/images/home/m-indoor.webp",
 ];
 
 const CARD_GAP = 20;
 const CARD_HEIGHT = 260;
 
 export default function AboutGallery() {
+    const { t, tArray } = useTranslations("aboutPage.gallery");
+    const alts = tArray("alts");
+    const galleryImages = useMemo(
+        () =>
+            gallerySources.map((src, index) => ({
+                src,
+                alt: alts[index] ?? "",
+            })),
+        [alts],
+    );
+
     const scrollRef = useRef<HTMLDivElement>(null);
     const isDragging = useRef(false);
     const dragMoved = useRef(false);
@@ -70,20 +53,18 @@ export default function AboutGallery() {
                 return;
             }
             if (event.key === "ArrowLeft") {
-                setActiveIndex(
-                    (current) =>
-                        current === null
-                            ? null
-                            : (current - 1 + galleryImages.length) %
-                              galleryImages.length,
+                setActiveIndex((current) =>
+                    current === null
+                        ? null
+                        : (current - 1 + galleryImages.length) %
+                          galleryImages.length,
                 );
             }
             if (event.key === "ArrowRight") {
-                setActiveIndex(
-                    (current) =>
-                        current === null
-                            ? null
-                            : (current + 1) % galleryImages.length,
+                setActiveIndex((current) =>
+                    current === null
+                        ? null
+                        : (current + 1) % galleryImages.length,
                 );
             }
         }
@@ -93,7 +74,7 @@ export default function AboutGallery() {
             document.body.style.overflow = previousOverflow;
             window.removeEventListener("keydown", onKeyDown);
         };
-    }, [activeIndex]);
+    }, [activeIndex, galleryImages.length]);
 
     function handlePointerDown(event: React.PointerEvent<HTMLDivElement>) {
         if (event.button !== 0) return;
@@ -150,21 +131,16 @@ export default function AboutGallery() {
     }
 
     function goPrev() {
-        setActiveIndex(
-            (current) =>
-                current === null
-                    ? null
-                    : (current - 1 + galleryImages.length) %
-                      galleryImages.length,
+        setActiveIndex((current) =>
+            current === null
+                ? null
+                : (current - 1 + galleryImages.length) % galleryImages.length,
         );
     }
 
     function goNext() {
-        setActiveIndex(
-            (current) =>
-                current === null
-                    ? null
-                    : (current + 1) % galleryImages.length,
+        setActiveIndex((current) =>
+            current === null ? null : (current + 1) % galleryImages.length,
         );
     }
 
@@ -193,7 +169,7 @@ export default function AboutGallery() {
                             "select-none touch-pan-y",
                         )}
                         style={{ gap: CARD_GAP }}
-                        aria-label="Project gallery images"
+                        aria-label={t("ariaLabel")}
                         onPointerDown={handlePointerDown}
                         onPointerMove={handlePointerMove}
                         onPointerUp={endDrag}
@@ -205,7 +181,7 @@ export default function AboutGallery() {
                                 data-gallery-index={index}
                                 role="button"
                                 tabIndex={0}
-                                aria-label={`View ${image.alt}`}
+                                aria-label={t("viewImage", { alt: image.alt })}
                                 onKeyDown={(event) => {
                                     if (
                                         event.key === "Enter" ||
@@ -254,13 +230,13 @@ export default function AboutGallery() {
                 <div
                     role="dialog"
                     aria-modal="true"
-                    aria-label="Image detail view"
+                    aria-label={t("dialogLabel")}
                     className="fixed inset-0 z-[100] flex items-center justify-center bg-primary/90 p-4 backdrop-blur-sm sm:p-8"
                     onClick={() => setActiveIndex(null)}
                 >
                     <button
                         type="button"
-                        aria-label="Close image view"
+                        aria-label={t("close")}
                         onClick={() => setActiveIndex(null)}
                         className="absolute top-4 right-4 z-20 flex size-11 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:top-6 sm:right-6"
                     >
@@ -269,7 +245,7 @@ export default function AboutGallery() {
 
                     <button
                         type="button"
-                        aria-label="Previous image"
+                        aria-label={t("prev")}
                         onClick={(event) => {
                             event.stopPropagation();
                             goPrev();
@@ -281,7 +257,7 @@ export default function AboutGallery() {
 
                     <button
                         type="button"
-                        aria-label="Next image"
+                        aria-label={t("next")}
                         onClick={(event) => {
                             event.stopPropagation();
                             goNext();

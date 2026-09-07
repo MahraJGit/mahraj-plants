@@ -65,6 +65,7 @@ export default function ServiceCard({
                             width={24}
                             height={24}
                             unoptimized
+                            style={{ width: "auto" }}
                             className="h-6 w-auto brightness-0 invert"
                         />
                     </div>

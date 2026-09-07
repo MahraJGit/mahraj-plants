@@ -103,6 +103,7 @@ export default function SiteCTA() {
                                 width={24}
                                 height={18}
                                 unoptimized
+                                style={{ width: "auto" }}
                                 className="h-4 w-auto brightness-0 invert"
                             />
                             <span className="font-script text-[26px] leading-none text-white sm:text-[30px]">

@@ -89,6 +89,7 @@ export default function BlogCard({
                     width={16}
                     height={16}
                     aria-hidden
+                    style={{ width: "auto" }}
                     className="size-4"
                 />
             </Link>
@@ -127,6 +128,7 @@ export default function BlogCard({
                             width={16}
                             height={16}
                             aria-hidden
+                            style={{ width: "auto" }}
                             className="size-3.5 shrink-0"
                         />
                         {messages.card.by.replace("{author}", post.author)}
@@ -138,6 +140,7 @@ export default function BlogCard({
                             width={16}
                             height={16}
                             aria-hidden
+                            style={{ width: "auto" }}
                             className="size-3.5 shrink-0"
                         />
                         {formatBlogCommentsLabel(post.comments, locale)}

@@ -1,36 +1,16 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 
-const milestones = [
-    {
-        period: "Since 1989",
-        title: "Rooted in a Love for Nature",
-        description:
-            "Landscape was founded with a deep appreciation for gardens and outdoor beauty — bringing nature closer to everyday life.",
-        cardBelow: true,
-    },
-    {
-        period: "1992–1998",
-        title: "From Garden Care to Landscape Craft",
-        description:
-            "We evolved from simple garden maintenance to offering full landscaping services — blending creativity with care.",
-        cardBelow: false,
-    },
-    {
-        period: "2005–2015",
-        title: "Sustainable Practices Take Root",
-        description:
-            "Landscape embraced eco-friendly design, choosing sustainable materials and greener methods for every project we delivered.",
-        cardBelow: true,
-    },
-    {
-        period: "2020–Today",
-        title: "Greener Designs for Shared Futures",
-        description:
-            "We focus on community gardens, urban green spaces, and nature-centered design — growing spaces that bring people together.",
-        cardBelow: false,
-    },
-];
+type Milestone = {
+    period: string;
+    title: string;
+    description: string;
+};
+
+const cardBelowFlags = [true, false, true, false];
 
 function TimelineLabel({
     period,
@@ -73,6 +53,14 @@ function TimelineCard({
 }
 
 export default function AboutTimeline() {
+    const { t, tObject } = useTranslations("aboutPage.timeline");
+    const milestones = (tObject<Milestone[]>("milestones") ?? []).map(
+        (item, index) => ({
+            ...item,
+            cardBelow: cardBelowFlags[index] ?? true,
+        }),
+    );
+
     return (
         <div className="section-container relative pt-12 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24">
             <header className="mx-auto max-w-3xl text-center">
@@ -82,29 +70,27 @@ export default function AboutTimeline() {
                     width={14}
                     height={21}
                     unoptimized
+                    style={{ width: "auto" }}
                     className="mx-auto h-5 w-auto"
                     aria-hidden
                 />
 
                 <p className="mt-4 font-script text-[28px] leading-none text-white sm:text-[32px] lg:text-[36px]">
-                    A Green Timeline
+                    {t("eyebrow")}
                 </p>
 
                 <h2
                     id="about-timeline-heading"
                     className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-4xl lg:text-[42px]"
                 >
-                    Decades Of Designing With Nature
+                    {t("title")}
                 </h2>
 
                 <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
-                    Our history is shaped by a love for nature — growing from
-                    simple gardens into timeless, sustainable landscapes with
-                    heart and purpose.
+                    {t("description")}
                 </p>
             </header>
 
-            {/* Mobile / tablet stacked timeline */}
             <ol className="relative mx-auto mt-12 max-w-xl space-y-10 lg:hidden">
                 <div
                     aria-hidden
@@ -146,7 +132,6 @@ export default function AboutTimeline() {
                 ))}
             </ol>
 
-            {/* Desktop horizontal timeline */}
             <div className="relative mt-16 hidden lg:block">
                 <div
                     aria-hidden

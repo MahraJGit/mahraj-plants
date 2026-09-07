@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "@/app/lib/i18n";
 
 export default function AboutHero() {
+    const { t } = useTranslations("aboutPage.hero");
+
     return (
         <section
             aria-labelledby="about-hero-heading"
@@ -25,25 +30,24 @@ export default function AboutHero() {
                         width={14}
                         height={21}
                         unoptimized
+                        style={{ width: "auto" }}
                         className="mx-auto h-6 w-auto"
                         aria-hidden
                     />
 
                     <p className="mt-4 font-script text-[26px] leading-none text-white sm:text-[32px] lg:text-[36px]">
-                        About Landscape
+                        {t("eyebrow")}
                     </p>
 
                     <h1
                         id="about-hero-heading"
                         className="mt-4 text-[32px] font-bold leading-tight text-white sm:text-[40px] lg:text-[48px]"
                     >
-                        Built With Care, Grown With Love
+                        {t("title")}
                     </h1>
 
                     <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
-                        Every garden tells a story. At Landscape, we shape green
-                        spaces that reflect your values, calm your senses, and
-                        bring nature closer to home.
+                        {t("description")}
                     </p>
                 </div>
             </div>

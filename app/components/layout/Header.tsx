@@ -8,8 +8,8 @@ import {
     FaFacebookF,
     FaGooglePlusG,
     FaInstagram,
-    FaTwitter,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import {
     HiChevronDown,
     HiOutlineClock,
@@ -17,17 +17,17 @@ import {
     HiOutlineMail,
     HiOutlineSearch,
 } from "react-icons/hi";
-import { FACEBOOK_HREF, INSTAGRAM_HREF, EMAIL_HREF } from "@/app/lib/contact";
+import { FACEBOOK_HREF, INSTAGRAM_HREF, EMAIL_HREF, X_HREF } from "@/app/lib/contact";
 import { useTranslations, type Locale } from "@/app/lib/i18n";
 import { useTodayOperatingHoursLabel } from "@/app/lib/i18n/use-operating-hours";
 import { cn } from "@/app/lib/utils";
 import { plantCategoryNav } from "@/app/lib/categories";
 
 const socialLinks = [
-    { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true },
-    { label: "Twitter", href: "#", Icon: FaTwitter, external: false },
-    { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true },
-    { label: "Google Plus", href: "#", Icon: FaGooglePlusG, external: false },
+    { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true, target: "_blank" },
+    { label: "Twitter", href: X_HREF, Icon: FaXTwitter, external: false, target: "_blank" },
+    { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true, target: "_blank" },
+    { label: "Google Plus", href: "#", Icon: FaGooglePlusG, external: false, target: "_blank" },
 ];
 
 const languages = [
@@ -88,7 +88,7 @@ export default function Header() {
     });
 
     const navLinks = [
-        { label: t("home"), href: "/#hero" },
+        { label: t("home"), href: "/" },
         {
             label: t("plantsCategory"),
             href: "/#categories",
@@ -293,7 +293,7 @@ export default function Header() {
                     )}
                 >
                     <Link
-                        href="/#hero"
+                        href="/"
                         className="relative mr-1 h-10 w-[160px] shrink-0 sm:h-11 sm:w-[180px]"
                         onClick={() => setMobileOpen(false)}
                     >
@@ -379,16 +379,17 @@ export default function Header() {
                     </nav>
 
                     <div className="ml-auto flex items-center gap-2 sm:gap-2.5">
-                        <button
+                        {/* <button
                             type="button"
                             aria-label="Search"
                             className="flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition hover:border-white/40 hover:text-secondary"
                         >
                             <HiOutlineSearch aria-hidden className="size-5" />
-                        </button>
+                        </button> */}
 
                         <Link
-                            href="/#categories"
+                            href="https://mahrajagriculture.com/"
+                            target="_blank"
                             className="hidden rounded-full bg-white px-4 py-2.5 text-sm font-medium text-primary transition hover:bg-cream sm:inline-flex lg:px-5"
                             onClick={() => setMobileOpen(false)}
                         >
@@ -468,7 +469,7 @@ export default function Header() {
                         </ul>
 
                         <div className="mt-4 flex items-center gap-2.5">
-                            <button
+                            {/* <button
                                 type="button"
                                 aria-label="Search"
                                 className="flex size-10 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white"
@@ -477,9 +478,10 @@ export default function Header() {
                                     aria-hidden
                                     className="size-5"
                                 />
-                            </button>
+                            </button> */}
                             <Link
-                                href="/#categories"
+                                href="https://mahrajagriculture.com/"
+                                target="_blank"
                                 className="flex flex-1 items-center justify-center rounded-full bg-white px-4 py-3 text-sm font-medium text-primary"
                                 onClick={() => setMobileOpen(false)}
                             >

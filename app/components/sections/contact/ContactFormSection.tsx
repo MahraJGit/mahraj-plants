@@ -112,6 +112,7 @@ export default function ContactFormSection() {
                         width={67}
                         height={55}
                         unoptimized
+                        style={{ width: "auto" }}
                         className="h-12 w-auto sm:h-14"
                         aria-hidden
                     />

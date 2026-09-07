@@ -457,6 +457,139 @@
       "iframeTitle": "Mahraj landscaping & Nursery company location"
     }
   },
+  "aboutPage": {
+    "metaTitle": "About Us | Mahraj Plants",
+    "metaDescription": "Built with care, grown with love. Learn how Mahraj Plants shapes green spaces that reflect your values and bring nature closer to home.",
+    "featuresAriaLabel": "What you can expect from Mahraj Plants",
+    "hero": {
+      "eyebrow": "About Landscape",
+      "title": "Built With Care, Grown With Love",
+      "description": "Every garden tells a story. At Landscape, we shape green spaces that reflect your values, calm your senses, and bring nature closer to home."
+    },
+    "quote": {
+      "ariaLabel": "Garden philosophy",
+      "text": "To tend a garden is to nurture more than plants — it is to grow patience, presence, and a love for life's quiet miracles, unfolding leaf by leaf, reminding us how beauty is sown in stillness and blossoms with care."
+    },
+    "whoWeAre": {
+      "eyebrow": "Who We Are",
+      "title": "Experts In Landscaping, Committed To Quality & Lasting Beauty",
+      "body": "Since 1989, Landscape has been crafting gardens and landscapes that connect people with nature. With a friendly, experienced team, we design green spaces that are both beautiful and meaningful — made to be enjoyed, every day. Each project reflects our deep love for nature and our commitment to sustainable, thoughtful design. We believe that a well-crafted garden is more than just a space — it's a place for connection, calm, and everyday joy.",
+      "startGarden": "Start Your Garden!",
+      "viewServices": "View All Services",
+      "stats": [
+        { "value": "35+", "label": "Years of Gardening" },
+        { "value": "98%", "label": "Client Satisfaction" }
+      ]
+    },
+    "gallery": {
+      "ariaLabel": "Project gallery images",
+      "viewImage": "View {alt}",
+      "dialogLabel": "Image detail view",
+      "close": "Close image view",
+      "prev": "Previous image",
+      "next": "Next image",
+      "alts": [
+        "Landscaper working on a flowering garden bed",
+        "Lush outdoor garden with green lawn and plants",
+        "Rooftop garden overlooking a city skyline",
+        "Garden terrace with trees and raised planting beds",
+        "Gardener trimming hedges in a landscaped space",
+        "Team working on sustainable garden landscaping",
+        "Mahraj Plants team caring for garden flowers",
+        "Indoor greenery and plant arrangements"
+      ]
+    },
+    "timeline": {
+      "eyebrow": "A Green Timeline",
+      "title": "Decades Of Designing With Nature",
+      "description": "Our history is shaped by a love for nature — growing from simple gardens into timeless, sustainable landscapes with heart and purpose.",
+      "milestones": [
+        {
+          "period": "Since 1989",
+          "title": "Rooted in a Love for Nature",
+          "description": "Landscape was founded with a deep appreciation for gardens and outdoor beauty — bringing nature closer to everyday life."
+        },
+        {
+          "period": "1992–1998",
+          "title": "From Garden Care to Landscape Craft",
+          "description": "We evolved from simple garden maintenance to offering full landscaping services — blending creativity with care."
+        },
+        {
+          "period": "2005–2015",
+          "title": "Sustainable Practices Take Root",
+          "description": "Landscape embraced eco-friendly design, choosing sustainable materials and greener methods for every project we delivered."
+        },
+        {
+          "period": "2020–Today",
+          "title": "Greener Designs for Shared Futures",
+          "description": "We focus on community gardens, urban green spaces, and nature-centered design — growing spaces that bring people together."
+        }
+      ]
+    },
+    "expertise": {
+      "eyebrow": "Rooted in Knowledge, Grown with Care",
+      "title": "Crafted With Expertise",
+      "description": "We combine horticultural know-how and design sense to create outdoor spaces that are functional, beautiful, and lasting.",
+      "imageAlt": "Mahraj Plants landscaping team standing together outdoors",
+      "teamCount": "20+",
+      "teamLabel": "Expert Team",
+      "skills": [
+        { "label": "Landscape Design Expertise", "value": 98 },
+        { "label": "Sustainable Solutions", "value": 70 },
+        { "label": "Plant Knowledge & Care", "value": 80 }
+      ],
+      "missionTitle": "Our Mission",
+      "missionBody": "To bring life, beauty, and balance to outdoor spaces through thoughtful design and expert care. At Landscape, we're here to make green living part of your everyday life.",
+      "visionTitle": "Our Vision",
+      "visionBody": "To grow as a leading name in landscape and garden design, creating beautiful, sustainable spaces where nature and people connect, relax, and thrive together."
+    },
+    "counters": {
+      "ariaLabel": "Landscape achievements",
+      "items": [
+        { "value": "80+", "label": "Green Workshops" },
+        { "value": "500+", "label": "Projects Complete" },
+        { "value": "300+", "label": "Tree & Plants Selected" },
+        { "value": "19+", "label": "Our Awards & Wins" }
+      ]
+    },
+    "whyChoose": {
+      "eyebrow": "Why Choose Us",
+      "title": "We Don't Just Garden — We Grow Happiness",
+      "description": "We bring creativity, care, and quality to every space. With a passion for greenery, we turn garden dreams into reality — beautifully and reliably.",
+      "imageAlt": "Mahraj Plants landscaping team standing together in front of a greenhouse",
+      "features": [
+        {
+          "title": "Expertise in Garden & Landscape Design",
+          "description": "Our experienced team brings creativity and horticultural knowledge to craft beautiful, functional outdoor spaces."
+        },
+        {
+          "title": "Customized Solutions for Every Space",
+          "description": "We tailor every project to your style, space, and needs — no two gardens are ever the same."
+        },
+        {
+          "title": "Reliable Service with Lasting Results",
+          "description": "From design to maintenance, we deliver high-quality, sustainable results you can enjoy season after season."
+        },
+        {
+          "title": "Eco-Friendly and Sustainable Materials",
+          "description": "We prioritize native plants and sustainable materials to protect and enhance your outdoor living space."
+        }
+      ]
+    },
+    "team": {
+      "eyebrow": "Meet the Landscape Team",
+      "title": "Working Hard, Growing Together",
+      "description": "Discover the skilled team dedicated to creating beautiful, sustainable outdoor spaces with passion and care.",
+      "ariaLabel": "Team members",
+      "showMember": "Show {name}",
+      "members": [
+        { "name": "Liam Patel", "role": "Irrigation Specialist" },
+        { "name": "Amelia Clarke", "role": "Landscape Architect" },
+        { "name": "Oliver Harris", "role": "Senior Gardener" },
+        { "name": "Sophie Turner", "role": "Project Manager" }
+      ]
+    }
+  },
   "operatingHours": {
     "title": "Operating Hours",
     "description": "Visit us during the hours below. Times are shown in Riyadh local time.",

@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { FaStar, FaThumbsUp } from "react-icons/fa";
+import { useTranslations } from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 
 function SatisfactionIcon({ className }: { className?: string }) {
@@ -22,20 +25,15 @@ function SatisfactionIcon({ className }: { className?: string }) {
     );
 }
 
-const stats = [
-    {
-        value: "35+",
-        label: "Years of Gardening",
-        icon: "leaf" as const,
-    },
-    {
-        value: "98%",
-        label: "Client Satisfaction",
-        icon: "satisfaction" as const,
-    },
-];
+type StatCopy = {
+    value: string;
+    label: string;
+};
 
 export default function AboutWhoWeAre() {
+    const { t, tObject } = useTranslations("aboutPage.whoWeAre");
+    const stats = tObject<StatCopy[]>("stats") ?? [];
+
     return (
         <section
             id="who-we-are"
@@ -53,11 +51,12 @@ export default function AboutWhoWeAre() {
                                     width={14}
                                     height={21}
                                     unoptimized
+                                    style={{ width: "auto" }}
                                     className="h-5 w-auto shrink-0"
                                     aria-hidden
                                 />
                                 <span className="font-script text-[28px] leading-none text-secondary sm:text-[32px]">
-                                    Who We Are
+                                    {t("eyebrow")}
                                 </span>
                             </p>
 
@@ -65,8 +64,7 @@ export default function AboutWhoWeAre() {
                                 id="who-we-are-heading"
                                 className="mt-4 max-w-md text-[26px] leading-tight font-bold tracking-[-2%] text-primary sm:text-4xl lg:text-[40px]"
                             >
-                                Experts In Landscaping, Committed To Quality
-                                &amp; Lasting Beauty
+                                {t("title")}
                             </h2>
 
                             <div className="mt-8 flex flex-wrap gap-3 sm:mt-10">
@@ -74,45 +72,37 @@ export default function AboutWhoWeAre() {
                                     href="/#consultation"
                                     className="inline-flex cursor-pointer items-center justify-center rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-primary/90 sm:px-8 sm:text-base"
                                 >
-                                    Start Your Garden!
+                                    {t("startGarden")}
                                 </Link>
                                 <Link
-                                    href="/#services"
+                                    href="/services"
                                     className="inline-flex cursor-pointer items-center justify-center rounded-full bg-secondary px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-secondary/90 sm:px-8 sm:text-base"
                                 >
-                                    View All Services
+                                    {t("viewServices")}
                                 </Link>
                             </div>
                         </div>
 
                         <div className="flex flex-col justify-center border-t border-dashed border-primary/20 px-6 py-10 sm:px-10 sm:py-12 lg:border-t-0 lg:border-l lg:px-12 lg:py-14 xl:px-14">
                             <p className="text-sm leading-relaxed text-primary/70 sm:text-base sm:leading-relaxed">
-                                Since 1989, Landscape has been crafting gardens
-                                and landscapes that connect people with nature.
-                                With a friendly, experienced team, we design
-                                green spaces that are both beautiful and
-                                meaningful — made to be enjoyed, every day. Each
-                                project reflects our deep love for nature and
-                                our commitment to sustainable, thoughtful
-                                design. We believe that a well-crafted garden is
-                                more than just a space — it&apos;s a place for
-                                connection, calm, and everyday joy.
+                                {t("body")}
                             </p>
 
                             <div className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-2 sm:gap-8">
-                                {stats.map((stat) => (
+                                {stats.map((stat, index) => (
                                     <div
                                         key={stat.label}
                                         className="flex items-center gap-3.5"
                                     >
                                         <div className="flex size-18 shrink-0 items-center justify-center rounded-full bg-secondary shadow-sm">
-                                            {stat.icon === "leaf" ? (
+                                            {index === 0 ? (
                                                 <Image
                                                     src="/icons/leaf.svg"
                                                     alt=""
                                                     width={28}
                                                     height={20}
                                                     unoptimized
+                                                    style={{ width: "auto" }}
                                                     className="h-5 w-auto brightness-0 invert"
                                                     aria-hidden
                                                 />

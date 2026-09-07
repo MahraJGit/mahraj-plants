@@ -66,6 +66,7 @@ export default function CategoryHero({ category }: CategoryHeroProps) {
                         width={14}
                         height={21}
                         unoptimized
+                        style={{ width: "auto" }}
                         className="mx-auto h-6 w-auto"
                         aria-hidden
                     />

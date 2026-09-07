@@ -37,6 +37,7 @@ export default function BlogListCard({ post }: BlogListCardProps) {
                             width={16}
                             height={16}
                             aria-hidden
+                            style={{ width: "auto" }}
                             className="size-3.5 shrink-0"
                         />
                         {messages.card.by.replace("{author}", post.author)}
@@ -48,6 +49,7 @@ export default function BlogListCard({ post }: BlogListCardProps) {
                             width={16}
                             height={16}
                             aria-hidden
+                            style={{ width: "auto" }}
                             className="size-3.5 shrink-0"
                         />
                         {commentsLabel}
@@ -92,6 +94,7 @@ export default function BlogListCard({ post }: BlogListCardProps) {
                                 width={14}
                                 height={14}
                                 aria-hidden
+                                style={{ width: "auto" }}
                                 className="size-3.5"
                             />
                         </span>

@@ -1,44 +1,56 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import TeamMemberCard, {
     type TeamMember,
 } from "@/app/components/ui/TeamMemberCard";
+import { useTranslations } from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 
-const team: TeamMember[] = [
+type MemberCopy = {
+    name: string;
+    role: string;
+};
+
+const memberMedia = [
     {
-        name: "Liam Patel",
-        role: "Irrigation Specialist",
         image: "/images/about/irrigation-specialist.webp",
         icon: "/icons/irrigation-specialist.svg",
     },
     {
-        name: "Amelia Clarke",
-        role: "Landscape Architect",
         image: "/images/about/landscape-architect.webp",
         icon: "/icons/landscape-architect.svg",
     },
     {
-        name: "Oliver Harris",
-        role: "Senior Gardener",
         image: "/images/about/senior-gardener.webp",
         icon: "/icons/senior-gardener.svg",
     },
     {
-        name: "Sophie Turner",
-        role: "Project Manager",
         image: "/images/about/project-manager.webp",
         icon: "/icons/project-manager.svg",
     },
 ];
 
-const slides = [...team, ...team];
-
 const CARD_GAP = 24;
 
 export default function AboutTeam() {
+    const { t, tObject } = useTranslations("aboutPage.team");
+    const memberCopy = tObject<MemberCopy[]>("members") ?? [];
+
+    const team = useMemo<TeamMember[]>(
+        () =>
+            memberCopy.map((member, index) => ({
+                name: member.name,
+                role: member.role,
+                image: memberMedia[index]?.image ?? memberMedia[0].image,
+                icon: memberMedia[index]?.icon ?? memberMedia[0].icon,
+            })),
+        [memberCopy],
+    );
+
+    const slides = useMemo(() => [...team, ...team], [team]);
+
     const scrollRef = useRef<HTMLDivElement>(null);
     const isDragging = useRef(false);
     const dragMoved = useRef(false);
@@ -58,15 +70,13 @@ export default function AboutTeam() {
 
             const cardWidth = card.offsetWidth + CARD_GAP;
             const index = Math.round(container.scrollLeft / cardWidth);
-            setActive(
-                ((index % team.length) + team.length) % team.length,
-            );
+            setActive(((index % team.length) + team.length) % team.length);
         }
 
         onScroll();
         container.addEventListener("scroll", onScroll, { passive: true });
         return () => container.removeEventListener("scroll", onScroll);
-    }, []);
+    }, [team.length]);
 
     function handlePointerDown(event: React.PointerEvent<HTMLDivElement>) {
         if (event.button !== 0) return;
@@ -117,11 +127,7 @@ export default function AboutTeam() {
     }
 
     return (
-        <section
-            id="team"
-            aria-labelledby="team-heading"
-            className="bg-white"
-        >
+        <section id="team" aria-labelledby="team-heading" className="bg-white">
             <div className="mx-auto max-w-[80vw] px-4 py-8 sm:px-6 lg:px-8 lg:py-16">
                 <div className="relative isolate overflow-hidden rounded-[1.75rem] bg-section py-16 sm:rounded-[2rem] sm:py-20 lg:rounded-[2.5rem] lg:py-24">
                     <div
@@ -137,25 +143,24 @@ export default function AboutTeam() {
                                 width={14}
                                 height={21}
                                 unoptimized
+                                style={{ width: "auto" }}
                                 className="mx-auto h-5 w-auto"
                                 aria-hidden
                             />
 
                             <p className="mt-4 font-script text-[28px] leading-none text-white sm:text-[32px] lg:text-[36px]">
-                                Meet the Landscape Team
+                                {t("eyebrow")}
                             </p>
 
                             <h2
                                 id="team-heading"
                                 className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-4xl lg:text-[42px]"
                             >
-                                Working Hard, Growing Together
+                                {t("title")}
                             </h2>
 
                             <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
-                                Discover the skilled team dedicated to creating
-                                beautiful, sustainable outdoor spaces with
-                                passion and care.
+                                {t("description")}
                             </p>
                         </header>
                     </div>
@@ -169,7 +174,7 @@ export default function AboutTeam() {
                                 "cursor-grab active:cursor-grabbing select-none touch-pan-y",
                             )}
                             style={{ gap: CARD_GAP }}
-                            aria-label="Team members"
+                            aria-label={t("ariaLabel")}
                             onPointerDown={handlePointerDown}
                             onPointerMove={handlePointerMove}
                             onPointerUp={endDrag}
@@ -192,7 +197,9 @@ export default function AboutTeam() {
                             <button
                                 key={member.name}
                                 type="button"
-                                aria-label={`Show ${member.name}`}
+                                aria-label={t("showMember", {
+                                    name: member.name,
+                                })}
                                 aria-current={active === index}
                                 onClick={() => goTo(index)}
                                 className={cn(

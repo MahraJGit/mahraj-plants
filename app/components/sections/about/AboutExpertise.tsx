@@ -1,30 +1,33 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 
-const skills = [
-    { label: "Landscape Design Expertise", value: 98 },
-    { label: "Sustainable Solutions", value: 70 },
-    { label: "Plant Knowledge & Care", value: 80 },
-];
-
-const pillars = [
-    {
-        title: "Our Mission",
-        description:
-            "To bring life, beauty, and balance to outdoor spaces through thoughtful design and expert care. At Landscape, we're here to make green living part of your everyday life.",
-        icon: "/icons/mission.svg",
-        tone: "bg-section",
-    },
-    {
-        title: "Our Vision",
-        description:
-            "To grow as a leading name in landscape and garden design, creating beautiful, sustainable spaces where nature and people connect, relax, and thrive together.",
-        icon: "/icons/vision.svg",
-        tone: "bg-[#06180A]",
-    },
-] as const;
+type Skill = {
+    label: string;
+    value: number;
+};
 
 export default function AboutExpertise() {
+    const { t, tObject } = useTranslations("aboutPage.expertise");
+    const skills = tObject<Skill[]>("skills") ?? [];
+
+    const pillars = [
+        {
+            title: t("missionTitle"),
+            description: t("missionBody"),
+            icon: "/icons/mission.svg",
+            tone: "bg-section",
+        },
+        {
+            title: t("visionTitle"),
+            description: t("visionBody"),
+            icon: "/icons/vision.svg",
+            tone: "bg-[#06180A]",
+        },
+    ] as const;
+
     return (
         <section
             id="expertise"
@@ -52,11 +55,12 @@ export default function AboutExpertise() {
                                     width={14}
                                     height={21}
                                     unoptimized
+                                    style={{ width: "auto" }}
                                     className="h-5 w-auto shrink-0"
                                     aria-hidden
                                 />
                                 <span className="font-script text-[26px] leading-none text-primary sm:text-[30px]">
-                                    Rooted in Knowledge, Grown with Care
+                                    {t("eyebrow")}
                                 </span>
                             </p>
 
@@ -64,13 +68,11 @@ export default function AboutExpertise() {
                                 id="expertise-heading"
                                 className="mt-4 text-[28px] leading-tight font-bold tracking-[-2%] text-primary sm:text-4xl lg:text-[42px]"
                             >
-                                Crafted With Expertise
+                                {t("title")}
                             </h2>
 
                             <p className="mt-5 text-sm leading-relaxed text-primary/70 sm:text-base">
-                                We combine horticultural know-how and design
-                                sense to create outdoor spaces that are
-                                functional, beautiful, and lasting.
+                                {t("description")}
                             </p>
 
                             <ul className="mt-8 space-y-5 sm:mt-10">
@@ -101,7 +103,7 @@ export default function AboutExpertise() {
                             <div className="relative aspect-[5/4] overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(10,37,14,0.12)] sm:rounded-[1.75rem] lg:aspect-[4/3] lg:min-h-[22rem]">
                                 <Image
                                     src="/images/about/expertise-content-img.webp"
-                                    alt="Mahraj Plants landscaping team standing together outdoors"
+                                    alt={t("imageAlt")}
                                     fill
                                     sizes="(max-width: 1024px) 100vw, 45vw"
                                     className="object-cover"
@@ -115,10 +117,10 @@ export default function AboutExpertise() {
 
                             <div className="absolute bottom-0 left-0 z-10 flex h-[6.5rem] w-[9.75rem] flex-col justify-center text-center">
                                 <p className="text-3xl font-bold leading-none text-primary sm:text-4xl">
-                                    20+
+                                    {t("teamCount")}
                                 </p>
                                 <p className="mt-1.5 text-sm text-primary/70">
-                                    Expert Team
+                                    {t("teamLabel")}
                                 </p>
                             </div>
                         </div>
@@ -140,6 +142,7 @@ export default function AboutExpertise() {
                                     height={180}
                                     unoptimized
                                     aria-hidden
+                                    style={{ width: "auto" }}
                                     className="pointer-events-none absolute -right-4 -bottom-6 size-36 opacity-[0.12] brightness-0 invert sm:size-44 lg:size-52"
                                 />
 
@@ -151,6 +154,7 @@ export default function AboutExpertise() {
                                             width={40}
                                             height={40}
                                             unoptimized
+                                            style={{ width: "auto" }}
                                             className="size-9 sm:size-10"
                                         />
                                     </div>

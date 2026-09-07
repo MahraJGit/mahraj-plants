@@ -36,6 +36,7 @@ export default function About() {
                                 width={41}
                                 height={30}
                                 unoptimized
+                                style={{ width: "auto" }}
                                 className="mx-auto h-7 w-auto"
                             />
                             <p className="mt-3 text-4xl leading-none font-semibold sm:text-[2.75rem]">
@@ -55,6 +56,7 @@ export default function About() {
                                 width={14}
                                 height={21}
                                 unoptimized
+                                style={{ width: "auto" }}
                                 className="h-5 w-auto shrink-0"
                                 aria-hidden
                             />

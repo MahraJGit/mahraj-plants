@@ -8,6 +8,7 @@ export const EMAIL_DISPLAY = "landscape@mahraj.com";
 export const EMAIL_HREF = `mailto:${EMAIL_DISPLAY}`;
 
 export const FACEBOOK_HREF = "https://www.facebook.com/MahrajPlants/";
+export const X_HREF = "https://x.com/mahrajplants";
 export const INSTAGRAM_HREF =
     "https://www.instagram.com/mahraj_plantsandlandscaping/";
 

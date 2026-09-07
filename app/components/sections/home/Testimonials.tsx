@@ -28,6 +28,7 @@ function Chevron({ direction }: { direction: "prev" | "next" }) {
             width={20}
             height={20}
             aria-hidden
+            style={{ width: "auto" }}
             className={cn(
                 "size-5",
                 direction === "prev" && "rotate-180 rtl:rotate-0",
