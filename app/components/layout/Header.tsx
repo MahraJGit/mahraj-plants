@@ -17,8 +17,9 @@ import {
     HiOutlineMail,
     HiOutlineSearch,
 } from "react-icons/hi";
-import { FACEBOOK_HREF, INSTAGRAM_HREF } from "@/app/lib/contact";
+import { FACEBOOK_HREF, INSTAGRAM_HREF, EMAIL_HREF } from "@/app/lib/contact";
 import { useTranslations, type Locale } from "@/app/lib/i18n";
+import { useTodayOperatingHoursLabel } from "@/app/lib/i18n/use-operating-hours";
 import { cn } from "@/app/lib/utils";
 import { plantCategoryNav } from "@/app/lib/categories";
 
@@ -69,6 +70,7 @@ function NavLink({
 export default function Header() {
     const pathname = usePathname();
     const { t, locale, setLocale } = useTranslations("nav");
+    const todayHoursLabel = useTodayOperatingHoursLabel();
     const [mobileOpen, setMobileOpen] = useState(false);
     const [plantsOpen, setPlantsOpen] = useState(false);
     const [languageOpen, setLanguageOpen] = useState(false);
@@ -187,7 +189,7 @@ export default function Header() {
                             {t("nurseryAddress")}
                         </span>
                         <Link
-                            href="mailto:info@mahrajplants.com"
+                            href={EMAIL_HREF}
                             aria-label="Email Mahraj Plants"
                             className="ml-1 shrink-0 text-white/90 transition hover:text-white"
                         >
@@ -197,7 +199,7 @@ export default function Header() {
 
                     <div className="hidden items-center gap-2 xl:flex">
                         <HiOutlineClock aria-hidden className="size-4 shrink-0" />
-                        <span>{t("hours")}</span>
+                        <span>{todayHoursLabel}</span>
                     </div>
 
                     <div className="flex shrink-0 items-center gap-2.5">
@@ -292,14 +294,14 @@ export default function Header() {
                 >
                     <Link
                         href="/#hero"
-                        className="relative mr-1 h-10 w-[148px] shrink-0 sm:h-11 sm:w-[168px]"
+                        className="relative mr-1 h-10 w-[160px] shrink-0 sm:h-11 sm:w-[180px]"
                         onClick={() => setMobileOpen(false)}
                     >
                         <Image
-                            src="/mahraj-landscaping-logo.webp"
+                            src="/mahraj-landscaping-logo.png"
                             alt="Mahraj Landscaping"
                             fill
-                            sizes="168px"
+                            sizes="180px"
                             className="object-contain object-left"
                             priority
                         />

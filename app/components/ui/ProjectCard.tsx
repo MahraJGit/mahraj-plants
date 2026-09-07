@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/app/lib/utils";
+import { getProjectsMessages, useLocale } from "@/app/lib/i18n";
 import type { PortfolioProject } from "./PortfolioCard";
 
 type ProjectCardProps = {
@@ -50,6 +53,9 @@ export default function ProjectCard({
     href = "#",
     className,
 }: ProjectCardProps) {
+    const { locale } = useLocale();
+    const messages = getProjectsMessages(locale);
+
     return (
         <article
             className={cn(
@@ -108,7 +114,7 @@ export default function ProjectCard({
                         className="group flex items-center justify-between gap-4 outline-none"
                     >
                         <span className="text-sm font-medium text-primary transition-colors group-hover:text-secondary group-focus-visible:text-secondary">
-                            View Project
+                            {messages.detail.viewProject}
                         </span>
                         <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary text-white transition-transform group-hover:scale-105 group-focus-visible:scale-105">
                             <svg

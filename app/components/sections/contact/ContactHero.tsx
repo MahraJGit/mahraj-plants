@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "@/app/lib/i18n";
 
 function GinkgoLeaf({ className }: { className?: string }) {
     return (
@@ -14,6 +17,8 @@ function GinkgoLeaf({ className }: { className?: string }) {
 }
 
 export default function ContactHero() {
+    const { t } = useTranslations("contactPage.hero");
+
     return (
         <section
             aria-labelledby="contact-hero-heading"
@@ -46,20 +51,18 @@ export default function ContactHero() {
                     />
 
                     <p className="mt-4 font-script text-[26px] leading-none text-white sm:text-[32px] lg:text-[36px]">
-                        Get in Touch
+                        {t("eyebrow")}
                     </p>
 
                     <h1
                         id="contact-hero-heading"
                         className="mt-4 text-[32px] font-bold leading-tight text-white sm:text-[40px] lg:text-[48px]"
                     >
-                        We&apos;d Love To Hear From You
+                        {t("title")}
                     </h1>
 
                     <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
-                        Reach out to our friendly team for garden consultations,
-                        inquiries, or support. We&apos;re just a message away
-                        and ready to help your outdoor vision grow.
+                        {t("description")}
                     </p>
                 </div>
             </div>

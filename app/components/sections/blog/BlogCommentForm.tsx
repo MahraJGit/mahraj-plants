@@ -1,12 +1,15 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { getBlogsMessages, useLocale } from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 
 const inputClassName =
     "w-full rounded-xl border border-primary/12 bg-white px-4 py-3.5 text-sm text-primary outline-none transition placeholder:text-primary/40 focus:border-secondary focus:ring-2 focus:ring-secondary/20 sm:px-5";
 
 export default function BlogCommentForm() {
+    const { locale } = useLocale();
+    const messages = getBlogsMessages(locale);
     const [form, setForm] = useState({
         name: "",
         email: "",
@@ -33,19 +36,19 @@ export default function BlogCommentForm() {
                 id="blog-comment-heading"
                 className="text-[22px] leading-tight font-bold tracking-[-1%] text-primary sm:text-[26px]"
             >
-                Post A Comment
+                {messages.comment.heading}
             </h2>
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4 sm:mt-8">
                 <div className="grid gap-4 sm:grid-cols-2">
                     <label className="block">
-                        <span className="sr-only">Name</span>
+                        <span className="sr-only">{messages.comment.name}</span>
                         <input
                             type="text"
                             name="name"
                             required
                             autoComplete="name"
-                            placeholder="Name"
+                            placeholder={messages.comment.name}
                             value={form.name}
                             onChange={(event) =>
                                 setForm((current) => ({
@@ -57,13 +60,13 @@ export default function BlogCommentForm() {
                         />
                     </label>
                     <label className="block">
-                        <span className="sr-only">Email</span>
+                        <span className="sr-only">{messages.comment.email}</span>
                         <input
                             type="email"
                             name="email"
                             required
                             autoComplete="email"
-                            placeholder="Email"
+                            placeholder={messages.comment.email}
                             value={form.email}
                             onChange={(event) =>
                                 setForm((current) => ({
@@ -77,12 +80,12 @@ export default function BlogCommentForm() {
                 </div>
 
                 <label className="block">
-                    <span className="sr-only">Message</span>
+                    <span className="sr-only">{messages.comment.message}</span>
                     <textarea
                         name="message"
                         required
                         rows={5}
-                        placeholder="Message"
+                        placeholder={messages.comment.message}
                         value={form.message}
                         onChange={(event) =>
                             setForm((current) => ({
@@ -106,17 +109,14 @@ export default function BlogCommentForm() {
                         }
                         className="mt-1 size-4 rounded border-primary/20 text-secondary focus:ring-secondary/30"
                     />
-                    <span>
-                        Save my name, email, and website in this browser for the
-                        next time I comment.
-                    </span>
+                    <span>{messages.comment.saveInfo}</span>
                 </label>
 
                 <button
                     type="submit"
                     className="inline-flex cursor-pointer items-center justify-center rounded-full bg-secondary px-8 py-3.5 text-sm font-medium text-white transition hover:bg-secondary/90 sm:text-base"
                 >
-                    Post Comment
+                    {messages.comment.submit}
                 </button>
             </form>
         </section>

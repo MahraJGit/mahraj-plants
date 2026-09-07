@@ -3,6 +3,12 @@
 import { useMemo, useState } from "react";
 import { ProjectCard, Reveal } from "@/app/components/ui";
 import {
+    getProjectsMessages,
+    localizeProjectFilterLabel,
+    localizeProjects,
+    useLocale,
+} from "@/app/lib/i18n";
+import {
     projectFilters,
     projects,
     type ProjectFilter,
@@ -10,12 +16,17 @@ import {
 import { cn } from "@/app/lib/utils";
 
 export default function ProjectsGrid() {
+    const { locale } = useLocale();
+    const messages = getProjectsMessages(locale);
     const [filter, setFilter] = useState<ProjectFilter>("All");
 
     const filteredProjects = useMemo(() => {
-        if (filter === "All") return projects;
-        return projects.filter((project) => project.tags.includes(filter));
-    }, [filter]);
+        const source =
+            filter === "All"
+                ? projects
+                : projects.filter((project) => project.tags.includes(filter));
+        return localizeProjects(source, locale);
+    }, [filter, locale]);
 
     return (
         <section
@@ -43,7 +54,7 @@ export default function ProjectsGrid() {
                             />
                         </svg>
                         <span className="font-script text-[28px] leading-none text-white sm:text-[32px]">
-                            Featured Work
+                            {messages.grid.eyebrow}
                         </span>
                     </p>
 
@@ -51,13 +62,11 @@ export default function ProjectsGrid() {
                         id="projects-grid-heading"
                         className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-4xl lg:text-[42px]"
                     >
-                        Gardens We&apos;ve Designed, Built &amp; Cared For
+                        {messages.grid.title}
                     </h2>
 
                     <p className="mt-5 text-sm leading-relaxed text-white/75 sm:text-base">
-                        Browse our completed landscapes by category — from full garden
-                        redesigns and rooftop retreats to lighting schemes and
-                        productive urban terraces.
+                        {messages.grid.description}
                     </p>
                 </Reveal>
 
@@ -78,7 +87,7 @@ export default function ProjectsGrid() {
                                         : "border-white/20 bg-white/5 text-white/85 hover:border-white/40 hover:text-white",
                                 )}
                             >
-                                {item}
+                                {localizeProjectFilterLabel(item, locale)}
                             </button>
                         );
                     })}
@@ -101,7 +110,7 @@ export default function ProjectsGrid() {
                     </ul>
                 ) : (
                     <p className="mt-12 text-center text-white/70">
-                        No projects found for this category.
+                        {messages.grid.empty}
                     </p>
                 )}
             </div>

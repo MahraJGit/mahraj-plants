@@ -1,8 +1,11 @@
-/** Canonical Mahraj Plants phone / WhatsApp contact. */
+/** Canonical Mahraj Plants phone / WhatsApp / email contact. */
 export const PHONE_DISPLAY = "+966 55 689 1877";
 export const PHONE_HREF = "tel:+966556891877";
 export const WHATSAPP_NUMBER = "966556891877";
 export const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+export const EMAIL_DISPLAY = "landscape@mahraj.com";
+export const EMAIL_HREF = `mailto:${EMAIL_DISPLAY}`;
 
 export const FACEBOOK_HREF = "https://www.facebook.com/MahrajPlants/";
 export const INSTAGRAM_HREF =

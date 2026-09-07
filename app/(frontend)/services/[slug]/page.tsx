@@ -8,6 +8,11 @@ import {
     getAllServiceSlugs,
     getServiceBySlug,
 } from "@/app/lib/services";
+import {
+    getServicesMessages,
+    localizeService,
+} from "@/app/lib/i18n/services-catalog";
+import { getLocale } from "@/app/lib/i18n/get-locale";
 
 type ServiceDetailPageProps = {
     params: Promise<{ slug: string }>;
@@ -22,14 +27,18 @@ export async function generateMetadata({
 }: ServiceDetailPageProps): Promise<Metadata> {
     const { slug } = await params;
     const service = getServiceBySlug(slug);
+    const locale = await getLocale();
+    const messages = getServicesMessages(locale);
 
     if (!service) {
-        return { title: "Service | Mahraj Plants" };
+        return { title: messages.detail.notFoundTitle };
     }
 
+    const localized = localizeService(service, locale);
+
     return {
-        title: `${service.title} | Mahraj Plants`,
-        description: service.description,
+        title: messages.detail.metaTitle.replace("{service}", localized.title),
+        description: localized.description,
     };
 }
 
@@ -46,7 +55,7 @@ export default async function ServiceDetailPage({
     return (
         <>
             <ServiceDetailHero service={service} />
-            <ServiceDetailGallery images={service.gallery} />
+            <ServiceDetailGallery service={service} />
             <ServiceDetailContent service={service} />
             <SiteCTA />
         </>

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { getBlogsMessages, useLocale } from "@/app/lib/i18n";
 
 function GinkgoLeaf({ className }: { className?: string }) {
     return (
@@ -14,6 +17,9 @@ function GinkgoLeaf({ className }: { className?: string }) {
 }
 
 export default function BlogHero() {
+    const { locale } = useLocale();
+    const messages = getBlogsMessages(locale);
+
     return (
         <section
             aria-labelledby="blog-hero-heading"
@@ -46,20 +52,18 @@ export default function BlogHero() {
                     />
 
                     <p className="mt-4 font-script text-[26px] leading-none text-white sm:text-[32px] lg:text-[36px]">
-                        Our Blogs &amp; News
+                        {messages.hero.eyebrow}
                     </p>
 
                     <h1
                         id="blog-hero-heading"
                         className="mt-4 text-[32px] font-bold leading-tight text-white sm:text-[40px] lg:text-[48px]"
                     >
-                        Insights, Tips, And Green Inspiration
+                        {messages.hero.title}
                     </h1>
 
                     <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
-                        Explore expert insights, practical ideas, and fresh
-                        inspiration for better gardening, sustainable living,
-                        and beautiful green spaces.
+                        {messages.hero.description}
                     </p>
                 </div>
             </div>

@@ -1,7 +1,18 @@
+"use client";
+
 import { Reveal, ServiceCard } from "@/app/components/ui";
+import {
+    getServicesMessages,
+    localizeServices,
+    useLocale,
+} from "@/app/lib/i18n";
 import { services } from "@/app/lib/services";
 
 export default function ServicesGrid() {
+    const { locale } = useLocale();
+    const messages = getServicesMessages(locale);
+    const localizedServices = localizeServices(services, locale);
+
     return (
         <section
             id="services-list"
@@ -28,7 +39,7 @@ export default function ServicesGrid() {
                             />
                         </svg>
                         <span className="font-script text-[28px] leading-none text-white sm:text-[32px]">
-                            Best Services For You
+                            {messages.grid.eyebrow}
                         </span>
                     </p>
 
@@ -36,18 +47,16 @@ export default function ServicesGrid() {
                         id="services-grid-heading"
                         className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-4xl lg:text-[42px]"
                     >
-                        Creative, Sustainable, Professional
+                        {messages.grid.title}
                     </h2>
 
                     <p className="mt-5 text-sm leading-relaxed text-white/75 sm:text-base">
-                        We offer a full range of services, from creative landscaping to
-                        ongoing garden care — ensuring beauty and vitality in every
-                        project.
+                        {messages.grid.description}
                     </p>
                 </Reveal>
 
                 <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-7">
-                    {services.map((service, index) => (
+                    {localizedServices.map((service, index) => (
                         <Reveal
                             key={service.slug ?? service.title}
                             as="li"

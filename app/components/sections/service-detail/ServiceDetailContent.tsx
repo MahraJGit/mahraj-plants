@@ -1,5 +1,12 @@
+"use client";
+
 import type { ServiceDetail } from "@/app/lib/services";
 import { ProcessCard, Reveal } from "@/app/components/ui";
+import {
+    getServicesMessages,
+    localizeService,
+    useLocale,
+} from "@/app/lib/i18n";
 import ServiceDetailFAQ from "./ServiceDetailFAQ";
 import ServiceDetailSidebar from "./ServiceDetailSidebar";
 
@@ -38,6 +45,10 @@ function SectionLeafHeading({
 export default function ServiceDetailContent({
     service,
 }: ServiceDetailContentProps) {
+    const { locale } = useLocale();
+    const messages = getServicesMessages(locale);
+    const localized = localizeService(service, locale);
+
     return (
         <section className="bg-white">
             <div className="section-container">
@@ -46,13 +57,13 @@ export default function ServiceDetailContent({
                         <Reveal>
                             <div>
                                 <SectionLeafHeading id="service-intro-heading">
-                                    Service Introduction
+                                    {messages.detail.introHeading}
                                 </SectionLeafHeading>
                                 <p className="mt-4 text-base font-semibold text-primary sm:text-lg">
-                                    {service.introTitle}
+                                    {localized.introTitle}
                                 </p>
                                 <div className="mt-4 space-y-4 text-sm leading-relaxed text-primary/70 sm:text-[15px]">
-                                    {service.introBody.map((paragraph) => (
+                                    {localized.introBody.map((paragraph) => (
                                         <p key={paragraph.slice(0, 32)}>{paragraph}</p>
                                     ))}
                                 </div>
@@ -62,13 +73,13 @@ export default function ServiceDetailContent({
                         <Reveal delayMs={80}>
                             <div className="border-t border-dashed border-primary/15 pt-12">
                                 <SectionLeafHeading id="service-included-heading">
-                                    {service.includedTitle}
+                                    {localized.includedTitle}
                                 </SectionLeafHeading>
                                 <p className="mt-4 text-sm leading-relaxed text-primary/70 sm:text-[15px]">
-                                    {service.includedDescription}
+                                    {localized.includedDescription}
                                 </p>
                                 <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                                    {service.includedItems.map((item) => (
+                                    {localized.includedItems.map((item) => (
                                         <li
                                             key={item}
                                             className="rounded-2xl bg-cream px-4 py-4 text-center text-sm font-medium text-primary transition-transform duration-300 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
@@ -83,14 +94,14 @@ export default function ServiceDetailContent({
                         <Reveal delayMs={100}>
                             <div className="border-t border-dashed border-primary/15 pt-12">
                                 <SectionLeafHeading id="service-process-heading">
-                                    {service.processTitle}
+                                    {localized.processTitle}
                                 </SectionLeafHeading>
                                 <p className="mt-4 text-sm leading-relaxed text-primary/70 sm:text-[15px]">
-                                    {service.processDescription}
+                                    {localized.processDescription}
                                 </p>
 
                                 <ol className="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-4 lg:gap-5">
-                                    {service.processSteps.map((step) => (
+                                    {localized.processSteps.map((step) => (
                                         <li key={step.number} className="min-w-0">
                                             <ProcessCard step={step} />
                                         </li>
@@ -102,16 +113,16 @@ export default function ServiceDetailContent({
                         <Reveal delayMs={80}>
                             <div className="border-t border-dashed border-primary/15 pt-12">
                                 <ServiceDetailFAQ
-                                    title={service.faqTitle}
-                                    description={service.faqDescription}
-                                    faqs={service.faqs}
+                                    title={localized.faqTitle}
+                                    description={localized.faqDescription}
+                                    faqs={localized.faqs}
                                 />
                             </div>
                         </Reveal>
                     </div>
 
                     <Reveal delayMs={140} className="lg:sticky lg:top-28 lg:self-start">
-                        <ServiceDetailSidebar activeSlug={service.slug} />
+                        <ServiceDetailSidebar activeSlug={localized.slug} />
                     </Reveal>
                 </div>
             </div>

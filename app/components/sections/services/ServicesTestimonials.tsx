@@ -1,8 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Button, Reveal } from "@/app/components/ui";
+import {
+    getServicesMessages,
+    localizeTestimonials,
+    useLocale,
+} from "@/app/lib/i18n";
 import { servicesTestimonials } from "@/app/lib/services";
 import { cn } from "@/app/lib/utils";
 
@@ -19,15 +24,22 @@ function StarRating() {
 }
 
 export default function ServicesTestimonials() {
+    const { locale } = useLocale();
+    const messages = getServicesMessages(locale);
+    const testimonials = useMemo(
+        () => localizeTestimonials(servicesTestimonials, locale),
+        [locale],
+    );
     const [activeIndex, setActiveIndex] = useState(0);
     const touchStartX = useRef(0);
-    const testimonial = servicesTestimonials[activeIndex];
+    const testimonial = testimonials[activeIndex];
 
-    const goTo = useCallback((next: number) => {
-        setActiveIndex(
-            (next + servicesTestimonials.length) % servicesTestimonials.length,
-        );
-    }, []);
+    const goTo = useCallback(
+        (next: number) => {
+            setActiveIndex((next + testimonials.length) % testimonials.length);
+        },
+        [testimonials.length],
+    );
 
     const next = useCallback(() => goTo(activeIndex + 1), [activeIndex, goTo]);
     const prev = useCallback(() => goTo(activeIndex - 1), [activeIndex, goTo]);
@@ -38,13 +50,11 @@ export default function ServicesTestimonials() {
         }
 
         const id = window.setInterval(() => {
-            setActiveIndex(
-                (current) => (current + 1) % servicesTestimonials.length,
-            );
+            setActiveIndex((current) => (current + 1) % testimonials.length);
         }, 6000);
 
         return () => window.clearInterval(id);
-    }, [activeIndex]);
+    }, [activeIndex, testimonials.length]);
 
     useEffect(() => {
         function onKeyDown(event: KeyboardEvent) {
@@ -61,7 +71,7 @@ export default function ServicesTestimonials() {
             id="services-testimonials"
             aria-labelledby="services-testimonials-heading"
             aria-roledescription="carousel"
-            aria-label="Client testimonials"
+            aria-label={messages.testimonials.ariaLabel}
             className="relative isolate overflow-hidden"
             onPointerDown={(event) => {
                 if ((event.target as HTMLElement).closest("button")) return;
@@ -101,7 +111,7 @@ export default function ServicesTestimonials() {
                                     className="h-4 w-auto brightness-0 invert"
                                 />
                                 <span className="font-script text-[28px] leading-none text-white sm:text-[32px]">
-                                    Testimonials
+                                    {messages.testimonials.eyebrow}
                                 </span>
                             </p>
 
@@ -109,12 +119,11 @@ export default function ServicesTestimonials() {
                                 id="services-testimonials-heading"
                                 className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-4xl lg:text-[42px]"
                             >
-                                Words From Our Happy Gardeners
+                                {messages.testimonials.title}
                             </h2>
 
                             <p className="mt-4 text-sm leading-relaxed text-white/80 sm:text-base">
-                                Real feedback from customers who trusted us to transform
-                                their outdoor living
+                                {messages.testimonials.description}
                             </p>
                         </div>
 
@@ -122,21 +131,24 @@ export default function ServicesTestimonials() {
                             variant="secondary"
                             className="w-fit shrink-0 rounded-lg px-8 py-3.5"
                         >
-                            View All Testimonials
+                            {messages.testimonials.viewAll}
                         </Button>
                     </header>
                 </Reveal>
 
                 <Reveal delayMs={120}>
                     <div className="mt-10 flex flex-wrap justify-center gap-3 sm:mt-12 sm:gap-4">
-                        {servicesTestimonials.map((item, index) => {
+                        {testimonials.map((item, index) => {
                             const isActive = index === activeIndex;
 
                             return (
                                 <button
                                     key={item.name}
                                     type="button"
-                                    aria-label={`Show testimonial from ${item.name}`}
+                                    aria-label={messages.testimonials.showFrom.replace(
+                                        "{name}",
+                                        item.name,
+                                    )}
                                     aria-current={isActive}
                                     onClick={() => setActiveIndex(index)}
                                     className={cn(
@@ -184,7 +196,6 @@ export default function ServicesTestimonials() {
                 </Reveal>
 
                 <div className="sr-only" aria-live="polite">
-                    Testimonial {activeIndex + 1} of {servicesTestimonials.length}:{" "}
                     {testimonial.name}
                 </div>
             </div>

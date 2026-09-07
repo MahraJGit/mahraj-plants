@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogDetailBody from "@/app/components/sections/blog/BlogDetailBody";
 import BlogDetailHero from "@/app/components/sections/blog/BlogDetailHero";
@@ -6,6 +7,11 @@ import {
     getAllBlogSlugs,
     getBlogBySlug,
 } from "@/app/lib/blogs";
+import {
+    getBlogsMessages,
+    localizeBlog,
+} from "@/app/lib/i18n/blogs-catalog";
+import { getLocale } from "@/app/lib/i18n/get-locale";
 
 type BlogDetailPageProps = {
     params: Promise<{ slug: string }>;
@@ -15,17 +21,23 @@ export function generateStaticParams() {
     return getAllBlogSlugs().map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: BlogDetailPageProps) {
+export async function generateMetadata({
+    params,
+}: BlogDetailPageProps): Promise<Metadata> {
     const { slug } = await params;
     const article = getBlogBySlug(slug);
+    const locale = await getLocale();
+    const messages = getBlogsMessages(locale);
 
     if (!article) {
-        return { title: "Blog Not Found | Mahraj Plants" };
+        return { title: messages.detail.notFoundTitle };
     }
 
+    const localized = localizeBlog(article, locale);
+
     return {
-        title: `${article.title} | Mahraj Plants`,
-        description: article.excerpt,
+        title: messages.detail.metaTitle.replace("{blog}", localized.title),
+        description: localized.excerpt,
     };
 }
 

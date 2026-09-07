@@ -10,6 +10,11 @@ import {
     getProjectBySlug,
     getRelatedProjects,
 } from "@/app/lib/projects";
+import {
+    getProjectsMessages,
+    localizeProject,
+} from "@/app/lib/i18n/projects-catalog";
+import { getLocale } from "@/app/lib/i18n/get-locale";
 
 type ProjectDetailPageProps = {
     params: Promise<{ slug: string }>;
@@ -24,14 +29,18 @@ export async function generateMetadata({
 }: ProjectDetailPageProps): Promise<Metadata> {
     const { slug } = await params;
     const project = getProjectBySlug(slug);
+    const locale = await getLocale();
+    const messages = getProjectsMessages(locale);
 
     if (!project) {
-        return { title: "Project Not Found | Mahraj Plants" };
+        return { title: messages.detail.notFoundTitle };
     }
 
+    const localized = localizeProject(project, locale);
+
     return {
-        title: `${project.title} | Mahraj Plants`,
-        description: project.description,
+        title: messages.detail.metaTitle.replace("{project}", localized.title),
+        description: localized.description,
     };
 }
 
@@ -50,7 +59,7 @@ export default async function ProjectDetailPage({
     return (
         <>
             <ProjectDetailHero project={project} />
-            <ProjectDetailGallery images={project.gallery} />
+            <ProjectDetailGallery project={project} />
             <ProjectDetailContent project={project} />
             <RelatedProjects projects={related} />
             <SiteCTA />

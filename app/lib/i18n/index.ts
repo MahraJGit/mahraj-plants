@@ -17,3 +17,34 @@ export {
     localizeCategory,
 } from "./catalog";
 export type { CategoryPageCopy } from "./catalog";
+export {
+    getServicesMessages,
+    getServiceCopy,
+    localizeService,
+    localizeServices,
+    localizeHighlightCopy,
+    localizeFeatureLabels,
+    localizeTestimonials,
+} from "./services-catalog";
+export type { ServiceSlug, ServicesMessages } from "./services-catalog";
+export {
+    getProjectsMessages,
+    getProjectCopy,
+    localizeProject,
+    localizeProjects,
+    localizeProjectHighlights,
+    localizeProjectFeatureLabels,
+    localizeProjectFilterLabel,
+} from "./projects-catalog";
+export type { ProjectSlug, ProjectsMessages } from "./projects-catalog";
+export {
+    getBlogsMessages,
+    getBlogCopy,
+    localizeBlog,
+    localizeBlogs,
+    localizeBlogCategory,
+    localizeBlogTag,
+    formatLocalizedBlogDate,
+    formatBlogCommentsLabel,
+} from "./blogs-catalog";
+export type { BlogSlug, BlogsMessages } from "./blogs-catalog";

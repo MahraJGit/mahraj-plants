@@ -25,7 +25,6 @@
     "selectLanguage": "Select language",
     "nurseryAddress": "Nursery: Heet, Old Al kharj Road, Riyadh, KSA",
     "exploreCta": "Explore Mahraj Agriculture",
-    "hours": "Wed: 9:00 - 12:00 / Morning | 1:00 PM — 6:00 PM / Evening",
     "categories": {
       "garden-tools": "Garden Tools",
       "indoor-plants": "Indoor Plants",
@@ -307,7 +306,6 @@
   "footer": {
     "logoAlt": "Mahraj Landscaping",
     "nurseryAddress": "Nursery: Heet, Old Al kharj Road, Riyadh, KSA",
-    "hours": "Wed: 9:00 – 12:00 / Morning | 1:00 PM – 6:00 PM / Evening",
     "callSupport": "Call Us Support 24/7",
     "servicesHeading": "Our Services",
     "usefulLinksHeading": "Useful Links",
@@ -420,5 +418,72 @@
     "whatsappMessage": "Hello, I would like to inquire about {product} from Mahraj Plants.",
     "relatedEyebrow": "You May Also Like",
     "relatedTitle": "More {category}"
+  },
+  "contactPage": {
+    "metaTitle": "Contact Us | Mahraj Plants",
+    "metaDescription": "Reach out to Mahraj Plants for garden consultations, inquiries, or support. We're ready to help your outdoor vision grow.",
+    "hero": {
+      "eyebrow": "Get in Touch",
+      "title": "We'd Love To Hear From You",
+      "description": "Reach out to our friendly team for garden consultations, inquiries, or support. We're just a message away and ready to help your outdoor vision grow."
+    },
+    "quote": "Nature speaks through rich textures, vibrant colors, and natural light, and we bring that vision to life. Explore our gallery to see how we craft breathtaking gardens and landscapes with intention, precision, and deep respect for the natural world.",
+    "info": {
+      "title": "Contact Mahraj Plants & Landscaping",
+      "body": "Whether you're dreaming of a lush garden retreat or need expert advice on outdoor design, we're here to help. Reach out anytime — we're passionate about bringing nature closer to you.",
+      "locationLabel": "Our Location",
+      "phoneLabel": "Phone Number",
+      "emailLabel": "Email Address",
+      "workingTimeLabel": "Working Time",
+      "socialMedia": "Social Media"
+    },
+    "form": {
+      "title": "Get In Touch!",
+      "name": "Name",
+      "namePlaceholder": "Name*",
+      "address": "Address",
+      "addressPlaceholder": "Address*",
+      "email": "Email",
+      "emailPlaceholder": "Email*",
+      "phone": "Phone",
+      "phonePlaceholder": "Phone*",
+      "message": "Message",
+      "messagePlaceholder": "Your Message Here...",
+      "privacy": "Your information stays safe with us.",
+      "submit": "Submit Now"
+    },
+    "map": {
+      "ariaLabel": "Mahraj Plants nursery location map",
+      "iframeTitle": "Mahraj landscaping & Nursery company location"
+    }
+  },
+  "operatingHours": {
+    "title": "Operating Hours",
+    "description": "Visit us during the hours below. Times are shown in Riyadh local time.",
+    "day": "Day",
+    "morning": "Morning",
+    "evening": "Evening",
+    "closed": "Closed",
+    "today": "Today",
+    "todayOpen": "{day}: {morning} / Morning | {evening} / Evening",
+    "todayClosed": "{day}: Closed",
+    "daysShort": {
+      "monday": "Mon",
+      "tuesday": "Tue",
+      "wednesday": "Wed",
+      "thursday": "Thu",
+      "friday": "Fri",
+      "saturday": "Sat",
+      "sunday": "Sun"
+    },
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    }
   }
 }

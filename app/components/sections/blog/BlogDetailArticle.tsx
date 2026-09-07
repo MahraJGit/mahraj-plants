@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
     FaFacebookF,
@@ -6,33 +8,15 @@ import {
 } from "react-icons/fa";
 import type { BlogArticle } from "@/app/lib/blogs";
 import {
+    getBlogsMessages,
+    localizeBlog,
+    useLocale,
+} from "@/app/lib/i18n";
+import {
     FACEBOOK_HREF,
     INSTAGRAM_HREF,
     getWhatsAppHref,
 } from "@/app/lib/contact";
-
-const includedItems = [
-    "Rooftop Infrastructure",
-    "Outdoor Lighting",
-    "Tall Garden Hedge",
-    "Sustainable Living Options",
-    "Outdoor Kitchen & Bar",
-    "Irrigation Systems",
-];
-
-const whyItems = [
-    "Maximize unused rooftop space with living greenery",
-    "Improve insulation and reduce urban heat",
-    "Create a private retreat above the city",
-    "Support biodiversity with thoughtfully chosen plants",
-];
-
-const maintenanceTips = [
-    "Water deeply but less often for stronger roots",
-    "Prune seasonally to keep shapes clean and healthy",
-    "Refresh mulch to retain moisture and suppress weeds",
-    "Check irrigation filters every few months",
-];
 
 const shareLinks = [
     { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF },
@@ -44,16 +28,20 @@ type BlogDetailArticleProps = {
 };
 
 export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
+    const { locale } = useLocale();
+    const messages = getBlogsMessages(locale);
+    const body = messages.detail.body;
+    const localized = localizeBlog(article, locale);
     const whatsappShare = getWhatsAppHref(
-        `Check out this article from Mahraj Plants: ${article.title}`,
+        messages.detail.whatsappShare.replace("{title}", localized.title),
     );
 
     return (
         <article className="min-w-0">
             <div className="relative aspect-[16/10] overflow-hidden rounded-[1.75rem]">
                 <Image
-                    src={article.image}
-                    alt={article.alt}
+                    src={localized.image}
+                    alt={localized.alt}
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 70vw"
@@ -62,23 +50,15 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
             </div>
 
             <div className="mt-8 space-y-5 text-sm leading-relaxed text-primary/70 sm:mt-10 sm:text-[15px]">
-                <p>{article.excerpt}</p>
-                <p>
-                    Creating a thriving outdoor space is never just about plants —
-                    it is about listening carefully, designing with intention, and
-                    bringing skilled hands together to shape something lasting. In
-                    this guide, we walk through the ideas, materials, and everyday
-                    choices that help gardens feel welcoming from the first day.
-                </p>
+                <p>{localized.excerpt}</p>
+                <p>{body.introParagraph}</p>
             </div>
 
             <h2 className="mt-10 text-[22px] leading-tight font-bold tracking-[-1%] text-primary sm:text-[26px]">
-                Why Cozy Rooftop Gardens Are Blooming
+                {body.sectionHeading}
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-primary/70 sm:text-[15px]">
-                Rooftop gardens are becoming a favorite for homes and workplaces
-                alike. They turn unused surfaces into green destinations, improve
-                comfort, and bring nature closer even in dense urban settings.
+                {body.sectionBody}
             </p>
 
             <blockquote className="relative mt-8 overflow-hidden rounded-2xl bg-section px-6 py-7 text-white sm:rounded-[1.75rem] sm:px-8 sm:py-8">
@@ -89,20 +69,18 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
                     “
                 </span>
                 <p className="relative z-10 max-w-2xl pl-2 text-sm leading-relaxed text-white/95 sm:pl-4 sm:text-base">
-                    Beauty is not just in what you see; it&apos;s in how it makes
-                    you feel. A well-designed garden brings calm, connection, and
-                    a sense of home that grows richer with every season.
+                    {body.quote}
                 </p>
                 <footer className="relative z-10 mt-5 pl-2 text-sm font-medium text-secondary sm:pl-4">
-                    — Jane Miller, Founder
+                    {body.quoteAuthor}
                 </footer>
             </blockquote>
 
             <h3 className="mt-10 text-lg font-bold text-primary sm:text-xl">
-                What&apos;s Included in Rooftop Gardens
+                {body.includedHeading}
             </h3>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-                {includedItems.map((item) => (
+                {body.includedItems.map((item) => (
                     <li key={item}>
                         <span className="flex min-h-[3rem] items-center justify-center rounded-full bg-cream/80 px-4 py-2.5 text-center text-sm font-medium text-primary">
                             {item}
@@ -112,39 +90,32 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
             </ul>
 
             <h3 className="mt-10 text-lg font-bold text-primary sm:text-xl">
-                Why Rooftop Gardens?
+                {body.whyHeading}
             </h3>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-primary/70 sm:text-[15px]">
-                {whyItems.map((item) => (
+                {body.whyItems.map((item) => (
                     <li key={item}>{item}</li>
                 ))}
             </ul>
 
             <h3 className="mt-10 text-lg font-bold text-primary sm:text-xl">
-                Planning &amp; Designing Your Rooftop Retreat
+                {body.planningHeading}
             </h3>
             <div className="mt-4 gap-6 lg:flex lg:items-start">
                 <div className="space-y-4 text-sm leading-relaxed text-primary/70 sm:text-[15px] lg:min-w-0 lg:flex-1">
-                    <p>
-                        Start with structure: load capacity, waterproofing, and
-                        access paths. Then layer plantings by height and light
-                        needs so the space feels full without becoming crowded.
-                    </p>
-                    <p>
-                        Furniture, containers, and soft lighting complete the
-                        experience — creating a rooftop that works for quiet
-                        mornings and evening gatherings alike.
-                    </p>
+                    {body.planningParagraphs.map((paragraph) => (
+                        <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+                    ))}
                     <ol className="list-decimal space-y-2 pl-5">
-                        <li>Assess sun, wind, and structural limits</li>
-                        <li>Choose containers and irrigation that fit your climate</li>
-                        <li>Blend edible and ornamental plants for year-round interest</li>
+                        {body.planningSteps.map((step) => (
+                            <li key={step}>{step}</li>
+                        ))}
                     </ol>
                 </div>
                 <div className="relative mt-6 aspect-[3/4] w-full overflow-hidden rounded-2xl lg:mt-0 lg:w-56 xl:w-64">
                     <Image
                         src="/images/home/m-outdoor.webp"
-                        alt="Rooftop garden with seating and layered greenery"
+                        alt={body.planningImageAlt}
                         fill
                         sizes="(max-width: 1024px) 100vw, 256px"
                         className="object-cover"
@@ -153,22 +124,22 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
             </div>
 
             <h3 className="mt-10 text-lg font-bold text-primary sm:text-xl">
-                Maintenance Tips
+                {body.maintenanceHeading}
             </h3>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-primary/70 sm:text-[15px]">
-                {maintenanceTips.map((item) => (
+                {body.maintenanceTips.map((item) => (
                     <li key={item}>{item}</li>
                 ))}
             </ul>
 
             <h3 className="mt-10 text-lg font-bold text-primary sm:text-xl">
-                Some Rooftop Gardens In Bloom
+                {body.galleryHeading}
             </h3>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                     <Image
                         src="/images/home/m-landscaping.webp"
-                        alt="Urban rooftop garden with lush planting beds"
+                        alt={body.galleryAlts[0]}
                         fill
                         sizes="(max-width: 640px) 100vw, 35vw"
                         className="object-cover"
@@ -177,7 +148,7 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                     <Image
                         src="/images/home/hero-bg-3.jpg"
-                        alt="Finished rooftop garden with outdoor seating"
+                        alt={body.galleryAlts[1]}
                         fill
                         sizes="(max-width: 640px) 100vw, 35vw"
                         className="object-cover"
@@ -187,8 +158,10 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
 
             <footer className="mt-10 flex flex-col gap-5 border-t border-dashed border-primary/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-sm font-semibold text-primary">Tags:</span>
-                    {article.tags.map((tag) => (
+                    <span className="text-sm font-semibold text-primary">
+                        {messages.detail.tagsLabel}
+                    </span>
+                    {localized.tags.map((tag) => (
                         <span
                             key={tag}
                             className="rounded-full bg-cream px-3.5 py-1.5 text-xs font-medium text-primary/75"
@@ -199,7 +172,9 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
                 </div>
 
                 <div className="flex items-center gap-3">
-                    <span className="text-sm font-semibold text-primary">Share</span>
+                    <span className="text-sm font-semibold text-primary">
+                        {messages.detail.shareLabel}
+                    </span>
                     <ul className="flex items-center gap-2">
                         {shareLinks.map(({ label, href, Icon }) => (
                             <li key={label}>
@@ -207,7 +182,10 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
                                     href={href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    aria-label={`Share on ${label}`}
+                                    aria-label={messages.detail.shareOn.replace(
+                                        "{label}",
+                                        label,
+                                    )}
                                     className="flex size-9 items-center justify-center rounded-full bg-section text-white transition hover:bg-secondary"
                                 >
                                     <Icon aria-hidden className="size-3.5" />
@@ -219,7 +197,7 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
                                 href={whatsappShare}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                aria-label="Share on WhatsApp"
+                                aria-label={messages.detail.shareWhatsApp}
                                 className="flex size-9 items-center justify-center rounded-full bg-whatsapp text-white transition hover:opacity-90"
                             >
                                 <FaWhatsapp aria-hidden className="size-4" />

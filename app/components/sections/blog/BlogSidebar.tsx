@@ -3,9 +3,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FormEvent } from "react";
+import { FormEvent, useMemo } from "react";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import type { BlogArticle } from "@/app/lib/blogs";
+import {
+    formatBlogCommentsLabel,
+    getBlogsMessages,
+    localizeBlogCategory,
+    localizeBlogTag,
+    localizeBlogs,
+    useLocale,
+} from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 
 type BlogSidebarProps = {
@@ -61,7 +69,13 @@ export default function BlogSidebar({
     variant = "filter",
 }: BlogSidebarProps) {
     const router = useRouter();
+    const { locale } = useLocale();
+    const messages = getBlogsMessages(locale);
     const isLinks = variant === "links";
+    const localizedLatest = useMemo(
+        () => localizeBlogs(latestPosts, locale),
+        [latestPosts, locale],
+    );
 
     function handleSearchSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -71,18 +85,21 @@ export default function BlogSidebar({
     }
 
     return (
-        <aside aria-label="Blog sidebar" className="space-y-6">
-            <SidebarWidget title="Search">
+        <aside
+            aria-label={messages.sidebar.ariaLabel}
+            className="space-y-6 lg:sticky lg:top-28 lg:self-start"
+        >
+            <SidebarWidget title={messages.sidebar.search}>
                 <form onSubmit={handleSearchSubmit}>
                     <label className="relative block">
-                        <span className="sr-only">Search blog posts</span>
+                        <span className="sr-only">{messages.sidebar.searchSr}</span>
                         <input
                             type="search"
                             value={searchQuery}
                             onChange={(event) =>
                                 onSearchChange(event.target.value)
                             }
-                            placeholder="Search here"
+                            placeholder={messages.sidebar.searchPlaceholder}
                             className="w-full rounded-xl border border-primary/12 bg-cream/30 py-3 pr-11 pl-4 text-sm text-primary outline-none transition placeholder:text-primary/40 focus:border-secondary focus:ring-2 focus:ring-secondary/20"
                         />
                         <HiOutlineMagnifyingGlass
@@ -93,10 +110,11 @@ export default function BlogSidebar({
                 </form>
             </SidebarWidget>
 
-            <SidebarWidget title="Categories">
+            <SidebarWidget title={messages.sidebar.categories}>
                 <ul className="divide-y divide-primary/8">
                     {categories.map((category) => {
                         const active = activeCategory === category;
+                        const label = localizeBlogCategory(category, locale);
 
                         if (isLinks) {
                             return (
@@ -105,7 +123,7 @@ export default function BlogSidebar({
                                         href="/blogs"
                                         className="flex w-full items-center justify-between py-3 text-left text-sm text-primary/75 transition hover:text-secondary"
                                     >
-                                        {category}
+                                        {label}
                                         <span aria-hidden className="text-secondary">
                                             ›
                                         </span>
@@ -130,7 +148,7 @@ export default function BlogSidebar({
                                             : "text-primary/75",
                                     )}
                                 >
-                                    {category}
+                                    {label}
                                 </button>
                             </li>
                         );
@@ -138,9 +156,9 @@ export default function BlogSidebar({
                 </ul>
             </SidebarWidget>
 
-            <SidebarWidget title="Latest Post">
+            <SidebarWidget title={messages.sidebar.latestPost}>
                 <ul className="space-y-4">
-                    {latestPosts.map((post) => (
+                    {localizedLatest.map((post) => (
                         <li key={post.slug}>
                             <Link
                                 href={`/blogs/${post.slug}`}
@@ -160,8 +178,11 @@ export default function BlogSidebar({
                                         {post.title}
                                     </p>
                                     <p className="mt-1 text-xs text-primary/55">
-                                        {post.day} {post.month} · {post.comments}{" "}
-                                        Comments
+                                        {post.day} {post.month} ·{" "}
+                                        {formatBlogCommentsLabel(
+                                            post.comments,
+                                            locale,
+                                        )}
                                     </p>
                                 </div>
                             </Link>
@@ -170,10 +191,11 @@ export default function BlogSidebar({
                 </ul>
             </SidebarWidget>
 
-            <SidebarWidget title="Tags">
+            <SidebarWidget title={messages.sidebar.tags}>
                 <ul className="flex flex-wrap gap-2">
                     {tags.map((tag) => {
                         const active = activeTag === tag;
+                        const label = localizeBlogTag(tag, locale);
 
                         if (isLinks) {
                             return (
@@ -182,7 +204,7 @@ export default function BlogSidebar({
                                         href="/blogs"
                                         className="inline-block rounded-full bg-cream px-3.5 py-1.5 text-xs font-medium text-primary/75 transition hover:bg-secondary/15 hover:text-secondary"
                                     >
-                                        {tag}
+                                        {label}
                                     </Link>
                                 </li>
                             );
@@ -202,7 +224,7 @@ export default function BlogSidebar({
                                             : "bg-cream text-primary/75 hover:bg-secondary/15 hover:text-secondary",
                                     )}
                                 >
-                                    {tag}
+                                    {label}
                                 </button>
                             </li>
                         );

@@ -3,6 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { RefObject } from "react";
+import {
+    formatBlogCommentsLabel,
+    getBlogsMessages,
+    useLocale,
+} from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 
 export type BlogPost = {
@@ -29,6 +34,9 @@ export default function BlogCard({
     href = "#",
     className,
 }: BlogCardProps) {
+    const { locale } = useLocale();
+    const messages = getBlogsMessages(locale);
+
     return (
         <article
             className={cn(
@@ -65,7 +73,7 @@ export default function BlogCard({
 
             <Link
                 href={href}
-                aria-label={`Read ${post.title}`}
+                aria-label={messages.card.readAria.replace("{title}", post.title)}
                 onClick={(event) => {
                     if (dragMovedRef?.current) event.preventDefault();
                 }}
@@ -121,7 +129,7 @@ export default function BlogCard({
                             aria-hidden
                             className="size-3.5 shrink-0"
                         />
-                        By: {post.author}
+                        {messages.card.by.replace("{author}", post.author)}
                     </span>
                     <span className="inline-flex items-center gap-1.5">
                         <Image
@@ -132,7 +140,7 @@ export default function BlogCard({
                             aria-hidden
                             className="size-3.5 shrink-0"
                         />
-                        {post.comments} Comments
+                        {formatBlogCommentsLabel(post.comments, locale)}
                     </span>
                 </div>
             </div>

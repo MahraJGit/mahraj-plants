@@ -2,76 +2,31 @@
 
 import Image from "next/image";
 import { useMemo, useRef } from "react";
-import { BlogCard, type BlogPost } from "@/app/components/ui";
-import { useTranslations } from "@/app/lib/i18n";
+import { BlogCard } from "@/app/components/ui";
+import {
+    localizeBlogs,
+    useLocale,
+    useTranslations,
+} from "@/app/lib/i18n";
+import { blogArticles } from "@/app/lib/blogs";
 import { cn } from "@/app/lib/utils";
-
-const blogMeta = [
-    {
-        image: "/images/home/hero-bg-2.jpg",
-        day: "23",
-        author: "mahrajplant",
-        comments: 0,
-    },
-    {
-        image: "/images/home/m-outdoor.webp",
-        day: "23",
-        author: "mahrajplant",
-        comments: 0,
-    },
-    {
-        image: "/images/home/m-landscaping.webp",
-        day: "23",
-        author: "mahrajplant",
-        comments: 0,
-    },
-    {
-        image: "/images/home/hero-bg-3.jpg",
-        day: "18",
-        author: "mahrajplant",
-        comments: 2,
-    },
-    {
-        image: "/images/home/m-trees.webp",
-        day: "05",
-        author: "mahrajplant",
-        comments: 1,
-    },
-];
 
 const CARD_GAP = 24;
 const CARD_HEIGHT = 380;
 
-type BlogCopy = {
-    title: string;
-    excerpt: string;
-    alt: string;
-    month: string;
-};
-
 export default function Blogs() {
-    const { t, tObject, locale } = useTranslations("home.blogs");
+    const { locale } = useLocale();
+    const { t } = useTranslations("home.blogs");
     const scrollRef = useRef<HTMLDivElement>(null);
     const isDragging = useRef(false);
     const dragMoved = useRef(false);
     const pointerStartX = useRef(0);
     const scrollStartLeft = useRef(0);
 
-    const blogs = useMemo(() => {
-        const items = tObject<BlogCopy[]>("items");
-        if (!Array.isArray(items)) return [] as BlogPost[];
-
-        return items.map((item, index) => ({
-            title: item.title,
-            excerpt: item.excerpt,
-            image: blogMeta[index].image,
-            alt: item.alt,
-            day: blogMeta[index].day,
-            month: item.month,
-            author: blogMeta[index].author,
-            comments: blogMeta[index].comments,
-        }));
-    }, [tObject, locale]);
+    const blogs = useMemo(
+        () => localizeBlogs(blogArticles.slice(0, 5), locale),
+        [locale],
+    );
 
     function handlePointerDown(event: React.PointerEvent<HTMLDivElement>) {
         if ((event.target as HTMLElement).closest("a, button")) return;
@@ -157,11 +112,15 @@ export default function Blogs() {
                     >
                         {blogs.map((post) => (
                             <div
-                                key={post.title}
+                                key={post.slug}
                                 className="w-[min(88vw,400px)] shrink-0 sm:w-[360px] lg:w-[400px]"
                                 style={{ height: CARD_HEIGHT }}
                             >
-                                <BlogCard post={post} dragMovedRef={dragMoved} />
+                                <BlogCard
+                                    post={post}
+                                    href={`/blogs/${post.slug}`}
+                                    dragMovedRef={dragMoved}
+                                />
                             </div>
                         ))}
                     </div>

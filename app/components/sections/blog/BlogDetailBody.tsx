@@ -7,6 +7,7 @@ import {
     blogTags,
     getLatestBlogArticles,
 } from "@/app/lib/blogs";
+import { getBlogsMessages, useLocale } from "@/app/lib/i18n";
 import BlogCommentForm from "./BlogCommentForm";
 import BlogDetailArticle from "./BlogDetailArticle";
 import BlogSidebar from "./BlogSidebar";
@@ -16,10 +17,12 @@ type BlogDetailBodyProps = {
 };
 
 export default function BlogDetailBody({ article }: BlogDetailBodyProps) {
+    const { locale } = useLocale();
+    const messages = getBlogsMessages(locale);
     const [searchQuery, setSearchQuery] = useState("");
 
     return (
-        <section aria-label="Blog article" className="bg-cream/40">
+        <section aria-label={messages.detail.ariaLabel} className="bg-cream/40">
             <div className="section-container">
                 <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px] xl:gap-12">
                     <div>

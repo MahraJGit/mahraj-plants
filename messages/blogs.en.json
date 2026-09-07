@@ -1,0 +1,247 @@
+{
+  "hero": {
+    "eyebrow": "Our Blogs & News",
+    "title": "Insights, Tips, And Green Inspiration",
+    "description": "Explore expert insights, practical ideas, and fresh inspiration for better gardening, sustainable living, and beautiful green spaces."
+  },
+  "listing": {
+    "ariaLabel": "Blog posts",
+    "emptyTitle": "No articles found",
+    "emptyDescription": "Try adjusting your search or filters.",
+    "paginationLabel": "Blog pagination",
+    "prevPage": "Previous page",
+    "nextPage": "Next page",
+    "pageLabel": "Page {n}"
+  },
+  "sidebar": {
+    "ariaLabel": "Blog sidebar",
+    "search": "Search",
+    "searchSr": "Search blog posts",
+    "searchPlaceholder": "Search here",
+    "categories": "Categories",
+    "latestPost": "Latest Post",
+    "tags": "Tags",
+    "commentsCount": "{count} Comments"
+  },
+  "card": {
+    "by": "By: {author}",
+    "noComments": "No Comments",
+    "oneComment": "1 Comment",
+    "comments": "{count} Comments",
+    "readMore": "Read More",
+    "readAria": "Read {title}"
+  },
+  "detail": {
+    "ariaLabel": "Blog article",
+    "tagsLabel": "Tags:",
+    "shareLabel": "Share",
+    "shareOn": "Share on {label}",
+    "shareWhatsApp": "Share on WhatsApp",
+    "whatsappShare": "Check out this article from Mahraj Plants: {title}",
+    "metaTitle": "{blog} | Mahraj Plants",
+    "notFoundTitle": "Blog Not Found | Mahraj Plants",
+    "pageMetaTitle": "Blogs & News | Mahraj Plants",
+    "pageMetaDescription": "Explore expert insights, practical ideas, and fresh inspiration for better gardening and sustainable living from Mahraj Plants.",
+    "body": {
+      "introParagraph": "Creating a thriving outdoor space is never just about plants — it is about listening carefully, designing with intention, and bringing skilled hands together to shape something lasting. In this guide, we walk through the ideas, materials, and everyday choices that help gardens feel welcoming from the first day.",
+      "sectionHeading": "Why Cozy Rooftop Gardens Are Blooming",
+      "sectionBody": "Rooftop gardens are becoming a favorite for homes and workplaces alike. They turn unused surfaces into green destinations, improve comfort, and bring nature closer even in dense urban settings.",
+      "quote": "Beauty is not just in what you see; it's in how it makes you feel. A well-designed garden brings calm, connection, and a sense of home that grows richer with every season.",
+      "quoteAuthor": "— Jane Miller, Founder",
+      "includedHeading": "What's Included in Rooftop Gardens",
+      "includedItems": [
+        "Rooftop Infrastructure",
+        "Outdoor Lighting",
+        "Tall Garden Hedge",
+        "Sustainable Living Options",
+        "Outdoor Kitchen & Bar",
+        "Irrigation Systems"
+      ],
+      "whyHeading": "Why Rooftop Gardens?",
+      "whyItems": [
+        "Maximize unused rooftop space with living greenery",
+        "Improve insulation and reduce urban heat",
+        "Create a private retreat above the city",
+        "Support biodiversity with thoughtfully chosen plants"
+      ],
+      "planningHeading": "Planning & Designing Your Rooftop Retreat",
+      "planningParagraphs": [
+        "Start with structure: load capacity, waterproofing, and access paths. Then layer plantings by height and light needs so the space feels full without becoming crowded.",
+        "Furniture, containers, and soft lighting complete the experience — creating a rooftop that works for quiet mornings and evening gatherings alike."
+      ],
+      "planningSteps": [
+        "Assess sun, wind, and structural limits",
+        "Choose containers and irrigation that fit your climate",
+        "Blend edible and ornamental plants for year-round interest"
+      ],
+      "planningImageAlt": "Rooftop garden with seating and layered greenery",
+      "maintenanceHeading": "Maintenance Tips",
+      "maintenanceTips": [
+        "Water deeply but less often for stronger roots",
+        "Prune seasonally to keep shapes clean and healthy",
+        "Refresh mulch to retain moisture and suppress weeds",
+        "Check irrigation filters every few months"
+      ],
+      "galleryHeading": "Some Rooftop Gardens In Bloom",
+      "galleryAlts": [
+        "Urban rooftop garden with lush planting beds",
+        "Finished rooftop garden with outdoor seating"
+      ]
+    }
+  },
+  "comment": {
+    "heading": "Post A Comment",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "saveInfo": "Save my name, email, and website in this browser for the next time I comment.",
+    "submit": "Post Comment"
+  },
+  "categories": {
+    "DIY garden projects": "DIY garden projects",
+    "Garden Design Ideas": "Garden Design Ideas",
+    "Outdoor Living Inspiration": "Outdoor Living Inspiration",
+    "Plant Care & Advice": "Plant Care & Advice",
+    "Seasonal Gardening Tips": "Seasonal Gardening Tips"
+  },
+  "tags": {
+    "DIY": "DIY",
+    "Garden Design": "Garden Design",
+    "Landscaping Ideas": "Landscaping Ideas",
+    "Organic": "Organic",
+    "Plant Care": "Plant Care",
+    "Soil Health": "Soil Health",
+    "Tools": "Tools",
+    "Watering Tips": "Watering Tips"
+  },
+  "months": {
+    "JAN": "January",
+    "FEB": "February",
+    "MAR": "March",
+    "APR": "April",
+    "MAY": "May",
+    "JUN": "June",
+    "JUL": "July",
+    "AUG": "August",
+    "SEP": "September",
+    "OCT": "October",
+    "NOV": "November",
+    "DEC": "December"
+  },
+  "monthsShort": {
+    "JAN": "JAN",
+    "FEB": "FEB",
+    "MAR": "MAR",
+    "APR": "APR",
+    "MAY": "MAY",
+    "JUN": "JUN",
+    "JUL": "JUL",
+    "AUG": "AUG",
+    "SEP": "SEP",
+    "OCT": "OCT",
+    "NOV": "NOV",
+    "DEC": "DEC"
+  },
+  "behind-the-green-meet-our-team": {
+    "title": "Behind The Green: Meet Our Talented Team",
+    "excerpt": "Get to know the passionate, skilled people behind Mahraj Plants' green transformations. From designers to gardeners, our team is dedicated to turning outdoor dreams into lush reality.",
+    "alt": "Mahraj Plants team working together in a garden nursery",
+    "month": "JUN",
+    "category": "Outdoor Living Inspiration",
+    "tags": [
+      "Garden Design",
+      "Landscaping Ideas"
+    ]
+  },
+  "balcony-makeovers-decoded": {
+    "title": "Balcony Makeovers Decoded: From Tiny Urban Space To Pocket-Sized Paradise",
+    "excerpt": "Small balconies can feel like full gardens with the right layout, planters, and plant choices. Here is how we turn compact urban spaces into calming green retreats.",
+    "alt": "Balcony garden overlooking a city skyline at sunset",
+    "month": "JUN",
+    "category": "Garden Design Ideas",
+    "tags": [
+      "Garden Design",
+      "DIY"
+    ]
+  },
+  "garden-privacy-shielding-your-space": {
+    "title": "Garden Privacy: Shielding Your Space While Staying Truly Connected",
+    "excerpt": "Privacy planting does not mean closing off your garden. Learn how hedges, trellises, and layered greenery create seclusion without losing light or openness.",
+    "alt": "Private garden with lush lawn and wooden seating",
+    "month": "JUN",
+    "category": "Garden Design Ideas",
+    "tags": [
+      "Landscaping Ideas",
+      "Garden Design"
+    ]
+  },
+  "how-to-create-a-beautiful-balcony-garden": {
+    "title": "How To Create A Beautiful Balcony Garden In A Small Space",
+    "excerpt": "You do not need a large yard to enjoy gardening. With smart planter placement, vertical greenery, and the right species, even the smallest balcony can become a vibrant oasis.",
+    "alt": "Small balcony filled with potted plants and flowers",
+    "month": "JUN",
+    "category": "DIY garden projects",
+    "tags": [
+      "DIY",
+      "Garden Design"
+    ]
+  },
+  "seasonal-plant-care-all-year": {
+    "title": "Seasonal Plant Care: Keeping Your Garden Thriving All Year",
+    "excerpt": "From spring planting to winter protection, a seasonal rhythm keeps gardens healthy. Our practical checklist covers watering, pruning, and soil care month by month.",
+    "alt": "Gardener tending plants in a landscaped outdoor space",
+    "month": "JUL",
+    "category": "Seasonal Gardening Tips",
+    "tags": [
+      "Plant Care",
+      "Watering Tips",
+      "Soil Health"
+    ]
+  },
+  "sustainable-garden-design-ideas": {
+    "title": "Sustainable Garden Design Ideas For Modern Homes",
+    "excerpt": "Eco-friendly gardens combine native species, smart irrigation, and low-maintenance layouts. Discover design choices that look beautiful and respect the environment.",
+    "alt": "Sustainable garden with native trees and natural planting",
+    "month": "JUL",
+    "category": "Garden Design Ideas",
+    "tags": [
+      "Garden Design",
+      "Organic",
+      "Landscaping Ideas"
+    ]
+  },
+  "indoor-plants-for-better-air-quality": {
+    "title": "Indoor Plants That Improve Air Quality And Mood",
+    "excerpt": "The right indoor plants do more than decorate — they freshen the air and create a calmer atmosphere. Explore our top picks for homes, offices, and shared workspaces.",
+    "alt": "Indoor plants arranged in a bright living room",
+    "month": "JUL",
+    "category": "Plant Care & Advice",
+    "tags": [
+      "Plant Care",
+      "Organic"
+    ]
+  },
+  "gift-ideas-for-plant-lovers": {
+    "title": "Thoughtful Gift Ideas For Plant Lovers And Garden Enthusiasts",
+    "excerpt": "From curated planter sets to care kits and rare species, these gift ideas delight anyone who loves greenery — perfect for birthdays, housewarmings, and special occasions.",
+    "alt": "Gift-wrapped plant and gardening accessories",
+    "month": "JUN",
+    "category": "DIY garden projects",
+    "tags": [
+      "DIY",
+      "Tools"
+    ]
+  },
+  "low-maintenance-outdoor-gardens": {
+    "title": "Low-Maintenance Outdoor Gardens For Busy Homeowners",
+    "excerpt": "A beautiful garden does not have to mean endless upkeep. Learn how drought-tolerant plants, mulching, and smart layout reduce maintenance while keeping spaces lush.",
+    "alt": "Low-maintenance outdoor garden with structured planting",
+    "month": "JUL",
+    "category": "Outdoor Living Inspiration",
+    "tags": [
+      "Landscaping Ideas",
+      "Plant Care",
+      "Watering Tips"
+    ]
+  }
+}

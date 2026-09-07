@@ -4,7 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { PortfolioCard } from "@/app/components/ui";
-import { useTranslations } from "@/app/lib/i18n";
+import {
+    getProjectsMessages,
+    localizeProjects,
+    useLocale,
+    useTranslations,
+} from "@/app/lib/i18n";
 import {
     projectFilters as filters,
     projects,
@@ -19,14 +24,19 @@ type PortfolioProps = {
 };
 
 export default function Portfolio({ variant = "white" }: PortfolioProps) {
+    const { locale } = useLocale();
+    const messages = getProjectsMessages(locale);
     const { t } = useTranslations("home.portfolio");
     const { t: tCommon } = useTranslations("common");
     const [filter, setFilter] = useState<ProjectFilter>("All");
 
     const filteredProjects = useMemo(() => {
-        if (filter === "All") return projects;
-        return projects.filter((project) => project.tags.includes(filter));
-    }, [filter]);
+        const source =
+            filter === "All"
+                ? projects
+                : projects.filter((project) => project.tags.includes(filter));
+        return localizeProjects(source, locale);
+    }, [filter, locale]);
 
     const marqueeProjects = useMemo(
         () => [...filteredProjects, ...filteredProjects],
@@ -125,7 +135,7 @@ export default function Portfolio({ variant = "white" }: PortfolioProps) {
                 </div>
             ) : (
                 <p className="py-16 text-center text-primary/60">
-                    No projects found for this category.
+                    {messages.grid.empty}
                 </p>
             )}
         </section>

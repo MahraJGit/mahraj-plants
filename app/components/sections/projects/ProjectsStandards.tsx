@@ -1,5 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Reveal from "@/app/components/ui/Reveal";
+import {
+    getProjectsMessages,
+    localizeProjectFeatureLabels,
+    useLocale,
+} from "@/app/lib/i18n";
 import { projectDelivery, projectStandards } from "@/app/lib/projects";
 import { cn } from "@/app/lib/utils";
 
@@ -54,6 +61,17 @@ function FeatureGrid({ items, iconBg }: FeatureGridProps) {
 }
 
 export default function ProjectsStandards() {
+    const { locale } = useLocale();
+    const messages = getProjectsMessages(locale);
+    const designItems = localizeProjectFeatureLabels(
+        projectStandards,
+        messages.standards.designFeatures,
+    );
+    const deliveryItems = localizeProjectFeatureLabels(
+        projectDelivery,
+        messages.standards.deliveryFeatures,
+    );
+
     return (
         <section
             aria-labelledby="projects-standards-heading"
@@ -100,9 +118,7 @@ export default function ProjectsStandards() {
                             />
 
                             <blockquote className="mt-6 font-script text-[22px] leading-[1.45] text-primary sm:text-[26px] lg:text-[30px]">
-                                &ldquo;Every project we finish is a place someone comes
-                                home to — so we build for the seasons ahead, not just
-                                the handover day.&rdquo;
+                                &ldquo;{messages.standards.quote}&rdquo;
                             </blockquote>
                         </div>
 
@@ -113,16 +129,13 @@ export default function ProjectsStandards() {
                                     className="flex items-center gap-2.5 text-xl font-bold text-white sm:text-2xl"
                                 >
                                     <LeafIcon className="text-white" />
-                                    How We Design
+                                    {messages.standards.designTitle}
                                 </h2>
                                 <p className="mt-4 text-sm leading-relaxed text-white/80 sm:text-[15px]">
-                                    Each landscape begins with a study of the site
-                                    itself — light, soil, water, and the way you want
-                                    to use the space — before any planting plan is
-                                    drawn.
+                                    {messages.standards.designBody}
                                 </p>
                                 <FeatureGrid
-                                    items={projectStandards}
+                                    items={designItems}
                                     iconBg="bg-[#1F3D24]"
                                 />
                             </article>
@@ -130,15 +143,13 @@ export default function ProjectsStandards() {
                             <article className="rounded-[1.5rem] bg-secondary px-6 py-8 shadow-[0_18px_44px_rgba(10,37,14,0.12)] sm:rounded-[1.75rem] sm:px-8 sm:py-9 lg:px-9">
                                 <h2 className="flex items-center gap-2.5 text-xl font-bold text-white sm:text-2xl">
                                     <LeafIcon className="text-white" />
-                                    How We Deliver
+                                    {messages.standards.deliveryTitle}
                                 </h2>
                                 <p className="mt-4 text-sm leading-relaxed text-white/90 sm:text-[15px]">
-                                    Our own designers, builders, and gardeners see the
-                                    work through together, with one point of contact
-                                    and clear updates from first visit to aftercare.
+                                    {messages.standards.deliveryBody}
                                 </p>
                                 <FeatureGrid
-                                    items={projectDelivery}
+                                    items={deliveryItems}
                                     iconBg="bg-white/20"
                                 />
                             </article>

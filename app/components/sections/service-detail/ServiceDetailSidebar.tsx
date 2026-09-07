@@ -1,8 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
+import {
+    getServicesMessages,
+    localizeServices,
+    useLocale,
+} from "@/app/lib/i18n";
 import { services } from "@/app/lib/services";
-import { CONSULTATION_WHATSAPP_HREF, PHONE_DISPLAY, PHONE_HREF } from "@/app/lib/contact";
+import {
+    CONSULTATION_WHATSAPP_HREF,
+    EMAIL_DISPLAY,
+    EMAIL_HREF,
+    PHONE_DISPLAY,
+    PHONE_HREF,
+} from "@/app/lib/contact";
 import { cn } from "@/app/lib/utils";
 
 type ServiceDetailSidebarProps = {
@@ -31,12 +44,16 @@ function SidebarHeading({ children }: { children: React.ReactNode }) {
 export default function ServiceDetailSidebar({
     activeSlug,
 }: ServiceDetailSidebarProps) {
+    const { locale } = useLocale();
+    const messages = getServicesMessages(locale);
+    const localizedServices = localizeServices(services, locale);
+
     return (
         <aside className="space-y-6 lg:sticky lg:top-32">
             <div className="overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-[0_12px_36px_rgba(10,37,14,0.08)]">
-                <SidebarHeading>Services</SidebarHeading>
+                <SidebarHeading>{messages.detail.sidebarServices}</SidebarHeading>
                 <ul>
-                    {services.map((service, index) => {
+                    {localizedServices.map((service, index) => {
                         const active = service.slug === activeSlug;
 
                         return (
@@ -48,7 +65,7 @@ export default function ServiceDetailSidebar({
                                         active
                                             ? "bg-secondary font-medium text-white"
                                             : "text-primary hover:bg-cream/70 hover:text-secondary",
-                                        index < services.length - 1 &&
+                                        index < localizedServices.length - 1 &&
                                             !active &&
                                             "border-b border-primary/8",
                                     )}
@@ -62,11 +79,10 @@ export default function ServiceDetailSidebar({
             </div>
 
             <div className="overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-[0_12px_36px_rgba(10,37,14,0.08)]">
-                <SidebarHeading>Brochure</SidebarHeading>
+                <SidebarHeading>{messages.detail.brochureTitle}</SidebarHeading>
                 <div className="space-y-4 px-5 py-5">
                     <p className="text-sm leading-relaxed text-primary/70">
-                        Explore our brochure to discover all our garden and landscape
-                        services in one convenient guide.
+                        {messages.detail.brochureBody}
                     </p>
 
                     <a
@@ -123,9 +139,11 @@ export default function ServiceDetailSidebar({
                 </div>
 
                 <p className="font-script text-[28px] leading-none text-white/90">
-                    Ready to Grow?
+                    {messages.detail.readyEyebrow}
                 </p>
-                <h3 className="mt-2 text-2xl font-bold">Let&apos;s Talk Today!</h3>
+                <h3 className="mt-2 text-2xl font-bold">
+                    {messages.detail.readyTitle}
+                </h3>
 
                 <ul className="mt-6 space-y-4 text-sm text-white/90">
                     <li className="flex items-start gap-3">
@@ -133,7 +151,7 @@ export default function ServiceDetailSidebar({
                             <HiOutlinePhone aria-hidden className="size-4" />
                         </span>
                         <span>
-                            Call Us Support 24/7:
+                            {messages.detail.callSupport}
                             <a
                                 href={PHONE_HREF}
                                 className="mt-0.5 block font-medium text-white transition hover:text-secondary"
@@ -147,10 +165,10 @@ export default function ServiceDetailSidebar({
                             <HiOutlineMail aria-hidden className="size-4" />
                         </span>
                         <a
-                            href="mailto:info@mahrajplants.com"
+                            href={EMAIL_HREF}
                             className="pt-2 transition hover:text-secondary"
                         >
-                            info@mahrajplants.com
+                            {EMAIL_DISPLAY}
                         </a>
                     </li>
                     <li className="flex items-start gap-3">
@@ -158,7 +176,7 @@ export default function ServiceDetailSidebar({
                             <HiOutlineLocationMarker aria-hidden className="size-4" />
                         </span>
                         <span className="pt-1.5 leading-relaxed">
-                            Nursery: Heet, Old Al kharj Road, Riyadh, KSA
+                            {messages.detail.location}
                         </span>
                     </li>
                 </ul>
@@ -169,7 +187,7 @@ export default function ServiceDetailSidebar({
                     rel="noopener noreferrer"
                     className="relative z-10 mt-8 flex w-full items-center justify-center rounded-xl bg-secondary px-5 py-3.5 text-sm font-medium text-white transition hover:bg-secondary/90"
                 >
-                    Get in Touch Today →
+                    {messages.detail.getInTouch}
                 </a>
             </div>
         </aside>

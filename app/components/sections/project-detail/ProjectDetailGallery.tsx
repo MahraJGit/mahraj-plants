@@ -1,14 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import Reveal from "@/app/components/ui/Reveal";
+import {
+    getProjectsMessages,
+    localizeProject,
+    useLocale,
+} from "@/app/lib/i18n";
+import type { ProjectDetail } from "@/app/lib/projects";
 import { cn } from "@/app/lib/utils";
 
 type GalleryItem = { src: string; alt: string };
 
 type ProjectDetailGalleryProps = {
-    images: GalleryItem[];
+    images?: GalleryItem[];
+    project?: ProjectDetail;
 };
 
 function Chevron({ direction }: { direction: "left" | "right" }) {
@@ -32,25 +39,35 @@ function Chevron({ direction }: { direction: "left" | "right" }) {
 
 export default function ProjectDetailGallery({
     images,
+    project,
 }: ProjectDetailGalleryProps) {
+    const { locale } = useLocale();
+    const messages = getProjectsMessages(locale);
+    const galleryImages = useMemo(() => {
+        if (project) return localizeProject(project, locale).gallery;
+        return images ?? [];
+    }, [images, locale, project]);
     const [offset, setOffset] = useState(0);
 
     const next = useCallback(() => {
-        setOffset((current) => (current + 1) % images.length);
-    }, [images.length]);
+        setOffset((current) => (current + 1) % galleryImages.length);
+    }, [galleryImages.length]);
 
     const prev = useCallback(() => {
-        setOffset((current) => (current - 1 + images.length) % images.length);
-    }, [images.length]);
+        setOffset(
+            (current) =>
+                (current - 1 + galleryImages.length) % galleryImages.length,
+        );
+    }, [galleryImages.length]);
 
     const visibleImages = Array.from(
-        { length: Math.min(3, images.length) },
-        (_, index) => images[(offset + index) % images.length],
+        { length: Math.min(3, galleryImages.length) },
+        (_, index) => galleryImages[(offset + index) % galleryImages.length],
     );
 
     return (
         <section
-            aria-label="Project gallery"
+            aria-label={messages.detail.galleryLabel}
             className="bg-gradient-to-b from-[#F4F8EC] to-white pt-8 sm:pt-10"
         >
             <div className="section-container relative pt-4">
@@ -58,7 +75,7 @@ export default function ProjectDetailGallery({
                     <div className="relative">
                         <button
                             type="button"
-                            aria-label="Previous images"
+                            aria-label={messages.detail.prevImages}
                             onClick={prev}
                             className="absolute top-1/2 -left-2 z-10 flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-secondary text-white shadow-md transition hover:bg-secondary/90 sm:-left-4"
                         >
@@ -66,7 +83,7 @@ export default function ProjectDetailGallery({
                         </button>
                         <button
                             type="button"
-                            aria-label="Next images"
+                            aria-label={messages.detail.nextImages}
                             onClick={next}
                             className="absolute top-1/2 -right-2 z-10 flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-secondary text-white shadow-md transition hover:bg-secondary/90 sm:-right-4"
                         >

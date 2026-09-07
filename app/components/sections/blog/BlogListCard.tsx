@@ -1,16 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import type { BlogArticle } from "@/app/lib/blogs";
+import {
+    formatBlogCommentsLabel,
+    getBlogsMessages,
+    useLocale,
+} from "@/app/lib/i18n";
 
 type BlogListCardProps = {
     post: BlogArticle;
 };
 
 export default function BlogListCard({ post }: BlogListCardProps) {
-    const commentsLabel =
-        post.comments === 0
-            ? "No Comments"
-            : `${post.comments} Comments`;
+    const { locale } = useLocale();
+    const messages = getBlogsMessages(locale);
+    const commentsLabel = formatBlogCommentsLabel(post.comments, locale);
 
     return (
         <article className="group overflow-hidden rounded-[1.75rem] border border-primary/8 bg-white p-4 shadow-[0_8px_30px_rgba(10,37,14,0.06)] sm:p-5">
@@ -33,7 +39,7 @@ export default function BlogListCard({ post }: BlogListCardProps) {
                             aria-hidden
                             className="size-3.5 shrink-0"
                         />
-                        By: {post.author}
+                        {messages.card.by.replace("{author}", post.author)}
                     </span>
                     <span className="inline-flex items-center gap-1.5">
                         <Image
@@ -70,11 +76,14 @@ export default function BlogListCard({ post }: BlogListCardProps) {
                 <div className="mt-5 flex justify-end border-t border-dotted border-primary/20 pt-5">
                     <Link
                         href={`/blogs/${post.slug}`}
-                        aria-label={`Read ${post.title}`}
+                        aria-label={messages.card.readAria.replace(
+                            "{title}",
+                            post.title,
+                        )}
                         className="inline-flex w-fit items-center gap-3 outline-none transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
                     >
                         <span className="text-sm font-bold text-primary sm:text-base">
-                            Read More
+                            {messages.card.readMore}
                         </span>
                         <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary text-white transition group-hover:scale-105">
                             <Image

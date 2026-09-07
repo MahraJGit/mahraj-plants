@@ -3,14 +3,19 @@ import ServicesHero from "@/app/components/sections/services/ServicesHero";
 import WhyChooseTeam from "@/app/components/sections/services/WhyChooseTeam";
 import ServicesGrid from "@/app/components/sections/services/ServicesGrid";
 import ServicesTestimonials from "@/app/components/sections/services/ServicesTestimonials";
-import ServicesPricing from "@/app/components/sections/services/ServicesPricing";
 import SiteCTA from "@/app/components/sections/shared/SiteCTA";
+import { getServicesMessages } from "@/app/lib/i18n/services-catalog";
+import { getLocale } from "@/app/lib/i18n/get-locale";
 
-export const metadata: Metadata = {
-    title: "Services | Mahraj Plants",
-    description:
-        "Explore Mahraj Plants landscaping services — from design and irrigation to maintenance, hardscaping, and outdoor finishing.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+    const locale = await getLocale();
+    const messages = getServicesMessages(locale);
+
+    return {
+        title: messages.detail.pageMetaTitle,
+        description: messages.detail.pageMetaDescription,
+    };
+}
 
 export default function ServicesPage() {
     return (
@@ -19,7 +24,6 @@ export default function ServicesPage() {
             <WhyChooseTeam />
             <ServicesGrid />
             <ServicesTestimonials />
-            {/* <ServicesPricing /> */}
             <SiteCTA />
         </>
     );

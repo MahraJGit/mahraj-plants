@@ -1,5 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Reveal from "@/app/components/ui/Reveal";
+import {
+    getServicesMessages,
+    localizeFeatureLabels,
+    useLocale,
+} from "@/app/lib/i18n";
 import { whyChooseFeatures, teamFeatures } from "@/app/lib/services";
 import { cn } from "@/app/lib/utils";
 
@@ -54,6 +61,17 @@ function FeatureGrid({ items, iconBg }: FeatureGridProps) {
 }
 
 export default function WhyChooseTeam() {
+    const { locale } = useLocale();
+    const messages = getServicesMessages(locale);
+    const whyItems = localizeFeatureLabels(
+        whyChooseFeatures,
+        messages.whyChoose.features,
+    );
+    const teamItems = localizeFeatureLabels(
+        teamFeatures,
+        messages.team.features,
+    );
+
     return (
         <section
             aria-labelledby="why-choose-heading"
@@ -100,10 +118,7 @@ export default function WhyChooseTeam() {
                             />
 
                             <blockquote className="mt-6 font-script text-[22px] leading-[1.45] text-primary sm:text-[26px] lg:text-[30px]">
-                                &ldquo;In every thoughtfully crafted garden, nature and
-                                human creativity blend, turning ordinary spaces into
-                                timeless landscapes where beauty grows with every
-                                season.&rdquo;
+                                &ldquo;{messages.quote}&rdquo;
                             </blockquote>
                         </div>
 
@@ -114,15 +129,13 @@ export default function WhyChooseTeam() {
                                     className="flex items-center gap-2.5 text-xl font-bold text-white sm:text-2xl"
                                 >
                                     <LeafIcon className="text-white" />
-                                    Why Choose Us
+                                    {messages.whyChoose.title}
                                 </h2>
                                 <p className="mt-4 text-sm leading-relaxed text-white/80 sm:text-[15px]">
-                                    Blending creativity, care, and craftsmanship, we
-                                    transform garden dreams into lush, lasting realities —
-                                    driven by a true passion for greenery.
+                                    {messages.whyChoose.body}
                                 </p>
                                 <FeatureGrid
-                                    items={whyChooseFeatures}
+                                    items={whyItems}
                                     iconBg="bg-[#1F3D24]"
                                 />
                             </article>
@@ -130,16 +143,13 @@ export default function WhyChooseTeam() {
                             <article className="rounded-[1.5rem] bg-secondary px-6 py-8 shadow-[0_18px_44px_rgba(10,37,14,0.12)] sm:rounded-[1.75rem] sm:px-8 sm:py-9 lg:px-9">
                                 <h2 className="flex items-center gap-2.5 text-xl font-bold text-white sm:text-2xl">
                                     <LeafIcon className="text-white" />
-                                    Meet The Landscaping Team
+                                    {messages.team.title}
                                 </h2>
                                 <p className="mt-4 text-sm leading-relaxed text-white/90 sm:text-[15px]">
-                                    At Mahraj Plants, our passionate team of designers and
-                                    landscapers work together to create beautiful, lasting
-                                    outdoor spaces. Each project is crafted with care,
-                                    creativity, and a shared love for nature.
+                                    {messages.team.body}
                                 </p>
                                 <FeatureGrid
-                                    items={teamFeatures}
+                                    items={teamItems}
                                     iconBg="bg-white/20"
                                 />
                             </article>

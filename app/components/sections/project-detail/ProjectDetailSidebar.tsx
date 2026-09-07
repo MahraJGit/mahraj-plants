@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -5,7 +7,19 @@ import {
     HiOutlineMail,
     HiOutlinePhone,
 } from "react-icons/hi";
+import {
+    getProjectsMessages,
+    localizeProject,
+    localizeProjects,
+    useLocale,
+} from "@/app/lib/i18n";
 import { projects, type ProjectDetail } from "@/app/lib/projects";
+import {
+    EMAIL_DISPLAY,
+    EMAIL_HREF,
+    PHONE_DISPLAY,
+    PHONE_HREF,
+} from "@/app/lib/contact";
 import { cn } from "@/app/lib/utils";
 
 type ProjectDetailSidebarProps = {
@@ -34,17 +48,22 @@ function SidebarHeading({ children }: { children: React.ReactNode }) {
 export default function ProjectDetailSidebar({
     project,
 }: ProjectDetailSidebarProps) {
+    const { locale } = useLocale();
+    const messages = getProjectsMessages(locale);
+    const localized = localizeProject(project, locale);
+    const localizedProjects = localizeProjects(projects, locale);
+
     return (
         <aside className="space-y-6 lg:sticky lg:top-32">
             <div className="overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-[0_12px_36px_rgba(10,37,14,0.08)]">
-                <SidebarHeading>Project Details</SidebarHeading>
+                <SidebarHeading>{messages.detail.sidebarDetails}</SidebarHeading>
                 <dl>
-                    {project.meta.map((item, index) => (
+                    {localized.meta.map((item, index) => (
                         <div
                             key={item.label}
                             className={cn(
                                 "flex items-start justify-between gap-4 px-5 py-3.5 text-sm",
-                                index < project.meta.length - 1 &&
+                                index < localized.meta.length - 1 &&
                                     "border-b border-primary/8",
                             )}
                         >
@@ -58,9 +77,9 @@ export default function ProjectDetailSidebar({
             </div>
 
             <div className="overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-[0_12px_36px_rgba(10,37,14,0.08)]">
-                <SidebarHeading>More Projects</SidebarHeading>
+                <SidebarHeading>{messages.detail.sidebarMore}</SidebarHeading>
                 <ul>
-                    {projects.map((item, index) => {
+                    {localizedProjects.map((item, index) => {
                         const active = item.slug === project.slug;
 
                         return (
@@ -72,7 +91,7 @@ export default function ProjectDetailSidebar({
                                         active
                                             ? "bg-secondary font-medium text-white"
                                             : "text-primary hover:bg-cream/70 hover:text-secondary",
-                                        index < projects.length - 1 &&
+                                        index < localizedProjects.length - 1 &&
                                             !active &&
                                             "border-b border-primary/8",
                                     )}
@@ -101,9 +120,11 @@ export default function ProjectDetailSidebar({
                 </div>
 
                 <p className="font-script text-[28px] leading-none text-white/90">
-                    Planning Something Similar?
+                    {messages.detail.ctaEyebrow}
                 </p>
-                <h3 className="mt-2 text-2xl font-bold">Let&apos;s Talk Today!</h3>
+                <h3 className="mt-2 text-2xl font-bold">
+                    {messages.detail.ctaTitle}
+                </h3>
 
                 <ul className="mt-6 space-y-4 text-sm text-white/90">
                     <li className="flex items-start gap-3">
@@ -111,12 +132,12 @@ export default function ProjectDetailSidebar({
                             <HiOutlinePhone aria-hidden className="size-4" />
                         </span>
                         <span>
-                            Call Us Support 24/7:
+                            {messages.detail.callSupport}
                             <a
-                                href="tel:+966556891877"
+                                href={PHONE_HREF}
                                 className="mt-0.5 block font-medium text-white transition hover:text-secondary"
                             >
-                                +966 55 689 1877
+                                {PHONE_DISPLAY}
                             </a>
                         </span>
                     </li>
@@ -125,10 +146,10 @@ export default function ProjectDetailSidebar({
                             <HiOutlineMail aria-hidden className="size-4" />
                         </span>
                         <a
-                            href="mailto:info@mahrajplants.com"
+                            href={EMAIL_HREF}
                             className="pt-2 transition hover:text-secondary"
                         >
-                            info@mahrajplants.com
+                            {EMAIL_DISPLAY}
                         </a>
                     </li>
                     <li className="flex items-start gap-3">
@@ -139,7 +160,7 @@ export default function ProjectDetailSidebar({
                             />
                         </span>
                         <span className="pt-1.5 leading-relaxed">
-                            Nursery: Heet, Old Al kharj Road, Riyadh, KSA
+                            {messages.detail.location}
                         </span>
                     </li>
                 </ul>
@@ -148,7 +169,7 @@ export default function ProjectDetailSidebar({
                     href="/#consultation"
                     className="relative z-10 mt-8 flex w-full items-center justify-center rounded-xl bg-secondary px-5 py-3.5 text-sm font-medium text-white transition hover:bg-secondary/90"
                 >
-                    Get in Touch Today →
+                    {messages.detail.getInTouch}
                 </Link>
             </div>
         </aside>

@@ -3,6 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import {
+    getBlogsMessages,
+    localizeBlog,
+    useLocale,
+} from "@/app/lib/i18n";
+import {
     blogArticles,
     blogCategories,
     blogTags,
@@ -15,6 +20,8 @@ import { cn } from "@/app/lib/utils";
 const PAGE_SIZE = 3;
 
 export default function BlogContent() {
+    const { locale } = useLocale();
+    const messages = getBlogsMessages(locale);
     const [searchQuery, setSearchQuery] = useState("");
     const [activeCategory, setActiveCategory] = useState<string | null>(null);
     const [activeTag, setActiveTag] = useState<string | null>(null);
@@ -23,22 +30,25 @@ export default function BlogContent() {
     const filteredPosts = useMemo(() => {
         const query = searchQuery.trim().toLowerCase();
 
-        return blogArticles.filter((post) => {
-            const matchesSearch =
-                !query ||
-                post.title.toLowerCase().includes(query) ||
-                post.excerpt.toLowerCase().includes(query) ||
-                post.author.toLowerCase().includes(query);
+        return blogArticles
+            .filter((post) => {
+                const localized = localizeBlog(post, locale);
+                const matchesSearch =
+                    !query ||
+                    localized.title.toLowerCase().includes(query) ||
+                    localized.excerpt.toLowerCase().includes(query) ||
+                    post.author.toLowerCase().includes(query);
 
-            const matchesCategory =
-                !activeCategory || post.category === activeCategory;
+                const matchesCategory =
+                    !activeCategory || post.category === activeCategory;
 
-            const matchesTag =
-                !activeTag || post.tags.includes(activeTag);
+                const matchesTag =
+                    !activeTag || post.tags.includes(activeTag);
 
-            return matchesSearch && matchesCategory && matchesTag;
-        });
-    }, [activeCategory, activeTag, searchQuery]);
+                return matchesSearch && matchesCategory && matchesTag;
+            })
+            .map((post) => localizeBlog(post, locale));
+    }, [activeCategory, activeTag, locale, searchQuery]);
 
     const totalPages = Math.max(
         1,
@@ -64,7 +74,7 @@ export default function BlogContent() {
     const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
 
     return (
-        <section aria-label="Blog posts" className="bg-cream/40">
+        <section aria-label={messages.listing.ariaLabel} className="bg-cream/40">
             <div className="section-container">
                 <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px] xl:gap-12">
                     <div>
@@ -79,17 +89,17 @@ export default function BlogContent() {
                         ) : (
                             <div className="rounded-[1.75rem] bg-white px-8 py-16 text-center shadow-[0_12px_40px_rgba(10,37,14,0.08)]">
                                 <p className="text-lg font-semibold text-primary">
-                                    No articles found
+                                    {messages.listing.emptyTitle}
                                 </p>
                                 <p className="mt-2 text-sm text-primary/60">
-                                    Try adjusting your search or filters.
+                                    {messages.listing.emptyDescription}
                                 </p>
                             </div>
                         )}
 
                         {totalPages > 1 && (
                             <nav
-                                aria-label="Blog pagination"
+                                aria-label={messages.listing.paginationLabel}
                                 className="mt-10 flex flex-wrap items-center justify-center gap-2"
                             >
                                 <button
@@ -98,7 +108,7 @@ export default function BlogContent() {
                                         setPage((current) => current - 1)
                                     }
                                     disabled={page === 1}
-                                    aria-label="Previous page"
+                                    aria-label={messages.listing.prevPage}
                                     className="inline-flex size-10 cursor-pointer items-center justify-center rounded-lg border border-primary/15 bg-white text-primary transition hover:border-secondary hover:text-secondary disabled:cursor-not-allowed disabled:opacity-40"
                                 >
                                     <HiChevronLeft className="size-5" aria-hidden />
@@ -109,7 +119,10 @@ export default function BlogContent() {
                                         key={pageNumber}
                                         type="button"
                                         onClick={() => setPage(pageNumber)}
-                                        aria-label={`Page ${pageNumber}`}
+                                        aria-label={messages.listing.pageLabel.replace(
+                                            "{n}",
+                                            String(pageNumber),
+                                        )}
                                         aria-current={
                                             pageNumber === page
                                                 ? "page"
@@ -132,7 +145,7 @@ export default function BlogContent() {
                                         setPage((current) => current + 1)
                                     }
                                     disabled={page === totalPages}
-                                    aria-label="Next page"
+                                    aria-label={messages.listing.nextPage}
                                     className="inline-flex size-10 cursor-pointer items-center justify-center rounded-lg border border-primary/15 bg-white text-primary transition hover:border-secondary hover:text-secondary disabled:cursor-not-allowed disabled:opacity-40"
                                 >
                                     <HiChevronRight className="size-5" aria-hidden />

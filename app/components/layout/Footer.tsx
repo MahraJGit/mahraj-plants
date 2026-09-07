@@ -12,10 +12,13 @@ import { MdSupportAgent } from "react-icons/md";
 import {
     FACEBOOK_HREF,
     INSTAGRAM_HREF,
+    EMAIL_DISPLAY,
+    EMAIL_HREF,
     PHONE_DISPLAY,
     PHONE_HREF,
 } from "@/app/lib/contact";
 import { useTranslations } from "@/app/lib/i18n";
+import { useTodayOperatingHoursLabel } from "@/app/lib/i18n/use-operating-hours";
 import { cn } from "@/app/lib/utils";
 
 const socialLinks = [
@@ -72,6 +75,7 @@ function LinkArrow() {
 
 export default function Footer() {
     const { t, tObject, locale } = useTranslations("footer");
+    const todayHoursLabel = useTodayOperatingHoursLabel();
 
     const services = tObject<FooterLink[]>("services") ?? [];
     const usefulLinks = tObject<FooterLink[]>("usefulLinks") ?? [];
@@ -84,13 +88,13 @@ export default function Footer() {
                     <div className="sm:col-span-2 lg:col-span-1">
                         <Link
                             href="/#hero"
-                            className="relative inline-block h-11 w-[168px]"
+                            className="relative inline-block h-11 w-[180px]"
                         >
                             <Image
-                                src="/mahraj-landscaping-logo.webp"
+                                src="/mahraj-landscaping-logo.png"
                                 alt={t("logoAlt")}
                                 fill
-                                sizes="168px"
+                                sizes="180px"
                                 className="object-contain object-left rtl:object-right"
                             />
                         </Link>
@@ -103,16 +107,16 @@ export default function Footer() {
                             <li className="flex items-start gap-3">
                                 <ContactIcon src="/icons/email-white.svg" />
                                 <Link
-                                    href="mailto:info@mahrajplants.com"
+                                    href={EMAIL_HREF}
                                     className="transition hover:text-secondary"
                                     dir="ltr"
                                 >
-                                    info@mahrajplants.com
+                                    {EMAIL_DISPLAY}
                                 </Link>
                             </li>
                             <li className="flex items-start gap-3">
                                 <ContactIcon src="/icons/clock-white.svg" />
-                                <span>{t("hours")}</span>
+                                <span>{todayHoursLabel}</span>
                             </li>
                         </ul>
 

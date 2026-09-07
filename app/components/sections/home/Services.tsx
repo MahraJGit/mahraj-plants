@@ -3,13 +3,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ServiceCard } from "@/app/components/ui";
-import { useTranslations } from "@/app/lib/i18n";
+import {
+    localizeServices,
+    useLocale,
+    useTranslations,
+} from "@/app/lib/i18n";
 import { services } from "@/app/lib/services";
 
 export default function Services() {
+    const { locale } = useLocale();
     const { t, tArray } = useTranslations("home.services");
     const { t: tCommon } = useTranslations("common");
     const paragraphs = tArray("paragraphs");
+    const localizedServices = localizeServices(services.slice(0, 3), locale);
 
     return (
         <section
@@ -63,8 +69,8 @@ export default function Services() {
                 </header>
 
                 <ul className="mt-12 grid gap-6 lg:mt-14 lg:grid-cols-3 lg:gap-7">
-                    {services.slice(0, 3).map((service) => (
-                        <li key={service.title}>
+                    {localizedServices.map((service) => (
+                        <li key={service.slug}>
                             <ServiceCard
                                 service={service}
                                 href={`/services/${service.slug}`}

@@ -36,6 +36,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: dictionary.meta.title,
     description: dictionary.meta.description,
+    icons: {
+      icon: [{ url: "/favicon.png", type: "image/png" }],
+      apple: [{ url: "/apple-icon.png", type: "image/png" }],
+    },
   };
 }
 

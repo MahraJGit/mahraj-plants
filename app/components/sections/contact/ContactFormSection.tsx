@@ -16,38 +16,17 @@ import {
     HiOutlineLocationMarker,
     HiOutlineMail,
 } from "react-icons/hi";
+import { useTranslations } from "@/app/lib/i18n";
 import { cn } from "@/app/lib/utils";
 import {
     FACEBOOK_HREF,
     INSTAGRAM_HREF,
+    EMAIL_DISPLAY,
+    EMAIL_HREF,
     PHONE_DISPLAY,
     PHONE_HREF,
 } from "@/app/lib/contact";
-
-const contactDetails = [
-    {
-        label: "Our Location",
-        value: "Nursery: Heet, Old Al Kharj Road, Riyadh, KSA",
-        Icon: HiOutlineLocationMarker,
-    },
-    {
-        label: "Phone Number",
-        value: PHONE_DISPLAY,
-        href: PHONE_HREF,
-        Icon: FaPhoneAlt,
-    },
-    {
-        label: "Email Address",
-        value: "info@mahrajplants.com",
-        href: "mailto:info@mahrajplants.com",
-        Icon: HiOutlineMail,
-    },
-    {
-        label: "Working Time",
-        value: "Thu: 9:00 - 12:00 / Morning, 1:00 PM — 6:00 PM / Evening",
-        Icon: HiOutlineClock,
-    },
-] as const;
+import { useTodayOperatingHoursLabel } from "@/app/lib/i18n/use-operating-hours";
 
 const socialLinks = [
     { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true },
@@ -59,6 +38,9 @@ const inputClassName =
     "w-full rounded-xl border-0 bg-white px-4 py-3.5 text-sm text-primary outline-none placeholder:italic placeholder:text-primary/40 sm:px-5 sm:py-4 sm:text-[15px]";
 
 export default function ContactFormSection() {
+    const { t } = useTranslations("contactPage");
+    const { t: tCommon } = useTranslations("common");
+    const todayHoursLabel = useTodayOperatingHoursLabel();
     const [form, setForm] = useState({
         name: "",
         address: "",
@@ -66,6 +48,31 @@ export default function ContactFormSection() {
         phone: "",
         message: "",
     });
+
+    const contactDetails = [
+        {
+            label: t("info.locationLabel"),
+            value: tCommon("nurseryAddress"),
+            Icon: HiOutlineLocationMarker,
+        },
+        {
+            label: t("info.phoneLabel"),
+            value: PHONE_DISPLAY,
+            href: PHONE_HREF,
+            Icon: FaPhoneAlt,
+        },
+        {
+            label: t("info.emailLabel"),
+            value: EMAIL_DISPLAY,
+            href: EMAIL_HREF,
+            Icon: HiOutlineMail,
+        },
+        {
+            label: t("info.workingTimeLabel"),
+            value: todayHoursLabel,
+            Icon: HiOutlineClock,
+        },
+    ] as const;
 
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -110,13 +117,7 @@ export default function ContactFormSection() {
                     />
 
                     <blockquote className="mt-6 text-[15px] leading-relaxed font-medium text-section sm:text-base lg:text-lg lg:leading-relaxed">
-                        <p>
-                            "Nature speaks through rich textures, vibrant colors,
-                            and natural light, and we bring that vision to life.
-                            Explore our gallery to see how we craft breathtaking
-                            gardens and landscapes with intention, precision,
-                            and deep respect for the natural world."
-                        </p>
+                        <p>&ldquo;{t("quote")}&rdquo;</p>
                     </blockquote>
                 </div>
 
@@ -126,15 +127,11 @@ export default function ContactFormSection() {
                             id="contact-form-heading"
                             className="text-[22px] leading-tight font-bold tracking-[-1%] text-section sm:text-[26px] lg:text-[28px]"
                         >
-                            Contact Mahraj Plants &amp; Landscaping
+                            {t("info.title")}
                         </h2>
 
                         <p className="mt-4 text-sm leading-relaxed text-section/70 sm:text-[15px]">
-                            Whether you&apos;re dreaming of a lush garden
-                            retreat or need expert advice on outdoor design,
-                            we&apos;re here to help. Reach out anytime —
-                            we&apos;re passionate about bringing nature closer
-                            to you.
+                            {t("info.body")}
                         </p>
 
                         <ul className="mt-8 grid gap-3 sm:grid-cols-2 sm:gap-4">
@@ -183,7 +180,7 @@ export default function ContactFormSection() {
 
                         <div className="mt-auto flex items-center justify-between gap-4 border-t border-section/10 pt-6 sm:pt-8">
                             <p className="text-sm font-semibold text-section sm:text-base">
-                                Social Media
+                                {t("info.socialMedia")}
                             </p>
                             <div className="flex items-center gap-3 sm:gap-4">
                                 {socialLinks.map(({ label, href, Icon, external }) => (
@@ -214,7 +211,7 @@ export default function ContactFormSection() {
 
                         <div className="relative z-10 flex h-full flex-col">
                             <h3 className="text-center text-[26px] font-bold tracking-[-1%] text-white sm:text-[30px] lg:text-[32px]">
-                                Get In Touch!
+                                {t("form.title")}
                             </h3>
 
                             <form
@@ -223,7 +220,7 @@ export default function ContactFormSection() {
                             >
                                 <div className="grid gap-4 sm:grid-cols-2">
                                     <label className="sr-only" htmlFor="contact-name">
-                                        Name
+                                        {t("form.name")}
                                     </label>
                                     <input
                                         id="contact-name"
@@ -231,7 +228,7 @@ export default function ContactFormSection() {
                                         type="text"
                                         required
                                         autoComplete="name"
-                                        placeholder="Name*"
+                                        placeholder={t("form.namePlaceholder")}
                                         value={form.name}
                                         onChange={(event) =>
                                             setForm((current) => ({
@@ -246,7 +243,7 @@ export default function ContactFormSection() {
                                         className="sr-only"
                                         htmlFor="contact-address"
                                     >
-                                        Address
+                                        {t("form.address")}
                                     </label>
                                     <input
                                         id="contact-address"
@@ -254,7 +251,7 @@ export default function ContactFormSection() {
                                         type="text"
                                         required
                                         autoComplete="street-address"
-                                        placeholder="Address*"
+                                        placeholder={t("form.addressPlaceholder")}
                                         value={form.address}
                                         onChange={(event) =>
                                             setForm((current) => ({
@@ -269,7 +266,7 @@ export default function ContactFormSection() {
                                         className="sr-only"
                                         htmlFor="contact-email"
                                     >
-                                        Email
+                                        {t("form.email")}
                                     </label>
                                     <input
                                         id="contact-email"
@@ -277,7 +274,7 @@ export default function ContactFormSection() {
                                         type="email"
                                         required
                                         autoComplete="email"
-                                        placeholder="Email*"
+                                        placeholder={t("form.emailPlaceholder")}
                                         value={form.email}
                                         onChange={(event) =>
                                             setForm((current) => ({
@@ -292,7 +289,7 @@ export default function ContactFormSection() {
                                         className="sr-only"
                                         htmlFor="contact-phone"
                                     >
-                                        Phone
+                                        {t("form.phone")}
                                     </label>
                                     <input
                                         id="contact-phone"
@@ -300,7 +297,7 @@ export default function ContactFormSection() {
                                         type="tel"
                                         required
                                         autoComplete="tel"
-                                        placeholder="Phone*"
+                                        placeholder={t("form.phonePlaceholder")}
                                         value={form.phone}
                                         onChange={(event) =>
                                             setForm((current) => ({
@@ -316,14 +313,14 @@ export default function ContactFormSection() {
                                     className="sr-only"
                                     htmlFor="contact-message"
                                 >
-                                    Message
+                                    {t("form.message")}
                                 </label>
                                 <textarea
                                     id="contact-message"
                                     name="message"
                                     required
                                     rows={6}
-                                    placeholder="Your Message Here..."
+                                    placeholder={t("form.messagePlaceholder")}
                                     value={form.message}
                                     onChange={(event) =>
                                         setForm((current) => ({
@@ -343,14 +340,14 @@ export default function ContactFormSection() {
                                             aria-hidden
                                             className="size-3.5 shrink-0 text-white"
                                         />
-                                        Your information stays safe with us.
+                                        {t("form.privacy")}
                                     </p>
 
                                     <button
                                         type="submit"
                                         className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#E8C84A] to-[#C4A035] px-6 py-3.5 text-sm font-semibold text-primary transition hover:brightness-105 sm:px-7 sm:text-base"
                                     >
-                                        Submit Now
+                                        {t("form.submit")}
                                         <HiChevronRight
                                             aria-hidden
                                             className="size-5"

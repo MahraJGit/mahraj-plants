@@ -1,4 +1,11 @@
+"use client";
+
 import { ProcessCard, Reveal } from "@/app/components/ui";
+import {
+    getProjectsMessages,
+    localizeProject,
+    useLocale,
+} from "@/app/lib/i18n";
 import type { ProjectDetail } from "@/app/lib/projects";
 import ProjectDetailSidebar from "./ProjectDetailSidebar";
 
@@ -37,6 +44,10 @@ function SectionLeafHeading({
 export default function ProjectDetailContent({
     project,
 }: ProjectDetailContentProps) {
+    const { locale } = useLocale();
+    const messages = getProjectsMessages(locale);
+    const localized = localizeProject(project, locale);
+
     return (
         <section className="bg-white">
             <div className="section-container">
@@ -45,19 +56,19 @@ export default function ProjectDetailContent({
                         <Reveal>
                             <div>
                                 <SectionLeafHeading id="project-overview-heading">
-                                    Project Overview
+                                    {messages.detail.overviewHeading}
                                 </SectionLeafHeading>
                                 <p className="mt-4 text-base font-semibold text-primary sm:text-lg">
-                                    {project.overviewTitle}
+                                    {localized.overviewTitle}
                                 </p>
                                 <div className="mt-4 space-y-4 text-sm leading-relaxed text-primary/70 sm:text-[15px]">
-                                    {project.overviewBody.map((paragraph) => (
+                                    {localized.overviewBody.map((paragraph) => (
                                         <p key={paragraph.slice(0, 32)}>{paragraph}</p>
                                     ))}
                                 </div>
 
                                 <ul className="mt-8 grid gap-4 sm:grid-cols-3">
-                                    {project.results.map((result) => (
+                                    {localized.results.map((result) => (
                                         <li
                                             key={result.label}
                                             className="rounded-2xl bg-cream px-5 py-5 text-center"
@@ -77,13 +88,13 @@ export default function ProjectDetailContent({
                         <Reveal delayMs={80}>
                             <div className="border-t border-dashed border-primary/15 pt-12">
                                 <SectionLeafHeading id="project-scope-heading">
-                                    {project.scopeTitle}
+                                    {localized.scopeTitle}
                                 </SectionLeafHeading>
                                 <p className="mt-4 text-sm leading-relaxed text-primary/70 sm:text-[15px]">
-                                    {project.scopeDescription}
+                                    {localized.scopeDescription}
                                 </p>
                                 <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                                    {project.scopeItems.map((item) => (
+                                    {localized.scopeItems.map((item) => (
                                         <li
                                             key={item}
                                             className="rounded-2xl bg-cream px-4 py-4 text-center text-sm font-medium text-primary transition-transform duration-300 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
@@ -98,14 +109,14 @@ export default function ProjectDetailContent({
                         <Reveal delayMs={100}>
                             <div className="border-t border-dashed border-primary/15 pt-12">
                                 <SectionLeafHeading id="project-approach-heading">
-                                    {project.approachTitle}
+                                    {localized.approachTitle}
                                 </SectionLeafHeading>
                                 <p className="mt-4 text-sm leading-relaxed text-primary/70 sm:text-[15px]">
-                                    {project.approachDescription}
+                                    {localized.approachDescription}
                                 </p>
 
                                 <ol className="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-4 lg:gap-5">
-                                    {project.approachSteps.map((step) => (
+                                    {localized.approachSteps.map((step) => (
                                         <li key={step.number} className="min-w-0">
                                             <ProcessCard step={step} />
                                         </li>
@@ -117,18 +128,18 @@ export default function ProjectDetailContent({
                         <Reveal delayMs={80}>
                             <div className="border-t border-dashed border-primary/15 pt-12">
                                 <SectionLeafHeading id="project-testimonial-heading">
-                                    What The Client Said
+                                    {messages.detail.testimonialHeading}
                                 </SectionLeafHeading>
 
                                 <figure className="mt-6 rounded-[1.5rem] bg-primary px-6 py-8 sm:px-8 sm:py-9">
                                     <blockquote className="text-base leading-relaxed text-white/95 sm:text-lg">
-                                        &ldquo;{project.testimonial.quote}&rdquo;
+                                        &ldquo;{localized.testimonial.quote}&rdquo;
                                     </blockquote>
                                     <figcaption className="mt-6 text-sm text-white/70">
                                         <span className="block font-semibold text-white">
-                                            {project.testimonial.name}
+                                            {localized.testimonial.name}
                                         </span>
-                                        {project.testimonial.role}
+                                        {localized.testimonial.role}
                                     </figcaption>
                                 </figure>
                             </div>

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Button from "../../ui/Button";
 import Link from "next/link";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/app/lib/contact";
+import { EMAIL_DISPLAY, EMAIL_HREF, PHONE_DISPLAY, PHONE_HREF } from "@/app/lib/contact";
 import { useTranslations } from "@/app/lib/i18n";
 
 const featureIconSrcs = [
@@ -233,7 +233,7 @@ export default function WhyUs() {
                                     {PHONE_DISPLAY}
                                 </a>
                                 <a
-                                    href="mailto:info@mahrajplants.com"
+                                    href={EMAIL_HREF}
                                     className="flex items-center gap-3 rounded-full bg-white px-4 py-3 text-sm text-primary shadow-sm transition hover:shadow-md"
                                 >
                                     <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary/15 text-secondary">
@@ -257,7 +257,7 @@ export default function WhyUs() {
                                             />
                                         </svg>
                                     </span>
-                                    info@mahrajplants.com
+                                    {EMAIL_DISPLAY}
                                 </a>
                             </div>
 

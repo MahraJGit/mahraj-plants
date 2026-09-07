@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
     HiOutlineChatAlt2,
@@ -5,17 +7,23 @@ import {
     HiOutlineUser,
 } from "react-icons/hi";
 import type { BlogArticle } from "@/app/lib/blogs";
-import { formatBlogDate } from "@/app/lib/blogs";
+import {
+    formatBlogCommentsLabel,
+    formatLocalizedBlogDate,
+    getBlogsMessages,
+    localizeBlog,
+    useLocale,
+} from "@/app/lib/i18n";
 
 type BlogDetailHeroProps = {
     article: BlogArticle;
 };
 
 export default function BlogDetailHero({ article }: BlogDetailHeroProps) {
-    const commentsLabel =
-        article.comments === 1
-            ? "1 Comment"
-            : `${article.comments} Comments`;
+    const { locale } = useLocale();
+    const messages = getBlogsMessages(locale);
+    const localized = localizeBlog(article, locale);
+    const commentsLabel = formatBlogCommentsLabel(article.comments, locale);
 
     return (
         <section
@@ -49,11 +57,11 @@ export default function BlogDetailHero({ article }: BlogDetailHeroProps) {
                         id="blog-detail-hero-heading"
                         className="mt-5 text-[28px] font-bold leading-tight text-white sm:text-[36px] lg:text-[44px] lg:leading-[1.15]"
                     >
-                        {article.title}
+                        {localized.title}
                     </h1>
 
                     <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
-                        {article.excerpt}
+                        {localized.excerpt}
                     </p>
 
                     <div className="mx-auto mt-8 flex w-fit max-w-full flex-wrap items-center justify-center gap-x-5 gap-y-2 rounded-full bg-[#C4A862] px-5 py-3 text-sm font-medium text-primary sm:gap-x-7 sm:px-7 sm:py-3.5 sm:text-[15px]">
@@ -62,14 +70,14 @@ export default function BlogDetailHero({ article }: BlogDetailHeroProps) {
                                 aria-hidden
                                 className="size-4 shrink-0 sm:size-[1.125rem]"
                             />
-                            {formatBlogDate(article)}
+                            {formatLocalizedBlogDate(article, locale)}
                         </span>
                         <span className="inline-flex items-center gap-2">
                             <HiOutlineUser
                                 aria-hidden
                                 className="size-4 shrink-0 sm:size-[1.125rem]"
                             />
-                            By: {article.author}
+                            {messages.card.by.replace("{author}", article.author)}
                         </span>
                         <span className="inline-flex items-center gap-2">
                             <HiOutlineChatAlt2
