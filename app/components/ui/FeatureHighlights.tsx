@@ -29,7 +29,7 @@ export default function FeatureHighlights({
                     <article
                         key={card.title}
                         className={cn(
-                            "group relative flex flex-col items-center overflow-visible px-3 py-4 text-center lg:px-4 lg:pb-5 lg:pt-0",
+                            "group relative flex flex-col items-center overflow-visible px-3 py-4 pt-7 text-center lg:px-4 lg:pb-5 lg:pt-0",
                             "border-primary/15 border-dashed",
                             "[@media(hover:hover)]:cursor-pointer [@media(hover:hover)]:outline-none",
                             index !== items.length - 1 &&

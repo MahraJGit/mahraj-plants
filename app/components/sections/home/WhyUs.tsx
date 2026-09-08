@@ -212,7 +212,7 @@ export default function WhyUs() {
                                 {t("talkBody")}
                             </p>
 
-                            <div className="mt-6 space-y-3">
+                            <div className="my-4 space-y-3 ">
                                 <a
                                     href={PHONE_HREF}
                                     className="flex items-center gap-3 rounded-full bg-white px-4 py-3 text-sm text-primary shadow-sm transition hover:shadow-md"

@@ -93,7 +93,7 @@ export default function ProjectCard({
                     {project.description}
                 </p>
 
-                <ul className="mt-5 space-y-2.5">
+                <ul className="my-4 space-y-2.5">
                     <li className="flex items-start gap-2.5">
                         <ClientIcon />
                         <span className="text-sm leading-snug text-primary/80">

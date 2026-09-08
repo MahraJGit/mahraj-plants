@@ -92,7 +92,7 @@ export default function ServiceCard({
                     ))}
                 </ul>
 
-                <div className="mt-auto border-t border-dashed border-primary/20 pt-5">
+                <div className="mt-2 border-t border-dashed border-primary/20 pt-5">
                     <Link
                         href={href}
                         className="group flex items-center justify-between gap-4 outline-none"
