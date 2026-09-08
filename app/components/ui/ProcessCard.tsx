@@ -27,7 +27,6 @@ export default function ProcessCard({ step, className }: ProcessCardProps) {
             )}
             tabIndex={0}
         >
-            {/* Touch / no-hover: all details visible */}
             <div
                 className={cn(
                     "flex h-full w-full flex-col bg-linear-to-b from-primary to-[#14351A] px-5 py-7 text-center shadow-[0_18px_40px_rgba(10,37,14,0.22)] sm:px-6 sm:py-8",
@@ -63,7 +62,6 @@ export default function ProcessCard({ step, className }: ProcessCardProps) {
                 </p>
             </div>
 
-            {/* Desktop with hover: flip card */}
             <div
                 className={cn(
                     "relative hidden h-full w-full [transform-style:preserve-3d] transition-transform duration-700 ease-in-out motion-reduce:transition-none",
