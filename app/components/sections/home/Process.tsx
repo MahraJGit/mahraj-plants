@@ -52,7 +52,7 @@ export default function Process() {
                             width={14}
                             height={21}
                             unoptimized
-                            style={{ width: "auto" }}
+                            style={{ width: "auto", height: "auto" }}
                             className="h-5 w-auto shrink-0"
                         />
                         <span className="font-script text-[28px] leading-none text-secondary sm:text-[32px]">
@@ -87,7 +87,7 @@ export default function Process() {
                                         width={56}
                                         height={32}
                                         unoptimized
-                                        style={{ width: "auto" }}
+                                        style={{ width: "auto", height: "auto" }}
                                         className="mx-auto w-12 xl:w-14 rtl:rotate-180"
                                     />
                                 </div>

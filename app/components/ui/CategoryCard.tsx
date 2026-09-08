@@ -55,11 +55,11 @@ export default function CategoryCard({
                 {category.title}
             </h3>
 
-            <p className="mt-2 max-w-[14rem] text-xs leading-relaxed text-primary/55 opacity-0 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100 group-focus-visible:max-h-20 group-focus-visible:opacity-100 sm:text-sm">
+            <p className="mt-2 max-w-[14rem] text-xs leading-relaxed text-primary/55 opacity-0 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100 group-focus-visible:max-h-20 group-focus-visible:opacity-100 [@media(hover:none)]:max-h-20 [@media(hover:none)]:opacity-100 sm:text-sm">
                 {category.tagline}
             </p>
 
-            <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-secondary opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+            <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-secondary opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 [@media(hover:none)]:opacity-100">
                 View collection
                 <svg
                     viewBox="0 0 16 16"

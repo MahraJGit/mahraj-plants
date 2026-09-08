@@ -57,19 +57,6 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                     </div>
                 </div>
 
-                <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 text-white sm:h-20"
-                >
-                    <svg
-                        viewBox="0 0 1440 80"
-                        preserveAspectRatio="none"
-                        className="h-full w-full"
-                        fill="currentColor"
-                    >
-                        <path d="M0 80V40c80-8 160-24 240-28s160 12 240 16 160-20 240-24 160 16 240 20 160-12 240-16 160 20 240 16V80H0Z" />
-                    </svg>
-                </div>
             </div>
 
             <div className="relative z-20 -mt-16 sm:-mt-20">

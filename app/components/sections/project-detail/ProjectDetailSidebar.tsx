@@ -115,7 +115,7 @@ export default function ProjectDetailSidebar({
                         width={96}
                         height={96}
                         unoptimized
-                        style={{ width: "auto" }}
+                        style={{ width: "auto", height: "auto" }}
                         className="h-24 w-auto brightness-0 invert"
                     />
                 </div>

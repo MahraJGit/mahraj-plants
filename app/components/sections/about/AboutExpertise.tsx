@@ -55,7 +55,7 @@ export default function AboutExpertise() {
                                     width={14}
                                     height={21}
                                     unoptimized
-                                    style={{ width: "auto" }}
+                                    style={{ width: "auto", height: "auto" }}
                                     className="h-5 w-auto shrink-0"
                                     aria-hidden
                                 />
@@ -142,7 +142,7 @@ export default function AboutExpertise() {
                                     height={180}
                                     unoptimized
                                     aria-hidden
-                                    style={{ width: "auto" }}
+                                    style={{ width: "auto", height: "auto" }}
                                     className="pointer-events-none absolute -right-4 -bottom-6 size-36 opacity-[0.12] brightness-0 invert sm:size-44 lg:size-52"
                                 />
 
@@ -154,7 +154,7 @@ export default function AboutExpertise() {
                                             width={40}
                                             height={40}
                                             unoptimized
-                                            style={{ width: "auto" }}
+                                            style={{ width: "auto", height: "auto" }}
                                             className="size-9 sm:size-10"
                                         />
                                     </div>

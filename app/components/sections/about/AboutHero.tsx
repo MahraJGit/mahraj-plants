@@ -30,7 +30,7 @@ export default function AboutHero() {
                         width={14}
                         height={21}
                         unoptimized
-                        style={{ width: "auto" }}
+                        style={{ width: "auto", height: "auto" }}
                         className="mx-auto h-6 w-auto"
                         aria-hidden
                     />

@@ -48,7 +48,7 @@ function FeatureGrid({ items, iconBg }: FeatureGridProps) {
                             width={24}
                             height={24}
                             unoptimized
-                            style={{ width: "auto" }}
+                            style={{ width: "auto", height: "auto" }}
                             className="h-6 w-auto brightness-0 invert"
                         />
                     </span>
@@ -88,7 +88,7 @@ export default function WhyChooseTeam() {
                     width={320}
                     height={320}
                     unoptimized
-                    style={{ width: "auto" }}
+                    style={{ width: "auto", height: "auto" }}
                     className="h-full w-full -rotate-[20deg]"
                 />
             </div>
@@ -102,7 +102,7 @@ export default function WhyChooseTeam() {
                     width={280}
                     height={280}
                     unoptimized
-                    style={{ width: "auto" }}
+                    style={{ width: "auto", height: "auto" }}
                     className="h-full w-full rotate-[25deg] scale-x-[-1]"
                 />
             </div>
@@ -117,7 +117,7 @@ export default function WhyChooseTeam() {
                                 width={48}
                                 height={48}
                                 unoptimized
-                                style={{ width: "auto" }}
+                                style={{ width: "auto", height: "auto" }}
                                 className="h-11 w-auto sm:h-12"
                             />
 

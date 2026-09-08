@@ -42,7 +42,7 @@ export default function AboutWhyChooseUs() {
                             width={14}
                             height={21}
                             unoptimized
-                            style={{ width: "auto" }}
+                            style={{ width: "auto", height: "auto" }}
                             className="mx-auto h-5 w-auto"
                             aria-hidden
                         />

@@ -146,7 +146,7 @@ export default function CategoryStats() {
                                     height={88}
                                     unoptimized
                                     aria-hidden
-                                    style={{ width: "auto" }}
+                                    style={{ width: "auto", height: "auto" }}
                                     className="pointer-events-none absolute end-4 bottom-4 h-16 w-auto opacity-20 brightness-0 invert sm:h-20"
                                 />
                             </article>

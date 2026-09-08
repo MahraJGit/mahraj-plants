@@ -63,7 +63,7 @@ export default function AboutCounters() {
                                             width={36}
                                             height={36}
                                             unoptimized
-                                            style={{ width: "auto" }}
+                                            style={{ width: "auto", height: "auto" }}
                                             className={meta.iconClassName}
                                             aria-hidden
                                         />

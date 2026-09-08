@@ -74,7 +74,7 @@ export default function Blogs() {
                             width={14}
                             height={21}
                             aria-hidden
-                            style={{ width: "auto" }}
+                            style={{ width: "auto", height: "auto" }}
                             className="h-5 w-3.5 shrink-0"
                         />
                         <span className="font-script text-[28px] leading-none text-secondary sm:text-[32px]">

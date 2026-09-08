@@ -41,7 +41,7 @@ export default function ServicesPricing() {
                     width={280}
                     height={280}
                     unoptimized
-                    style={{ width: "auto" }}
+                    style={{ width: "auto", height: "auto" }}
                     className="h-full w-full -rotate-[20deg]"
                 />
             </div>
@@ -55,7 +55,7 @@ export default function ServicesPricing() {
                     width={240}
                     height={240}
                     unoptimized
-                    style={{ width: "auto" }}
+                    style={{ width: "auto", height: "auto" }}
                     className="h-full w-full rotate-[25deg] scale-x-[-1]"
                 />
             </div>

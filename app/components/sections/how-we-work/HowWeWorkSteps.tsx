@@ -107,7 +107,7 @@ export default function HowWeWorkSteps() {
                                             width={48}
                                             height={48}
                                             unoptimized
-                                            style={{ width: "auto" }}
+                                            style={{ width: "auto", height: "auto" }}
                                             className="mt-2 h-10 w-auto [filter:brightness(0)_saturate(100%)_invert(67%)_sepia(35%)_saturate(650%)_hue-rotate(42deg)_brightness(94%)_contrast(90%)] sm:h-11"
                                             aria-hidden
                                         />

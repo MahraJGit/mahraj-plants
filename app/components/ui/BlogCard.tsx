@@ -81,6 +81,7 @@ export default function BlogCard({
                     "absolute top-5 right-5 z-20 flex size-10 items-center justify-center rounded-full bg-white text-primary opacity-0 shadow-md transition-all duration-500 ease-out motion-reduce:transition-none",
                     "pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 group-hover:scale-105",
                     "group-focus-within:pointer-events-auto group-focus-within:opacity-100",
+                    "[@media(hover:none)]:pointer-events-auto [@media(hover:none)]:opacity-100",
                 )}
             >
                 <Image
@@ -89,7 +90,7 @@ export default function BlogCard({
                     width={16}
                     height={16}
                     aria-hidden
-                    style={{ width: "auto" }}
+                    style={{ width: "auto", height: "auto" }}
                     className="size-4"
                 />
             </Link>
@@ -98,6 +99,7 @@ export default function BlogCard({
                 className={cn(
                     "absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-primary via-primary/85 to-transparent px-6 pt-20 pb-6 transition-all duration-500 ease-out motion-reduce:transition-none",
                     "group-hover:from-primary group-hover:via-primary/95 group-hover:pt-28",
+                    "[@media(hover:none)]:from-primary [@media(hover:none)]:via-primary/95 [@media(hover:none)]:pt-28",
                 )}
             >
                 <h3 className="text-lg leading-snug font-bold text-white sm:text-xl">
@@ -109,6 +111,7 @@ export default function BlogCard({
                         "mt-3 line-clamp-3 text-sm leading-relaxed text-white/85 transition-all duration-500 ease-out motion-reduce:transition-none",
                         "max-h-0 opacity-0 group-hover:mt-3 group-hover:max-h-24 group-hover:opacity-100",
                         "group-focus-within:mt-3 group-focus-within:max-h-24 group-focus-within:opacity-100",
+                        "[@media(hover:none)]:mt-3 [@media(hover:none)]:max-h-24 [@media(hover:none)]:opacity-100",
                     )}
                 >
                     {post.excerpt}
@@ -119,6 +122,7 @@ export default function BlogCard({
                         "mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/90 transition-all duration-500 ease-out motion-reduce:transition-none sm:text-sm",
                         "max-h-0 overflow-hidden opacity-0 group-hover:mt-4 group-hover:max-h-10 group-hover:opacity-100",
                         "group-focus-within:mt-4 group-focus-within:max-h-10 group-focus-within:opacity-100",
+                        "[@media(hover:none)]:mt-4 [@media(hover:none)]:max-h-10 [@media(hover:none)]:opacity-100",
                     )}
                 >
                     <span className="inline-flex items-center gap-1.5">
@@ -128,7 +132,7 @@ export default function BlogCard({
                             width={16}
                             height={16}
                             aria-hidden
-                            style={{ width: "auto" }}
+                            style={{ width: "auto", height: "auto" }}
                             className="size-3.5 shrink-0"
                         />
                         {messages.card.by.replace("{author}", post.author)}
@@ -140,7 +144,7 @@ export default function BlogCard({
                             width={16}
                             height={16}
                             aria-hidden
-                            style={{ width: "auto" }}
+                            style={{ width: "auto", height: "auto" }}
                             className="size-3.5 shrink-0"
                         />
                         {formatBlogCommentsLabel(post.comments, locale)}

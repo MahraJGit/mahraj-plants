@@ -159,7 +159,7 @@ export default function Hero() {
                                 height={30}
                                 unoptimized
                                 loading="eager"
-                                style={{ width: "auto" }}
+                                style={{ width: "auto", height: "auto" }}
                                 className="h-6 w-auto shrink-0 sm:h-[30px]"
                             />
                             <span

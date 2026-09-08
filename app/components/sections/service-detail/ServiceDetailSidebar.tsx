@@ -96,7 +96,7 @@ export default function ServiceDetailSidebar({
                                 width={16}
                                 height={16}
                                 unoptimized
-                                style={{ width: "auto" }}
+                                style={{ width: "auto", height: "auto" }}
                                 className="size-4 brightness-0 invert"
                             />
                             BROCHURE.DOC
@@ -115,7 +115,7 @@ export default function ServiceDetailSidebar({
                                 width={16}
                                 height={16}
                                 unoptimized
-                                style={{ width: "auto" }}
+                                style={{ width: "auto", height: "auto" }}
                                 className="size-4 brightness-0 invert"
                             />
                             BROCHURE.PDF
@@ -136,7 +136,7 @@ export default function ServiceDetailSidebar({
                         width={96}
                         height={96}
                         unoptimized
-                        style={{ width: "auto" }}
+                        style={{ width: "auto", height: "auto" }}
                         className="h-24 w-auto brightness-0 invert"
                     />
                 </div>

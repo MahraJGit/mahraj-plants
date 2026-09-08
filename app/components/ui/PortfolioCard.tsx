@@ -46,6 +46,7 @@ export default function PortfolioCard({
                     "absolute top-4 right-4 z-20 flex size-10 items-center justify-center rounded-full bg-white text-primary opacity-0 shadow-md transition-all duration-500 ease-out motion-reduce:transition-none",
                     "pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 group-hover:scale-105",
                     "group-focus-within:pointer-events-auto group-focus-within:opacity-100",
+                    "[@media(hover:none)]:pointer-events-auto [@media(hover:none)]:opacity-100",
                 )}
             >
                 <svg
@@ -68,6 +69,7 @@ export default function PortfolioCard({
                 className={cn(
                     "absolute inset-x-0 bottom-0 z-10 translate-y-6 bg-gradient-to-t from-primary via-primary/95 to-transparent px-5 pb-5 pt-16 opacity-0 transition-all duration-500 ease-out motion-reduce:transition-none",
                     "group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100",
+                    "[@media(hover:none)]:translate-y-0 [@media(hover:none)]:opacity-100",
                 )}
             >
                 <div className="flex flex-wrap gap-2">

@@ -15,7 +15,6 @@ import {
     HiOutlineClock,
     HiOutlineLocationMarker,
     HiOutlineMail,
-    HiOutlineSearch,
 } from "react-icons/hi";
 import { FACEBOOK_HREF, INSTAGRAM_HREF, EMAIL_HREF, X_HREF } from "@/app/lib/contact";
 import { useTranslations, type Locale } from "@/app/lib/i18n";
@@ -73,11 +72,13 @@ export default function Header() {
     const todayHoursLabel = useTodayOperatingHoursLabel();
     const [mobileOpen, setMobileOpen] = useState(false);
     const [plantsOpen, setPlantsOpen] = useState(false);
+    const [mobilePlantsOpen, setMobilePlantsOpen] = useState(false);
     const [languageOpen, setLanguageOpen] = useState(false);
     const [activeHash, setActiveHash] = useState("");
     const [scrolled, setScrolled] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const languageRef = useRef<HTMLDivElement>(null);
+    const mobileLanguageRef = useRef<HTMLDivElement>(null);
 
     const plantCategories = plantCategoryNav.map((item) => {
         const slug = item.href.replace("/categories/", "");
@@ -129,7 +130,9 @@ export default function Header() {
                 setPlantsOpen(false);
             }
 
-            if (languageRef.current && !languageRef.current.contains(target)) {
+            const inDesktopLang = languageRef.current?.contains(target);
+            const inMobileLang = mobileLanguageRef.current?.contains(target);
+            if (!inDesktopLang && !inMobileLang) {
                 setLanguageOpen(false);
             }
         }
@@ -140,6 +143,9 @@ export default function Header() {
 
     useEffect(() => {
         document.body.style.overflow = mobileOpen ? "hidden" : "";
+        if (!mobileOpen) {
+            setMobilePlantsOpen(false);
+        }
         return () => {
             document.body.style.overflow = "";
         };
@@ -176,6 +182,81 @@ export default function Header() {
         return pathname === href;
     }
 
+    function renderLanguageSwitcher(
+        ref: React.RefObject<HTMLDivElement | null>,
+        className?: string,
+        options?: { showLabel?: boolean; buttonClassName?: string },
+    ) {
+        const showLabel = options?.showLabel ?? true;
+
+        return (
+            <div ref={ref} className={cn("relative", className)}>
+                <button
+                    type="button"
+                    aria-label={t("changeLanguage")}
+                    aria-expanded={languageOpen}
+                    aria-haspopup="listbox"
+                    onClick={() => setLanguageOpen((open) => !open)}
+                    className={cn(
+                        "flex cursor-pointer items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2 py-1 text-white/90 transition hover:border-white/30 hover:text-white",
+                        options?.buttonClassName,
+                    )}
+                >
+                    <FlagIcon src={currentLanguage.flag} />
+                    {showLabel && (
+                        <span className="hidden text-[11px] font-medium sm:inline">
+                            {currentLanguage.label}
+                        </span>
+                    )}
+                    <HiChevronDown
+                        aria-hidden
+                        className={cn(
+                            "size-3.5 transition-transform duration-200",
+                            languageOpen && "rotate-180",
+                        )}
+                    />
+                </button>
+
+                {languageOpen && (
+                    <ul
+                        role="listbox"
+                        aria-label={t("selectLanguage")}
+                        className="absolute top-[calc(100%+0.4rem)] end-0 z-50 min-w-[9.5rem] overflow-hidden rounded-xl border border-white/15 bg-section py-1 shadow-xl"
+                    >
+                        {languages.map((item) => {
+                            const selected = locale === item.code;
+
+                            return (
+                                <li
+                                    key={item.code}
+                                    role="option"
+                                    aria-selected={selected}
+                                >
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            setLocale(item.code as Locale);
+                                            setLanguageOpen(false);
+                                        }}
+                                        className={cn(
+                                            "flex w-full cursor-pointer items-center gap-2.5 px-3 py-2 text-start text-[11px] transition hover:bg-white/10",
+                                            selected
+                                                ? "text-secondary"
+                                                : "text-white/90",
+                                        )}
+                                    >
+                                        <FlagIcon src={item.flag} />
+                                        {item.label}
+                                    </button>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                )}
+            </div>
+        );
+    }
+
     return (
         <header className="fixed inset-x-0 top-0 z-50">
             <div className="hidden bg-section text-white lg:block">
@@ -191,7 +272,7 @@ export default function Header() {
                         <Link
                             href={EMAIL_HREF}
                             aria-label="Email Mahraj Landscaping"
-                            className="ml-1 shrink-0 text-white/90 transition hover:text-white"
+                            className="ms-1 shrink-0 text-white/90 transition hover:text-white"
                         >
                             <HiOutlineMail aria-hidden className="size-4" />
                         </Link>
@@ -203,65 +284,9 @@ export default function Header() {
                     </div>
 
                     <div className="flex shrink-0 items-center gap-2.5">
-                        <div ref={languageRef} className="relative">
-                            <button
-                                type="button"
-                                aria-label={t("changeLanguage")}
-                                aria-expanded={languageOpen}
-                                aria-haspopup="listbox"
-                                onClick={() =>
-                                    setLanguageOpen((open) => !open)
-                                }
-                                className="flex cursor-pointer items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2 py-1 text-white/90 transition hover:border-white/30 hover:text-white"
-                            >
-                                <FlagIcon src={currentLanguage.flag} />
-                                <span className="hidden text-[11px] font-medium sm:inline">
-                                    {currentLanguage.label}
-                                </span>
-                                <HiChevronDown
-                                    aria-hidden
-                                    className={cn(
-                                        "size-3.5 transition-transform duration-200",
-                                        languageOpen && "rotate-180",
-                                    )}
-                                />
-                            </button>
+                        {renderLanguageSwitcher(languageRef)}
 
-                            {languageOpen && (
-                                <ul
-                                    role="listbox"
-                                    aria-label={t("selectLanguage")}
-                                    className="absolute top-[calc(100%+0.4rem)] end-0 z-50 min-w-[9.5rem] overflow-hidden rounded-xl border border-white/15 bg-section py-1 shadow-xl"
-                                >
-                                    {languages.map((item) => {
-                                        const selected = locale === item.code;
-
-                                        return (
-                                            <li key={item.code} role="option" aria-selected={selected}>
-                                                <button
-                                                    type="button"
-                                                    onClick={() => {
-                                                        setLocale(item.code as Locale);
-                                                        setLanguageOpen(false);
-                                                    }}
-                                                    className={cn(
-                                                        "flex w-full cursor-pointer items-center gap-2.5 px-3 py-2 text-start text-[11px] transition hover:bg-white/10",
-                                                        selected
-                                                            ? "text-secondary"
-                                                            : "text-white/90",
-                                                    )}
-                                                >
-                                                    <FlagIcon src={item.flag} />
-                                                    {item.label}
-                                                </button>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
-                            )}
-                        </div>
-
-                        <div className="ml-1 flex items-center gap-1.5">
+                        <div className="ms-1 flex items-center gap-1.5">
                             {socialLinks.map(({ label, href, Icon, external }) => (
                                 <Link
                                     key={label}
@@ -286,7 +311,7 @@ export default function Header() {
             <div className="px-4 pt-3 lg:px-8 lg:pt-4">
                 <div
                     className={cn(
-                        "mx-auto flex max-w-7xl items-center gap-3 rounded-full border px-3 py-2.5 transition-all duration-300 lg:gap-4 lg:px-5 lg:py-3",
+                        "mx-auto flex w-full max-w-7xl items-center justify-between gap-3 rounded-full border px-3 py-2.5 transition-all duration-300 lg:gap-4 lg:px-5 lg:py-3",
                         scrolled
                             ? "border-primary/30 bg-section shadow-[0_10px_40px_rgba(10,37,14,0.28)] backdrop-blur-md"
                             : "border-white/30 bg-section/88 shadow-[0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-xl",
@@ -294,7 +319,7 @@ export default function Header() {
                 >
                     <Link
                         href="/"
-                        className="relative mr-1 h-10 w-[160px] shrink-0 sm:h-11 sm:w-[180px]"
+                        className="relative me-1 h-10 w-[160px] shrink-0 sm:h-11 sm:w-[180px]"
                         onClick={() => setMobileOpen(false)}
                     >
                         <Image
@@ -302,7 +327,7 @@ export default function Header() {
                             alt="Mahraj Landscaping"
                             fill
                             sizes="180px"
-                            className="object-contain object-left"
+                            className="object-contain object-start"
                             priority
                         />
                     </Link>
@@ -346,7 +371,7 @@ export default function Header() {
                                         </button>
 
                                         {plantsOpen && (
-                                            <div className="absolute top-[calc(100%+0.65rem)] left-0 min-w-[15rem] overflow-hidden rounded-2xl border border-white/15 bg-section py-2 shadow-xl">
+                                            <div className="absolute top-[calc(100%+0.65rem)] start-0 min-w-[15rem] overflow-hidden rounded-2xl border border-white/15 bg-section py-2 shadow-xl">
                                                 {link.dropdown.map((item) => (
                                                     <Link
                                                         key={item.label}
@@ -378,14 +403,12 @@ export default function Header() {
                         })}
                     </nav>
 
-                    <div className="ml-auto flex items-center gap-2 sm:gap-2.5">
-                        {/* <button
-                            type="button"
-                            aria-label="Search"
-                            className="flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition hover:border-white/40 hover:text-secondary"
-                        >
-                            <HiOutlineSearch aria-hidden className="size-5" />
-                        </button> */}
+                    <div className="flex shrink-0 items-center gap-2 sm:gap-2.5">
+                        {renderLanguageSwitcher(mobileLanguageRef, "lg:hidden", {
+                            showLabel: false,
+                            buttonClassName:
+                                "h-10 border-white/25 bg-white/10 px-2.5 hover:border-white/40",
+                        })}
 
                         <Link
                             href="https://mahrajagriculture.com/"
@@ -433,52 +456,103 @@ export default function Header() {
                         className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-primary/20 bg-section p-4 shadow-xl"
                     >
                         <ul className="space-y-1">
-                            {navLinks.map((link) => (
-                                <li key={link.label}>
-                                    <Link
-                                        href={link.href}
-                                        className={cn(
-                                            navLinkClass,
-                                            "block",
-                                            isActive(link.href) &&
-                                                "text-secondary",
-                                        )}
-                                        onClick={() => setMobileOpen(false)}
-                                    >
-                                        {link.label}
-                                    </Link>
-                                    {link.dropdown && (
-                                        <ul className="mt-1 space-y-1 pl-3">
-                                            {link.dropdown.map((item) => (
-                                                <li key={item.label}>
-                                                    <Link
-                                                        href={item.href}
-                                                        className="block rounded-lg px-4 py-2 text-sm text-white/80 transition hover:text-secondary"
-                                                        onClick={() =>
-                                                            setMobileOpen(false)
-                                                        }
-                                                    >
-                                                        {item.label}
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </li>
-                            ))}
+                            {navLinks.map((link) => {
+                                if (link.dropdown) {
+                                    return (
+                                        <li key={link.label}>
+                                            <button
+                                                type="button"
+                                                aria-expanded={mobilePlantsOpen}
+                                                onClick={() =>
+                                                    setMobilePlantsOpen(
+                                                        (open) => !open,
+                                                    )
+                                                }
+                                                className={cn(
+                                                    navLinkClass,
+                                                    "flex w-full cursor-pointer items-center justify-between gap-3",
+                                                    (isActive(link.href) ||
+                                                        mobilePlantsOpen) &&
+                                                        "text-secondary",
+                                                )}
+                                            >
+                                                <span>{link.label}</span>
+                                                <HiChevronDown
+                                                    aria-hidden
+                                                    className={cn(
+                                                        "size-4 shrink-0 transition-transform duration-200",
+                                                        mobilePlantsOpen &&
+                                                            "rotate-180",
+                                                    )}
+                                                />
+                                            </button>
+
+                                            <div
+                                                className={cn(
+                                                    "grid transition-[grid-template-rows,opacity] duration-300 ease-out",
+                                                    mobilePlantsOpen
+                                                        ? "grid-rows-[1fr] opacity-100"
+                                                        : "grid-rows-[0fr] opacity-0",
+                                                )}
+                                            >
+                                                <ul
+                                                    className={cn(
+                                                        "space-y-0.5 overflow-hidden border-s border-white/15 ms-4 ps-3",
+                                                        !mobilePlantsOpen &&
+                                                            "pointer-events-none",
+                                                    )}
+                                                >
+                                                    {link.dropdown.map(
+                                                        (item) => (
+                                                            <li
+                                                                key={item.label}
+                                                            >
+                                                                <Link
+                                                                    href={
+                                                                        item.href
+                                                                    }
+                                                                    className="block rounded-lg px-3 py-2.5 text-sm text-white/75 transition hover:bg-white/5 hover:text-secondary"
+                                                                    onClick={() =>
+                                                                        setMobileOpen(
+                                                                            false,
+                                                                        )
+                                                                    }
+                                                                >
+                                                                    {
+                                                                        item.label
+                                                                    }
+                                                                </Link>
+                                                            </li>
+                                                        ),
+                                                    )}
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    );
+                                }
+
+                                return (
+                                    <li key={link.label}>
+                                        <Link
+                                            href={link.href}
+                                            className={cn(
+                                                navLinkClass,
+                                                "block",
+                                                isActive(link.href) &&
+                                                    "text-secondary",
+                                            )}
+                                            onClick={() =>
+                                                setMobileOpen(false)
+                                            }
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                );
+                            })}
                         </ul>
 
                         <div className="mt-4 flex items-center gap-2.5">
-                            {/* <button
-                                type="button"
-                                aria-label="Search"
-                                className="flex size-10 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white"
-                            >
-                                <HiOutlineSearch
-                                    aria-hidden
-                                    className="size-5"
-                                />
-                            </button> */}
                             <Link
                                 href="https://mahrajagriculture.com/"
                                 target="_blank"

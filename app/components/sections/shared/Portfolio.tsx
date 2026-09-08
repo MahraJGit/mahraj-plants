@@ -61,7 +61,7 @@ export default function Portfolio({ variant = "white" }: PortfolioProps) {
                             width={14}
                             height={21}
                             unoptimized
-                            style={{ width: "auto" }}
+                            style={{ width: "auto", height: "auto" }}
                             className="h-5 w-auto shrink-0"
                             aria-hidden
                         />
