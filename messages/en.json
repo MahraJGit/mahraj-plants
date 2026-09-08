@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Mahraj Plants",
-    "description": "Mahraj Plants is a plant store that sells plants and plant related products."
+    "title": "Mahraj Landscaping",
+    "description": "Mahraj Landscaping is a plant store that sells plants and plant related products."
   },
   "common": {
     "readMore": "Read More",
@@ -36,8 +36,8 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Welcome to Mahraj Plants Landscaping",
-      "carouselLabel": "Mahraj Plants highlights",
+      "eyebrow": "Welcome to Mahraj Landscaping",
+      "carouselLabel": "Mahraj Landscaping highlights",
       "prevSlide": "Previous slide",
       "nextSlide": "Next slide",
       "slideStatus": "Slide {current} of {total}",
@@ -60,7 +60,7 @@
       ]
     },
     "features": {
-      "ariaLabel": "Why choose Mahraj Plants",
+      "ariaLabel": "Why choose Mahraj Landscaping",
       "cards": [
         {
           "title": "Free Expert Consultation",
@@ -82,7 +82,7 @@
     },
     "categories": {
       "eyebrow": "Explore our collections",
-      "titleBefore": "Mahraj Plants",
+      "titleBefore": "Mahraj Landscaping",
       "titleAfter": " Your Trusted Greenery & Landscaping Partner",
       "description": "Our curated collection of vibrant plants and custom landscaping solutions. From budget-friendly greens to statement plants that transform your home, garden, or commercial space, we deliver health, beauty, and expert care right to your doorstep.",
       "items": [
@@ -109,12 +109,12 @@
       ]
     },
     "about": {
-      "imageAlt": "Mahraj Plants team caring for garden flowers together",
+      "imageAlt": "Mahraj Landscaping team caring for garden flowers together",
       "yearsLabel": "Years of Gardening",
       "eyebrow": "Who We Are",
-      "title": "Mahraj Plants & Landscaping",
+      "title": "Mahraj Landscaping",
       "paragraphs": [
-        "At Mahraj Plants, we bring life, greenery, and timeless beauty to modern living and outdoor spaces.",
+        "At Mahraj Landscaping, we bring life, greenery, and timeless beauty to modern living and outdoor spaces.",
         "With years of horticultural experience, we craft custom landscaping solutions tailored to bring your vision to life."
       ],
       "highlights": [
@@ -130,11 +130,11 @@
       "visionTitle": "Our Vision",
       "visionBody": "To be the leading name in sustainable green design, transforming urban and suburban spaces into thriving, vibrant eco-sanctuaries that connect people back to nature.",
       "missionTitle": "Our Mission",
-      "missionBody": "At Mahraj Plants & Landscaping, our mission is to deliver exceptional botanical quality and custom outdoor design through expert craftsmanship, eco-friendly irrigation, and dedicated plant care making beautiful green spaces accessible, effortless, and lasting for every client.",
-      "imageAlt": "Mahraj Plants team working on sustainable garden landscaping"
+      "missionBody": "At Mahraj Landscaping, our mission is to deliver exceptional botanical quality and custom outdoor design through expert craftsmanship, eco-friendly irrigation, and dedicated plant care making beautiful green spaces accessible, effortless, and lasting for every client.",
+      "imageAlt": "Mahraj Landscaping team working on sustainable garden landscaping"
     },
     "stats": {
-      "ariaLabel": "Mahraj Plants by the numbers",
+      "ariaLabel": "Mahraj Landscaping by the numbers",
       "items": [
         {
           "title": "Projects Completed",
@@ -177,7 +177,7 @@
     },
     "whyUs": {
       "eyebrow": "Natural green Plants",
-      "title": "Why Choose Mahraj Plants?",
+      "title": "Why Choose Mahraj Landscaping?",
       "description": "We combine thoughtful design, expert planting, and dependable care to create outdoor spaces that feel natural, balanced, and built to last. Every project is handled with the same attention to detail—from the first consultation to long-term maintenance.",
       "highlights": [
         "Tailored landscaping solutions designed around your space and lifestyle",
@@ -185,7 +185,7 @@
         "Integrated services from planting to irrigation and maintenance",
         "Clear communication and reliable project delivery every step of the way"
       ],
-      "imageAlt": "Mahraj Plants landscaping team standing together in front of a greenhouse",
+      "imageAlt": "Mahraj Landscaping team standing together in front of a greenhouse",
       "sinceTitle": "We Are Since 2023!",
       "sinceBody": "Built on a passion for greenery and sustainable outdoor living, we've grown into a trusted partner for homeowners and businesses seeking beautiful, healthy landscapes.",
       "featureIcons": [
@@ -231,7 +231,7 @@
       "goToSlide": "Go to slide {n}",
       "items": [
         {
-          "quote": "Mahraj Plants transformed our backyard into a peaceful retreat. The team listened to every detail and delivered beyond what we imagined.",
+          "quote": "Mahraj Landscaping transformed our backyard into a peaceful retreat. The team listened to every detail and delivered beyond what we imagined.",
           "name": "Sarah Mitchell",
           "role": "Homeowner, London"
         },
@@ -265,8 +265,8 @@
       "items": [
         {
           "title": "Behind The Green: Meet Our Talented Team",
-          "excerpt": "Get to know the passionate, skilled people behind Mahraj Plants' green transformations. From designers to gardeners, our team is dedicated to turning outdoor dreams into lush reality.",
-          "alt": "Mahraj Plants team working together in a garden nursery",
+          "excerpt": "Get to know the passionate, skilled people behind Mahraj Landscaping's green transformations. From designers to gardeners, our team is dedicated to turning outdoor dreams into lush reality.",
+          "alt": "Mahraj Landscaping team working together in a garden nursery",
           "month": "AUG"
         },
         {
@@ -299,7 +299,7 @@
       "ariaLabel": "Partner logos"
     },
     "consultation": {
-      "title": "Ready To Elevate Your Landscape With Mahraj Plants?",
+      "title": "Ready To Elevate Your Landscape With Mahraj Landscaping?",
       "description": "From custom garden design to ongoing care, our experts are here to turn your vision into a thriving green oasis."
     }
   },
@@ -311,32 +311,78 @@
     "usefulLinksHeading": "Useful Links",
     "newsletterHeading": "Get Our Newsletter",
     "newsletterBody": "Garden tips, ideas & offers—straight to your inbox.",
-    "copyright": "© 2026 Mahraj Plants & Landscaping. All Rights Reserved.",
+    "copyright": "© 2026 Mahraj Landscaping. All Rights Reserved.",
     "legalNavLabel": "Legal links",
     "services": [
-      { "label": "Landscape Design & Planning", "href": "/services/landscape-design-planning" },
-      { "label": "Irrigation & Drainage Solutions", "href": "/services/irrigation-drainage-solutions" },
-      { "label": "Green Maintenance Packages", "href": "/services/green-maintenance-packages" },
-      { "label": "Hardscaping & Lighting", "href": "/services/hardscaping-lighting" },
-      { "label": "Gardening & Plant Upgrade", "href": "/services/gardening-plant-upgrade" }
+      {
+        "label": "Landscape Design & Planning",
+        "href": "/services/landscape-design-planning"
+      },
+      {
+        "label": "Irrigation & Drainage Solutions",
+        "href": "/services/irrigation-drainage-solutions"
+      },
+      {
+        "label": "Green Maintenance Packages",
+        "href": "/services/green-maintenance-packages"
+      },
+      {
+        "label": "Hardscaping & Lighting",
+        "href": "/services/hardscaping-lighting"
+      },
+      {
+        "label": "Gardening & Plant Upgrade",
+        "href": "/services/gardening-plant-upgrade"
+      }
     ],
     "usefulLinks": [
-      { "label": "Home", "href": "/#hero", "highlighted": true },
-      { "label": "About us", "href": "/about" },
-      { "label": "Why choose us", "href": "/#why-us" },
-      { "label": "Feature Projects", "href": "/projects" },
-      { "label": "Gallery", "href": "/projects" },
-      { "label": "Pricing Packages", "href": "/#consultation" }
+      {
+        "label": "Home",
+        "href": "/#hero",
+        "highlighted": true
+      },
+      {
+        "label": "About us",
+        "href": "/about"
+      },
+      {
+        "label": "Why choose us",
+        "href": "/#why-us"
+      },
+      {
+        "label": "Feature Projects",
+        "href": "/projects"
+      },
+      {
+        "label": "Gallery",
+        "href": "/projects"
+      },
+      {
+        "label": "Pricing Packages",
+        "href": "/#consultation"
+      }
     ],
     "legalLinks": [
-      { "label": "Privacy Policy", "href": "#" },
-      { "label": "Terms & Condition", "href": "#" },
-      { "label": "Site Map", "href": "#" },
-      { "label": "Support", "href": "/#consultation" }
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy-policy"
+      },
+      {
+        "label": "Terms & Condition",
+        "href": "/terms-and-conditions"
+      },
+      {
+        "label": "Site Map",
+        "href": "#"
+      },
+      {
+        "label": "Support",
+        "href": "/#consultation"
+      }
     ]
   },
   "siteCta": {
-    "title": "Ready To Elevate Your Landscape With Mahraj Plants?",
+    "title": "Ready To Elevate Your Landscape With Mahraj Landscaping?",
     "consultation": "Get a Free Consultation",
     "insightsEyebrow": "Expert Gardening & Sustainable Living",
     "insightsTitle": "Insights",
@@ -346,19 +392,31 @@
     "submit": "Submit"
   },
   "categoriesPage": {
-    "notFoundTitle": "Category Not Found | Mahraj Plants",
-    "metaTitle": "{category} | Mahraj Plants",
-    "statsAriaLabel": "Mahraj Plants highlights",
+    "notFoundTitle": "Category Not Found | Mahraj Landscaping",
+    "metaTitle": "{category} | Mahraj Landscaping",
+    "statsAriaLabel": "Mahraj Landscaping highlights",
     "stats": [
-      { "value": "500+", "label": "Projects Complete" },
-      { "value": "300+", "label": "Trees & Plants Selected" },
-      { "value": "98%", "label": "Client Satisfaction" },
-      { "value": "20+", "label": "Expert Team" }
+      {
+        "value": "500+",
+        "label": "Projects Complete"
+      },
+      {
+        "value": "300+",
+        "label": "Trees & Plants Selected"
+      },
+      {
+        "value": "98%",
+        "label": "Client Satisfaction"
+      },
+      {
+        "value": "20+",
+        "label": "Expert Team"
+      }
     ],
     "listing": {
       "eyebrow": "Our Collection",
       "title": "Browse {category}",
-      "description": "Handpicked {category} from Mahraj Plants — quality you can see and care you can trust.",
+      "description": "Handpicked {category} from Mahraj Landscaping — quality you can see and care you can trust.",
       "showing": "Showing {range} of {total} products",
       "sortBy": "Sort by",
       "sortAriaLabel": "Sort products",
@@ -404,8 +462,8 @@
     }
   },
   "productPage": {
-    "notFoundTitle": "Product Not Found | Mahraj Plants",
-    "metaTitle": "{product} | Mahraj Plants",
+    "notFoundTitle": "Product Not Found | Mahraj Landscaping",
+    "metaTitle": "{product} | Mahraj Landscaping",
     "hero": {
       "eyebrow": "Garden Shop",
       "title": "Tools, Plants & Green Essentials",
@@ -415,13 +473,13 @@
     "home": "Home",
     "inquireWhatsApp": "Inquire on WhatsApp",
     "backTo": "Back to {category}",
-    "whatsappMessage": "Hello, I would like to inquire about {product} from Mahraj Plants.",
+    "whatsappMessage": "Hello, I would like to inquire about {product} from Mahraj Landscaping.",
     "relatedEyebrow": "You May Also Like",
     "relatedTitle": "More {category}"
   },
   "contactPage": {
-    "metaTitle": "Contact Us | Mahraj Plants",
-    "metaDescription": "Reach out to Mahraj Plants for garden consultations, inquiries, or support. We're ready to help your outdoor vision grow.",
+    "metaTitle": "Contact Us | Mahraj Landscaping",
+    "metaDescription": "Reach out to Mahraj Landscaping for garden consultations, inquiries, or support. We're ready to help your outdoor vision grow.",
     "hero": {
       "eyebrow": "Get in Touch",
       "title": "We'd Love To Hear From You",
@@ -429,7 +487,7 @@
     },
     "quote": "Nature speaks through rich textures, vibrant colors, and natural light, and we bring that vision to life. Explore our gallery to see how we craft breathtaking gardens and landscapes with intention, precision, and deep respect for the natural world.",
     "info": {
-      "title": "Contact Mahraj Plants & Landscaping",
+      "title": "Contact Mahraj Landscaping",
       "body": "Whether you're dreaming of a lush garden retreat or need expert advice on outdoor design, we're here to help. Reach out anytime — we're passionate about bringing nature closer to you.",
       "locationLabel": "Our Location",
       "phoneLabel": "Phone Number",
@@ -453,14 +511,14 @@
       "submit": "Submit Now"
     },
     "map": {
-      "ariaLabel": "Mahraj Plants nursery location map",
+      "ariaLabel": "Mahraj Landscaping nursery location map",
       "iframeTitle": "Mahraj landscaping & Nursery company location"
     }
   },
   "aboutPage": {
-    "metaTitle": "About Us | Mahraj Plants",
-    "metaDescription": "Built with care, grown with love. Learn how Mahraj Plants shapes green spaces that reflect your values and bring nature closer to home.",
-    "featuresAriaLabel": "What you can expect from Mahraj Plants",
+    "metaTitle": "About Us | Mahraj Landscaping",
+    "metaDescription": "Built with care, grown with love. Learn how Mahraj Landscaping shapes green spaces that reflect your values and bring nature closer to home.",
+    "featuresAriaLabel": "What you can expect from Mahraj Landscaping",
     "hero": {
       "eyebrow": "About Landscape",
       "title": "Built With Care, Grown With Love",
@@ -477,8 +535,14 @@
       "startGarden": "Start Your Garden!",
       "viewServices": "View All Services",
       "stats": [
-        { "value": "35+", "label": "Years of Gardening" },
-        { "value": "98%", "label": "Client Satisfaction" }
+        {
+          "value": "35+",
+          "label": "Years of Gardening"
+        },
+        {
+          "value": "98%",
+          "label": "Client Satisfaction"
+        }
       ]
     },
     "gallery": {
@@ -495,7 +559,7 @@
         "Garden terrace with trees and raised planting beds",
         "Gardener trimming hedges in a landscaped space",
         "Team working on sustainable garden landscaping",
-        "Mahraj Plants team caring for garden flowers",
+        "Mahraj Landscaping team caring for garden flowers",
         "Indoor greenery and plant arrangements"
       ]
     },
@@ -530,13 +594,22 @@
       "eyebrow": "Rooted in Knowledge, Grown with Care",
       "title": "Crafted With Expertise",
       "description": "We combine horticultural know-how and design sense to create outdoor spaces that are functional, beautiful, and lasting.",
-      "imageAlt": "Mahraj Plants landscaping team standing together outdoors",
+      "imageAlt": "Mahraj Landscaping team standing together outdoors",
       "teamCount": "20+",
       "teamLabel": "Expert Team",
       "skills": [
-        { "label": "Landscape Design Expertise", "value": 98 },
-        { "label": "Sustainable Solutions", "value": 70 },
-        { "label": "Plant Knowledge & Care", "value": 80 }
+        {
+          "label": "Landscape Design Expertise",
+          "value": 98
+        },
+        {
+          "label": "Sustainable Solutions",
+          "value": 70
+        },
+        {
+          "label": "Plant Knowledge & Care",
+          "value": 80
+        }
       ],
       "missionTitle": "Our Mission",
       "missionBody": "To bring life, beauty, and balance to outdoor spaces through thoughtful design and expert care. At Landscape, we're here to make green living part of your everyday life.",
@@ -546,17 +619,29 @@
     "counters": {
       "ariaLabel": "Landscape achievements",
       "items": [
-        { "value": "80+", "label": "Green Workshops" },
-        { "value": "500+", "label": "Projects Complete" },
-        { "value": "300+", "label": "Tree & Plants Selected" },
-        { "value": "19+", "label": "Our Awards & Wins" }
+        {
+          "value": "80+",
+          "label": "Green Workshops"
+        },
+        {
+          "value": "500+",
+          "label": "Projects Complete"
+        },
+        {
+          "value": "300+",
+          "label": "Tree & Plants Selected"
+        },
+        {
+          "value": "19+",
+          "label": "Our Awards & Wins"
+        }
       ]
     },
     "whyChoose": {
       "eyebrow": "Why Choose Us",
       "title": "We Don't Just Garden — We Grow Happiness",
       "description": "We bring creativity, care, and quality to every space. With a passion for greenery, we turn garden dreams into reality — beautifully and reliably.",
-      "imageAlt": "Mahraj Plants landscaping team standing together in front of a greenhouse",
+      "imageAlt": "Mahraj Landscaping team standing together in front of a greenhouse",
       "features": [
         {
           "title": "Expertise in Garden & Landscape Design",
@@ -583,10 +668,22 @@
       "ariaLabel": "Team members",
       "showMember": "Show {name}",
       "members": [
-        { "name": "Liam Patel", "role": "Irrigation Specialist" },
-        { "name": "Amelia Clarke", "role": "Landscape Architect" },
-        { "name": "Oliver Harris", "role": "Senior Gardener" },
-        { "name": "Sophie Turner", "role": "Project Manager" }
+        {
+          "name": "Liam Patel",
+          "role": "Irrigation Specialist"
+        },
+        {
+          "name": "Amelia Clarke",
+          "role": "Landscape Architect"
+        },
+        {
+          "name": "Oliver Harris",
+          "role": "Senior Gardener"
+        },
+        {
+          "name": "Sophie Turner",
+          "role": "Project Manager"
+        }
       ]
     }
   },
@@ -618,5 +715,234 @@
       "saturday": "Saturday",
       "sunday": "Sunday"
     }
+  },
+  "privacyPage": {
+    "metaTitle": "Privacy Policy | Mahraj Landscaping",
+    "metaDescription": "How Mahraj Landscaping collects, uses, and protects your personal information when you shop plants or request landscaping services.",
+    "hero": {
+      "eyebrow": "Legal Information",
+      "title": "Privacy Policy",
+      "description": "How we collect, use, and protect your personal information when you shop plants or request landscaping services with Mahraj Landscaping."
+    },
+    "intro": "At Mahraj Landscaping, your trust matters as much as healthy greenery. This Privacy Policy explains what information we collect on mahrajlandscaping.com, why we collect it, and how we keep it safe when you browse, order plants, or request garden services.",
+    "lastUpdated": "Last updated: 25 August 2026",
+    "sections": [
+      {
+        "title": "1. Who We Are",
+        "paragraphs": [
+          "Mahraj Landscaping is a plant nursery and landscaping business based in Riyadh, Saudi Arabia. We supply indoor and outdoor plants, trees, garden products, and full landscaping services."
+        ],
+        "lines": [
+          "Nursery: Heet, Old Alharaj Road, Riyadh, KSA",
+          "WhatsApp / Phone: +966 55 689 1877",
+          "Email: landscape@mahraj.com"
+        ]
+      },
+      {
+        "title": "2. Information We Collect",
+        "paragraphs": [
+          "We only collect information needed to serve you well:"
+        ],
+        "bullets": [
+          "Details you share with us — name, phone number, email, delivery or project address, and your message when you contact us, place an order, book a consultation, or chat on WhatsApp.",
+          "Order & project details — plants or packages you choose, landscaping preferences, appointment notes, and payment records needed to complete your request.",
+          "Website usage data — basic technical details such as browser type, device type, pages visited, and general site activity, often through cookies."
+        ]
+      },
+      {
+        "title": "3. How We Use Your Information",
+        "paragraphs": [
+          "We use your information to:"
+        ],
+        "bullets": [
+          "Reply to inquiries and offer plant or landscaping advice",
+          "Process orders, deliveries, installations, and garden maintenance",
+          "Confirm appointments, invoices, and service updates",
+          "Improve our website, products, and customer experience",
+          "Share offers or tips only when allowed, or when you have opted in",
+          "Meet legal requirements and protect our business and customers"
+        ]
+      },
+      {
+        "title": "4. Cookies",
+        "paragraphs": [
+          "Our website may use cookies to remember preferences, understand how visitors use the site, and improve performance. You can block or delete cookies in your browser settings. Some features may work less smoothly if cookies are disabled."
+        ]
+      },
+      {
+        "title": "5. Sharing Your Information",
+        "paragraphs": [
+          "We do not sell your personal information. We may share it only when needed with:"
+        ],
+        "bullets": [
+          "Trusted partners who help with payments, delivery, hosting, or technical support",
+          "Professionals or authorities when the law requires it",
+          "Teams involved in completing your plant order or landscaping project"
+        ]
+      },
+      {
+        "title": "6. How Long We Keep Data",
+        "paragraphs": [
+          "We keep personal information only as long as needed for service delivery, records, legal compliance, or resolving questions. When it is no longer needed, we delete or anonymize it where practical."
+        ]
+      },
+      {
+        "title": "7. Keeping Your Data Safe",
+        "paragraphs": [
+          "We take reasonable steps to protect your information. No online system is perfectly secure, so we encourage you to share only what is needed and contact us if you notice anything unusual."
+        ]
+      },
+      {
+        "title": "8. Your Choices & Rights",
+        "paragraphs": [
+          "Depending on applicable law, you may ask us to access, update, or delete your personal information, or stop marketing messages. To make a request, message us on WhatsApp or email landscape@mahraj.com."
+        ]
+      },
+      {
+        "title": "9. Third-Party Links",
+        "paragraphs": [
+          "Our site may link to WhatsApp, social media, or other external services. Their privacy practices are separate from ours, so please review their policies before sharing information there."
+        ]
+      },
+      {
+        "title": "10. Children's Privacy",
+        "paragraphs": [
+          "Our services are intended for adults and business customers. We do not knowingly collect personal information from children. If you believe a child has shared data with us, contact us and we will remove it."
+        ]
+      },
+      {
+        "title": "11. Updates to This Policy",
+        "paragraphs": [
+          "We may update this Privacy Policy from time to time. The latest version will always appear on this page with a new \"Last updated\" date."
+        ]
+      },
+      {
+        "title": "12. Contact Us",
+        "paragraphs": [
+          "Questions about privacy? We're happy to help."
+        ],
+        "boxed": true,
+        "lines": [
+          "Mahraj Landscaping",
+          "Heet, Old Alharaj Road, Riyadh, KSA",
+          "WhatsApp: +966 55 689 1877",
+          "Email: landscape@mahraj.com",
+          "Web: mahrajlandscaping.com"
+        ]
+      }
+    ]
+  },
+  "termsPage": {
+    "metaTitle": "Terms & Conditions | Mahraj Landscaping",
+    "metaDescription": "Clear guidelines for using our website, ordering plants, and booking landscaping services with Mahraj Landscaping.",
+    "hero": {
+      "eyebrow": "Legal Information",
+      "title": "Terms & Conditions",
+      "description": "Clear guidelines for using our website, ordering plants, and booking landscaping services with Mahraj Landscaping."
+    },
+    "intro": "Welcome to Mahraj Landscaping. These Terms & Conditions explain how our website, plant sales, and landscaping services work. By using mahrajlandscaping.com or hiring our team, you agree to the terms below.",
+    "lastUpdated": "Last updated: 25 August 2026",
+    "sections": [
+      {
+        "title": "1. About Mahraj Landscaping",
+        "paragraphs": [
+          "We provide indoor and outdoor plants, trees, garden supplies, landscape design, installation, irrigation, and garden care from our nursery in Riyadh."
+        ],
+        "lines": [
+          "Nursery: Heet, Old Alharaj Road, Riyadh, KSA",
+          "WhatsApp / Phone: +966 55 689 1877",
+          "Email: landscape@mahraj.com"
+        ]
+      },
+      {
+        "title": "2. Using Our Website",
+        "paragraphs": [
+          "Please use our website respectfully and lawfully. Do not attempt to disrupt the site, misuse content, or access private systems. We may update website information at any time."
+        ]
+      },
+      {
+        "title": "3. Plants, Products & Services",
+        "paragraphs": [
+          "Photos and descriptions are a helpful guide. Because plants are living products, size, color, and shape can vary naturally.",
+          "Landscaping plans and prices depend on your space, goals, and site conditions. Final scope is confirmed in a quote or agreement.",
+          "We may update, limit, or discontinue products or packages when needed."
+        ]
+      },
+      {
+        "title": "4. Orders, Quotes & Payments",
+        "paragraphs": [
+          "An order or accepted quote is a request to purchase, subject to availability and our confirmation.",
+          "Prices are those shown or quoted at confirmation, unless we agree otherwise in writing.",
+          "Payment details appear at checkout, on your invoice, or in your service agreement.",
+          "For custom landscaping, a deposit or staged payments may be required before work starts or continues."
+        ]
+      },
+      {
+        "title": "5. Delivery, Installation & Site Access",
+        "paragraphs": [
+          "Delivery and installation dates are estimates unless confirmed in writing.",
+          "Please provide clear access, parking details, and any permissions needed for safe work.",
+          "Weather, access issues, supply delays, or events beyond our control may affect timing."
+        ]
+      },
+      {
+        "title": "6. Cancellations & Changes",
+        "paragraphs": [
+          "Tell us as early as possible if you need to cancel or change an order. Fees may apply if plants are already reserved, materials purchased, or work has begun. Completed custom landscaping work is generally non-refundable except where required by law."
+        ]
+      },
+      {
+        "title": "7. Plant Health & Care",
+        "paragraphs": [
+          "We aim to supply healthy plants. Any guarantee offered will be explained at purchase or in your agreement and usually depends on proper watering and care.",
+          "Guarantees typically do not cover neglect, incorrect watering, pests after delivery, extreme weather, or changes made by others.",
+          "If a plant arrives damaged or unhealthy, contact us quickly so we can help with a fair solution."
+        ]
+      },
+      {
+        "title": "8. Website Content & Branding",
+        "paragraphs": [
+          "Text, images, logos, and designs on our website belong to Mahraj Landscaping or our licensors. Please do not copy or reuse them without written permission."
+        ]
+      },
+      {
+        "title": "9. Limitation of Liability",
+        "paragraphs": [
+          "To the fullest extent allowed by law, we are not responsible for indirect or consequential losses. For any claim related to a product or service, our responsibility is limited to the amount you paid for that specific item or service."
+        ]
+      },
+      {
+        "title": "10. Privacy",
+        "paragraphs": [
+          "How we handle personal information is explained in our Privacy Policy."
+        ]
+      },
+      {
+        "title": "11. Governing Law",
+        "paragraphs": [
+          "These Terms are governed by the laws of the Kingdom of Saudi Arabia. Disputes are handled by the competent courts in Riyadh, unless applicable law requires otherwise."
+        ]
+      },
+      {
+        "title": "12. Changes to These Terms",
+        "paragraphs": [
+          "We may update these Terms & Conditions when needed. The latest version will be posted on this page. Continued use of our website or services after an update means you accept the revised Terms."
+        ]
+      },
+      {
+        "title": "13. Contact Us",
+        "paragraphs": [
+          "Need clarity on anything in these Terms? Reach out anytime."
+        ],
+        "boxed": true,
+        "lines": [
+          "Mahraj Landscaping",
+          "Heet, Old Alharaj Road, Riyadh, KSA",
+          "WhatsApp: +966 55 689 1877",
+          "Email: landscape@mahraj.com",
+          "Web: mahrajlandscaping.com"
+        ]
+      }
+    ]
   }
 }

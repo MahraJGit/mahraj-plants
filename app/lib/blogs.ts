@@ -36,9 +36,9 @@ export const blogArticles: BlogArticle[] = [
         slug: "behind-the-green-meet-our-team",
         title: "Behind The Green: Meet Our Talented Team",
         excerpt:
-            "Get to know the passionate, skilled people behind Mahraj Plants' green transformations. From designers to gardeners, our team is dedicated to turning outdoor dreams into lush reality.",
+            "Get to know the passionate, skilled people behind Mahraj Landscaping's green transformations. From designers to gardeners, our team is dedicated to turning outdoor dreams into lush reality.",
         image: "/images/home/hero-bg-2.jpg",
-        alt: "Mahraj Plants team working together in a garden nursery",
+        alt: "Mahraj Landscaping team working together in a garden nursery",
         day: "30",
         month: "JUN",
         author: "mahrajplant",

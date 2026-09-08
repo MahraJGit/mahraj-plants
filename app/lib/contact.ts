@@ -1,4 +1,4 @@
-/** Canonical Mahraj Plants phone / WhatsApp / email contact. */
+/** Canonical Mahraj Landscaping phone / WhatsApp / email contact. */
 export const PHONE_DISPLAY = "+966 55 689 1877";
 export const PHONE_HREF = "tel:+966556891877";
 export const WHATSAPP_NUMBER = "966556891877";
@@ -17,5 +17,5 @@ export function getWhatsAppHref(message: string) {
 }
 
 export const CONSULTATION_WHATSAPP_HREF = getWhatsAppHref(
-    "Hello, I would like to get a free consultation from Mahraj Plants.",
+    "Hello, I would like to get a free consultation from Mahraj Landscaping.",
 );

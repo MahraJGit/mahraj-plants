@@ -37,11 +37,11 @@
     "shareLabel": "Share",
     "shareOn": "Share on {label}",
     "shareWhatsApp": "Share on WhatsApp",
-    "whatsappShare": "Check out this article from Mahraj Plants: {title}",
-    "metaTitle": "{blog} | Mahraj Plants",
-    "notFoundTitle": "Blog Not Found | Mahraj Plants",
-    "pageMetaTitle": "Blogs & News | Mahraj Plants",
-    "pageMetaDescription": "Explore expert insights, practical ideas, and fresh inspiration for better gardening and sustainable living from Mahraj Plants.",
+    "whatsappShare": "Check out this article from Mahraj Landscaping: {title}",
+    "metaTitle": "{blog} | Mahraj Landscaping",
+    "notFoundTitle": "Blog Not Found | Mahraj Landscaping",
+    "pageMetaTitle": "Blogs & News | Mahraj Landscaping",
+    "pageMetaDescription": "Explore expert insights, practical ideas, and fresh inspiration for better gardening and sustainable living from Mahraj Landscaping.",
     "body": {
       "introParagraph": "Creating a thriving outdoor space is never just about plants — it is about listening carefully, designing with intention, and bringing skilled hands together to shape something lasting. In this guide, we walk through the ideas, materials, and everyday choices that help gardens feel welcoming from the first day.",
       "sectionHeading": "Why Cozy Rooftop Gardens Are Blooming",
@@ -144,8 +144,8 @@
   },
   "behind-the-green-meet-our-team": {
     "title": "Behind The Green: Meet Our Talented Team",
-    "excerpt": "Get to know the passionate, skilled people behind Mahraj Plants' green transformations. From designers to gardeners, our team is dedicated to turning outdoor dreams into lush reality.",
-    "alt": "Mahraj Plants team working together in a garden nursery",
+    "excerpt": "Get to know the passionate, skilled people behind Mahraj Landscaping's green transformations. From designers to gardeners, our team is dedicated to turning outdoor dreams into lush reality.",
+    "alt": "Mahraj Landscaping team working together in a garden nursery",
     "month": "JUN",
     "category": "Outdoor Living Inspiration",
     "tags": [

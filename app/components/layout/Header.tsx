@@ -190,7 +190,7 @@ export default function Header() {
                         </span>
                         <Link
                             href={EMAIL_HREF}
-                            aria-label="Email Mahraj Plants"
+                            aria-label="Email Mahraj Landscaping"
                             className="ml-1 shrink-0 text-white/90 transition hover:text-white"
                         >
                             <HiOutlineMail aria-hidden className="size-4" />

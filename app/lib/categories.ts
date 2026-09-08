@@ -103,7 +103,7 @@ export const plantCategories: PlantCategory[] = categories.map((category) => {
             title: category.name,
             description:
                 hero?.description ??
-                `Browse our ${category.name.toLowerCase()} collection from Mahraj Plants.`,
+                `Browse our ${category.name.toLowerCase()} collection from Mahraj Landscaping.`,
         },
         listings: getProductsByCategoryId(category.id).map(toListingItem),
     };

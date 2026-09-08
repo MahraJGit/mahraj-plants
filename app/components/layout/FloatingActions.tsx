@@ -8,7 +8,7 @@ import { cn } from "@/app/lib/utils";
 import { getWhatsAppHref } from "@/app/lib/contact";
 
 const WHATSAPP_HREF = getWhatsAppHref(
-    "Hello, I would like to inquire about Mahraj Plants.",
+    "Hello, I would like to inquire about Mahraj Landscaping.",
 );
 
 const SCROLL_THRESHOLD = 300;

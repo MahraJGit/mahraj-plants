@@ -6,7 +6,7 @@ import Portfolio from "@/app/components/sections/shared/Portfolio";
 import SiteCTA from "@/app/components/sections/shared/SiteCTA";
 
 export const metadata: Metadata = {
-    title: "Our Working Process | Mahraj Plants",
+    title: "Our Working Process | Mahraj Landscaping",
     description:
         "We follow a clear, simple process to create gardens that grow beautifully — shaped with care and creativity at every step.",
 };
