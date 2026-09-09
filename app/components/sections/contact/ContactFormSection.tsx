@@ -152,7 +152,7 @@ export default function ContactFormSection() {
                                                 <span className="block text-sm font-bold text-section">
                                                     {label}
                                                 </span>
-                                                <span className="mt-1 block text-xs leading-snug text-section/65 sm:text-[13px]">
+                                                <span className="mt-1 block text-xs leading-snug text-section/65 sm:text-[13px] lg:break-all">
                                                     {value}
                                                 </span>
                                             </span>

@@ -45,8 +45,7 @@ export default function FeatureHighlights({
                                 width={40}
                                 height={40}
                                 unoptimized
-                                style={{ width: "auto", height: "auto" }}
-                                className={cn("h-9 w-auto", card.iconClassName)}
+                                className={cn("h-11 w-11", card.iconClassName)}
                             />
                         </div>
 
@@ -85,7 +84,7 @@ export default function FeatureHighlights({
                                             "[@media(hover:none)]:mt-4",
                                         )}
                                     >
-                                        <p className="text-[13px] md:h-18 flex items-center leading-[1.55] text-white sm:text-sm sm:leading-relaxed">
+                                        <p className="text-[13px] md:h-18 flex items-center leading-[1.55] text-white sm:text-sm sm:leading-relaxed lg:h-auto lg:line-clamp-3">
                                             {card.description}
                                         </p>
                                     </div>

@@ -115,7 +115,7 @@ export default function AboutExpertise() {
                                 />
                             </div>
 
-                            <div className="absolute bottom-0 left-0 z-10 flex h-[6.5rem] w-[9.75rem] flex-col justify-center text-center">
+                            <div className="absolute bottom-0 left-0 z-10 flex h-[6.5rem] w-[9.75rem] flex-col justify-center text-center lg:bottom-20 rtl:lg:right-80 rtl:lg:bottom-0">
                                 <p className="text-3xl font-bold leading-none text-primary sm:text-4xl">
                                     {t("teamCount")}
                                 </p>

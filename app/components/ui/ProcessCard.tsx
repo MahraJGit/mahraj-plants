@@ -43,7 +43,7 @@ export default function ProcessCard({ step, className }: ProcessCardProps) {
                     className="mx-auto mt-4 block h-0.5 w-12 rounded-full bg-[#C4A862]"
                 />
 
-                <h3 className="mt-4 text-base font-bold leading-snug text-white sm:text-lg">
+                <h3 className="mt-4 text-base font-bold leading-snug lg:h-20 text-white sm:text-lg">
                     {step.title}
                 </h3>
 
@@ -57,7 +57,7 @@ export default function ProcessCard({ step, className }: ProcessCardProps) {
                     className="mx-auto mt-3 h-5 w-auto brightness-0 invert"
                 />
 
-                <p className="mt-3 text-sm leading-relaxed text-white/75">
+                <p className="mt-3 text-sm leading-relaxed text-white/75 lg:h-40">
                     {step.description}
                 </p>
             </div>

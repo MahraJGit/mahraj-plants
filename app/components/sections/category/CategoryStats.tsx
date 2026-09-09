@@ -126,7 +126,7 @@ export default function CategoryStats() {
                 <ul className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
                     {stats.map((stat) => (
                         <li key={stat.label}>
-                            <article className="relative overflow-hidden rounded-2xl bg-secondary px-6 py-7 sm:px-7 sm:py-8">
+                            <article className="relative overflow-hidden rounded-2xl bg-secondary px-6 py-7 sm:px-7 sm:py-8 lg:h-40">
                                 <div className="relative z-10">
                                     <p className="text-4xl font-bold leading-none text-white sm:text-[2.75rem]">
                                         <AnimatedStatValue

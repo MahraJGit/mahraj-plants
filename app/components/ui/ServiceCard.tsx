@@ -77,7 +77,7 @@ export default function ServiceCard({
                     {service.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-relaxed text-primary/70 sm:text-[15px]">
+                <p className="mt-3 text-sm leading-relaxed text-primary/70 sm:text-[15px] lg:h-20">
                     {service.description}
                 </p>
 

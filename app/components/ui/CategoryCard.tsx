@@ -51,7 +51,7 @@ export default function CategoryCard({
                 </div>
             </div>
 
-            <h3 className="mt-5 text-sm font-medium text-secondary transition-colors duration-300 group-hover:text-primary sm:text-base lg:text-lg">
+            <h3 className="mt-5 text-sm font-medium text-secondary transition-colors duration-300 group-hover:text-primary sm:text-base lg:text-lg lg:h-13">
                 {category.title}
             </h3>
 
