@@ -85,7 +85,7 @@ export default function ProjectCard({
             </div>
 
             <div className="flex flex-1 flex-col bg-gradient-to-b from-secondary/5 to-white px-6 pb-6 pt-5 sm:px-7 sm:pb-7 sm:pt-6">
-                <h3 className="text-lg font-bold leading-snug text-primary sm:text-xl">
+                <h3 className="text-lg font-bold leading-snug md:h-12 text-primary sm:text-xl">
                     {project.title}
                 </h3>
 

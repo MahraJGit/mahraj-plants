@@ -135,7 +135,7 @@ export default function ContactFormSection() {
                             {t("info.body")}
                         </p>
 
-                        <ul className="mt-8 grid gap-3 sm:grid-cols-2 sm:gap-4">
+                        <ul className="mt-8 grid gap-3 sm:grid-cols-2 sm:gap-4 md:border-0">
                             {contactDetails.map(
                                 ({ label, value, Icon, ...rest }) => {
                                     const href =
@@ -179,7 +179,7 @@ export default function ContactFormSection() {
                             )}
                         </ul>
 
-                        <div className="mt-auto flex items-center justify-between gap-4 border-t border-section/10 pt-6 sm:pt-8">
+                        <div className="mt-auto flex items-center justify-between gap-4 pt-6 sm:pt-8">
                             <p className="text-sm font-semibold text-section sm:text-base">
                                 {t("info.socialMedia")}
                             </p>

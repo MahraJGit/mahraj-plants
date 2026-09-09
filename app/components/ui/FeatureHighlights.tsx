@@ -32,10 +32,9 @@ export default function FeatureHighlights({
                             "group relative flex flex-col items-center overflow-visible px-3 py-4 pt-7 text-center lg:px-4 lg:pb-5 lg:pt-0",
                             "border-primary/15 border-dashed",
                             "[@media(hover:hover)]:cursor-pointer [@media(hover:hover)]:outline-none",
-                            index !== items.length - 1 &&
-                                "border-b lg:border-b-0 lg:border-r",
-                            (index === 0 || index === 2) && "md:border-r",
-                            index < 2 && "md:border-b lg:border-b-0",
+                            (index === 0 || index === 1) && "md:border-b lg:border-b-0",
+                            (index === 0 || index === 2) && "md:border-e",
+                            index !== items.length - 1 && "lg:border-e",
                         )}
                         tabIndex={0}
                     >
@@ -86,7 +85,7 @@ export default function FeatureHighlights({
                                             "[@media(hover:none)]:mt-4",
                                         )}
                                     >
-                                        <p className="text-[13px] leading-[1.55] text-white sm:text-sm sm:leading-relaxed">
+                                        <p className="text-[13px] md:h-18 flex items-center leading-[1.55] text-white sm:text-sm sm:leading-relaxed">
                                             {card.description}
                                         </p>
                                     </div>

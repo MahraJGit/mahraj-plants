@@ -118,7 +118,8 @@ export default function WhyUs() {
                         </div>
                     </div>
 
-                    <div className="grid border-t border-primary/8 md:grid-cols-3">
+                    <div className="grid sm:grid-cols-1 border-t border-primary/8 lg:grid-cols-2 bg-cream xl:grid-cols-3">
+
                         <article className="flex flex-col bg-cream px-6 py-8 sm:px-8 sm:py-9 lg:px-9">
                             <h3 className="text-xl font-bold text-primary sm:text-2xl">
                                 {t("sinceTitle")}
@@ -152,7 +153,7 @@ export default function WhyUs() {
                             </div>
                         </article>
 
-                        <article className="flex flex-col bg-section px-6 py-8 text-white sm:px-8 sm:py-9 lg:px-9">
+                        <article className="flex flex-col bg-section px-6 py-8 text-white sm:px-8 sm:py-9 lg:px-9 lg:rounded-bl-lg">
                             <h3 className="text-xl font-bold sm:text-2xl">
                                 {t("commitmentTitle")}
                             </h3>
@@ -204,7 +205,7 @@ export default function WhyUs() {
                             </div>
                         </article>
 
-                        <article className="flex flex-col bg-cream px-6 py-8 sm:px-8 sm:py-9 lg:px-9">
+                        <article className="flex flex-col lg:col-span-2 xl:col-span-1 bg-cream px-6 py-8 sm:px-8 sm:py-9 lg:px-9">
                             <h3 className="text-xl font-bold text-primary sm:text-2xl">
                                 {t("talkTitle")}
                             </h3>
