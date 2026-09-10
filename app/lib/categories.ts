@@ -74,6 +74,11 @@ const categoryHeroCopy: Record<
         description:
             "Durable hand tools and garden equipment to make planting, pruning, and maintenance easier.",
     },
+    "garden-supplies": {
+        tagline: "Everything Your Garden Needs",
+        description:
+            "Soil mixes, fertilizers, décor, and outdoor essentials to prepare, enrich, and style your garden.",
+    },
     "pots-and-planters": {
         tagline: "Style Meets Function",
         description:

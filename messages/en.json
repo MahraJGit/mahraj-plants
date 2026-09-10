@@ -26,6 +26,7 @@
     "nurseryAddress": "Nursery: Heet, Old Al kharj Road, Riyadh, KSA",
     "exploreCta": "Explore Mahraj Agriculture",
     "categories": {
+      "garden-supplies": "Garden Supplies",
       "garden-tools": "Garden Tools",
       "indoor-plants": "Indoor Plants",
       "outdoor-plants": "Outdoor Plants",
@@ -429,6 +430,11 @@
       "pageLabel": "Page {n}"
     },
     "bySlug": {
+      "garden-supplies": {
+        "label": "Garden Supplies",
+        "tagline": "Everything Your Garden Needs",
+        "description": "Soil mixes, fertilizers, décor, and outdoor essentials to prepare, enrich, and style your garden."
+      },
       "garden-tools": {
         "label": "Garden Tools",
         "tagline": "Tools for Every Gardener",

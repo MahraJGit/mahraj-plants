@@ -31,6 +31,14 @@
     "title": "Dibber",
     "description": "A versatile dibber for planting seeds and bulbs, perfect for garden beds and containers."
   },
+  "fountain": {
+    "title": "Fountain",
+    "description": "Add a touch of tranquility to your garden with our Fountain, a charming decorative feature designed for outdoor use. This elegant fountain brings gentle water movement and soothing sound, enhancing the beauty of any landscape while creating a relaxing atmosphere."
+  },
+  "garden-bench": {
+    "title": "Garden Bench",
+    "description": "Add a touch of charm to your outdoor space with this Garden Bench, a sturdy and inviting piece crafted for the garden. Ideal for unwinding after a day of planting or simply enjoying sunshine, it offers comfortable seating that blends seamlessly with any landscape. Choose this simple yet elegant addition to create a welcoming spot where memories can grow."
+  },
   "garden-fork": {
     "title": "Garden Fork",
     "description": "Garden Fork – a reliable hand tool designed for loosening soil, turning compost, and planting seedlings in any garden bed. Its balanced handle provides a comfortable grip, while the sharp tines bite into earth without bending, making digging effortless and protecting roots. Ideal for both novice gardeners and seasoned growers, this versatile fork works in a variety of soils and plantings, helping"
@@ -155,9 +163,21 @@
     "title": "Nephrolepis exaltata",
     "description": "Nephrolepis exaltata is an elegant indoor plant that brings a touch of natural beauty to your home; its soft, feathery fronds thrive in low‑light corners and create a calm, fresh atmosphere, making it a wonderful addition for anyone looking for a graceful green accent."
   },
+  "organic-manure": {
+    "title": "Organic Manure",
+    "description": "Organic Manure – a nutrient-rich, naturally sourced amendment perfect for enriching garden soil, supporting healthy plant growth, and promoting sustainable gardening practices. Ideal for vegetable beds, flower borders, and lawns, this gentle fertilizer helps improve soil structure and fertility without harsh chemicals."
+  },
   "pachira-aquatica": {
     "title": "Pachira aquatica",
     "description": "A graceful indoor plant known as Pachira aquatica brings a touch of tropical elegance to any living space, thriving in low‑light corners and adding a fresh, leafy charm to your home."
+  },
+  "patio-umbrella": {
+    "title": "Patio Umbrella",
+    "description": "Add a touch of shade to your outdoor space with this stylish Patio Umbrella, perfect for garden parties or relaxing on the deck; designed for easy setup and durable construction, it brings comfort and style to any sunny area."
+  },
+  "peat-moss": {
+    "title": "Peat Moss",
+    "description": "Peat Moss – a versatile, lightweight soil amendment that helps retain moisture and improve drainage in garden beds, perfect for seedlings, potting mixes, and lawn top-dressing."
   },
   "peperomia-scandens": {
     "title": "Peperomia scandens",
@@ -174,6 +194,14 @@
   "spathiphyllum-wallisii": {
     "title": "Spathiphyllum wallisii",
     "description": "Meet Spathiphyllum wallisii, a graceful addition to any indoor space; this elegant houseplant features broad, deep‑green leaves and delicate white spathes that add a touch of sophistication to living rooms or offices. Its low‑maintenance nature makes it perfect for beginners seeking a resilient green companion, thriving in indirect light and helping keep the air fresh with its natural purifying qualities."
+  },
+  "stepping-stone": {
+    "title": "Stepping Stone",
+    "description": "A charming stepping stone adds a touch of natural elegance to any garden, offering a simple design that fits seamlessly into pathways or relaxing spaces; its timeless look makes it a perfect addition for homeowners and garden lovers."
+  },
+  "stone-path": {
+    "title": "Stone Path",
+    "description": "A versatile stone path brings timeless charm to any garden setting, offering a smooth, natural surface that enhances outdoor spaces. Ideal for creating inviting walkways or defining garden zones, this durable option blends seamlessly with surrounding foliage and stone features, providing both aesthetic appeal and lasting value."
   },
   "strelitzia-nicolai": {
     "title": "Strelitzia nicolai",
@@ -203,9 +231,17 @@
     "title": "Chrysanthemum",
     "description": "Chrysanthemum – a timeless seasonal flower that brings elegant beauty to any garden."
   },
+  "perlite-soil": {
+    "title": "Perlite Soil",
+    "description": "Perlite Soil offers a light, well-draining growing medium perfect for containers and garden beds alike. The natural perlite particles improve aeration and prevent compaction, helping roots breathe and grow strong. It’s ideal for seedlings, succulents, or any plant that benefits from extra drainage, and it blends easily with regular potting mixes. Choose this versatile amendment to boost soil health and support vigorous plant growth."
+  },
   "petunia": {
     "title": "Petunia",
     "description": "Petunia – a popular seasonal flower that brings color to your garden during spring and summer."
+  },
+  "sweet-soil": {
+    "title": "Sweet soil",
+    "description": "Sweet soil (Garden Supplies) – a gentle, aromatic addition to your garden beds that improves texture and feeds plants, helping them thrive with minimal effort."
   },
   "tagetes": {
     "title": "Tagetes",
@@ -482,6 +518,10 @@
   "portulaca-grandiflora": {
     "title": "Portulaca grandiflora",
     "description": "Add a splash of color to your garden with Portulaca grandiflora, a vibrant outdoor plant known for its hardy blooms and sunny disposition."
+  },
+  "potting-soil": {
+    "title": "Potting soil",
+    "description": "A versatile potting soil blend designed to give your plants a healthy foundation for successful growth in containers or garden beds."
   },
   "prickly-pear": {
     "title": "Prickly Pear",

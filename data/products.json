@@ -1,5 +1,85 @@
 [
   {
+    "id": "6bf08d3b-8ac8-5d11-8492-9417ed5f596f",
+    "slug": "fountain",
+    "title": "Fountain",
+    "description": "Add a touch of tranquility to your garden with our Fountain, a charming decorative feature designed for outdoor use. This elegant fountain brings gentle water movement and soothing sound, enhancing the beauty of any landscape while creating a relaxing atmosphere.",
+    "image": "/products/garden-supplies/fountain.webp",
+    "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
+  },
+  {
+    "id": "c621d98f-974b-5978-87f6-fe6006423c2f",
+    "slug": "garden-bench",
+    "title": "Garden Bench",
+    "description": "Add a touch of charm to your outdoor space with this Garden Bench, a sturdy and inviting piece crafted for the garden. Ideal for unwinding after a day of planting or simply enjoying sunshine, it offers comfortable seating that blends seamlessly with any landscape. Choose this simple yet elegant addition to create a welcoming spot where memories can grow.",
+    "image": "/products/garden-supplies/garden-bench.webp",
+    "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
+  },
+  {
+    "id": "0225daa6-4620-5113-a3fe-a883c12a6443",
+    "slug": "organic-manure",
+    "title": "Organic Manure",
+    "description": "Organic Manure – a nutrient‑rich, naturally sourced amendment perfect for enriching garden soil, supporting healthy plant growth, and promoting sustainable gardening practices. Ideal for vegetable beds, flower borders, and lawns, this gentle fertilizer helps improve soil structure and fertility without harsh chemicals.",
+    "image": "/products/garden-supplies/organic-manure.webp",
+    "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
+  },
+  {
+    "id": "15001b90-8232-5837-8aca-32954e5a2ebf",
+    "slug": "patio-umbrella",
+    "title": "Patio Umbrella",
+    "description": "Add a touch of shade to your outdoor space with this stylish Patio Umbrella, perfect for garden parties or relaxing on the deck; designed for easy setup and durable construction, it brings comfort and style to any sunny area.",
+    "image": "/products/garden-supplies/patio-umbrella.webp",
+    "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
+  },
+  {
+    "id": "04096774-0ccd-5b82-b432-f7c621e80194",
+    "slug": "peat-moss",
+    "title": "Peat Moss",
+    "description": "Peat Moss – a versatile, lightweight soil amendment that helps retain moisture and improve drainage in garden beds, perfect for seedlings, potting mixes, and lawn top‑dressing.",
+    "image": "/products/garden-supplies/peat-moss.webp",
+    "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
+  },
+  {
+    "id": "11214f28-6fd6-53e3-aac6-bd9f939860ee",
+    "slug": "perlite-soil",
+    "title": "Perlite Soil",
+    "description": "Perlite Soil offers a light, well‑draining growing medium perfect for containers and garden beds alike. The natural perlite particles improve aeration and prevent compaction, helping roots breathe and grow strong. It’s ideal for seedlings, succulents, or any plant that benefits from extra drainage, and it blends easily with regular potting mixes. Choose this versatile amendment to boost soil health and support vigorous plant growth.",
+    "image": "/products/garden-supplies/perlite-soil.webp",
+    "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
+  },
+  {
+    "id": "c88fd2d6-eb9d-54b8-85fb-d51092b0acce",
+    "slug": "potting-soil",
+    "title": "Potting soil",
+    "description": "A versatile potting soil blend designed to give your plants a healthy foundation for successful growth in containers or garden beds.",
+    "image": "/products/garden-supplies/potting-soil.webp",
+    "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
+  },
+  {
+    "id": "6ffa293e-1d4a-5564-b3e4-640962ef6b09",
+    "slug": "stepping-stone",
+    "title": "Stepping Stone",
+    "description": "A charming stepping stone adds a touch of natural elegance to any garden, offering a simple design that fits seamlessly into pathways or relaxing spaces; its timeless look makes it a perfect addition for homeowners and garden lovers.",
+    "image": "/products/garden-supplies/stepping-stone.webp",
+    "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
+  },
+  {
+    "id": "a632aac7-c281-5f73-88f0-8d41da5473d7",
+    "slug": "stone-path",
+    "title": "Stone Path",
+    "description": "A versatile stone path brings timeless charm to any garden setting, offering a smooth, natural surface that enhances outdoor spaces. Ideal for creating inviting walkways or defining garden zones, this durable option blends seamlessly with surrounding foliage and stone features, providing both aesthetic appeal and lasting value.",
+    "image": "/products/garden-supplies/stone-path.webp",
+    "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
+  },
+  {
+    "id": "b79a3a24-b446-5c7d-b0ed-e71324b6d5a5",
+    "slug": "sweet-soil",
+    "title": "Sweet soil",
+    "description": "Sweet soil (Garden Supplies) – a gentle, aromatic addition to your garden beds that improves texture and feeds plants, helping them thrive with minimal effort.",
+    "image": "/products/garden-supplies/sweet-soil.webp",
+    "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
+  },
+  {
     "id": "57a13bee-6047-5c71-a981-a2b6f5264105",
     "slug": "aerator",
     "title": "Aerator",
