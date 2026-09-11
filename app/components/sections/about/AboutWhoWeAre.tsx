@@ -69,7 +69,7 @@ export default function AboutWhoWeAre() {
 
                             <div className="mt-8 flex flex-wrap gap-3 sm:mt-10">
                                 <Link
-                                    href="/#consultation"
+                                    href="/contact"
                                     className="inline-flex cursor-pointer items-center justify-center rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-primary/90 sm:px-8 sm:text-base"
                                 >
                                     {t("startGarden")}

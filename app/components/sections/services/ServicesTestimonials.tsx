@@ -127,13 +127,6 @@ export default function ServicesTestimonials() {
                                 {messages.testimonials.description}
                             </p>
                         </div>
-
-                        <Button
-                            variant="secondary"
-                            className="w-fit shrink-0 rounded-lg px-8 py-3.5"
-                        >
-                            {messages.testimonials.viewAll}
-                        </Button>
                     </header>
                 </Reveal>
 

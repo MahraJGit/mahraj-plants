@@ -55,25 +55,6 @@ function ContactIcon({ src }: { src: string }) {
     );
 }
 
-function LinkArrow() {
-    return (
-        <svg
-            viewBox="0 0 12 12"
-            fill="none"
-            aria-hidden
-            className="size-3 shrink-0 text-[#C4A862] rtl:rotate-180"
-        >
-            <path
-                d="M4.5 2.5 8 6l-3.5 3.5"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    );
-}
-
 export default function Footer() {
     const { t, tObject, locale } = useTranslations("footer");
     const todayHoursLabel = useTodayOperatingHoursLabel();
@@ -166,13 +147,12 @@ export default function Footer() {
                                     <Link
                                         href={item.href}
                                         className={cn(
-                                            "inline-flex items-center gap-2 text-sm transition",
+                                            "inline-flex items-center gap-2 text-sm transition hover:text-secondary",
                                             item.highlighted
                                                 ? "font-medium text-white"
-                                                : "text-white/80 hover:text-secondary",
+                                                : "text-white/80",
                                         )}
                                     >
-                                        {item.highlighted && <LinkArrow />}
                                         {item.label}
                                     </Link>
                                 </li>

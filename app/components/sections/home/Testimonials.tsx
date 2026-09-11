@@ -133,13 +133,6 @@ export default function Testimonials() {
                             {t("description")}
                         </p>
                     </div>
-
-                    <Button
-                        variant="secondary"
-                        className="w-fit shrink-0 rounded-lg px-8 py-3.5"
-                    >
-                        {tCommon("viewAllTestimonials")}
-                    </Button>
                 </header>
 
                 <div className="relative mt-12 lg:mt-14">

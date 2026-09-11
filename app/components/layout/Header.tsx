@@ -61,7 +61,11 @@ function NavLink({
     return (
         <Link
             {...props}
-            className={cn(navLinkClass, active && "text-secondary", className)}
+            className={cn(
+                "rounded-full px-3.5 py-2 text-sm font-medium transition-colors duration-200 hover:text-secondary",
+                active ? "text-secondary" : "text-white/90",
+                className,
+            )}
         />
     );
 }

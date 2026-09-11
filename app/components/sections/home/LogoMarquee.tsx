@@ -1,79 +1,54 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "@/app/lib/i18n";
 
 const logos = [
     {
-        src: "/icons/cytozyme.svg",
+        src: "/images/home/LogoMarquee/Emaar-logo.png",
         alt: "Cytozyme",
         width: 169,
         height: 67,
     },
     {
-        src: "/icons/olive-garden.svg",
+        src: "/images/home/LogoMarquee/green-riyadh-.png",
         alt: "Olive Garden",
-        width: 168,
-        height: 58,
+        width: 169,
+        height: 67,
     },
     {
-        src: "/icons/fortgreen.svg",
+        src: "/images/home/LogoMarquee/Logo.png",
         alt: "Fortgreen",
-        width: 173,
-        height: 54,
+        width: 169,
+        height: 67,
     },
     {
-        src: "/icons/brudden.svg",
+        src: "/images/home/LogoMarquee/moc-logo.jpg",
         alt: "Brudden",
-        width: 185,
-        height: 35,
+        width: 169,
+        height: 67,
     },
     {
-        src: "/icons/spring.svg",
+        src: "/images/home/LogoMarquee/Nakheel-logo.png",
         alt: "Spring",
-        width: 192,
-        height: 51,
+        width: 169,
+        height: 67,
     },
     {
-        src: "/icons/national-trust.svg",
+        src: "/images/home/LogoMarquee/National-Water-Company.png",
         alt: "National Trust",
-        width: 177,
-        height: 53,
+        width: 169,
+        height: 67,
+    },
+    {
+        src: "/images/home/LogoMarquee/Sela-logo.png",
+        alt: "National Trust",
+        width: 169,
+        height: 67,
     },
 ];
 
 const LOGO_GAP = 96;
-
-function LogoMark({
-    src,
-    alt,
-    width,
-    height,
-}: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-}) {
-    return (
-        <div
-            role="img"
-            aria-label={alt}
-            className="shrink-0 bg-secondary"
-            style={{
-                width,
-                height,
-                WebkitMaskImage: `url(${src})`,
-                maskImage: `url(${src})`,
-                WebkitMaskSize: "contain",
-                maskSize: "contain",
-                WebkitMaskRepeat: "no-repeat",
-                maskRepeat: "no-repeat",
-                WebkitMaskPosition: "center",
-                maskPosition: "center",
-            }}
-        />
-    );
-}
 
 export default function LogoMarquee() {
     const { t } = useTranslations("home.logos");
@@ -94,13 +69,19 @@ export default function LogoMarquee() {
                     style={{ gap: LOGO_GAP }}
                 >
                     {marqueeLogos.map((logo, index) => (
-                        <LogoMark
+                        <div
                             key={`${logo.alt}-${index}`}
-                            src={logo.src}
-                            alt={logo.alt}
-                            width={logo.width}
-                            height={logo.height}
-                        />
+                            className="relative shrink-0 flex items-center justify-center"
+                            style={{ width: logo.width, height: logo.height }}
+                        >
+                            <Image
+                                src={logo.src}
+                                alt={logo.alt}
+                                fill
+                                sizes={`${logo.width}px`}
+                                className="object-contain"
+                            />
+                        </div>
                     ))}
                 </div>
             </div>
