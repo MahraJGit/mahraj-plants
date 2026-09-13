@@ -41,6 +41,7 @@ export function LocaleProvider({
     useEffect(() => {
         document.documentElement.lang = locale;
         document.documentElement.dir = localeDirection(locale);
+        document.body.classList.toggle("font-arabic", locale === "ar");
     }, [locale]);
 
     const setLocale = useCallback(

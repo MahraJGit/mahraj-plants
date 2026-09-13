@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import type { BlogArticle } from "@/app/lib/blogs";
+import type { BlogArticle } from "@/app/lib/blogs/types";
 import {
-    formatBlogCommentsLabel,
     getBlogsMessages,
     useLocale,
 } from "@/app/lib/i18n";
@@ -16,7 +15,6 @@ type BlogListCardProps = {
 export default function BlogListCard({ post }: BlogListCardProps) {
     const { locale } = useLocale();
     const messages = getBlogsMessages(locale);
-    const commentsLabel = formatBlogCommentsLabel(post.comments, locale);
 
     return (
         <article className="group overflow-hidden rounded-[1.75rem] border border-primary/8 bg-white shadow-[0_8px_30px_rgba(10,37,14,0.06)] transition hover:shadow-md">
@@ -49,18 +47,6 @@ export default function BlogListCard({ post }: BlogListCardProps) {
                                 className="size-3.5 shrink-0"
                             />
                             {messages.card.by.replace("{author}", post.author)}
-                        </span>
-                        <span className="inline-flex items-center gap-1.5">
-                            <Image
-                                src="/icons/comment-white.svg"
-                                alt=""
-                                width={16}
-                                height={16}
-                                aria-hidden
-                                style={{ width: "auto", height: "auto" }}
-                                className="size-3.5 shrink-0"
-                            />
-                            {commentsLabel}
                         </span>
                     </div>
 

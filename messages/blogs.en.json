@@ -89,20 +89,14 @@
       ]
     }
   },
-  "comment": {
-    "heading": "Post A Comment",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "saveInfo": "Save my name, email, and website in this browser for the next time I comment.",
-    "submit": "Post Comment"
-  },
   "categories": {
-    "DIY garden projects": "DIY garden projects",
-    "Garden Design Ideas": "Garden Design Ideas",
-    "Outdoor Living Inspiration": "Outdoor Living Inspiration",
-    "Plant Care & Advice": "Plant Care & Advice",
-    "Seasonal Gardening Tips": "Seasonal Gardening Tips"
+    "Garden Supplies": "Garden Supplies",
+    "Garden Tools": "Garden Tools",
+    "Indoor Plants": "Indoor Plants",
+    "Outdoor Plants": "Outdoor Plants",
+    "Pots and Planters": "Pots and Planters",
+    "Seasonal Flowers": "Seasonal Flowers",
+    "Vegetables": "Vegetables"
   },
   "tags": {
     "DIY": "DIY",
@@ -147,7 +141,7 @@
     "excerpt": "Get to know the passionate, skilled people behind Mahraj Landscaping's green transformations. From designers to gardeners, our team is dedicated to turning outdoor dreams into lush reality.",
     "alt": "Mahraj Landscaping team working together in a garden nursery",
     "month": "JUN",
-    "category": "Outdoor Living Inspiration",
+    "category": "Outdoor Plants",
     "tags": [
       "Garden Design",
       "Landscaping Ideas"
@@ -158,7 +152,7 @@
     "excerpt": "Small balconies can feel like full gardens with the right layout, planters, and plant choices. Here is how we turn compact urban spaces into calming green retreats.",
     "alt": "Balcony garden overlooking a city skyline at sunset",
     "month": "JUN",
-    "category": "Garden Design Ideas",
+    "category": "Outdoor Plants",
     "tags": [
       "Garden Design",
       "DIY"
@@ -169,7 +163,7 @@
     "excerpt": "Privacy planting does not mean closing off your garden. Learn how hedges, trellises, and layered greenery create seclusion without losing light or openness.",
     "alt": "Private garden with lush lawn and wooden seating",
     "month": "JUN",
-    "category": "Garden Design Ideas",
+    "category": "Outdoor Plants",
     "tags": [
       "Landscaping Ideas",
       "Garden Design"
@@ -180,7 +174,7 @@
     "excerpt": "You do not need a large yard to enjoy gardening. With smart planter placement, vertical greenery, and the right species, even the smallest balcony can become a vibrant oasis.",
     "alt": "Small balcony filled with potted plants and flowers",
     "month": "JUN",
-    "category": "DIY garden projects",
+    "category": "Pots and Planters",
     "tags": [
       "DIY",
       "Garden Design"
@@ -191,7 +185,7 @@
     "excerpt": "From spring planting to winter protection, a seasonal rhythm keeps gardens healthy. Our practical checklist covers watering, pruning, and soil care month by month.",
     "alt": "Gardener tending plants in a landscaped outdoor space",
     "month": "JUL",
-    "category": "Seasonal Gardening Tips",
+    "category": "Seasonal Flowers",
     "tags": [
       "Plant Care",
       "Watering Tips",
@@ -203,7 +197,7 @@
     "excerpt": "Eco-friendly gardens combine native species, smart irrigation, and low-maintenance layouts. Discover design choices that look beautiful and respect the environment.",
     "alt": "Sustainable garden with native trees and natural planting",
     "month": "JUL",
-    "category": "Garden Design Ideas",
+    "category": "Garden Supplies",
     "tags": [
       "Garden Design",
       "Organic",
@@ -215,7 +209,7 @@
     "excerpt": "The right indoor plants do more than decorate — they freshen the air and create a calmer atmosphere. Explore our top picks for homes, offices, and shared workspaces.",
     "alt": "Indoor plants arranged in a bright living room",
     "month": "JUL",
-    "category": "Plant Care & Advice",
+    "category": "Indoor Plants",
     "tags": [
       "Plant Care",
       "Organic"
@@ -226,7 +220,7 @@
     "excerpt": "From curated planter sets to care kits and rare species, these gift ideas delight anyone who loves greenery — perfect for birthdays, housewarmings, and special occasions.",
     "alt": "Gift-wrapped plant and gardening accessories",
     "month": "JUN",
-    "category": "DIY garden projects",
+    "category": "Garden Tools",
     "tags": [
       "DIY",
       "Tools"
@@ -237,7 +231,7 @@
     "excerpt": "A beautiful garden does not have to mean endless upkeep. Learn how drought-tolerant plants, mulching, and smart layout reduce maintenance while keeping spaces lush.",
     "alt": "Low-maintenance outdoor garden with structured planting",
     "month": "JUL",
-    "category": "Outdoor Living Inspiration",
+    "category": "Vegetables",
     "tags": [
       "Landscaping Ideas",
       "Plant Care",

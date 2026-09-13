@@ -5,9 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useMemo } from "react";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
-import type { BlogArticle } from "@/app/lib/blogs";
+import type { BlogArticle } from "@/app/lib/blogs/types";
 import {
-    formatBlogCommentsLabel,
     getBlogsMessages,
     localizeBlogCategory,
     localizeBlogTag,
@@ -178,11 +177,7 @@ export default function BlogSidebar({
                                         {post.title}
                                     </p>
                                     <p className="mt-1 text-xs text-primary/55">
-                                        {post.day} {post.month} ·{" "}
-                                        {formatBlogCommentsLabel(
-                                            post.comments,
-                                            locale,
-                                        )}
+                                        {post.day} {post.month}
                                     </p>
                                 </div>
                             </Link>

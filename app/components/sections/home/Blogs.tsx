@@ -8,13 +8,17 @@ import {
     useLocale,
     useTranslations,
 } from "@/app/lib/i18n";
-import { blogArticles } from "@/app/lib/blogs";
+import type { BlogArticle } from "@/app/lib/blogs/types";
 import { cn } from "@/app/lib/utils";
 
 const CARD_GAP = 24;
 const CARD_HEIGHT = 380;
 
-export default function Blogs() {
+type HomeBlogsProps = {
+    posts: BlogArticle[];
+};
+
+export default function Blogs({ posts }: HomeBlogsProps) {
     const { locale } = useLocale();
     const { t } = useTranslations("home.blogs");
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -24,8 +28,8 @@ export default function Blogs() {
     const scrollStartLeft = useRef(0);
 
     const blogs = useMemo(
-        () => localizeBlogs(blogArticles.slice(0, 5), locale),
-        [locale],
+        () => localizeBlogs(posts, locale),
+        [locale, posts],
     );
 
     function handlePointerDown(event: React.PointerEvent<HTMLDivElement>) {

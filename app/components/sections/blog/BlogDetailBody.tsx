@@ -1,22 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import type { BlogArticle } from "@/app/lib/blogs";
-import {
-    blogCategories,
-    blogTags,
-    getLatestBlogArticles,
-} from "@/app/lib/blogs";
+import type { BlogArticle } from "@/app/lib/blogs/types";
+import { blogCategories, blogTags } from "@/app/lib/blogs/constants";
 import { getBlogsMessages, useLocale } from "@/app/lib/i18n";
-import BlogCommentForm from "./BlogCommentForm";
 import BlogDetailArticle from "./BlogDetailArticle";
 import BlogSidebar from "./BlogSidebar";
 
 type BlogDetailBodyProps = {
     article: BlogArticle;
+    latestPosts: BlogArticle[];
 };
 
-export default function BlogDetailBody({ article }: BlogDetailBodyProps) {
+export default function BlogDetailBody({
+    article,
+    latestPosts,
+}: BlogDetailBodyProps) {
     const { locale } = useLocale();
     const messages = getBlogsMessages(locale);
     const [searchQuery, setSearchQuery] = useState("");
@@ -27,14 +26,13 @@ export default function BlogDetailBody({ article }: BlogDetailBodyProps) {
                 <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px] xl:gap-12">
                     <div>
                         <BlogDetailArticle article={article} />
-                        <BlogCommentForm />
                     </div>
 
                     <BlogSidebar
                         variant="links"
                         categories={blogCategories}
                         tags={blogTags}
-                        latestPosts={getLatestBlogArticles(3)}
+                        latestPosts={latestPosts}
                         searchQuery={searchQuery}
                         onSearchChange={setSearchQuery}
                         activeCategory={null}

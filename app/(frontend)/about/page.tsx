@@ -9,22 +9,53 @@ import AboutWhyChooseUs from "@/app/components/sections/about/AboutWhyChooseUs";
 import AboutTeam from "@/app/components/sections/about/AboutTeam";
 import AboutFeatures from "@/app/components/sections/about/AboutFeatures";
 import SiteCTA from "@/app/components/sections/shared/SiteCTA";
+import JsonLd from "@/app/components/seo/JsonLd";
 import { getDictionary } from "@/app/lib/i18n/get-dictionary";
 import { getLocale } from "@/app/lib/i18n/get-locale";
+import {
+    breadcrumbJsonLd,
+    graphJsonLd,
+    organizationJsonLd,
+    webPageJsonLd,
+    websiteJsonLd,
+} from "@/app/lib/seo/json-ld";
+import { buildPageMetadata } from "@/app/lib/seo/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
     const locale = await getLocale();
     const dictionary = await getDictionary(locale);
 
-    return {
+    return buildPageMetadata({
         title: dictionary.aboutPage.metaTitle,
         description: dictionary.aboutPage.metaDescription,
-    };
+        path: "/about",
+        locale,
+        image: "/images/about/bg-about-us.webp",
+        imageAlt: dictionary.aboutPage.hero.title,
+    });
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
+    const locale = await getLocale();
+    const dictionary = await getDictionary(locale);
+
     return (
         <>
+            <JsonLd
+                data={graphJsonLd(
+                    organizationJsonLd(),
+                    websiteJsonLd(),
+                    webPageJsonLd({
+                        title: dictionary.aboutPage.metaTitle,
+                        description: dictionary.aboutPage.metaDescription,
+                        path: "/about",
+                    }),
+                    breadcrumbJsonLd([
+                        { name: dictionary.nav.home, path: "/" },
+                        { name: dictionary.nav.about, path: "/about" },
+                    ]),
+                )}
+            />
             <AboutHero />
             <AboutFeatures />
             <AboutQuote />

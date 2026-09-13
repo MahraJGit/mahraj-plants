@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { RefObject } from "react";
 import {
-    formatBlogCommentsLabel,
     getBlogsMessages,
     useLocale,
 } from "@/app/lib/i18n";
@@ -136,18 +135,6 @@ export default function BlogCard({
                             className="size-3.5 shrink-0"
                         />
                         {messages.card.by.replace("{author}", post.author)}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5">
-                        <Image
-                            src="/icons/comment-white.svg"
-                            alt=""
-                            width={16}
-                            height={16}
-                            aria-hidden
-                            style={{ width: "auto", height: "auto" }}
-                            className="size-3.5 shrink-0"
-                        />
-                        {formatBlogCommentsLabel(post.comments, locale)}
                     </span>
                 </div>
             </div>

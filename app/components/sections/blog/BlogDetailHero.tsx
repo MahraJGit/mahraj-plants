@@ -2,13 +2,11 @@
 
 import Image from "next/image";
 import {
-    HiOutlineChatAlt2,
     HiOutlineClock,
     HiOutlineUser,
 } from "react-icons/hi";
-import type { BlogArticle } from "@/app/lib/blogs";
+import type { BlogArticle } from "@/app/lib/blogs/types";
 import {
-    formatBlogCommentsLabel,
     formatLocalizedBlogDate,
     getBlogsMessages,
     localizeBlog,
@@ -23,7 +21,6 @@ export default function BlogDetailHero({ article }: BlogDetailHeroProps) {
     const { locale } = useLocale();
     const messages = getBlogsMessages(locale);
     const localized = localizeBlog(article, locale);
-    const commentsLabel = formatBlogCommentsLabel(article.comments, locale);
 
     return (
         <section
@@ -79,13 +76,6 @@ export default function BlogDetailHero({ article }: BlogDetailHeroProps) {
                                 className="size-4 shrink-0 sm:size-[1.125rem]"
                             />
                             {messages.card.by.replace("{author}", article.author)}
-                        </span>
-                        <span className="inline-flex items-center gap-2">
-                            <HiOutlineChatAlt2
-                                aria-hidden
-                                className="size-4 shrink-0 sm:size-[1.125rem]"
-                            />
-                            {commentsLabel}
                         </span>
                     </div>
                 </div>

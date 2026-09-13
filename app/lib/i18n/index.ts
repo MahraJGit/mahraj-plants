@@ -39,7 +39,6 @@ export {
 export type { ProjectSlug, ProjectsMessages } from "./projects-catalog";
 export {
     getBlogsMessages,
-    getBlogCopy,
     localizeBlog,
     localizeBlogs,
     localizeBlogCategory,
@@ -47,4 +46,4 @@ export {
     formatLocalizedBlogDate,
     formatBlogCommentsLabel,
 } from "./blogs-catalog";
-export type { BlogSlug, BlogsMessages } from "./blogs-catalog";
+export type { BlogsMessages } from "./blogs-catalog";

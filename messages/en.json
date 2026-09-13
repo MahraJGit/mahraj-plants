@@ -1,7 +1,10 @@
 {
   "meta": {
-    "title": "Mahraj Landscaping",
-    "description": "Mahraj Landscaping is a plant store that sells plants and plant related products."
+    "title": "Mahraj Landscaping | Plants, Gardens & Outdoor Design in Riyadh",
+    "description": "Mahraj Landscaping designs gardens and supplies plants in Riyadh — landscape design, irrigation, maintenance, and nursery greenery from Heet, Old Al Kharj Road.",
+    "keywords": "Mahraj Landscaping, landscaping Riyadh, garden design Saudi Arabia, plants nursery Riyadh, irrigation systems, outdoor living, landscape maintenance",
+    "ogImage": "/images/home/hero-bg-1.jpg",
+    "ogImageAlt": "Gardener watering flowers in a lush Mahraj Landscaping garden"
   },
   "common": {
     "readMore": "Read More",
@@ -391,6 +394,10 @@
     "emailLabel": "Email address",
     "emailPlaceholder": "Enter your email here ...",
     "submit": "Submit"
+  },
+  "workingProcessPage": {
+    "metaTitle": "Our Working Process | Mahraj Landscaping",
+    "metaDescription": "See how Mahraj Landscaping plans, plants, and finishes gardens in Riyadh — a clear process from consultation to lasting garden care."
   },
   "categoriesPage": {
     "notFoundTitle": "Category Not Found | Mahraj Landscaping",

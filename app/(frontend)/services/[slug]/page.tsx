@@ -4,15 +4,27 @@ import ServiceDetailHero from "@/app/components/sections/service-detail/ServiceD
 import ServiceDetailGallery from "@/app/components/sections/service-detail/ServiceDetailGallery";
 import ServiceDetailContent from "@/app/components/sections/service-detail/ServiceDetailContent";
 import SiteCTA from "@/app/components/sections/shared/SiteCTA";
+import JsonLd from "@/app/components/seo/JsonLd";
 import {
     getAllServiceSlugs,
     getServiceBySlug,
 } from "@/app/lib/services";
+import { getDictionary } from "@/app/lib/i18n/get-dictionary";
 import {
     getServicesMessages,
     localizeService,
 } from "@/app/lib/i18n/services-catalog";
 import { getLocale } from "@/app/lib/i18n/get-locale";
+import {
+    breadcrumbJsonLd,
+    faqJsonLd,
+    graphJsonLd,
+    organizationJsonLd,
+    serviceJsonLd,
+    webPageJsonLd,
+    websiteJsonLd,
+} from "@/app/lib/seo/json-ld";
+import { buildPageMetadata } from "@/app/lib/seo/metadata";
 
 type ServiceDetailPageProps = {
     params: Promise<{ slug: string }>;
@@ -31,15 +43,19 @@ export async function generateMetadata({
     const messages = getServicesMessages(locale);
 
     if (!service) {
-        return { title: messages.detail.notFoundTitle };
+        return { title: messages.detail.notFoundTitle, robots: { index: false } };
     }
 
     const localized = localizeService(service, locale);
 
-    return {
+    return buildPageMetadata({
         title: messages.detail.metaTitle.replace("{service}", localized.title),
         description: localized.description,
-    };
+        path: `/services/${slug}`,
+        locale,
+        image: localized.image,
+        imageAlt: localized.alt,
+    });
 }
 
 export default async function ServiceDetailPage({
@@ -52,8 +68,32 @@ export default async function ServiceDetailPage({
         notFound();
     }
 
+    const locale = await getLocale();
+    const dictionary = await getDictionary(locale);
+    const messages = getServicesMessages(locale);
+    const localized = localizeService(service, locale);
+    const title = messages.detail.metaTitle.replace("{service}", localized.title);
+
     return (
         <>
+            <JsonLd
+                data={graphJsonLd(
+                    organizationJsonLd(),
+                    websiteJsonLd(),
+                    webPageJsonLd({
+                        title,
+                        description: localized.description,
+                        path: `/services/${slug}`,
+                    }),
+                    serviceJsonLd(localized),
+                    faqJsonLd(localized.faqs),
+                    breadcrumbJsonLd([
+                        { name: dictionary.nav.home, path: "/" },
+                        { name: dictionary.nav.services, path: "/services" },
+                        { name: localized.title, path: `/services/${slug}` },
+                    ]),
+                )}
+            />
             <ServiceDetailHero service={service} />
             <ServiceDetailGallery service={service} />
             <ServiceDetailContent service={service} />
