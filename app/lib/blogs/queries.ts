@@ -12,6 +12,8 @@ const BLOG_COLUMNS =
 
 export async function listPublishedBlogs(): Promise<BlogArticle[]> {
     const supabase = createPublicClient();
+    if (!supabase) return [];
+
     const { data, error } = await supabase
         .from("blogs")
         .select(BLOG_COLUMNS)
@@ -37,6 +39,8 @@ export async function getPublishedBlogBySlug(
     slug: string,
 ): Promise<BlogArticle | null> {
     const supabase = createPublicClient();
+    if (!supabase) return null;
+
     const { data, error } = await supabase
         .from("blogs")
         .select(BLOG_COLUMNS)
@@ -71,6 +75,8 @@ export async function getLatestPublishedBlogs(
 
 export async function getAllPublishedBlogSlugs(): Promise<string[]> {
     const supabase = createPublicClient();
+    if (!supabase) return [];
+
     const { data, error } = await supabase
         .from("blogs")
         .select("slug")

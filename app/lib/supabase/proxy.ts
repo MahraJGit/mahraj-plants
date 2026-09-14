@@ -1,6 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
-import { getSupabaseEnv } from "./env";
+import { tryGetSupabaseEnv } from "./env";
 
 function copyCookies(from: NextResponse, to: NextResponse) {
     from.cookies.getAll().forEach((cookie) => {
@@ -11,9 +11,10 @@ function copyCookies(from: NextResponse, to: NextResponse) {
 
 export async function updateSession(request: NextRequest) {
     let supabaseResponse = NextResponse.next({ request });
-    const { url, anonKey } = getSupabaseEnv();
+    const env = tryGetSupabaseEnv();
+    if (!env) return supabaseResponse;
 
-    const supabase = createServerClient(url, anonKey, {
+    const supabase = createServerClient(env.url, env.anonKey, {
         cookies: {
             getAll() {
                 return request.cookies.getAll();
