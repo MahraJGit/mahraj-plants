@@ -22,8 +22,15 @@ export const NURSERY_COUNTRY_NAME = "Saudi Arabia";
 export function getSiteUrl(): string {
     const configured = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
     if (configured) return configured;
-    if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-    return "https://mahraj.com";
+
+    const vercelUrl = process.env.VERCEL_URL?.replace(/\/$/, "");
+    if (vercelUrl) {
+        return vercelUrl.startsWith("http://") || vercelUrl.startsWith("https://")
+            ? vercelUrl
+            : `https://${vercelUrl}`;
+    }
+
+    return "https://mahrajlandscaping.com";
 }
 
 export function absoluteUrl(path = "/"): string {

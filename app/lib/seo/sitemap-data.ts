@@ -1,11 +1,8 @@
-import { getAllPublishedBlogSlugs } from "@/app/lib/blogs";
 import { getAllCategorySlugs } from "@/app/lib/categories";
-import { getAllProductSlugs } from "@/app/lib/products";
-import { getAllProjectSlugs } from "@/app/lib/projects";
-import { getAllServiceSlugs } from "@/app/lib/services";
 
 export type SitemapEntry = {
     path: string;
+    lastModified: string;
     changeFrequency:
         | "always"
         | "hourly"
@@ -17,53 +14,80 @@ export type SitemapEntry = {
     priority: number;
 };
 
-const STATIC_PAGES: SitemapEntry[] = [
-    { path: "/", changeFrequency: "weekly", priority: 1 },
-    { path: "/about", changeFrequency: "monthly", priority: 0.8 },
-    { path: "/services", changeFrequency: "weekly", priority: 0.9 },
-    { path: "/projects", changeFrequency: "weekly", priority: 0.8 },
-    { path: "/blogs", changeFrequency: "weekly", priority: 0.8 },
-    { path: "/contact", changeFrequency: "monthly", priority: 0.7 },
-    { path: "/working-process", changeFrequency: "monthly", priority: 0.6 },
-    { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
-    { path: "/terms-and-conditions", changeFrequency: "yearly", priority: 0.3 },
+/** Matches the public sitemap structure for mahrajlandscaping.com */
+const CORE_PAGES: SitemapEntry[] = [
+    {
+        path: "/",
+        lastModified: "2026-09-14",
+        changeFrequency: "daily",
+        priority: 1,
+    },
+    {
+        path: "/about-us",
+        lastModified: "2026-09-12",
+        changeFrequency: "monthly",
+        priority: 0.8,
+    },
+    {
+        path: "/contact-us",
+        lastModified: "2026-09-12",
+        changeFrequency: "monthly",
+        priority: 0.8,
+    },
+    {
+        path: "/projects",
+        lastModified: "2026-09-12",
+        changeFrequency: "weekly",
+        priority: 0.8,
+    },
+];
+
+const SERVICE_PAGES: SitemapEntry[] = [
+    {
+        path: "/our-services",
+        lastModified: "2026-09-12",
+        changeFrequency: "weekly",
+        priority: 0.9,
+    },
+];
+
+const BLOG_PAGES: SitemapEntry[] = [
+    {
+        path: "/blogs",
+        lastModified: "2026-09-12",
+        changeFrequency: "daily",
+        priority: 0.8,
+    },
+];
+
+const LEGAL_PAGES: SitemapEntry[] = [
+    {
+        path: "/privacy-policy",
+        lastModified: "2026-09-14",
+        changeFrequency: "daily",
+        priority: 0.3,
+    },
+    {
+        path: "/terms-and-conditions",
+        lastModified: "2026-09-14",
+        changeFrequency: "daily",
+        priority: 0.3,
+    },
 ];
 
 export async function getPublicSitemapEntries(): Promise<SitemapEntry[]> {
-    const blogSlugs = await getAllPublishedBlogSlugs();
-
-    const services = getAllServiceSlugs().map((slug) => ({
-        path: `/services/${slug}`,
-        changeFrequency: "monthly" as const,
-        priority: 0.7,
-    }));
-    const projects = getAllProjectSlugs().map((slug) => ({
-        path: `/projects/${slug}`,
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-    }));
-    const blogs = blogSlugs.map((slug) => ({
-        path: `/blogs/${slug}`,
-        changeFrequency: "weekly" as const,
-        priority: 0.6,
-    }));
     const categories = getAllCategorySlugs().map((slug) => ({
         path: `/categories/${slug}`,
+        lastModified: "2026-09-12",
         changeFrequency: "weekly" as const,
-        priority: 0.7,
-    }));
-    const products = getAllProductSlugs().map((slug) => ({
-        path: `/products/${slug}`,
-        changeFrequency: "weekly" as const,
-        priority: 0.5,
+        priority: 0.8,
     }));
 
     return [
-        ...STATIC_PAGES,
-        ...services,
-        ...projects,
-        ...blogs,
+        ...CORE_PAGES,
+        ...SERVICE_PAGES,
         ...categories,
-        ...products,
+        ...BLOG_PAGES,
+        ...LEGAL_PAGES,
     ];
 }

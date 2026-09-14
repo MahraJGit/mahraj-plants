@@ -99,11 +99,11 @@ export default function Header() {
             href: "/#categories",
             dropdown: plantCategories,
         },
-        { label: t("services"), href: "/services" },
+        { label: t("services"), href: "/our-services" },
         { label: t("projects"), href: "/projects" },
         { label: t("blogs"), href: "/blogs" },
-        { label: t("about"), href: "/about" },
-        { label: t("contact"), href: "/contact" },
+        { label: t("about"), href: "/about-us" },
+        { label: t("contact"), href: "/contact-us" },
     ];
 
     const currentLanguage =
