@@ -16,6 +16,8 @@ export default function WhyUs() {
     const { t: tCommon } = useTranslations("common");
     const highlights = tArray("highlights");
     const featureIcons = tArray("featureIcons");
+    const ceoName = t("ceoName");
+    const ceoInitial = ceoName.replace(/^(Mr\.\s+|السيد\s+)/i, "").charAt(0);
 
     return (
         <section
@@ -166,11 +168,11 @@ export default function WhyUs() {
                                 <div className="flex items-center gap-3">
                                     <div className="relative size-11 shrink-0 overflow-hidden rounded-full bg-white/15">
                                         <div className="flex size-full items-center justify-center text-sm font-semibold text-white">
-                                            A
+                                            {ceoInitial}
                                         </div>
                                     </div>
                                     <div>
-                                        <p className="text-sm font-semibold">Anish</p>
+                                        <p className="text-sm font-semibold">{ceoName}</p>
                                         <p className="text-xs text-white/70">
                                             {t("ceoRole")}
                                         </p>
@@ -199,7 +201,7 @@ export default function WhyUs() {
                                         </svg>
                                     </Link>
                                     <span className="font-script text-2xl text-white/90">
-                                        Anish
+                                        {ceoName}
                                     </span>
                                 </div>
                             </div>

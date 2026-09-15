@@ -252,11 +252,33 @@
   },
   "stepping-stone": {
     "title": "Stepping Stone",
-    "description": "A charming stepping stone adds a touch of natural elegance to any garden, offering a simple design that fits seamlessly into pathways or relaxing spaces; its timeless look makes it a perfect addition for homeowners and garden lovers."
+    "description": "A path can change the whole feel of your garden. These stepping stones are simple to lay, easy to walk on, and strong enough to handle daily use outdoors. Great for lawns, flower beds, or quiet corners, they add a clean, natural look to any space. Pick this easy upgrade and give your garden a path that lasts.",
+    "hero": {
+      "eyebrow": "Walk In Style",
+      "title": "Where Garden Paths Feel Special",
+      "description": "Make every walk through your garden more enjoyable with pieces that bring texture, charm, and a lasting finish to your outdoor space."
+    },
+    "siteCta": {
+      "title": "Ready To Build A Path Your Garden Deserves?",
+      "insightsEyebrow": "Plan Your Perfect Path",
+      "insightsTitle": "Stepping Stone Ideas",
+      "insightsBody": "Not sure how far apart to place them or which shape fits your garden? We'll send you easy layout tricks, spacing guides, and real path examples so you can plan with confidence."
+    }
   },
   "stone-path": {
     "title": "Stone Path",
-    "description": "A versatile stone path brings timeless charm to any garden setting, offering a smooth, natural surface that enhances outdoor spaces. Ideal for creating inviting walkways or defining garden zones, this durable option blends seamlessly with surrounding foliage and stone features, providing both aesthetic appeal and lasting value."
+    "description": "Give your garden a walkway that lasts. This stone path has a smooth, natural surface that fits right in with any outdoor setting. Use it to create a walkway, mark out a garden zone, or add charm around flower beds and trees. Strong and easy to maintain, it brings both good looks and long term value to your garden.",
+    "hero": {
+      "eyebrow": "Shape Your Journey",
+      "title": "A Path That Feels Like Home",
+      "description": "Give your garden a walkway that looks as good as it feels, solid underfoot, natural in style, and made to guide every step with quiet charm."
+    },
+    "siteCta": {
+      "title": "Ready To Pave Your Own Path?",
+      "insightsEyebrow": "One Step At A Time",
+      "insightsTitle": "Build a Path You'll Love",
+      "insightsBody": "Wondering what layout suits your garden, or how to keep your path looking new? We'll send you easy placement tricks, care tips, and real project ideas to guide the way."
+    }
   },
   "strelitzia-nicolai": {
     "title": "Strelitzia nicolai",
@@ -306,8 +328,19 @@
     "description": "Petunia – a popular seasonal flower that brings color to your garden during spring and summer."
   },
   "sweet-soil": {
-    "title": "Sweet soil",
-    "description": "Sweet soil (Garden Supplies) – a gentle, aromatic addition to your garden beds that improves texture and feeds plants, helping them thrive with minimal effort."
+    "title": "Sweet Soil",
+    "description": "Balance out acidic soil and give your plants a healthier base to grow in. This sweet soil adds the right nutrients to help roots grow strong, blooms come out brighter, and plants stay healthy season after season. Simple to add, easy to use, and a great choice for beds, borders, or containers that need a little extra care.",
+    "hero": {
+      "eyebrow": "Feed The Roots",
+      "title": "Soil That Sweetens Every Bloom",
+      "description": "Give your garden better soil with sweet soil, helping balance acidity while supporting stronger roots, brighter blooms, and greater yields."
+    },
+    "siteCta": {
+      "title": "Ready To Give Your Soil A Boost?",
+      "insightsEyebrow": "Rooted In Care",
+      "insightsTitle": "Smarter Soil Starts Here",
+      "insightsBody": "Get simple tips on balancing soil, feeding your plants right, and choosing the best mix for beds, borders, or pots, straight to your inbox."
+    }
   },
   "tagetes": {
     "title": "Tagetes",
@@ -586,8 +619,19 @@
     "description": "Add a splash of color to your garden with Portulaca grandiflora, a vibrant outdoor plant known for its hardy blooms and sunny disposition."
   },
   "potting-soil": {
-    "title": "Potting soil",
-    "description": "A versatile potting soil blend designed to give your plants a healthy foundation for successful growth in containers or garden beds."
+    "title": "Potting Soil",
+    "description": "Good plants start with good soil. Our potting soil is mixed to feed roots, hold the right amount of moisture, and let air reach where it matters most. From potted plants to full garden beds, flowers, herbs, and vegetables all benefit from this soil. Simple to use, built to help your plants grow strong from the very first day.",
+    "hero": {
+      "eyebrow": "Grow With Confidence",
+      "title": "Soil That Sets Your Garden Up To Win",
+      "description": "Give your plants a strong start with potting soil full of good nutrients. It holds just the right amount of water and keeps roots happy from day one."
+    },
+    "siteCta": {
+      "title": "Ready To Give Your Plants A Strong Start?",
+      "insightsEyebrow": "Healthy Roots Start Here",
+      "insightsTitle": "Potting Soil Tips",
+      "insightsBody": "Get easy tips on choosing the right soil mix, watering the right amount, and helping your plants grow strong in pots or garden beds, straight to your inbox."
+    }
   },
   "prickly-pear": {
     "title": "Prickly Pear",

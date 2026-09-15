@@ -68,26 +68,26 @@
       "cards": [
         {
           "title": "Expert Plant Consultation",
-          "description": "Book a free chat with our friendly team and get honest, expert advice on the best plants for your space, climate, and style."
+          "description": "Book a free chat with our team for honest advice on the best plants for your space."
         },
         {
           "title": "Professional Landscaping & Planting",
-          "description": "We design lovely outdoor spaces using handpicked plants and careful, professional planting, done right from start to finish."
+          "description": "We design lovely outdoor spaces with handpicked plants and careful, expert planting."
         },
         {
           "title": "Healthy Plants Guaranteed",
-          "description": "Every plant we use is fresh, healthy, and carefully looked after, so your garden always looks green, lush, and at its very best."
+          "description": "Every plant we use is fresh, healthy, and cared for, so your garden always looks its best."
         },
         {
           "title": "Reliable Landscaping Services",
-          "description": "Our expert team is always ready to help with landscaping and plant care, staying available up to 12 hours a day for you."
+          "description": "Our expert team is ready to help with landscaping, staying available up to 12 hours a day."
         }
       ]
     },
     "categories": {
       "eyebrow": "Explore Our Collections",
-      "titleBefore": "Mahraj Landscaping",
-      "titleAfter": ": Your Trusted Partner",
+      "titleBefore": "Your Trusted Partner",
+      "titleAfter": " in Green Living",
       "description": "From vibrant lawns to breathtaking gardens, we bring your vision to life with landscapes designed to impress and built to last. We create beautiful outdoor spaces that are relaxing and enjoyable and provide a peaceful environment.",
       "items": [
         {
@@ -145,7 +145,7 @@
         },
         {
           "title": "Trees & Plants Selected",
-          "description": "Every plant tells a story. We handpick unique greenery that always fits your style, climate, and dream garden perfectly."
+          "description": "Every plant tells a story. We handpick unique greenery that perfectly fits your style, climate, and dream garden."
         },
         {
           "title": "Client Satisfaction",
@@ -153,7 +153,7 @@
         },
         {
           "title": "Expert Team",
-          "description": "Our skilled crew of designers and gardeners work hand in hand to turn your outdoor ideas into a truly beautiful reality."
+          "description": "Our skilled designers and gardeners work together to turn your outdoor ideas into a truly beautiful reality."
         }
       ]
     },
@@ -180,7 +180,7 @@
     "whyUs": {
       "eyebrow": "Natural Green Plants",
       "title": "Why Mahraj Landscaping Feel Different?",
-      "description": "Good gardens don't just happen. We blend smart design, plant know-how, and hands-on care so your outdoor or indoor space stays lush and beautiful long after we're done. Every project gets equal care, from our first chat to years of ongoing garden upkeep.",
+      "description": "Good gardens don't just happen. We blend smart design, plant knowledge, and dedicated care so your outdoor or indoor space stays lush and beautiful long after we're done. Every project gets equal care, from our first chat to years of ongoing garden upkeep.",
       "highlights": [
         "Garden designs made to fit your space, style, and daily needs.",
         "One team handles your design, planting, and garden care.",
@@ -188,14 +188,15 @@
         "Clear updates and timely service keep every step simple."
       ],
       "imageAlt": "Mahraj Landscaping team standing together in front of a greenhouse",
-      "sinceTitle": "Growing Strong Since 2023",
+      "sinceTitle": "Growing Strong Since 2021",
       "sinceBody": "We started with a simple love for plants and green spaces. Since then, we've become a name that homeowners and businesses trust for lasting, healthy, vibrant landscapes.",
       "featureIcons": [
-        "Pesticide-Free Practices",
-        "Long-Term Green Solutions"
+        "Local Plant Expertise",
+        "Trusted Since Day One"
       ],
       "commitmentTitle": "Our Promise To You",
       "commitmentQuote": "We treat every garden like our own. That means honest advice, careful planting, and results that keep growing stronger and greener, season after season, long after we leave.",
+      "ceoName": "Mr. Majid Khan",
       "ceoRole": "CEO / Company",
       "talkTitle": "Let's Bring Your Garden to Life",
       "talkBody": "Have a garden idea? Let's turn it into a space you'll love coming home to."
@@ -233,7 +234,7 @@
       "goToSlide": "Go to slide {n}",
       "items": [
         {
-          "quote": "I've worked with a few landscaping teams, but none as reliable as Mahraj. Our commercial entrance finally looks the way it should, means it is clean, welcoming, and low-maintenance all year long.",
+          "quote": "I've worked with a few landscaping teams, but none as reliable as Mahraj. Our commercial entrance finally looks the way it should, means it is clean, welcoming, and low maintenance all year long.",
           "name": "James Porter",
           "role": "Property Manager, Birmingham"
         },
@@ -575,7 +576,7 @@
       "viewServices": "View All Services",
       "stats": [
         {
-          "value": "35+",
+          "value": "5+",
           "label": "Years of Gardening"
         },
         {

@@ -40,7 +40,7 @@ export default function About() {
                                 className="mx-auto h-7 w-auto"
                             />
                             <p className="mt-3 text-4xl leading-none font-semibold sm:text-[2.75rem]">
-                                35+
+                                5+
                             </p>
                             <p className="mt-2 text-sm leading-snug font-light sm:text-base">
                                 {t("yearsLabel")}

@@ -50,8 +50,8 @@
   {
     "id": "c88fd2d6-eb9d-54b8-85fb-d51092b0acce",
     "slug": "potting-soil",
-    "title": "Potting soil",
-    "description": "A versatile potting soil blend designed to give your plants a healthy foundation for successful growth in containers or garden beds.",
+    "title": "Potting Soil",
+    "description": "Good plants start with good soil. Our potting soil is mixed to feed roots, hold the right amount of moisture, and let air reach where it matters most. From potted plants to full garden beds, flowers, herbs, and vegetables all benefit from this soil. Simple to use, built to help your plants grow strong from the very first day.",
     "image": "/products/garden-supplies/potting-soil.webp",
     "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
   },
@@ -59,7 +59,7 @@
     "id": "6ffa293e-1d4a-5564-b3e4-640962ef6b09",
     "slug": "stepping-stone",
     "title": "Stepping Stone",
-    "description": "A charming stepping stone adds a touch of natural elegance to any garden, offering a simple design that fits seamlessly into pathways or relaxing spaces; its timeless look makes it a perfect addition for homeowners and garden lovers.",
+    "description": "A path can change the whole feel of your garden. These stepping stones are simple to lay, easy to walk on, and strong enough to handle daily use outdoors. Great for lawns, flower beds, or quiet corners, they add a clean, natural look to any space. Pick this easy upgrade and give your garden a path that lasts.",
     "image": "/products/garden-supplies/stepping-stone.webp",
     "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
   },
@@ -67,15 +67,15 @@
     "id": "a632aac7-c281-5f73-88f0-8d41da5473d7",
     "slug": "stone-path",
     "title": "Stone Path",
-    "description": "A versatile stone path brings timeless charm to any garden setting, offering a smooth, natural surface that enhances outdoor spaces. Ideal for creating inviting walkways or defining garden zones, this durable option blends seamlessly with surrounding foliage and stone features, providing both aesthetic appeal and lasting value.",
+    "description": "Give your garden a walkway that lasts. This stone path has a smooth, natural surface that fits right in with any outdoor setting. Use it to create a walkway, mark out a garden zone, or add charm around flower beds and trees. Strong and easy to maintain, it brings both good looks and long term value to your garden.",
     "image": "/products/garden-supplies/stone-path.webp",
     "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
   },
   {
     "id": "b79a3a24-b446-5c7d-b0ed-e71324b6d5a5",
     "slug": "sweet-soil",
-    "title": "Sweet soil",
-    "description": "Sweet soil (Garden Supplies) – a gentle, aromatic addition to your garden beds that improves texture and feeds plants, helping them thrive with minimal effort.",
+    "title": "Sweet Soil",
+    "description": "Balance out acidic soil and give your plants a healthier base to grow in. This sweet soil adds the right nutrients to help roots grow strong, blooms come out brighter, and plants stay healthy season after season. Simple to add, easy to use, and a great choice for beds, borders, or containers that need a little extra care.",
     "image": "/products/garden-supplies/sweet-soil.webp",
     "category_id": "3c2dd32a-e053-51e7-b840-6f75ae2e63cb"
   },

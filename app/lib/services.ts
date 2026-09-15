@@ -64,14 +64,14 @@ export const services: ServiceDetail[] = [
         slug: "landscape-design-planning",
         title: "Landscape Design & Planning",
         description:
-            "Every great garden starts with a great plan. We shape outdoor spaces that mix beauty, purpose, and nature into one stunning design.",
+            "Every great garden starts with a smart plan. We create beautiful, useful outdoor spaces designed around your style and needs.",
         heroDescription:
-            "Every great garden starts with a great plan. We shape outdoor spaces that mix beauty, purpose, and nature into one stunning design.",
+            "Every great garden starts with a smart plan. We create beautiful, useful outdoor spaces designed around your style and needs.",
         image: "/images/home/m-landscaping.webp",
         alt: "Landscaper working on a garden bed with flowering plants",
         icon: "/icons/consultation.svg",
         features: [
-            "Personalized Garden Concepts",
+            "Custom Garden Designs",
             "3D Design Previews",
             "Perfect Plant Pairing",
         ],
@@ -85,7 +85,7 @@ export const services: ServiceDetail[] = [
         includedDescription:
             "Our design package covers the essentials to shape your outdoor space—layouts, plant selection, visuals, and practical planning. Everything is handled by our expert team with a focus on sustainability.",
         includedItems: [
-            "Personalized Garden Concepts",
+            "Custom Garden Designs",
             "3D Design Previews",
             "Perfect Plant Pairing",
             "Soil & Site Assessment",
@@ -230,9 +230,9 @@ export const services: ServiceDetail[] = [
         slug: "green-maintenance-packages",
         title: "Green Maintenance Packages",
         description:
-            "Keep your garden looking its best all year round. We handle the hard work so you can simply enjoy a healthy, green outdoor space.",
+            "Keep your garden looking its best all year round. We handle the hard work so you can enjoy a healthy, green outdoor space.",
         heroDescription:
-            "Keep your garden looking its best all year round. We handle the hard work so you can simply enjoy a healthy, green outdoor space.",
+            "Keep your garden looking its best all year round. We handle the hard work so you can enjoy a healthy, green outdoor space.",
         image: "/images/home/hero-bg-3.jpg",
         alt: "Gardener trimming hedges in a landscaped garden",
         icon: "/icons/trees-plants.svg",
