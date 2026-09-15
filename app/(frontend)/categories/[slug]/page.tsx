@@ -9,6 +9,7 @@ import {
 } from "@/app/lib/categories";
 import SiteCTA from "@/app/components/sections/shared/SiteCTA";
 import JsonLd from "@/app/components/seo/JsonLd";
+import type { CategoryPageCopy } from "@/app/lib/i18n";
 import { getDictionary } from "@/app/lib/i18n/get-dictionary";
 import { getLocale } from "@/app/lib/i18n/get-locale";
 import {
@@ -70,10 +71,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
     const locale = await getLocale();
     const dictionary = await getDictionary(locale);
-    const copy =
-        dictionary.categoriesPage.bySlug[
-            slug as keyof typeof dictionary.categoriesPage.bySlug
-        ];
+    const copy = dictionary.categoriesPage.bySlug[
+        slug as keyof typeof dictionary.categoriesPage.bySlug
+    ] as CategoryPageCopy | undefined;
     const label = copy?.label ?? category.label;
     const description = copy?.description ?? category.hero.description;
 
