@@ -11,7 +11,7 @@ import {
     getProductBySlug,
     getRelatedProducts,
 } from "@/app/lib/products";
-import { localizeProduct } from "@/app/lib/i18n/catalog";
+import { localizeProduct, getCatalogEntry } from "@/app/lib/i18n/catalog";
 import { getDictionary } from "@/app/lib/i18n/get-dictionary";
 import { getLocale } from "@/app/lib/i18n/get-locale";
 import {
@@ -80,6 +80,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     const locale = await getLocale();
     const dictionary = await getDictionary(locale);
     const localized = localizeProduct(product, locale);
+    const catalogEntry = getCatalogEntry(slug, locale);
     const categoryCopy =
         dictionary.categoriesPage.bySlug[
             category.slug as keyof typeof dictionary.categoriesPage.bySlug
@@ -112,13 +113,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     ]),
                 )}
             />
-            <ProductHero />
+            <ProductHero copy={catalogEntry?.hero} />
             <ProductDetails product={product} category={category} />
             <RelatedProducts
                 products={related}
                 categoryLabel={categoryLabel}
             />
-            <SiteCTA />
+            <SiteCTA copy={catalogEntry?.siteCta} />
         </>
     );
 }

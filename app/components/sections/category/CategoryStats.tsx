@@ -80,20 +80,30 @@ function AnimatedStatValue({
     );
 }
 
-export default function CategoryStats() {
+export default function CategoryStats({
+    categorySlug,
+}: {
+    categorySlug?: string;
+}) {
     const sectionRef = useRef<HTMLElement>(null);
     const [inView, setInView] = useState(false);
     const { t, tObject, locale } = useTranslations("categoriesPage");
 
     const stats = useMemo(() => {
-        const items = tObject<StatCopy[]>("stats");
+        const override =
+            categorySlug != null
+                ? tObject<StatCopy[]>(`bySlug.${categorySlug}.stats`)
+                : undefined;
+        const items = Array.isArray(override)
+            ? override
+            : tObject<StatCopy[]>("stats");
         if (!Array.isArray(items)) return [];
 
         return items.map((item, index) => ({
             ...item,
             icon: statIcons[index] ?? statIcons[0],
         }));
-    }, [tObject, locale]);
+    }, [categorySlug, tObject, locale]);
 
     useEffect(() => {
         const node = sectionRef.current;

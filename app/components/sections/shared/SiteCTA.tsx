@@ -12,7 +12,18 @@ import {
 } from "@/app/lib/contact";
 import { useTranslations } from "@/app/lib/i18n";
 
-export default function SiteCTA() {
+export type SiteCTACopy = {
+    title?: string;
+    insightsEyebrow?: string;
+    insightsTitle?: string;
+    insightsBody?: string;
+};
+
+type SiteCTAProps = {
+    copy?: SiteCTACopy;
+};
+
+export default function SiteCTA({ copy }: SiteCTAProps) {
     const [email, setEmail] = useState("");
     const { t } = useTranslations("siteCta");
 
@@ -47,7 +58,7 @@ export default function SiteCTA() {
                             id="site-cta-heading"
                             className="max-w-md text-[26px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-3xl lg:text-[34px]"
                         >
-                            {t("title")}
+                            {copy?.title ?? t("title")}
                         </h2>
 
                         <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -107,16 +118,16 @@ export default function SiteCTA() {
                                 className="h-4 w-auto brightness-0 invert"
                             />
                             <span className="font-script text-[26px] leading-none text-white sm:text-[30px]">
-                                {t("insightsEyebrow")}
+                                {copy?.insightsEyebrow ?? t("insightsEyebrow")}
                             </span>
                         </p>
 
                         <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-                            {t("insightsTitle")}
+                            {copy?.insightsTitle ?? t("insightsTitle")}
                         </h3>
 
                         <p className="mt-4 max-w-md text-sm leading-relaxed text-white/80 sm:text-[15px]">
-                            {t("insightsBody")}
+                            {copy?.insightsBody ?? t("insightsBody")}
                         </p>
 
                         <form

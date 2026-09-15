@@ -8,7 +8,7 @@ export const products: Product[] = [
     slug: `fountain`,
     title: `Fountain`,
     description:
-      `Add a touch of tranquility to your garden with our Fountain, a charming decorative feature designed for outdoor use. This elegant fountain brings gentle water movement and soothing sound, enhancing the beauty of any landscape while creating a relaxing atmosphere.`,
+      `Every garden deserves a feature that feels alive. Our fountains combine graceful design with weather resistant materials built to last through every season. From tiered classics to sleek modern styles, each piece is selected for reliable performance and effortless upkeep. Add gentle movement, calming sound, and a refined touch that turns any outdoor corner into a peaceful escape.`,
     image: `/products/garden-supplies/fountain.webp`,
     category_id: `3c2dd32a-e053-51e7-b840-6f75ae2e63cb`,
   },
@@ -17,7 +17,7 @@ export const products: Product[] = [
     slug: `garden-bench`,
     title: `Garden Bench`,
     description:
-      `Add a touch of charm to your outdoor space with this Garden Bench, a sturdy and inviting piece crafted for the garden. Ideal for unwinding after a day of planting or simply enjoying sunshine, it offers comfortable seating that blends seamlessly with any landscape. Choose this simple yet elegant addition to create a welcoming spot where memories can grow.`,
+      `Add a welcoming touch to your outdoor space with this Garden Bench, a sturdy and stylish piece for everyday garden living. Perfect for relaxing after a long day or sharing quiet moments with loved ones, it offers comfortable, durable seating that suits any landscape. A timeless addition that turns any corner into a favorite spot.`,
     image: `/products/garden-supplies/garden-bench.webp`,
     category_id: `3c2dd32a-e053-51e7-b840-6f75ae2e63cb`,
   },
@@ -26,7 +26,7 @@ export const products: Product[] = [
     slug: `organic-manure`,
     title: `Organic Manure`,
     description:
-      `Organic Manure – a nutrient‑rich, naturally sourced amendment perfect for enriching garden soil, supporting healthy plant growth, and promoting sustainable gardening practices. Ideal for vegetable beds, flower borders, and lawns, this gentle fertilizer helps improve soil structure and fertility without harsh chemicals.`,
+      `Organic manure is a natural, nutrient rich fertilizer made to feed your garden soil the healthy way. It helps plants grow stronger, improves soil quality, and supports better roots without any harsh chemicals. Great for vegetable beds, flower borders, and lawns, this manure makes gardening easy, natural, and rewarding for every gardener.`,
     image: `/products/garden-supplies/organic-manure.webp`,
     category_id: `3c2dd32a-e053-51e7-b840-6f75ae2e63cb`,
   },
@@ -35,7 +35,7 @@ export const products: Product[] = [
     slug: `patio-umbrella`,
     title: `Patio Umbrella`,
     description:
-      `Add a touch of shade to your outdoor space with this stylish Patio Umbrella, perfect for garden parties or relaxing on the deck; designed for easy setup and durable construction, it brings comfort and style to any sunny area.`,
+      `Add a cool, comfy shade to your outdoor space with this Patio Umbrella, a stylish and sturdy pick made for garden days. Great for dining outside, relaxing in the sun, or hosting friends, it sets up easily and stands strong in any weather. Choose this simple, practical addition to enjoy your patio in comfort, rain or shine, all season long.`,
     image: `/products/garden-supplies/patio-umbrella.webp`,
     category_id: `3c2dd32a-e053-51e7-b840-6f75ae2e63cb`,
   },
@@ -44,7 +44,7 @@ export const products: Product[] = [
     slug: `peat-moss`,
     title: `Peat Moss`,
     description:
-      `Peat Moss – a versatile, lightweight soil amendment that helps retain moisture and improve drainage in garden beds, perfect for seedlings, potting mixes, and lawn top‑dressing.`,
+      `Add better soil to your garden with this peat moss, a light and simple mix that holds water and softens hard ground. Great for seedlings, potting mixes, or topping your lawn, it helps roots grow deep and strong while keeping soil loose and healthy. Choose this easy, natural fix to give your garden a strong, lasting start.`,
     image: `/products/garden-supplies/peat-moss.webp`,
     category_id: `3c2dd32a-e053-51e7-b840-6f75ae2e63cb`,
   },
@@ -53,7 +53,7 @@ export const products: Product[] = [
     slug: `perlite-soil`,
     title: `Perlite Soil`,
     description:
-      `Perlite Soil offers a light, well‑draining growing medium perfect for containers and garden beds alike. The natural perlite particles improve aeration and prevent compaction, helping roots breathe and grow strong. It’s ideal for seedlings, succulents, or any plant that benefits from extra drainage, and it blends easily with regular potting mixes. Choose this versatile amendment to boost soil health and support vigorous plant growth.`,
+      `This perlite soil keeps your plants breathing easy. It is light, clean, and mixes right into any soil to stop water from pooling around the roots. No more soggy pots or slow growth, just healthy drainage and stronger roots every time. A small change that makes a big difference for any garden bed or potted plant at home.`,
     image: `/products/garden-supplies/perlite-soil.webp`,
     category_id: `3c2dd32a-e053-51e7-b840-6f75ae2e63cb`,
   },

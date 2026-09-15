@@ -64,16 +64,16 @@ export const services: ServiceDetail[] = [
         slug: "landscape-design-planning",
         title: "Landscape Design & Planning",
         description:
-            "Thoughtfully designed outdoor spaces that blend beauty, function, and nature—tailored just for you.",
+            "Every great garden starts with a great plan. We shape outdoor spaces that mix beauty, purpose, and nature into one stunning design.",
         heroDescription:
-            "Year-round garden care made easy — from trimming to pest control, we keep your green space healthy.",
+            "Every great garden starts with a great plan. We shape outdoor spaces that mix beauty, purpose, and nature into one stunning design.",
         image: "/images/home/m-landscaping.webp",
         alt: "Landscaper working on a garden bed with flowering plants",
         icon: "/icons/consultation.svg",
         features: [
-            "Custom garden layouts",
-            "3D visual planning",
-            "Plant Selection & Placement",
+            "Personalized Garden Concepts",
+            "3D Design Previews",
+            "Perfect Plant Pairing",
         ],
         introTitle:
             "Keeping gardens beautiful, healthy, and eco-conscious—season after season.",
@@ -85,9 +85,9 @@ export const services: ServiceDetail[] = [
         includedDescription:
             "Our design package covers the essentials to shape your outdoor space—layouts, plant selection, visuals, and practical planning. Everything is handled by our expert team with a focus on sustainability.",
         includedItems: [
-            "Custom Garden Layouts",
-            "3D Visual Planning",
-            "Plant Selection & Placement",
+            "Personalized Garden Concepts",
+            "3D Design Previews",
+            "Perfect Plant Pairing",
             "Soil & Site Assessment",
             "Seasonal Planting Plans",
             "Implementation Roadmap",
@@ -148,16 +148,16 @@ export const services: ServiceDetail[] = [
         slug: "irrigation-drainage-solutions",
         title: "Irrigation & Drainage Solutions",
         description:
-            "Smart watering and drainage systems designed to keep your garden green, healthy, and flood-free.",
+            "Say goodbye to dry patches and soggy spots. Our smart water systems keep every corner of your garden thriving, rain or shine.",
         heroDescription:
-            "Smart watering and drainage systems designed to keep your garden green, healthy, and flood-free.",
+            "Say goodbye to dry patches and soggy spots. Our smart water systems keep every corner of your garden thriving, rain or shine.",
         image: "/images/home/m-outdoor.webp",
         alt: "Garden sprinkler watering a lush green lawn",
         icon: "/icons/green-solutions.svg",
         features: [
-            "Automatic Irrigation Systems",
-            "Smart Water Scheduling",
-            "Garden Drainage Planning",
+            "Automated Watering Setup",
+            "Water Saving Smart Timers",
+            "Flood Proof Drainage Design",
         ],
         introTitle:
             "Efficient water systems that protect plants and property—season after season.",
@@ -169,9 +169,9 @@ export const services: ServiceDetail[] = [
         includedDescription:
             "From automatic irrigation to smart scheduling and drainage planning, we cover the full water-management toolkit for a healthier garden.",
         includedItems: [
-            "Automatic Irrigation Systems",
-            "Smart Water Scheduling",
-            "Garden Drainage Planning",
+            "Automated Watering Setup",
+            "Water Saving Smart Timers",
+            "Flood Proof Drainage Design",
             "Drip & Sprinkler Setup",
             "Leak Checks & Adjustments",
             "Seasonal System Tuning",
@@ -230,16 +230,16 @@ export const services: ServiceDetail[] = [
         slug: "green-maintenance-packages",
         title: "Green Maintenance Packages",
         description:
-            "Year-round garden care made easy — from trimming to pest control, we keep your green space healthy.",
+            "Keep your garden looking its best all year round. We handle the hard work so you can simply enjoy a healthy, green outdoor space.",
         heroDescription:
-            "Year-round garden care made easy — from trimming to pest control, we keep your green space healthy.",
+            "Keep your garden looking its best all year round. We handle the hard work so you can simply enjoy a healthy, green outdoor space.",
         image: "/images/home/hero-bg-3.jpg",
         alt: "Gardener trimming hedges in a landscaped garden",
         icon: "/icons/trees-plants.svg",
         features: [
-            "Seasonal Lawn Care",
-            "Pruning & Trimming Services",
-            "Weed & Pest Management",
+            "Year Round Lawn Upkeep",
+            "Precision Pruning & Shaping",
+            "Natural Pest & Weed Control",
         ],
         introTitle:
             "Keeping gardens beautiful, healthy, and eco-conscious—season after season.",
@@ -251,10 +251,10 @@ export const services: ServiceDetail[] = [
         includedDescription:
             "Our Green Maintenance service covers all the essentials to keep your garden thriving—lawn care, pruning, eco-friendly treatments, and seasonal updates. Everything is handled by our expert team with a focus on sustainability.",
         includedItems: [
-            "Seasonal Lawn Care",
-            "Pruning & Trimming Services",
+            "Year Round Lawn Upkeep",
+            "Precision Pruning & Shaping",
+            "Natural Pest & Weed Control",
             "Organic Fertilization",
-            "Weed & Pest Management",
             "Irrigation Monitoring",
             "Eco Waste Removal",
         ],

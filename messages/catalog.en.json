@@ -33,11 +33,33 @@
   },
   "fountain": {
     "title": "Fountain",
-    "description": "Add a touch of tranquility to your garden with our Fountain, a charming decorative feature designed for outdoor use. This elegant fountain brings gentle water movement and soothing sound, enhancing the beauty of any landscape while creating a relaxing atmosphere."
+    "description": "Every garden deserves a feature that feels alive. Our fountains combine graceful design with weather resistant materials built to last through every season. From tiered classics to sleek modern styles, each piece is selected for reliable performance and effortless upkeep. Add gentle movement, calming sound, and a refined touch that turns any outdoor corner into a peaceful escape.",
+    "hero": {
+      "eyebrow": "Our Fountain Collection",
+      "title": "Bring Calm, Flowing Water to Your Garden",
+      "description": "Add gentle sound, soft movement, and timeless charm to your garden with fountains that turn any outdoor corner into a peaceful retreat."
+    },
+    "siteCta": {
+      "title": "Ready To Add A Fountain To Your Garden?",
+      "insightsEyebrow": "Water Features & Garden Style",
+      "insightsTitle": "Fountain Insights",
+      "insightsBody": "Get simple tips on choosing, placing, and caring for garden fountains, plus fresh ideas to keep your outdoor space calm, stylish, and full of life."
+    }
   },
   "garden-bench": {
     "title": "Garden Bench",
-    "description": "Add a touch of charm to your outdoor space with this Garden Bench, a sturdy and inviting piece crafted for the garden. Ideal for unwinding after a day of planting or simply enjoying sunshine, it offers comfortable seating that blends seamlessly with any landscape. Choose this simple yet elegant addition to create a welcoming spot where memories can grow."
+    "description": "Add a welcoming touch to your outdoor space with this Garden Bench, a sturdy and stylish piece for everyday garden living. Perfect for relaxing after a long day or sharing quiet moments with loved ones, it offers comfortable, durable seating that suits any landscape. A timeless addition that turns any corner into a favorite spot.",
+    "hero": {
+      "eyebrow": "Slow Down & Enjoy",
+      "title": "A Cozy Seat for Your Garden Moments",
+      "description": "Create a spot where you can sit after a busy day, enjoy the sunshine, talk with someone you love, or simply watch your garden grow."
+    },
+    "siteCta": {
+      "title": "Ready To Add A Garden Bench To Your Space?",
+      "insightsEyebrow": "Comfort, Style & Garden Living",
+      "insightsTitle": "Garden Bench Ideas",
+      "insightsBody": "Discover easy tips for choosing, placing, and caring for garden benches, plus simple ideas to create a cozy outdoor space you'll love to enjoy."
+    }
   },
   "garden-fork": {
     "title": "Garden Fork",
@@ -165,7 +187,18 @@
   },
   "organic-manure": {
     "title": "Organic Manure",
-    "description": "Organic Manure – a nutrient-rich, naturally sourced amendment perfect for enriching garden soil, supporting healthy plant growth, and promoting sustainable gardening practices. Ideal for vegetable beds, flower borders, and lawns, this gentle fertilizer helps improve soil structure and fertility without harsh chemicals."
+    "description": "Organic manure is a natural, nutrient rich fertilizer made to feed your garden soil the healthy way. It helps plants grow stronger, improves soil quality, and supports better roots without any harsh chemicals. Great for vegetable beds, flower borders, and lawns, this manure makes gardening easy, natural, and rewarding for every gardener.",
+    "hero": {
+      "eyebrow": "Nourish Your Roots",
+      "title": "Organic Manure That Helps Your Garden Grow Better",
+      "description": "Your garden deserves real nutrition, not chemicals. Our organic manure feeds your soil from the roots up for healthier, stronger plants."
+    },
+    "siteCta": {
+      "title": "Ready To Give Your Garden The Nutrients It Needs?",
+      "insightsEyebrow": "Feed Naturally, Grow Better",
+      "insightsTitle": "Soil Secrets & Tips",
+      "insightsBody": "Get easy tips to care for your soil, keep your plants healthy, and grow a more natural garden. Discover simple advice and fresh ideas delivered straight to your inbox."
+    }
   },
   "pachira-aquatica": {
     "title": "Pachira aquatica",
@@ -173,11 +206,33 @@
   },
   "patio-umbrella": {
     "title": "Patio Umbrella",
-    "description": "Add a touch of shade to your outdoor space with this stylish Patio Umbrella, perfect for garden parties or relaxing on the deck; designed for easy setup and durable construction, it brings comfort and style to any sunny area."
+    "description": "Add a cool, comfy shade to your outdoor space with this Patio Umbrella, a stylish and sturdy pick made for garden days. Great for dining outside, relaxing in the sun, or hosting friends, it sets up easily and stands strong in any weather. Choose this simple, practical addition to enjoy your patio in comfort, rain or shine, all season long.",
+    "hero": {
+      "eyebrow": "Shade for Every Moment",
+      "title": "Cool Shade That Keeps Your Outdoors Comfortable",
+      "description": "Enjoy your garden any time of day with patio umbrellas that provide cool shade, making it easy to relax, dine, or unwind outdoors."
+    },
+    "siteCta": {
+      "title": "Ready To Add Shade And Style To Your Space?",
+      "insightsEyebrow": "Stay Cool, Stay Stylish",
+      "insightsTitle": "Shade & Style Guide",
+      "insightsBody": "Find simple ways to make your patio more comfortable, from smart shade ideas to easy umbrella care. Get practical tips and fresh inspiration delivered straight to your inbox."
+    }
   },
   "peat-moss": {
     "title": "Peat Moss",
-    "description": "Peat Moss – a versatile, lightweight soil amendment that helps retain moisture and improve drainage in garden beds, perfect for seedlings, potting mixes, and lawn top-dressing."
+    "description": "Add better soil to your garden with this peat moss, a light and simple mix that holds water and softens hard ground. Great for seedlings, potting mixes, or topping your lawn, it helps roots grow deep and strong while keeping soil loose and healthy. Choose this easy, natural fix to give your garden a strong, lasting start.",
+    "hero": {
+      "eyebrow": "A Gift From The Earth",
+      "title": "Hold Moisture, Soften Soil, Help Roots Grow Strong",
+      "description": "Some things in gardening are simple but powerful. Peat moss holds moisture, softens hard soil, and helps roots grow deep and strong."
+    },
+    "siteCta": {
+      "title": "Thinking About Better Soil For Your Garden?",
+      "insightsEyebrow": "Dig a Little Deeper",
+      "insightsTitle": "Soil Secrets",
+      "insightsBody": "Small soil changes lead to big plant results. Get practical tips on soil care, moisture control, and growing a garden that thrives on its own."
+    }
   },
   "peperomia-scandens": {
     "title": "Peperomia scandens",
@@ -233,7 +288,18 @@
   },
   "perlite-soil": {
     "title": "Perlite Soil",
-    "description": "Perlite Soil offers a light, well-draining growing medium perfect for containers and garden beds alike. The natural perlite particles improve aeration and prevent compaction, helping roots breathe and grow strong. It’s ideal for seedlings, succulents, or any plant that benefits from extra drainage, and it blends easily with regular potting mixes. Choose this versatile amendment to boost soil health and support vigorous plant growth."
+    "description": "This perlite soil keeps your plants breathing easy. It is light, clean, and mixes right into any soil to stop water from pooling around the roots. No more soggy pots or slow growth, just healthy drainage and stronger roots every time. A small change that makes a big difference for any garden bed or potted plant at home.",
+    "hero": {
+      "eyebrow": "Light, Strong & Natural",
+      "title": "Open Soil, Stronger Roots, Happier Plants",
+      "description": "Sometimes plants struggle from soil that holds them back. Perlite opens things up, letting air and water move freely for healthy roots."
+    },
+    "siteCta": {
+      "title": "Want Soil That Actually Supports Your Plants?",
+      "insightsEyebrow": "Grow With Confidence",
+      "insightsTitle": "Perlite Tips & Tricks",
+      "insightsBody": "Not sure how or when to use perlite? We'll send you easy explanations, mixing ratios, and real examples so you can use it with confidence in any garden setup."
+    }
   },
   "petunia": {
     "title": "Petunia",

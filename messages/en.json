@@ -48,18 +48,18 @@
       "slides": [
         {
           "alt": "Gardener watering flowers in a lush garden",
-          "title": "Welcome to Mahraj\nLandscaping",
-          "description": "We create elegant, personalized outdoor spaces from thoughtful design to expert garden care always with heart and precision"
+          "title": "Turn Outdoor Spaces\nInto Your Favorite Place",
+          "description": "We design beautiful gardens and outdoor spaces that reflect your lifestyle, bringing nature, comfort, and charm together."
         },
         {
           "alt": "Landscaped garden seating area surrounded by hedges and trees",
-          "title": "Come for the greenery\nStay for the expert care",
-          "description": "We believe people and plants belong together. Since city living often cuts us off from nature, we're here to make bringing greenery home and keeping it thriving effortless."
+          "title": "Bring Home More Green",
+          "description": "Explore 1000+ plant varieties, from indoor favorites to outdoor greenery and seasonal blooms, carefully selected to keep your space fresh and vibrant."
         },
         {
           "alt": "Landscaper trimming a hedge with professional equipment",
-          "title": "Fair pricing. Simple care.\nDelivered to your door.",
-          "description": "Our custom eco-packaging ensures every plant arrives fresh, healthy, and perfectly protected, making greenery effortless for your space."
+          "title": "A Greener Garden,\nAll Year Round",
+          "description": "From irrigation and pruning to pest control and seasonal care, we keep your garden healthy, beautiful, and thriving in every season."
         }
       ]
     },
@@ -67,48 +67,48 @@
       "ariaLabel": "Why choose Mahraj Landscaping",
       "cards": [
         {
-          "title": "Free Expert Consultation",
-          "description": "Share your vision with our horticultural specialists. We'll assess your space and recommend the best plants and outdoor designs at no cost."
+          "title": "Expert Plant Consultation",
+          "description": "Book a free chat with our friendly team and get honest, expert advice on the best plants for your space, climate, and style."
         },
         {
-          "title": "Flawless Landscaping Execution",
-          "description": "Our skilled gardeners handle everything from soil preparation to expert planting ensuring your outdoor space is crafted to perfection."
+          "title": "Professional Landscaping & Planting",
+          "description": "We design lovely outdoor spaces using handpicked plants and careful, professional planting, done right from start to finish."
         },
         {
-          "title": "Healthy Plant Guarantee",
-          "description": "We stand behind the quality of our greenery. Enjoy total peace of mind with guaranteed healthy, vibrant plants that are built to thrive."
+          "title": "Healthy Plants Guaranteed",
+          "description": "Every plant we use is fresh, healthy, and carefully looked after, so your garden always looks green, lush, and at its very best."
         },
         {
-          "title": "Punctual & Reliable Service",
-          "description": "We deliver and transform your green space on schedule, maintaining clean work sites and respecting your time every step of the way."
+          "title": "Reliable Landscaping Services",
+          "description": "Our expert team is always ready to help with landscaping and plant care, staying available up to 12 hours a day for you."
         }
       ]
     },
     "categories": {
-      "eyebrow": "Explore our collections",
+      "eyebrow": "Explore Our Collections",
       "titleBefore": "Mahraj Landscaping",
-      "titleAfter": " Your Trusted Greenery & Landscaping Partner",
-      "description": "Our curated collection of vibrant plants and custom landscaping solutions. From budget-friendly greens to statement plants that transform your home, garden, or commercial space, we deliver health, beauty, and expert care right to your doorstep.",
+      "titleAfter": ": Your Trusted Partner",
+      "description": "From vibrant lawns to breathtaking gardens, we bring your vision to life with landscapes designed to impress and built to last. We create beautiful outdoor spaces that are relaxing and enjoyable and provide a peaceful environment.",
       "items": [
         {
-          "title": "Mahraj Indoor Plants",
+          "title": "Indoor Plants",
           "alt": "Lush indoor plants with dew on the leaves",
-          "tagline": "Fresh greens for homes, offices, and bright indoor spaces."
+          "tagline": "Bring nature indoors with fresh plants that add life, freshness, and style to any space."
         },
         {
-          "title": "Mahraj Outdoor Plants",
+          "title": "Outdoor Plants",
           "alt": "Vibrant outdoor plants in natural sunlight",
-          "tagline": "Hardy selections built to thrive in open air and seasonal sun."
+          "tagline": "Create greener spaces with hardy, vibrant plants built to thrive through every season."
         },
         {
-          "title": "Mahraj Pots and Planters",
+          "title": "Pots & Planters",
           "alt": "Decorative pots and planters arranged in a garden setting",
-          "tagline": "Stylish pots and planters for every indoor and outdoor space."
+          "tagline": "Complete your space with stylish pots and planters that make every plant look its best."
         },
         {
-          "title": "Mahraj Seasonal Flowers",
+          "title": "Seasonal Flowers",
           "alt": "Colourful seasonal flowers in full bloom",
-          "tagline": "Rotating seasonal blooms to keep your garden vibrant all year."
+          "tagline": "Brighten your garden with seasonal blooms that keep it fresh and colorful year round."
         }
       ]
     },
@@ -118,23 +118,22 @@
       "eyebrow": "Who We Are",
       "title": "Mahraj Landscaping",
       "paragraphs": [
-        "At Mahraj Landscaping, we bring life, greenery, and timeless beauty to modern living and outdoor spaces.",
-        "With years of horticultural experience, we craft custom landscaping solutions tailored to bring your vision to life."
+        "At Mahraj Landscaping, we create beautiful, welcoming landscapes with thoughtful design. From concept to completion, we deliver quality, creativity, and lasting results, making your environment greener, healthier, and more enjoyable."
       ],
       "highlights": [
-        "A True Passion for Nature",
-        "Proven Expertise in Landscaping & Care",
-        "End-to-End Maintenance & Plant Guarantee",
-        "Custom Garden & Landscape Design",
-        "Personalized, Thoughtful Customer Service",
-        "Curated Selection of Healthy Plants"
+        "Love for Nature",
+        "Careful Garden Design",
+        "Quality Plants & Skilled Work",
+        "Creative, Functional Spaces",
+        "Results That Truly Last",
+        "Trusted, Reliable Service"
       ]
     },
     "mission": {
       "visionTitle": "Our Vision",
-      "visionBody": "To be the leading name in sustainable green design, transforming urban and suburban spaces into thriving, vibrant eco-sanctuaries that connect people back to nature.",
+      "visionBody": "Our vision is to be a trusted landscaper known for quality, creativity, sustainability, and customer satisfaction, creating greener spaces that inspire and enrich life.",
       "missionTitle": "Our Mission",
-      "missionBody": "At Mahraj Landscaping, our mission is to deliver exceptional botanical quality and custom outdoor design through expert craftsmanship, eco-friendly irrigation, and dedicated plant care making beautiful green spaces accessible, effortless, and lasting for every client.",
+      "missionBody": "Our mission is to transform outdoor spaces through creative landscape design, quality plants, professional planting, and reliable garden care, creating healthy, beautiful, sustainable environments that thrive in every season.",
       "imageAlt": "Mahraj Landscaping team working on sustainable garden landscaping"
     },
     "stats": {
@@ -142,34 +141,33 @@
       "items": [
         {
           "title": "Projects Completed",
-          "description": "Over 200 custom landscaping and plant projects thoughtfully completed for our valued clients and partners."
+          "description": "From tiny gardens to grand estates, we've brought bold visions to life with care, creativity, and lasting quality."
         },
         {
           "title": "Trees & Plants Selected",
-          "description": "A curated collection of over 300 plant and tree varieties, thoughtfully handpicked to complement every landscape style."
+          "description": "Every plant tells a story. We handpick unique greenery that always fits your style, climate, and dream garden perfectly."
         },
         {
           "title": "Client Satisfaction",
-          "description": "98% of clients reported high satisfaction with our professional garden plants services."
+          "description": "Happy clients are our biggest reward. We listen closely, plan carefully, and craft gardens that truly match your vision."
         },
         {
           "title": "Expert Team",
-          "description": "Our team of over 10 designers, gardeners, and technicians work together to bring your vision to life."
+          "description": "Our skilled crew of designers and gardeners work hand in hand to turn your outdoor ideas into a truly beautiful reality."
         }
       ]
     },
     "services": {
       "eyebrow": "Best Offer for You",
-      "title": "Transforming Your Garden Space Into A Natural Masterpiece",
+      "title": "Bringing Fresh Life To Every Corner Of Your Garden",
       "paragraphs": [
-        "We specialize in creating stunning outdoor environments that reflect your unique style and enhance your daily life. From initial concept to final planting, every detail is handled with care.",
-        "Whether you need a complete landscape transformation or ongoing garden maintenance, our expert team delivers healthy, thriving green spaces you'll love for years to come."
+        "Your dream garden is closer than you think. Whether it's a small backyard refresh or a full outdoor makeover, we plan, plant, and shape spaces that truly feel like home. Our team pays close attention to the little things, like soil health, sunlight, and the right plant for the right spot, so your garden stays lush and easy to enjoy for years, not just one perfect season."
       ]
     },
     "portfolio": {
       "eyebrow": "Natural Green Plants",
-      "title": "Our Latest Green Creations Just Finished!",
-      "description": "Explore a selection of our standout garden projects each one a unique blend of thoughtful design, quality craftsmanship, and a deep love for green spaces.",
+      "title": "Where Every Leaf Tells A Different Story",
+      "description": "Take a peek at the gardens we've brought to life. From quiet backyards to bold rooftop escapes, every project reflects our passion for design and greenery.",
       "ariaLabel": "Featured garden projects",
       "filters": {
         "All": "All",
@@ -180,91 +178,91 @@
       }
     },
     "whyUs": {
-      "eyebrow": "Natural green Plants",
-      "title": "Why Choose Mahraj Landscaping?",
-      "description": "We combine thoughtful design, expert planting, and dependable care to create outdoor spaces that feel natural, balanced, and built to last. Every project is handled with the same attention to detail—from the first consultation to long-term maintenance.",
+      "eyebrow": "Natural Green Plants",
+      "title": "Why Mahraj Landscaping Feel Different?",
+      "description": "Good gardens don't just happen. We blend smart design, plant know-how, and hands-on care so your outdoor or indoor space stays lush and beautiful long after we're done. Every project gets equal care, from our first chat to years of ongoing garden upkeep.",
       "highlights": [
-        "Tailored landscaping solutions designed around your space and lifestyle",
-        "A practical, hands-on approach from design to ongoing care",
-        "Integrated services from planting to irrigation and maintenance",
-        "Clear communication and reliable project delivery every step of the way"
+        "Garden designs made to fit your space, style, and daily needs.",
+        "One team handles your design, planting, and garden care.",
+        "Smart watering systems help keep your plants healthy and fresh.",
+        "Clear updates and timely service keep every step simple."
       ],
       "imageAlt": "Mahraj Landscaping team standing together in front of a greenhouse",
-      "sinceTitle": "We Are Since 2023!",
-      "sinceBody": "Built on a passion for greenery and sustainable outdoor living, we've grown into a trusted partner for homeowners and businesses seeking beautiful, healthy landscapes.",
+      "sinceTitle": "Growing Strong Since 2023",
+      "sinceBody": "We started with a simple love for plants and green spaces. Since then, we've become a name that homeowners and businesses trust for lasting, healthy, vibrant landscapes.",
       "featureIcons": [
         "Pesticide-Free Practices",
         "Long-Term Green Solutions"
       ],
-      "commitmentTitle": "Our Commitment",
-      "commitmentQuote": "Every garden we create reflects our promise to nurture nature responsibly—delivering lasting beauty, healthier environments, and spaces our clients are proud to call their own.",
+      "commitmentTitle": "Our Promise To You",
+      "commitmentQuote": "We treat every garden like our own. That means honest advice, careful planting, and results that keep growing stronger and greener, season after season, long after we leave.",
       "ceoRole": "CEO / Company",
-      "talkTitle": "Let's Talk Today!",
-      "talkBody": "We're here to help! Reach out anytime our friendly team is happy to assist."
+      "talkTitle": "Let's Bring Your Garden to Life",
+      "talkBody": "Have a garden idea? Let's turn it into a space you'll love coming home to."
     },
     "process": {
       "eyebrow": "Our Working Process",
-      "title": "Growing Ideas Into Living Spaces",
-      "description": "We make landscaping easy with a clear, step-by-step process designed to turn your ideas into thriving green spaces.",
+      "title": "The Steps Behind Every Great Garden",
+      "description": "A clear 4 step process takes your idea from the first plan to a beautiful garden, with every step handled with care.",
       "steps": [
         {
-          "title": "Consultation & Planning",
-          "description": "We listen closely to your vision, assess your space, and craft a personalized plan that blends beauty, functionality, and long-term growth."
+          "title": "Listen & Discover",
+          "description": "We sit down, hear your ideas, walk your space, and understand what a perfect garden looks like through your eyes."
         },
         {
-          "title": "Create your garden",
-          "description": "We bring your design to life with expert craftmanship, quality materials, and thoughtful planting that transforms your space into a living sanctuary."
+          "title": "Design & Plan",
+          "description": "Our team sketches a custom layout, picks the right plants, and plans every detail before a single shovel touches soil."
         },
         {
-          "title": "Finishing Touches & Styling",
-          "description": "We refine every detail with decor, lighting, and layout elements to bring out the garden's full charm and character"
+          "title": "Build & Plant",
+          "description": "We bring the design to life, which means shaping the land, planting with care, and setting up systems that keep everything thriving."
         },
         {
-          "title": "Garden care & maintenance",
-          "description": "We keep your garden thriving year-round with routine care, seasonal updates, and responsive support tailored to its evolving needs."
+          "title": "Care & Support",
+          "description": "Once planted, we stay close with regular check-ins and maintenance, so your garden keeps growing strong for years ahead."
         }
       ]
     },
     "testimonials": {
       "eyebrow": "Testimonials",
-      "title": "What our clients say about our service",
-      "description": "Our clients' words speak for the quality and care we put into every project. Discover how we've helped turn outdoor dreams into reality one garden at a time.",
+      "title": "Real Stories From Happy Garden Owners",
+      "description": "Every garden has a story, and our clients love telling theirs. Here's how we turned simple backyards into real, lasting green spaces they truly cherish now.",
       "carouselLabel": "Client testimonials",
       "prev": "Previous testimonial",
       "next": "Next testimonial",
       "goToSlide": "Go to slide {n}",
       "items": [
         {
-          "quote": "Mahraj Landscaping transformed our backyard into a peaceful retreat. The team listened to every detail and delivered beyond what we imagined.",
-          "name": "Sarah Mitchell",
-          "role": "Homeowner, London"
-        },
-        {
-          "quote": "Professional from start to finish. Our commercial entrance looks welcoming year-round, and maintenance has been effortless.",
+          "quote": "I've worked with a few landscaping teams, but none as reliable as Mahraj. Our commercial entrance finally looks the way it should, means it is clean, welcoming, and low-maintenance all year long.",
           "name": "James Porter",
-          "role": "Property Manager"
+          "role": "Property Manager, Birmingham"
         },
         {
-          "quote": "The rooftop garden they designed for our restaurant has become the highlight of the space. Guests compliment it every evening.",
+          "quote": "The rooftop garden became our best marketing tool without us even trying. Guests take photos, ask questions, and keep coming back just to sit among the plants.",
           "name": "Emma Clarke",
-          "role": "Restaurant Owner"
+          "role": "Restaurant Owner, Nottingham"
         },
         {
-          "quote": "We needed a full landscape overhaul before selling. Their design added real curb appeal and the plants are thriving months later.",
-          "name": "David Khan",
-          "role": "Villa Owner, Manchester"
+          "quote": "My wife and I had almost given up on our backyard, it was just mud and weeds for years. But then the Mahraj team walked in, listened patiently to every half-formed idea we had, and turned it into something we now use every single evening. It genuinely changed how our family spends time together.",
+          "name": "David Chen",
+          "role": "Homeowner, Manchester"
         },
         {
-          "quote": "Reliable, punctual, and genuinely passionate about plants. Our office courtyard finally feels like a place employees want to spend time.",
-          "name": "Lisa Nguyen",
-          "role": "Office Park Manager"
+          "quote": "I was nervous about the cost at first, but watching the space come together made it worth every penny. Our kids now play outside more than they ever did before.",
+          "name": "Michael Torres",
+          "role": "Homeowner, Leeds"
+        },
+        {
+          "quote": "After my father passed, I wanted to turn his old garden into something that still felt like him, full of life, a little wild, but cared for. The team understood that without me having to explain it twice. Every time I sit out there now, it feels like he's still part of it.",
+          "name": "Robert Hale",
+          "role": "Homeowner, Bristol"
         }
       ]
     },
     "blogs": {
       "eyebrow": "Our Blogs",
-      "title": "Insights, Stories & Updates From Our Green World",
-      "description": "Explore expert insights, practical ideas, and fresh inspiration for better gardening and sustainable living.",
+      "title": "Smart Gardening Tips, Ideas & Inspiration",
+      "description": "Explore practical tips, creative ideas, and expert guidance to grow healthier plants and create greener spaces you'll love.",
       "ariaLabel": "Blog posts",
       "items": [
         {
@@ -303,8 +301,8 @@
       "ariaLabel": "Partner logos"
     },
     "consultation": {
-      "title": "Ready To Elevate Your Landscape With Mahraj Landscaping?",
-      "description": "From custom garden design to ongoing care, our experts are here to turn your vision into a thriving green oasis."
+      "title": "Ready To Start Your Green Journey With Mahraj Landscaping?",
+      "description": "One call is all it takes. Let Mahraj Landscaping turn your dull, boring yard into the green escape you truly deserve."
     }
   },
   "footer": {
@@ -440,7 +438,35 @@
       "garden-supplies": {
         "label": "Garden Supplies",
         "tagline": "Everything Your Garden Needs",
-        "description": "Soil mixes, fertilizers, décor, and outdoor essentials to prepare, enrich, and style your garden."
+        "description": "From rich soil and plant feed to pots, tools, and outdoor décor, find everything you need to keep your garden growing strong all season long.",
+        "stats": [
+          {
+            "value": "150+",
+            "label": "Products Available"
+          },
+          {
+            "value": "50+",
+            "label": "Trusted Brands"
+          },
+          {
+            "value": "95%",
+            "label": "Customer Satisfaction"
+          },
+          {
+            "value": "24/7",
+            "label": "Order Support"
+          }
+        ],
+        "listing": {
+          "title": "Explore Our Garden Supplies",
+          "description": "Every item here is chosen with care, built to help your garden grow strong and stay beautiful."
+        },
+        "siteCta": {
+          "title": "Ready To Create A Greener Space You'll Love?",
+          "insightsEyebrow": "Tips, Trends & Green Living",
+          "insightsTitle": "Join Our Newsletter",
+          "insightsBody": "Receive simple gardening tips, seasonal ideas, and eco-friendly advice straight to your inbox. Get useful guidance to help your garden stay healthy and vibrant."
+        }
       },
       "garden-tools": {
         "label": "Garden Tools",

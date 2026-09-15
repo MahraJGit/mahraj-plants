@@ -7,6 +7,17 @@ import catalogAr from "@/messages/catalog.ar.json";
 type CatalogEntry = {
     title: string;
     description: string;
+    hero?: {
+        eyebrow: string;
+        title: string;
+        description: string;
+    };
+    siteCta?: {
+        title: string;
+        insightsEyebrow: string;
+        insightsTitle: string;
+        insightsBody: string;
+    };
 };
 
 type CatalogMap = Record<string, CatalogEntry>;
@@ -53,6 +64,17 @@ export type CategoryPageCopy = {
     label: string;
     tagline: string;
     description: string;
+    stats?: { value: string; label: string }[];
+    listing?: {
+        title: string;
+        description: string;
+    };
+    siteCta?: {
+        title: string;
+        insightsEyebrow: string;
+        insightsTitle: string;
+        insightsBody: string;
+    };
 };
 
 export function localizeCategory(

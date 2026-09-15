@@ -182,6 +182,11 @@ export default function CategoryListing({ category }: CategoryListingProps) {
         return localizeCategory(category, copy, locale);
     }, [category, locale, tObject]);
 
+    const categoryCopy = useMemo(
+        () => tObject<CategoryPageCopy>(`bySlug.${category.slug}`),
+        [category.slug, tObject, locale],
+    );
+
     const sortedListings = useMemo(
         () => sortListings(localized.listings, sort, locale),
         [localized.listings, sort, locale],
@@ -223,12 +228,16 @@ export default function CategoryListing({ category }: CategoryListingProps) {
                         id="category-listing-heading"
                         className="mt-4 text-[28px] leading-[1.15] font-bold tracking-[-2%] text-primary sm:text-4xl"
                     >
-                        {tListing("title", { category: localized.hero.title })}
+                        {categoryCopy?.listing?.title ??
+                            tListing("title", {
+                                category: localized.hero.title,
+                            })}
                     </h2>
                     <p className="mt-4 text-sm leading-relaxed text-primary/65 sm:text-base">
-                        {tListing("description", {
-                            category: localized.label,
-                        })}
+                        {categoryCopy?.listing?.description ??
+                            tListing("description", {
+                                category: localized.label,
+                            })}
                     </p>
                 </header>
 

@@ -77,7 +77,7 @@ const categoryHeroCopy: Record<
     "garden-supplies": {
         tagline: "Everything Your Garden Needs",
         description:
-            "Soil mixes, fertilizers, décor, and outdoor essentials to prepare, enrich, and style your garden.",
+            "From rich soil and plant feed to pots, tools, and outdoor décor, find everything you need to keep your garden growing strong all season long.",
     },
     "pots-and-planters": {
         tagline: "Style Meets Function",

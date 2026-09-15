@@ -6,9 +6,9 @@ import { useTranslations } from "@/app/lib/i18n";
 
 const statsMeta = [
     { value: "200+", icon: "/icons/projects-completed.svg" },
-    { value: "300+", icon: "/icons/trees-plants.svg" },
+    { value: "1000+", icon: "/icons/trees-plants.svg" },
     { value: "98%", icon: "/icons/client-satisfaction.svg" },
-    { value: "20+", icon: "/icons/expert-team.svg" },
+    { value: "15+", icon: "/icons/expert-team.svg" },
 ];
 
 type StatCopy = {

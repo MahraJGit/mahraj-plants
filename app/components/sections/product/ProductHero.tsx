@@ -3,7 +3,17 @@
 import Image from "next/image";
 import { useTranslations } from "@/app/lib/i18n";
 
-export default function ProductHero() {
+export type ProductHeroCopy = {
+    eyebrow?: string;
+    title?: string;
+    description?: string;
+};
+
+type ProductHeroProps = {
+    copy?: ProductHeroCopy;
+};
+
+export default function ProductHero({ copy }: ProductHeroProps) {
     const { t } = useTranslations("productPage.hero");
 
     return (
@@ -36,18 +46,18 @@ export default function ProductHero() {
                     />
 
                     <p className="mt-4 font-script text-[26px] leading-none text-white sm:text-[32px] lg:text-[36px]">
-                        {t("eyebrow")}
+                        {copy?.eyebrow ?? t("eyebrow")}
                     </p>
 
                     <p
                         id="product-hero-heading"
                         className="mt-4 text-[32px] font-bold leading-tight text-white sm:text-[40px] lg:text-[48px]"
                     >
-                        {t("title")}
+                        {copy?.title ?? t("title")}
                     </p>
 
                     <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
-                        {t("description")}
+                        {copy?.description ?? t("description")}
                     </p>
                 </div>
             </div>

@@ -98,9 +98,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 )}
             />
             <CategoryHero category={category} />
-            <CategoryStats />
+            <CategoryStats categorySlug={slug} />
             <CategoryListing category={category} />
-            <SiteCTA />
+            <SiteCTA copy={copy?.siteCta} />
         </>
     );
 }
