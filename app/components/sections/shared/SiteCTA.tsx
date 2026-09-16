@@ -79,12 +79,12 @@ export default function SiteCTA({ copy }: SiteCTAProps) {
                                 <span className="flex size-11 items-center justify-center rounded-full bg-secondary text-white">
                                     <HiOutlinePhone aria-hidden className="size-5" />
                                 </span>
-                                <span
+                                {/* <span
                                     dir="ltr"
                                     className="text-sm font-medium sm:text-base"
                                 >
                                     {PHONE_DISPLAY}
-                                </span>
+                                </span> */}
                             </a>
                         </div>
                     </Reveal>

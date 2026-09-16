@@ -108,11 +108,11 @@ export default function ProjectCard({
                     </li>
                 </ul>
 
-                <div className="mt-auto border-t border-dashed border-primary/20 pt-5">
-                    <Link
+                <div className="mt-auto border-t border-dashed border-primary/20 pt-5 group flex items-center justify-between gap-4 outline-none">
+                    {/* <Link
                         href={href}
                         className="group flex items-center justify-between gap-4 outline-none"
-                    >
+                    > */}
                         <span className="text-sm font-medium text-primary transition-colors group-hover:text-secondary group-focus-visible:text-secondary">
                             {messages.detail.viewProject}
                         </span>
@@ -132,7 +132,7 @@ export default function ProjectCard({
                                 />
                             </svg>
                         </span>
-                    </Link>
+                    {/* </Link> */}
                 </div>
             </div>
         </article>
