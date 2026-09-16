@@ -172,7 +172,7 @@ export default function WhyUs() {
                                         </div>
                                     </div>
                                     <div>
-                                        <p className="text-sm font-semibold">{ceoName}</p>
+                                        <p className="whitespace-nowrap text-sm font-semibold">{ceoName}</p>
                                         <p className="text-xs text-white/70">
                                             {t("ceoRole")}
                                         </p>
@@ -200,7 +200,7 @@ export default function WhyUs() {
                                             />
                                         </svg>
                                     </Link>
-                                    <span className="font-script text-2xl text-white/90">
+                                    <span className="whitespace-nowrap font-script text-2xl text-white/90">
                                         {ceoName}
                                     </span>
                                 </div>

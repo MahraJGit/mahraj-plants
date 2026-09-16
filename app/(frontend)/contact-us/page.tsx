@@ -57,7 +57,7 @@ export default async function ContactPage() {
             <ContactFormSection />
             <ContactOperatingHours />
             <ContactMap />
-            <SiteCTA />
+            <SiteCTA copy={dictionary.contactPage.siteCta} />
         </>
     );
 }

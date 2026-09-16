@@ -519,16 +519,16 @@
   },
   "contactPage": {
     "metaTitle": "Contact Us | Mahraj Landscaping",
-    "metaDescription": "Reach out to Mahraj Landscaping for garden consultations, inquiries, or support. We're ready to help your outdoor vision grow.",
+    "metaDescription": "Have a question or a project in mind? Reach out to Mahraj Landscaping and let our team help turn your garden ideas into a space you truly love.",
     "hero": {
-      "eyebrow": "Get in Touch",
-      "title": "We'd Love To Hear From You",
-      "description": "Reach out to our friendly team for garden consultations, inquiries, or support. We're just a message away and ready to help your outdoor vision grow."
+      "eyebrow": "Get In Touch",
+      "title": "Your Dream Garden Starts With a Conversation",
+      "description": "Have a question or a project in mind? Reach out and let our team help turn your garden ideas into a space you truly love."
     },
-    "quote": "Nature speaks through rich textures, vibrant colors, and natural light, and we bring that vision to life. Explore our gallery to see how we craft breathtaking gardens and landscapes with intention, precision, and deep respect for the natural world.",
+    "quote": "A garden is more than soil and plants, it's a place for quiet mornings and slower evenings. We create green spaces where life feels closer to nature.",
     "info": {
-      "title": "Contact Mahraj Landscaping",
-      "body": "Whether you're dreaming of a lush garden retreat or need expert advice on outdoor design, we're here to help. Reach out anytime — we're passionate about bringing nature closer to you.",
+      "title": "Talk to Mahraj Landscaping.",
+      "body": "Got a garden idea in your head, or just need some honest advice? We're real people who love this work, and we'd genuinely love to help you figure it out.",
       "locationLabel": "Our Location",
       "phoneLabel": "Phone Number",
       "emailLabel": "Email Address",
@@ -553,6 +553,12 @@
     "map": {
       "ariaLabel": "Mahraj Landscaping nursery location map",
       "iframeTitle": "Mahraj landscaping & Nursery company location"
+    },
+    "siteCta": {
+      "title": "Ready To Start The Conversation?",
+      "insightsEyebrow": "From Our Team To Your Inbox",
+      "insightsTitle": "Stay In The Loop",
+      "insightsBody": "Can't wait for a reply? Get quick gardening tips, seasonal advice, and practical updates sent straight to your inbox while you wait to hear from us."
     }
   },
   "aboutPage": {
@@ -728,8 +734,8 @@
     }
   },
   "operatingHours": {
-    "title": "Operating Hours",
-    "description": "Visit us during the hours below. Times are shown in Riyadh local time.",
+    "title": "Our Working Hours",
+    "description": "Plan your visit around us. Below are our working hours, shown in Riyadh local time.",
     "day": "Day",
     "morning": "Morning",
     "evening": "Evening",
