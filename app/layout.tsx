@@ -56,6 +56,9 @@ export async function generateMetadata(): Promise<Metadata> {
       icon: [{ url: "/favicon.png", type: "image/png" }],
       apple: [{ url: "/apple-icon.png", type: "image/png" }],
     },
+    verification: {
+      google: "Z2bJ-jX7ruH4z5N9Q6rfTcHU0_fWRs_CONmeYBF3RXw",
+    },
   };
 }
 
