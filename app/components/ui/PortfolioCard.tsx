@@ -39,7 +39,7 @@ export default function PortfolioCard({
                 className="object-cover"
             />
 
-            <Link
+            {/* <Link
                 href={href}
                 aria-label={`View ${project.title}`}
                 className={cn(
@@ -63,7 +63,7 @@ export default function PortfolioCard({
                         strokeLinejoin="round"
                     />
                 </svg>
-            </Link>
+            </Link> */}
 
             <div
                 className={cn(

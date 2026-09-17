@@ -39,9 +39,11 @@ function ArrowBullet() {
 
 export default function ServiceCard({
     service,
-    href = "#",
+    href,
     className,
 }: ServiceCardProps) {
+    const targetHref = href || (service.slug ? `/our-services/${service.slug}` : "#");
+
     return (
         <article
             className={cn(
@@ -50,7 +52,7 @@ export default function ServiceCard({
             )}
         >
             <Link
-                href={href}
+                href={targetHref}
                 className="flex h-full flex-col outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
             >
                 <div className="relative m-4 mb-0 aspect-[4/3] overflow-hidden rounded-2xl">
