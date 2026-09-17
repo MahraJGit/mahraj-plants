@@ -255,6 +255,15 @@
   margin: 0.9rem 0;
 }
 
+.blog-article-body h1 {
+  margin: 0 0 1rem;
+  color: var(--color-primary);
+  font-size: 1.625rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
 .blog-article-body h2 {
   margin: 2rem 0 0.75rem;
   color: var(--color-primary);
@@ -273,6 +282,10 @@
 }
 
 @media (min-width: 640px) {
+  .blog-article-body h1 {
+    font-size: 1.875rem;
+  }
+
   .blog-article-body h2 {
     font-size: 1.625rem;
   }

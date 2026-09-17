@@ -65,7 +65,7 @@ export default function ServicesGrid() {
                         >
                             <ServiceCard
                                 service={service}
-                                href={`/services/${service.slug}`}
+                                href={`/our-services/${service.slug}`}
                             />
                         </Reveal>
                     ))}

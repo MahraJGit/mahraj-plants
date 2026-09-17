@@ -191,7 +191,7 @@ export default function Hero() {
                             {slide.description}
                         </p>
 
-                        <Button href="/services">
+                        <Button href="/our-services">
                             {tCommon("ourServices")}
                         </Button>
                     </div>

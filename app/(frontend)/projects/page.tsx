@@ -56,7 +56,10 @@ export default async function ProjectsPage() {
             <ProjectsStandards />
             <ProjectsGrid />
             <LogoMarquee />
-            <Consultation />
+            <Consultation
+                title={messages.consultation.title}
+                description={messages.consultation.description}
+            />
         </>
     );
 }

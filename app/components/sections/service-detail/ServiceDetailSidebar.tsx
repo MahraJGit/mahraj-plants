@@ -59,7 +59,7 @@ export default function ServiceDetailSidebar({
                         return (
                             <li key={service.slug}>
                                 <Link
-                                    href={`/services/${service.slug}`}
+                                    href={`/our-services/${service.slug}`}
                                     className={cn(
                                         "block px-5 py-3.5 text-sm transition",
                                         active

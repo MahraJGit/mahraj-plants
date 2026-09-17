@@ -161,17 +161,17 @@ function galleryFor(...indexes: number[]) {
 export const projects: ProjectDetail[] = [
     {
         slug: "soft-greens-city-views",
-        title: "Soft Greens & Stunning City Views",
+        title: "Rooftop Garden Landscaping & Planting",
         category: "Rooftop Garden",
         description:
-            "Striking building entrance with a lush vertical garden, integrated LED strips, and modern seating for a vibrant first impression.",
+            "We made the most of limited rooftop space with chosen plants, vertical greenery, and a smart layout for a peaceful escape above the city.",
         heroDescription:
-            "A rooftop terrace reimagined as a green outdoor lounge—layered planting, warm lighting, and skyline views that work day and night.",
+            "We made the most of limited rooftop space with chosen plants, vertical greenery, and a smart layout for a peaceful escape above the city.",
         image: "/images/home/hero-bg-2.jpg",
         alt: "City skyline viewed through lush rooftop greenery at dusk",
-        tags: ["Landscape Design", "Outdoor Lighting"],
-        client: "Westminster",
-        address: "200 Parkside, London",
+        tags: ["Rooftop Garden", "Urban Green Space"],
+        client: "Skyline Garden Residence",
+        address: "King Abdullah Financial District, Riyadh",
         overviewTitle:
             "Turning an exposed rooftop into a sheltered, planted retreat.",
         overviewBody: [
@@ -218,8 +218,8 @@ export const projects: ProjectDetail[] = [
             { value: "9 wks", label: "Start To Handover" },
         ],
         meta: [
-            { label: "Client", value: "Westminster" },
-            { label: "Location", value: "200 Parkside, London" },
+            { label: "Client", value: "Skyline Garden Residence" },
+            { label: "Location", value: "King Abdullah Financial District, Riyadh" },
             { label: "Project Type", value: "Rooftop Garden" },
             { label: "Area", value: "310 m²" },
             { label: "Duration", value: "9 Weeks" },
@@ -234,17 +234,17 @@ export const projects: ProjectDetail[] = [
     },
     {
         slug: "stone-path-garden-revival",
-        title: "Stone Path Garden Revival",
+        title: "Modern Garden Landscaping Project in Dubai",
         category: "Landscape Design",
         description:
-            "A refreshed courtyard with natural stone pathways, layered planting beds, and drought-tolerant greenery for year-round appeal.",
+            "We created a modern garden that feels stylish, not cold, using smart planting, clean lines, and easy care greenery for urban life.",
         heroDescription:
-            "A tired courtyard rebuilt around natural stone paths and drought-tolerant planting that holds its colour through every season.",
+            "We created a modern garden that feels stylish, not cold, using smart planting, clean lines, and easy care greenery for urban life.",
         image: "/images/home/m-landscaping.webp",
         alt: "Landscaper laying stone pavers in a garden courtyard",
-        tags: ["Landscape Design"],
-        client: "Greenfield Estate",
-        address: "14 Willow Lane, Manchester",
+        tags: ["Landscape Design", "Residential"],
+        client: "Emirates Palm Residence",
+        address: "Arabian Ranches, Dubai",
         overviewTitle:
             "A courtyard rebuilt for easy movement and low-maintenance colour.",
         overviewBody: [
@@ -291,8 +291,8 @@ export const projects: ProjectDetail[] = [
             { value: "7 wks", label: "Start To Handover" },
         ],
         meta: [
-            { label: "Client", value: "Greenfield Estate" },
-            { label: "Location", value: "14 Willow Lane, Manchester" },
+            { label: "Client", value: "Emirates Palm Residence" },
+            { label: "Location", value: "Arabian Ranches, Dubai" },
             { label: "Project Type", value: "Landscape Design" },
             { label: "Area", value: "240 m²" },
             { label: "Duration", value: "7 Weeks" },
@@ -307,17 +307,17 @@ export const projects: ProjectDetail[] = [
     },
     {
         slug: "trellis-vine-sanctuary",
-        title: "Trellis & Vine Sanctuary",
-        category: "Rooftop Garden",
+        title: "Luxury Villa Landscaping & Garden Design",
+        category: "Landscape Design",
         description:
-            "A rooftop retreat framed by wooden trellises, climbing vines, and soft ambient lighting for quiet evening gatherings.",
+            "We balanced lawns, palms, and seating areas to create a refined villa garden where every feature has a clear purpose and place.",
         heroDescription:
-            "Timber trellises, climbing vines, and soft ambient light turn an open rooftop into a shaded sanctuary for quiet evenings.",
+            "We balanced lawns, palms, and seating areas to create a refined villa garden where every feature has a clear purpose and place.",
         image: "/images/home/m-outdoor.webp",
         alt: "Garden trellis covered in climbing vines and greenery",
-        tags: ["Rooftop Garden"],
-        client: "Skyline Residences",
-        address: "88 Horizon Terrace, Birmingham",
+        tags: ["Landscape Design", "Luxury Villas"],
+        client: "Al Noor Villa Estate",
+        address: "Al Barsha, Dubai",
         overviewTitle:
             "Shade, privacy, and greenery on a fully exposed roof deck.",
         overviewBody: [
@@ -364,9 +364,9 @@ export const projects: ProjectDetail[] = [
             { value: "6 wks", label: "Start To Handover" },
         ],
         meta: [
-            { label: "Client", value: "Skyline Residences" },
-            { label: "Location", value: "88 Horizon Terrace, Birmingham" },
-            { label: "Project Type", value: "Rooftop Garden" },
+            { label: "Client", value: "Al Noor Villa Estate" },
+            { label: "Location", value: "Al Barsha, Dubai" },
+            { label: "Project Type", value: "Landscape Design" },
             { label: "Area", value: "185 m²" },
             { label: "Duration", value: "6 Weeks" },
             { label: "Completed", value: "2024" },
@@ -380,17 +380,17 @@ export const projects: ProjectDetail[] = [
     },
     {
         slug: "urban-farming-terrace",
-        title: "Urban Farming Terrace",
-        category: "Urban Farming",
+        title: "Outdoor Garden Landscaping & Green Space",
+        category: "Landscape Design",
         description:
-            "Productive raised beds and herb gardens designed for city living, combining edible planting with elegant landscape structure.",
+            "We planned this family garden around daily life, giving children space to play, adults space to relax, and plants room to thrive.",
         heroDescription:
-            "Raised beds, herb gardens, and a compact orchard row—an edible terrace that still reads as a designed landscape.",
+            "We planned this family garden around daily life, giving children space to play, adults space to relax, and plants room to thrive.",
         image: "/images/home/m-trees.webp",
         alt: "Urban terrace garden with trees and raised planting beds",
-        tags: ["Urban Farming", "Rooftop Garden"],
-        client: "Harbor District",
-        address: "5 Canal View, Bristol",
+        tags: ["Outdoor Living", "Family Garden"],
+        client: "Green Valley Residence",
+        address: "Al Waha, Riyadh",
         overviewTitle:
             "A working kitchen garden that still looks designed, not utilitarian.",
         overviewBody: [
@@ -437,9 +437,9 @@ export const projects: ProjectDetail[] = [
             { value: "8 wks", label: "Start To Handover" },
         ],
         meta: [
-            { label: "Client", value: "Harbor District" },
-            { label: "Location", value: "5 Canal View, Bristol" },
-            { label: "Project Type", value: "Urban Farming" },
+            { label: "Client", value: "Green Valley Residence" },
+            { label: "Location", value: "Al Waha, Riyadh" },
+            { label: "Project Type", value: "Landscape Design" },
             { label: "Area", value: "220 m²" },
             { label: "Duration", value: "8 Weeks" },
             { label: "Completed", value: "2025" },
@@ -453,17 +453,17 @@ export const projects: ProjectDetail[] = [
     },
     {
         slug: "illuminated-garden-walkway",
-        title: "Illuminated Garden Walkway",
+        title: "Garden Walkway & Landscape Design Project",
         category: "Outdoor Lighting",
         description:
-            "Warm pathway lighting woven through sculpted hedges and seasonal blooms, creating a welcoming route after sunset.",
+            "We turned a plain walkway into part of the garden itself, with natural stone, layered planting, and lighting that makes every step feel special.",
         heroDescription:
-            "A lighting-led scheme that makes a long garden route feel safe, warm, and quietly dramatic once the sun goes down.",
+            "We turned a plain walkway into part of the garden itself, with natural stone, layered planting, and lighting that makes every step feel special.",
         image: "/images/home/hero-bg-3.jpg",
         alt: "Garden walkway with professional landscape lighting at dusk",
-        tags: ["Outdoor Lighting", "Landscape Design"],
-        client: "Oakwood Manor",
-        address: "31 Elm Grove, Leeds",
+        tags: ["Hardscaping & Lighting", "Pathway Design"],
+        client: "Wadi View Residence",
+        address: "Al Nakheel, Riyadh",
         overviewTitle:
             "Lighting designed around the planting, not bolted on afterwards.",
         overviewBody: [
@@ -510,8 +510,8 @@ export const projects: ProjectDetail[] = [
             { value: "5 wks", label: "Start To Handover" },
         ],
         meta: [
-            { label: "Client", value: "Oakwood Manor" },
-            { label: "Location", value: "31 Elm Grove, Leeds" },
+            { label: "Client", value: "Wadi View Residence" },
+            { label: "Location", value: "Al Nakheel, Riyadh" },
             { label: "Project Type", value: "Outdoor Lighting" },
             { label: "Length", value: "120 m" },
             { label: "Duration", value: "5 Weeks" },
@@ -526,17 +526,17 @@ export const projects: ProjectDetail[] = [
     },
     {
         slug: "corporate-green-entrance",
-        title: "Corporate Green Entrance",
+        title: "Commercial Office Landscaping Project",
         category: "Landscape Design",
         description:
-            "A polished office arrival experience with layered planters, native species, and low-maintenance irrigation for busy teams.",
+            "We designed the entrance as part of the brand, using polished greenery, clear pathways, and smart planting to welcome every visitor.",
         heroDescription:
-            "A commercial forecourt replanted for year-round structure, native resilience, and almost no day-to-day maintenance.",
+            "We designed the entrance as part of the brand, using polished greenery, clear pathways, and smart planting to welcome every visitor.",
         image: "/images/home/our-mission.webp",
         alt: "Corporate building entrance with landscaped green planters",
-        tags: ["Landscape Design"],
-        client: "Northgate Offices",
-        address: "120 Commerce Road, London",
+        tags: ["Commercial", "Hardscaping"],
+        client: "Crescent Business Centre",
+        address: "Al Murabba, Riyadh",
         overviewTitle:
             "A first impression that stays sharp with minimal intervention.",
         overviewBody: [
@@ -583,8 +583,8 @@ export const projects: ProjectDetail[] = [
             { value: "4 wks", label: "Start To Handover" },
         ],
         meta: [
-            { label: "Client", value: "Northgate Offices" },
-            { label: "Location", value: "120 Commerce Road, London" },
+            { label: "Client", value: "Crescent Business Centre" },
+            { label: "Location", value: "Al Murabba, Riyadh" },
             { label: "Project Type", value: "Landscape Design" },
             { label: "Area", value: "160 m²" },
             { label: "Duration", value: "4 Weeks" },

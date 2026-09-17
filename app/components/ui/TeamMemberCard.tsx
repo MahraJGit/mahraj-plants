@@ -23,8 +23,8 @@ export type TeamMember = {
 const socialLinks = [
     { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true },
     { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true },
-    { label: "Twitter", href: "#", Icon: FaTwitter, external: false },
-    { label: "LinkedIn", href: "#", Icon: FaLinkedinIn, external: false },
+    { label: "Twitter", href: "#", Icon: FaTwitter, external: true },
+    { label: "LinkedIn", href: "#", Icon: FaLinkedinIn, external: true },
 ] as const;
 
 type TeamMemberCardProps = {

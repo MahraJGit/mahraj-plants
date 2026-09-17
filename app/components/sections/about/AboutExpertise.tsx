@@ -109,19 +109,14 @@ export default function AboutExpertise() {
                                     className="object-cover"
                                 />
 
-                                <div
-                                    aria-hidden
-                                    className="absolute bottom-0 left-0 h-[6.5rem] w-[9.75rem] rounded-tr-[1.75rem] bg-white"
-                                />
-                            </div>
-
-                            <div className="absolute bottom-0 left-0 z-10 flex h-[6.5rem] w-[9.75rem] flex-col justify-center text-center lg:bottom-20 rtl:lg:right-80 rtl:lg:bottom-0">
-                                <p className="text-3xl font-bold leading-none text-primary sm:text-4xl">
-                                    {t("teamCount")}
-                                </p>
-                                <p className="mt-1.5 text-sm text-primary/70">
-                                    {t("teamLabel")}
-                                </p>
+                                <div className="absolute bottom-0 left-0 z-10 flex h-[6.5rem] w-[9.75rem] flex-col items-center justify-center rounded-tr-[1.75rem] bg-white text-center rtl:right-0 rtl:left-auto rtl:rounded-tr-none rtl:rounded-tl-[1.75rem]">
+                                    <p className="text-3xl font-bold leading-none text-primary sm:text-4xl">
+                                        {t("teamCount")}
+                                    </p>
+                                    <p className="mt-1.5 text-sm text-primary/70">
+                                        {t("teamLabel")}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>

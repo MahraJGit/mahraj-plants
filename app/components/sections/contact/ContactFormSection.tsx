@@ -26,12 +26,12 @@ import {
     PHONE_DISPLAY,
     PHONE_HREF,
 } from "@/app/lib/contact";
-import { useTodayOperatingHoursLabel } from "@/app/lib/i18n/use-operating-hours";
+import { useTodayHours } from "@/app/lib/i18n/use-operating-hours";
 
 const socialLinks = [
     { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true },
     { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true },
-    { label: "LinkedIn", href: "#", Icon: FaLinkedinIn, external: false },
+    { label: "LinkedIn", href: "#", Icon: FaLinkedinIn, external: true },
 ] as const;
 
 const inputClassName =
@@ -39,8 +39,9 @@ const inputClassName =
 
 export default function ContactFormSection() {
     const { t } = useTranslations("contactPage");
-    const { t: tCommon } = useTranslations("common");
-    const todayHoursLabel = useTodayOperatingHoursLabel();
+    const { t: tNav } = useTranslations("nav");
+    const { t: tHours } = useTranslations("operatingHours");
+    const todayHours = useTodayHours();
     const [form, setForm] = useState({
         name: "",
         address: "",
@@ -49,10 +50,17 @@ export default function ContactFormSection() {
         message: "",
     });
 
+    const dayLabel = tHours(
+        `daysShort.${todayHours.day}` as `daysShort.${typeof todayHours.day}`,
+    );
+    const workingTimeValue = todayHours.closed
+        ? tHours("todayClosed", { day: dayLabel })
+        : `${dayLabel}: ${tHours("morning")} ${todayHours.morning}\n${tHours("evening")} ${todayHours.evening}`;
+
     const contactDetails = [
         {
             label: t("info.locationLabel"),
-            value: tCommon("nurseryAddress"),
+            value: tNav("nurseryAddress"),
             Icon: HiOutlineLocationMarker,
         },
         {
@@ -60,17 +68,21 @@ export default function ContactFormSection() {
             value: PHONE_DISPLAY,
             href: PHONE_HREF,
             Icon: FaPhoneAlt,
+            ltr: true,
         },
         {
             label: t("info.emailLabel"),
             value: EMAIL_DISPLAY,
             href: EMAIL_HREF,
             Icon: HiOutlineMail,
+            ltr: true,
         },
         {
             label: t("info.workingTimeLabel"),
-            value: todayHoursLabel,
+            value: workingTimeValue,
             Icon: HiOutlineClock,
+            ltr: true,
+            preLine: true,
         },
     ] as const;
 
@@ -136,47 +148,57 @@ export default function ContactFormSection() {
                         </p>
 
                         <ul className="mt-8 grid gap-3 sm:grid-cols-2 sm:gap-4 md:border-0">
-                            {contactDetails.map(
-                                ({ label, value, Icon, ...rest }) => {
-                                    const href =
-                                        "href" in rest ? rest.href : undefined;
-                                    const content = (
-                                        <>
-                                            <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-secondary/15 text-secondary sm:size-11">
-                                                <Icon
-                                                    aria-hidden
-                                                    className="size-5"
-                                                />
+                            {contactDetails.map((detail) => {
+                                const { label, value, Icon } = detail;
+                                const href =
+                                    "href" in detail ? detail.href : undefined;
+                                const ltr = "ltr" in detail && detail.ltr;
+                                const preLine =
+                                    "preLine" in detail && detail.preLine;
+                                const content = (
+                                    <>
+                                        <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-secondary/15 text-secondary sm:size-11">
+                                            <Icon
+                                                aria-hidden
+                                                className="size-5"
+                                            />
+                                        </span>
+                                        <span className="min-w-0 flex-1 text-start">
+                                            <span className="block text-sm font-bold text-section">
+                                                {label}
                                             </span>
-                                            <span className="min-w-0">
-                                                <span className="block text-sm font-bold text-section">
-                                                    {label}
-                                                </span>
-                                                <span className="mt-1 block text-xs leading-snug text-section/65 sm:text-[13px] lg:break-all">
-                                                    {value}
-                                                </span>
+                                            <span
+                                                dir={ltr ? "ltr" : undefined}
+                                                className={cn(
+                                                    "mt-1 block text-xs leading-snug text-section/65 sm:text-[13px]",
+                                                    preLine &&
+                                                        "whitespace-pre-line",
+                                                    ltr && "text-start",
+                                                )}
+                                            >
+                                                {value}
                                             </span>
-                                        </>
-                                    );
+                                        </span>
+                                    </>
+                                );
 
-                                    return (
-                                        <li key={label}>
-                                            {href ? (
-                                                <a
-                                                    href={href}
-                                                    className="flex h-full items-start gap-3 rounded-2xl border border-section/10 bg-cream/50 p-3.5 transition hover:border-section/20 sm:p-4"
-                                                >
-                                                    {content}
-                                                </a>
-                                            ) : (
-                                                <div className="flex h-full items-start gap-3 rounded-2xl border border-section/10 bg-cream/50 p-3.5 sm:p-4">
-                                                    {content}
-                                                </div>
-                                            )}
-                                        </li>
-                                    );
-                                },
-                            )}
+                                return (
+                                    <li key={label}>
+                                        {href ? (
+                                            <a
+                                                href={href}
+                                                className="flex h-full items-center gap-3 rounded-2xl border border-section/10 bg-cream/50 p-3.5 transition hover:border-section/20 sm:p-4"
+                                            >
+                                                {content}
+                                            </a>
+                                        ) : (
+                                            <div className="flex h-full items-center gap-3 rounded-2xl border border-section/10 bg-cream/50 p-3.5 sm:p-4">
+                                                {content}
+                                            </div>
+                                        )}
+                                    </li>
+                                );
+                            })}
                         </ul>
 
                         <div className="mt-auto flex items-center justify-between gap-4 pt-6 sm:pt-8">

@@ -125,7 +125,7 @@ export function serviceJsonLd(service: ServiceDetail): JsonLd {
         name: service.title,
         description: service.description,
         image: absoluteAsset(service.image),
-        url: absoluteUrl(`/services/${service.slug}`),
+        url: absoluteUrl(`/our-services/${service.slug}`),
         provider: { "@id": `${absoluteUrl("/")}/#localbusiness` },
         areaServed: BUSINESS.city,
         serviceType: service.title,

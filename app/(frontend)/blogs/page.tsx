@@ -60,7 +60,7 @@ export default async function BlogsPage() {
             />
             <BlogHero />
             <BlogContent posts={posts} latestPosts={latestPosts} />
-            <SiteCTA />
+            <SiteCTA copy={messages.siteCta} />
         </>
     );
 }

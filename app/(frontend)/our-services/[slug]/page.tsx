@@ -51,7 +51,7 @@ export async function generateMetadata({
     return buildPageMetadata({
         title: messages.detail.metaTitle.replace("{service}", localized.title),
         description: localized.description,
-        path: `/services/${slug}`,
+        path: `/our-services/${slug}`,
         locale,
         image: localized.image,
         imageAlt: localized.alt,
@@ -83,14 +83,14 @@ export default async function ServiceDetailPage({
                     webPageJsonLd({
                         title,
                         description: localized.description,
-                        path: `/services/${slug}`,
+                        path: `/our-services/${slug}`,
                     }),
                     serviceJsonLd(localized),
                     faqJsonLd(localized.faqs),
                     breadcrumbJsonLd([
                         { name: dictionary.nav.home, path: "/" },
-                        { name: dictionary.nav.services, path: "/services" },
-                        { name: localized.title, path: `/services/${slug}` },
+                        { name: dictionary.nav.services, path: "/our-services" },
+                        { name: localized.title, path: `/our-services/${slug}` },
                     ]),
                 )}
             />

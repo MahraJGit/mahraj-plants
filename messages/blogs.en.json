@@ -1,8 +1,14 @@
 {
   "hero": {
     "eyebrow": "Our Blogs & News",
-    "title": "Insights, Tips, And Green Inspiration",
-    "description": "Explore expert insights, practical ideas, and fresh inspiration for better gardening, sustainable living, and beautiful green spaces."
+    "title": "Stories From The Garden We Love",
+    "description": "From simple tips to real project ideas, share our hands-on gardening knowledge to help you grow, design, and care for your green space confidently."
+  },
+  "siteCta": {
+    "title": "Liked The Ideas? Let's Make Your Garden Live Them",
+    "insightsEyebrow": "Keep Growing With Us",
+    "insightsTitle": "Bring More Garden Goodness Home",
+    "insightsBody": "Want more ways to grow a beautiful garden? Get fresh tips, creative ideas, and practical advice straight to your inbox."
   },
   "listing": {
     "ariaLabel": "Blog posts",
@@ -41,7 +47,7 @@
     "metaTitle": "{blog} | Mahraj Landscaping",
     "notFoundTitle": "Blog Not Found | Mahraj Landscaping",
     "pageMetaTitle": "Blogs & News | Mahraj Landscaping",
-    "pageMetaDescription": "Explore expert insights, practical ideas, and fresh inspiration for better gardening and sustainable living from Mahraj Landscaping.",
+    "pageMetaDescription": "Stay inspired with useful gardening tips, fresh ideas, seasonal updates, and exclusive offers from Mahraj Landscaping.",
     "body": {
       "introParagraph": "Creating a thriving outdoor space is never just about plants — it is about listening carefully, designing with intention, and bringing skilled hands together to shape something lasting. In this guide, we walk through the ideas, materials, and everyday choices that help gardens feel welcoming from the first day.",
       "sectionHeading": "Why Cozy Rooftop Gardens Are Blooming",

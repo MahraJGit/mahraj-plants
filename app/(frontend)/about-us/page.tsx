@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         title: dictionary.aboutPage.metaTitle,
         description: dictionary.aboutPage.metaDescription,
-        path: "/about",
+        path: "/about-us",
         locale,
         image: "/images/about/bg-about-us.webp",
         imageAlt: dictionary.aboutPage.hero.title,
@@ -48,11 +48,11 @@ export default async function AboutPage() {
                     webPageJsonLd({
                         title: dictionary.aboutPage.metaTitle,
                         description: dictionary.aboutPage.metaDescription,
-                        path: "/about",
+                        path: "/about-us",
                     }),
                     breadcrumbJsonLd([
                         { name: dictionary.nav.home, path: "/" },
-                        { name: dictionary.nav.about, path: "/about" },
+                        { name: dictionary.nav.about, path: "/about-us" },
                     ]),
                 )}
             />
@@ -65,7 +65,7 @@ export default async function AboutPage() {
             <AboutCounters />
             <AboutWhyChooseUs />
             <AboutTeam />
-            <SiteCTA />
+            <SiteCTA copy={dictionary.aboutPage.siteCta} />
         </>
     );
 }

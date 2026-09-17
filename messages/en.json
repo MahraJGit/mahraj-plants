@@ -71,7 +71,7 @@
           "description": "Book a free chat with our team for honest advice on the best plants for your space."
         },
         {
-          "title": "Professional Landscaping & Planting",
+          "title": "Landscaping & Planting",
           "description": "We design lovely outdoor spaces with handpicked plants and careful, expert planting."
         },
         {
@@ -312,30 +312,30 @@
     "callSupport": "Call Us Support 24/7",
     "servicesHeading": "Our Services",
     "usefulLinksHeading": "Useful Links",
-    "newsletterHeading": "Get Our Newsletter",
-    "newsletterBody": "Garden tips, ideas & offers—straight to your inbox.",
+    "newsletterHeading": "Stay In The Green",
+    "newsletterBody": "Stay inspired with useful gardening tips, fresh ideas, seasonal updates, and exclusive offers from Mahraj Landscaping.",
     "copyright": "© 2026 Mahraj Landscaping. All Rights Reserved.",
     "legalNavLabel": "Legal links",
     "services": [
       {
         "label": "Landscape Design & Planning",
-        "href": "/services/landscape-design-planning"
+        "href": "/our-services/landscape-design-planning"
       },
       {
         "label": "Irrigation & Drainage Solutions",
-        "href": "/services/irrigation-drainage-solutions"
+        "href": "/our-services/irrigation-drainage-solutions"
       },
       {
         "label": "Green Maintenance Packages",
-        "href": "/services/green-maintenance-packages"
+        "href": "/our-services/green-maintenance-packages"
       },
       {
         "label": "Hardscaping & Lighting",
-        "href": "/services/hardscaping-lighting"
+        "href": "/our-services/hardscaping-lighting"
       },
       {
         "label": "Gardening & Plant Upgrade",
-        "href": "/services/gardening-plant-upgrade"
+        "href": "/our-services/gardening-plant-upgrade"
       }
     ],
     "usefulLinks": [
@@ -346,7 +346,7 @@
       },
       {
         "label": "About us",
-        "href": "/about"
+        "href": "/about-us"
       },
       {
         "label": "Why choose us",
@@ -563,21 +563,41 @@
   },
   "aboutPage": {
     "metaTitle": "About Us | Mahraj Landscaping",
-    "metaDescription": "Built with care, grown with love. Learn how Mahraj Landscaping shapes green spaces that reflect your values and bring nature closer to home.",
+    "metaDescription": "Stay inspired with useful gardening tips, fresh ideas, seasonal updates, and exclusive offers from Mahraj Landscaping.",
     "featuresAriaLabel": "What you can expect from Mahraj Landscaping",
+    "features": {
+      "cards": [
+        {
+          "title": "Years of Trusted Experience",
+          "description": "Years of hands-on experience shaping gardens that people truly fall in love with."
+        },
+        {
+          "title": "Quality Materials, Always",
+          "description": "We choose trusted materials and native plants built to give lasting, healthy results."
+        },
+        {
+          "title": "A Team That Listens",
+          "description": "Real people are ready to answer your questions and guide every step of your project."
+        },
+        {
+          "title": "Honest, Upfront Pricing",
+          "description": "Clear pricing and honest timelines, so you always know just what to expect from us."
+        }
+      ]
+    },
     "hero": {
-      "eyebrow": "About Landscape",
-      "title": "Built With Care, Grown With Love",
-      "description": "Every garden tells a story. At Landscape, we shape green spaces that reflect your values, calm your senses, and bring nature closer to home."
+      "eyebrow": "About Mahraj Landscaping",
+      "title": "Where Every Garden Begins With Care",
+      "description": "We're not just landscapers, we're neighbors who love watching gardens come alive. From the first sketch to the last leaf, every project we touch carries a bit of our heart in it."
     },
     "quote": {
       "ariaLabel": "Garden philosophy",
-      "text": "To tend a garden is to nurture more than plants — it is to grow patience, presence, and a love for life's quiet miracles, unfolding leaf by leaf, reminding us how beauty is sown in stillness and blossoms with care."
+      "text": "A garden never rushes. It teaches you to wait, to notice, and to trust the process, and somewhere between the digging and the waiting, it quietly teaches you to slow down too."
     },
     "whoWeAre": {
       "eyebrow": "Who We Are",
-      "title": "Experts In Landscaping, Committed To Quality & Lasting Beauty",
-      "body": "Since 1989, Landscape has been crafting gardens and landscapes that connect people with nature. With a friendly, experienced team, we design green spaces that are both beautiful and meaningful — made to be enjoyed, every day. Each project reflects our deep love for nature and our commitment to sustainable, thoughtful design. We believe that a well-crafted garden is more than just a space — it's a place for connection, calm, and everyday joy.",
+      "title": "A Team That Treats Your Garden Like Our Own",
+      "body": "We started Mahraj Landscaping in 2021 with one simple goal, to help people fall in love with their own backyard. Since then, we have grown into a team that plans, plants, and cares for gardens across Riyadh with real attention to detail. We pick the right plants for the right spots, build spaces that hold up through every season, and treat every project like it matters, because to us, it truly does, from first sketch to the last leaf we plant.",
       "startGarden": "Start Your Garden!",
       "viewServices": "View All Services",
       "stats": [
@@ -611,106 +631,106 @@
     },
     "timeline": {
       "eyebrow": "A Green Timeline",
-      "title": "Decades Of Designing With Nature",
-      "description": "Our history is shaped by a love for nature — growing from simple gardens into timeless, sustainable landscapes with heart and purpose.",
+      "title": "Our Journey, Season By Season",
+      "description": "Every year has added a little more experience, a little more care, and a lot more green to what we do.",
       "milestones": [
         {
-          "period": "Since 1989",
-          "title": "Rooted in a Love for Nature",
-          "description": "Landscape was founded with a deep appreciation for gardens and outdoor beauty — bringing nature closer to everyday life."
+          "period": "2021",
+          "title": "Where It All Began",
+          "description": "Mahraj Landscaping started with a small team and one clear goal, to turn ordinary outdoor spaces into gardens people actually love spending time in."
         },
         {
-          "period": "1992–1998",
-          "title": "From Garden Care to Landscape Craft",
-          "description": "We evolved from simple garden maintenance to offering full landscaping services — blending creativity with care."
+          "period": "2022 – 2023",
+          "title": "Growing Our Roots",
+          "description": "We expanded from basic garden upkeep into full landscape design, irrigation, and hardscaping, learning what Riyadh's climate and clients really needed."
         },
         {
-          "period": "2005–2015",
-          "title": "Sustainable Practices Take Root",
-          "description": "Landscape embraced eco-friendly design, choosing sustainable materials and greener methods for every project we delivered."
+          "period": "2024",
+          "title": "Sustainability Took Center Stage",
+          "description": "We shifted toward eco-conscious materials, water wise irrigation, and native planting, making every project a little kinder to the environment."
         },
         {
-          "period": "2020–Today",
-          "title": "Greener Designs for Shared Futures",
-          "description": "We focus on community gardens, urban green spaces, and nature-centered design — growing spaces that bring people together."
+          "period": "2025 – Today",
+          "title": "Building For The Community",
+          "description": "Now we focus on more than single gardens, from neighborhood green spaces to long term client relationships built on trust and consistent care."
         }
       ]
     },
     "expertise": {
-      "eyebrow": "Rooted in Knowledge, Grown with Care",
-      "title": "Crafted With Expertise",
-      "description": "We combine horticultural know-how and design sense to create outdoor spaces that are functional, beautiful, and lasting.",
+      "eyebrow": "More Than Just Gardening",
+      "title": "Skills Behind The Green",
+      "description": "Good gardens aren't luck, they're planning, patience, and years of getting our hands dirty. Here's what we bring to every project.",
       "imageAlt": "Mahraj Landscaping team standing together outdoors",
-      "teamCount": "20+",
+      "teamCount": "15+",
       "teamLabel": "Expert Team",
       "skills": [
         {
-          "label": "Landscape Design Expertise",
-          "value": 98
+          "label": "Design & Planning",
+          "value": 95
         },
         {
-          "label": "Sustainable Solutions",
-          "value": 70
+          "label": "Eco-Friendly Practices",
+          "value": 75
         },
         {
-          "label": "Plant Knowledge & Care",
-          "value": 80
+          "label": "Plant Care & Maintenance",
+          "value": 85
         }
       ],
       "missionTitle": "Our Mission",
-      "missionBody": "To bring life, beauty, and balance to outdoor spaces through thoughtful design and expert care. At Landscape, we're here to make green living part of your everyday life.",
+      "missionBody": "Creating welcoming outdoor spaces with thoughtful design, quality plants, and dedicated care that helps every garden feel alive, personal, and beautiful for years ahead.",
       "visionTitle": "Our Vision",
-      "visionBody": "To grow as a leading name in landscape and garden design, creating beautiful, sustainable spaces where nature and people connect, relax, and thrive together."
+      "visionBody": "Building trust through beautiful gardens, quality landscaping, and lasting care in Riyadh, while creating strong relationships that grow, too, with every space we create."
     },
     "counters": {
-      "ariaLabel": "Landscape achievements",
+      "ariaLabel": "Mahraj Landscaping achievements",
       "items": [
         {
-          "value": "80+",
-          "label": "Green Workshops"
+          "value": "150+",
+          "label": "Happy Clients"
         },
         {
-          "value": "500+",
-          "label": "Projects Complete"
+          "value": "35+",
+          "label": "Neighborhoods Served"
         },
         {
-          "value": "300+",
-          "label": "Tree & Plants Selected"
+          "value": "25+",
+          "label": "Ongoing Maintenance Clients"
         },
         {
-          "value": "19+",
-          "label": "Our Awards & Wins"
+          "value": "5+",
+          "label": "Years of Growing Together"
         }
       ]
     },
     "whyChoose": {
       "eyebrow": "Why Choose Us",
-      "title": "We Don't Just Garden — We Grow Happiness",
-      "description": "We bring creativity, care, and quality to every space. With a passion for greenery, we turn garden dreams into reality — beautifully and reliably.",
+      "title": "Real Gardens Start With Real Trust",
+      "description": "We don't cut corners or rush the process. Every space we touch gets real planning, honest advice, and hands-on care from start to finish.",
       "imageAlt": "Mahraj Landscaping team standing together in front of a greenhouse",
       "features": [
         {
-          "title": "Expertise in Garden & Landscape Design",
-          "description": "Our experienced team brings creativity and horticultural knowledge to craft beautiful, functional outdoor spaces."
+          "title": "Real Experience, Real Results",
+          "description": "Our team has spent years learning what works. We know the right plants, layout, and timing for every garden season."
         },
         {
-          "title": "Customized Solutions for Every Space",
-          "description": "We tailor every project to your style, space, and needs — no two gardens are ever the same."
+          "title": "A Plan Made For Your Space",
+          "description": "No two gardens are the same, and neither are our plans. We design around your space, your style, and how you live."
         },
         {
-          "title": "Reliable Service with Lasting Results",
-          "description": "From design to maintenance, we deliver high-quality, sustainable results you can enjoy season after season."
+          "title": "Care That Doesn't Stop At Setup",
+          "description": "We stick around after planting is done, keeping your garden healthy and looking its best long after we finish up."
         },
         {
-          "title": "Eco-Friendly and Sustainable Materials",
-          "description": "We prioritize native plants and sustainable materials to protect and enhance your outdoor living space."
+          "title": "Choices That Respect the Land",
+          "description": "We lean toward native plants and eco-friendly materials, so your garden stays beautiful without harming the earth."
         }
       ]
     },
     "team": {
-      "eyebrow": "Meet the Landscape Team",
-      "title": "Working Hard, Growing Together",
-      "description": "Discover the skilled team dedicated to creating beautiful, sustainable outdoor spaces with passion and care.",
+      "eyebrow": "Meet Our Landscape Team",
+      "title": "People Who Put Heart Into Every Garden",
+      "description": "Behind every garden we build is a team who actually loves this work, like planting, planning, and showing up rain or shine to get it right.",
       "ariaLabel": "Team members",
       "showMember": "Show {name}",
       "members": [
@@ -731,6 +751,12 @@
           "role": "Project Manager"
         }
       ]
+    },
+    "siteCta": {
+      "title": "Liked What You've Read? Let's Meet In Person.",
+      "insightsEyebrow": "Straight From The Team",
+      "insightsTitle": "Get To Know Us Better",
+      "insightsBody": "We share behind-the-scenes updates, honest gardening advice, and the occasional lesson we learned the hard way, sent straight to your inbox."
     }
   },
   "operatingHours": {
@@ -741,7 +767,7 @@
     "evening": "Evening",
     "closed": "Closed",
     "today": "Today",
-    "todayOpen": "{day}: {morning} / Morning | {evening} / Evening",
+    "todayOpen": "{day}: Morning {morning} / Evening {evening}",
     "todayClosed": "{day}: Closed",
     "daysShort": {
       "monday": "Mon",

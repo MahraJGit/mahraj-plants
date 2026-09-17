@@ -111,7 +111,7 @@ export default function About() {
 
                         <Button
                             variant="secondary"
-                            href="/about"
+                            href="/about-us"
                             className="mt-8 w-fit self-start rounded-lg px-10 py-3.5 sm:mt-10"
                         >
                             {tCommon("readMore")}
