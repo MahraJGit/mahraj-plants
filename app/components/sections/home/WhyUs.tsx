@@ -100,7 +100,7 @@ export default function WhyUs() {
 
                             <Button
                                 variant="secondary"
-                                href="/about"
+                                href="/about-us"
                                 className="mt-8 w-fit rounded-lg px-10 py-3.5 sm:mt-10"
                             >
                                 {tCommon("readMore")}

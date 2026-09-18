@@ -24,9 +24,9 @@ import { cn } from "@/app/lib/utils";
 
 const socialLinks = [
     { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true },
-    { label: "Twitter", href: X_HREF, Icon: FaXTwitter, external: false },
+    { label: "Twitter", href: X_HREF, Icon: FaXTwitter, external: true },
     { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true },
-    { label: "Google Plus", href: "#", Icon: FaGooglePlusG, external: false },
+    { label: "Google Plus", href: "#", Icon: FaGooglePlusG, external: true },
 ];
 
 type FooterLink = {

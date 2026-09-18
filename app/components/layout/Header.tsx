@@ -24,9 +24,9 @@ import { plantCategoryNav } from "@/app/lib/categories";
 
 const socialLinks = [
     { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true, target: "_blank" },
-    { label: "Twitter", href: X_HREF, Icon: FaXTwitter, external: false, target: "_blank" },
+    { label: "Twitter", href: X_HREF, Icon: FaXTwitter, external: true, target: "_blank" },
     { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true, target: "_blank" },
-    { label: "Google Plus", href: "#", Icon: FaGooglePlusG, external: false, target: "_blank" },
+    { label: "Google Plus", href: "#", Icon: FaGooglePlusG, external: true, target: "_blank" },
 ];
 
 const languages = [
@@ -159,14 +159,14 @@ export default function Header() {
         if (href === "/blogs") {
             return pathname === "/blogs";
         }
-        if (href === "/about") {
-            return pathname === "/about";
+        if (href === "/about-us") {
+            return pathname === "/about-us";
         }
-        if (href === "/contact") {
-            return pathname === "/contact";
+        if (href === "/contact-us") {
+            return pathname === "/contact-us";
         }
-        if (href === "/services") {
-            return pathname === "/services" || pathname.startsWith("/services/");
+        if (href === "/our-services") {
+            return pathname === "/our-services" || pathname.startsWith("/our-services/");
         }
         if (href === "/projects") {
             return pathname === "/projects" || pathname.startsWith("/projects/");

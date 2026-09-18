@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
     return buildPageMetadata({
         title: messages.detail.pageMetaTitle,
         description: messages.detail.pageMetaDescription,
-        path: "/services",
+        path: "/our-services",
         locale,
         image: "/images/home/hero-bg-1.jpg",
     });
@@ -44,11 +44,11 @@ export default async function ServicesPage() {
                     webPageJsonLd({
                         title: messages.detail.pageMetaTitle,
                         description: messages.detail.pageMetaDescription,
-                        path: "/services",
+                        path: "/our-services",
                     }),
                     breadcrumbJsonLd([
                         { name: dictionary.nav.home, path: "/" },
-                        { name: dictionary.nav.services, path: "/services" },
+                        { name: dictionary.nav.services, path: "/our-services" },
                     ]),
                 )}
             />

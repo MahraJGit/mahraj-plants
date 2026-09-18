@@ -5,7 +5,12 @@ import Button from "../../ui/Button";
 import { CONSULTATION_WHATSAPP_HREF } from "@/app/lib/contact";
 import { useTranslations } from "@/app/lib/i18n";
 
-export default function Consultation() {
+type ConsultationProps = {
+    title?: string;
+    description?: string;
+};
+
+export default function Consultation({ title, description }: ConsultationProps) {
     const { t } = useTranslations("home.consultation");
     const { t: tCommon } = useTranslations("common");
 
@@ -35,11 +40,11 @@ export default function Consultation() {
                         id="consultation-heading"
                         className="text-[28px] leading-[1.15] font-bold tracking-[-2%] text-white sm:text-4xl lg:text-[42px]"
                     >
-                        {t("title")}
+                        {title ?? t("title")}
                     </h2>
 
                     <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/90 sm:text-base">
-                        {t("description")}
+                        {description ?? t("description")}
                     </p>
 
                     <Button

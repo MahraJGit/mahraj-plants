@@ -99,7 +99,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
             />
             <BlogDetailHero article={article} />
             <BlogDetailBody article={article} latestPosts={latestPosts} />
-            <SiteCTA />
+            <SiteCTA copy={messages.siteCta} />
         </>
     );
 }

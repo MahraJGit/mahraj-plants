@@ -62,7 +62,7 @@ export default function Services() {
                     </div>
 
                     <Link
-                        href="/services"
+                        href="/our-services"
                         className="w-fit shrink-0 self-start rounded-lg bg-secondary px-8 py-3.5 text-base font-medium leading-[100%] tracking-[-1%] text-white transition-colors hover:bg-secondary/90 lg:mt-2"
                     >
                         {tCommon("viewAllServices")}
@@ -74,7 +74,7 @@ export default function Services() {
                         <li key={service.slug}>
                             <ServiceCard
                                 service={service}
-                                href={`/services/${service.slug}`}
+                                href={`/our-services/${service.slug}`}
                             />
                         </li>
                     ))}
