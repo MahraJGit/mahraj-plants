@@ -14,7 +14,8 @@ export const DEFAULT_OG_IMAGE = "/images/home/hero-bg-1.jpg";
 export const DEFAULT_OG_IMAGE_ALT =
     "Gardener watering flowers in a lush Mahraj Landscaping garden";
 
-export const NURSERY_STREET = "Heet, Old Al kharj Road";
+export const NURSERY_STREET =
+    "Mahraj Agriculture Co, Office No 9, 1st Floor, 5207, AlMalqa";
 export const NURSERY_CITY = "Riyadh";
 export const NURSERY_COUNTRY = "SA";
 export const NURSERY_COUNTRY_NAME = "Saudi Arabia";
