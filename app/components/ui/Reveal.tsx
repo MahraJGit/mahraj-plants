@@ -26,8 +26,10 @@ export default function Reveal({
         if (!node) return;
 
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            setVisible(true);
-            return;
+            const visibleFrame = window.requestAnimationFrame(() => {
+                setVisible(true);
+            });
+            return () => window.cancelAnimationFrame(visibleFrame);
         }
 
         const observer = new IntersectionObserver(

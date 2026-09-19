@@ -84,7 +84,7 @@ export default function FeatureHighlights({
                                             "[@media(hover:none)]:mt-4",
                                         )}
                                     >
-                                        <p className="text-[13px] md:h-18 flex items-center leading-[1.55] text-white sm:text-sm sm:leading-relaxed lg:h-auto lg:line-clamp-3">
+                                        <p className="flex items-center text-[13px] leading-[1.55] text-white sm:text-sm sm:leading-relaxed">
                                             {card.description}
                                         </p>
                                     </div>

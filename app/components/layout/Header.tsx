@@ -147,10 +147,13 @@ export default function Header() {
 
     useEffect(() => {
         document.body.style.overflow = mobileOpen ? "hidden" : "";
-        if (!mobileOpen) {
-            setMobilePlantsOpen(false);
-        }
+        const closePlantsFrame = !mobileOpen
+            ? window.requestAnimationFrame(() => setMobilePlantsOpen(false))
+            : undefined;
         return () => {
+            if (closePlantsFrame !== undefined) {
+                window.cancelAnimationFrame(closePlantsFrame);
+            }
             document.body.style.overflow = "";
         };
     }, [mobileOpen]);

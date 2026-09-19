@@ -21,7 +21,9 @@ export default function FloatingActions() {
     const [showScrollTop, setShowScrollTop] = useState(false);
 
     useEffect(() => {
-        setMounted(true);
+        const mountFrame = window.requestAnimationFrame(() => {
+            setMounted(true);
+        });
 
         function onScroll() {
             setShowScrollTop(window.scrollY > SCROLL_THRESHOLD);
@@ -29,7 +31,10 @@ export default function FloatingActions() {
 
         onScroll();
         window.addEventListener("scroll", onScroll, { passive: true });
-        return () => window.removeEventListener("scroll", onScroll);
+        return () => {
+            window.cancelAnimationFrame(mountFrame);
+            window.removeEventListener("scroll", onScroll);
+        };
     }, []);
 
     function scrollToTop() {

@@ -11,6 +11,7 @@ import {
 } from "@/app/lib/services";
 import { getDictionary } from "@/app/lib/i18n/get-dictionary";
 import {
+    getServiceCopy,
     getServicesMessages,
     localizeService,
 } from "@/app/lib/i18n/services-catalog";
@@ -72,6 +73,7 @@ export default async function ServiceDetailPage({
     const dictionary = await getDictionary(locale);
     const messages = getServicesMessages(locale);
     const localized = localizeService(service, locale);
+    const serviceCopy = getServiceCopy(slug, locale);
     const title = messages.detail.metaTitle.replace("{service}", localized.title);
 
     return (
@@ -97,7 +99,15 @@ export default async function ServiceDetailPage({
             <ServiceDetailHero service={service} />
             <ServiceDetailGallery service={service} />
             <ServiceDetailContent service={service} />
-            <SiteCTA />
+            <SiteCTA
+                copy={{
+                    title: serviceCopy?.ctaEyebrow,
+                    consultation: serviceCopy?.ctaButton,
+                    insightsEyebrow: serviceCopy?.newsletterEyebrow,
+                    insightsTitle: serviceCopy?.newsletterTitle,
+                    insightsBody: serviceCopy?.newsletterBody,
+                }}
+            />
         </>
     );
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import {
+    getServiceCopy,
     getServicesMessages,
     localizeServices,
     useLocale,
@@ -46,6 +47,7 @@ export default function ServiceDetailSidebar({
 }: ServiceDetailSidebarProps) {
     const { locale } = useLocale();
     const messages = getServicesMessages(locale);
+    const serviceCopy = getServiceCopy(activeSlug, locale);
     const localizedServices = localizeServices(services, locale);
 
     return (
@@ -142,10 +144,10 @@ export default function ServiceDetailSidebar({
                 </div>
 
                 <p className="font-script text-[28px] leading-none text-white/90">
-                    {messages.detail.readyEyebrow}
+                    {serviceCopy?.ctaEyebrow ?? messages.detail.readyEyebrow}
                 </p>
                 <h3 className="mt-2 text-2xl font-bold">
-                    {messages.detail.readyTitle}
+                    {serviceCopy?.ctaButton ?? messages.detail.readyTitle}
                 </h3>
 
                 <ul className="mt-6 space-y-4 text-sm text-white/90">

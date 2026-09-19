@@ -4,8 +4,9 @@ import Image from "next/image";
 import FeatureHighlights from "@/app/components/ui/FeatureHighlights";
 import Reveal from "@/app/components/ui/Reveal";
 import {
+    getServiceHighlights,
+    getServiceCopy,
     getServicesMessages,
-    localizeHighlightCopy,
     localizeService,
     useLocale,
 } from "@/app/lib/i18n";
@@ -19,7 +20,10 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
     const { locale } = useLocale();
     const messages = getServicesMessages(locale);
     const localized = localizeService(service, locale);
-    const highlights = localizeHighlightCopy(serviceHighlights, locale);
+    const highlights = serviceHighlights.map((item, index) => ({
+        ...item,
+        ...(getServiceHighlights(service.slug, locale)?.[index] ?? {}),
+    }));
 
     return (
         <section
@@ -41,7 +45,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 <div className="hero-content relative z-10 my-auto w-full pb-8 sm:pb-10">
                     <div className="hero-copy-in mx-auto w-full max-w-4xl px-6 text-center sm:px-10">
                         <p className="font-script text-[22px] leading-tight text-white sm:text-[28px] lg:text-[32px]">
-                            {messages.detail.eyebrow}
+                            {getServiceCopy(service.slug, locale)?.detailEyebrow ?? messages.detail.eyebrow}
                         </p>
 
                         <h1

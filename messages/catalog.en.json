@@ -286,15 +286,48 @@
   },
   "brinjal": {
     "title": "Brinjal",
-    "description": "Enjoy the taste of home‑grown flavor with our Brinjal plant, a lively eggplant seedling ready to thrive in your garden; ideal for adding fresh, nutritious vegetables to any backyard plot."
+    "description": "Brinjal is a rewarding addition to a home vegetable garden, especially when you enjoy growing food from the ground up. Its attractive leaves and rich fruits bring both greenery and purpose to your growing space. Give it suitable soil, sunlight, water, and regular care, then watch your plant develop toward a satisfying harvest for your own garden space.",
+    "hero": {
+      "eyebrow": "Grow It, Pick It, Love It",
+      "title": "Bring Fresh Harvests to Your Garden",
+      "description": "Grow your own fresh brinjal with healthy plants suited for home gardens and vegetable spaces. With simple care and the right growing conditions, enjoy a rewarding harvest right from your garden."
+    },
+    "siteCta": {
+      "title": "READY TO ADD FRESH BRINJAL TO YOUR KITCHEN?",
+      "insightsEyebrow": "Fresh Picks, Simple Tips",
+      "insightsTitle": "Cooking and Growing Made Easy",
+      "insightsBody": "Get simple tips on choosing, storing, and cooking fresh vegetables like brinjal, sent straight to your inbox, made for real home cooks."
+    }
   },
   "chilli": {
     "title": "Chilli",
-    "description": "Spice up your cooking with our fresh chilli, a classic vegetable that brings bright heat and bold flavor to soups, stews, salads, and more; perfect for adding a lively kick to any dish while supporting sustainable garden‑grown produce."
+    "description": "Bring a burst of flavor to your home garden with chilli plants that are easy to enjoy from growing to picking. Their bright fruits add color to your garden while giving you a fresh supply for everyday cooking. With the right sunlight, watering, and care, chilli plants can become a rewarding part of your vegetable garden.",
+    "hero": {
+      "eyebrow": "Small Plant, Big Flavor",
+      "title": "Bring Bold Flavor To Your Garden",
+      "description": "Add a lively touch to your garden with chilli plants that bring bright color, fresh flavor, and a satisfying harvest to your everyday cooking."
+    },
+    "siteCta": {
+      "title": "READY TO GROW YOUR OWN CHILLI?",
+      "insightsEyebrow": "Grow Fresh, Cook Fresh",
+      "insightsTitle": "More Garden Ideas, Straight To You",
+      "insightsBody": "Get simple vegetable growing tips, seasonal planting ideas, useful care advice, and fresh inspiration to help you enjoy more from your garden."
+    }
   },
   "tomato": {
     "title": "Tomato",
-    "description": "Enjoy the fresh taste of home‑grown flavor with our Tomato, a classic vegetable perfect for salads, sauces, and snacking straight from the vine. Grown in nutrient‑rich soil and nurtured with care, each fruit is ripe, juicy, and ready to add color and nutrition to any garden or kitchen. Ideal for both seasoned gardeners and beginners, this tomato variety brings a bright, sweet harvest to your table."
+    "description": "Tomato plants bring a useful mix of greenery and homegrown food to your garden. Their bright fruit makes the growing journey easy to enjoy, from the first flowers to the final picking. Give your plant a sunny spot, suitable soil, regular water, and simple care, then watch it turn into a rewarding source of fresh tomatoes for your kitchen and table.",
+    "hero": {
+      "eyebrow": "Grow A Garden You Can Taste",
+      "title": "Fresh Tomatoes, Grown Your Way",
+      "description": "Bring tomato plants into your garden and enjoy fresh produce at home. With proper care, sunlight, and space, you can grow delicious homegrown tomatoes."
+    },
+    "siteCta": {
+      "title": "READY TO ADD TOMATOES TO YOUR GARDEN?",
+      "insightsEyebrow": "Grow, Pick, Enjoy",
+      "insightsTitle": "Ideas For A More Productive Garden",
+      "insightsBody": "Discover simple ways to grow healthier vegetables, care for your plants, and enjoy a garden that keeps giving through every season."
+    }
   },
   "calendula": {
     "title": "Calendula",

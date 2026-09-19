@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "@/app/lib/i18n";
 
 export default function HowWeWorkQuote() {
+    const { t } = useTranslations("workingProcessPage");
+
     return (
         <section aria-label="Working process philosophy" className="bg-white">
             <div className="section-container">
@@ -18,10 +23,7 @@ export default function HowWeWorkQuote() {
 
                     <blockquote className="mt-6 font-script text-[22px] leading-snug text-primary sm:text-[28px] sm:leading-relaxed lg:text-[32px]">
                         <p>
-                            &ldquo;Behind every thriving garden is a careful
-                            journey — where ideas take root, skilled hands shape
-                            the space, and every detail is crafted to help nature
-                            shine.&rdquo;
+                            &ldquo;{t("quote")}&rdquo;
                         </p>
                     </blockquote>
                 </div>

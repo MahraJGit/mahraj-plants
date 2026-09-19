@@ -196,12 +196,16 @@ export default function CategoryListing({ category }: CategoryListingProps) {
     const totalPages = Math.max(1, Math.ceil(totalProducts / PAGE_SIZE));
 
     useEffect(() => {
-        setPage(1);
+        const resetFrame = window.requestAnimationFrame(() => setPage(1));
+        return () => window.cancelAnimationFrame(resetFrame);
     }, [sort, category.slug]);
 
     useEffect(() => {
         if (page > totalPages) {
-            setPage(totalPages);
+            const pageFrame = window.requestAnimationFrame(() => {
+                setPage(totalPages);
+            });
+            return () => window.cancelAnimationFrame(pageFrame);
         }
     }, [page, totalPages]);
 

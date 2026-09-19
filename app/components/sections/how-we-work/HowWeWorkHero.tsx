@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "@/app/lib/i18n";
 
 export default function HowWeWorkHero() {
+    const { t } = useTranslations("workingProcessPage");
+
     return (
         <section
             aria-labelledby="how-we-work-hero-heading"
@@ -31,20 +36,18 @@ export default function HowWeWorkHero() {
                     />
 
                     <p className="mt-4 font-script text-[26px] leading-none text-white sm:text-[32px] lg:text-[36px]">
-                        Our Working Process
+                        {t("hero.eyebrow")}
                     </p>
 
                     <h1
                         id="how-we-work-hero-heading"
                         className="mt-4 text-[32px] font-bold leading-tight text-white sm:text-[40px] lg:text-[48px]"
                     >
-                        Simple Steps, Honest Results
+                        {t("hero.title")}
                     </h1>
 
                     <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
-                        We follow a clear, simple process to create gardens that
-                        grow beautifully — shaped with care and creativity at
-                        every step.
+                        {t("hero.description")}
                     </p>
                 </div>
             </div>

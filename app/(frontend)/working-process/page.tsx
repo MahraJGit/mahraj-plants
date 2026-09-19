@@ -59,7 +59,7 @@ export default async function WorkingProcessPage() {
             <div className="mb-16">
             <Portfolio variant="cream" />
             </div>
-            <SiteCTA />
+            <SiteCTA copy={dictionary.workingProcessPage.siteCta} />
         </>
     );
 }

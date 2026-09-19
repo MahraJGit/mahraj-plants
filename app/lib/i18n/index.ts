@@ -20,6 +20,7 @@ export type { CategoryPageCopy } from "./catalog";
 export {
     getServicesMessages,
     getServiceCopy,
+    getServiceHighlights,
     localizeService,
     localizeServices,
     localizeHighlightCopy,

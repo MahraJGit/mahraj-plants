@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { cn } from "@/app/lib/utils";
+import { useTranslations } from "@/app/lib/i18n";
 
 const steps = [
     {
@@ -45,6 +48,9 @@ const steps = [
 ] as const;
 
 export default function HowWeWorkSteps() {
+    const { tObject } = useTranslations("workingProcessPage");
+    const copy = tObject<{ title: string; description: string }[]>("steps") ?? [];
+
     return (
         <section
             aria-labelledby="how-we-work-steps-heading"
@@ -114,11 +120,11 @@ export default function HowWeWorkSteps() {
                                     </div>
 
                                     <h3 className="mt-4 text-[24px] leading-tight font-bold tracking-[-2%] text-primary sm:text-[28px] lg:text-[32px]">
-                                        {step.title}
+                                        {copy[index]?.title ?? step.title}
                                     </h3>
 
                                     <p className="mt-4 max-w-xl text-sm leading-relaxed text-primary/65 sm:text-[15px] sm:leading-relaxed">
-                                        {step.description}
+                                        {copy[index]?.description ?? step.description}
                                     </p>
                                 </div>
                             </li>

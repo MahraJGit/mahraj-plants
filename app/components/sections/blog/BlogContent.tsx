@@ -57,12 +57,16 @@ export default function BlogContent({ posts, latestPosts }: BlogContentProps) {
     );
 
     useEffect(() => {
-        setPage(1);
+        const resetFrame = window.requestAnimationFrame(() => setPage(1));
+        return () => window.cancelAnimationFrame(resetFrame);
     }, [searchQuery, activeCategory, activeTag]);
 
     useEffect(() => {
         if (page > totalPages) {
-            setPage(totalPages);
+            const pageFrame = window.requestAnimationFrame(() => {
+                setPage(totalPages);
+            });
+            return () => window.cancelAnimationFrame(pageFrame);
         }
     }, [page, totalPages]);
 

@@ -312,7 +312,7 @@
     "callSupport": "Call Us Support 24/7",
     "servicesHeading": "Our Services",
     "usefulLinksHeading": "Useful Links",
-    "newsletterHeading": "Garden Tips & Updates",
+    "newsletterHeading": "Gardening Tips & Updates",
     "newsletterBody": "Stay inspired with useful gardening tips, fresh ideas, seasonal updates, and exclusive offers from Mahraj Landscaping.",
     "copyright": "© 2026 Mahraj Landscaping. All Rights Reserved.",
     "legalNavLabel": "Legal links",
@@ -385,18 +385,48 @@
     ]
   },
   "siteCta": {
-    "title": "Ready To Elevate Your Landscape With Mahraj Landscaping?",
+    "title": "Ready To Turn Your Outdoor Space Into Something Special?",
     "consultation": "Get a Free Consultation",
-    "insightsEyebrow": "Expert Gardening & Sustainable Living",
-    "insightsTitle": "Insights",
-    "insightsBody": "Receive curated gardening strategies, seasonal planting guides, and practical eco-friendly updates. Stay ahead with expert-backed sustainable practices delivered straight to your inbox.",
+    "insightsEyebrow": "Grow Smarter With Every Season",
+    "insightsTitle": "Garden Tips Worth Reading",
+    "insightsBody": "Get simple, real advice on plant care, watering, and seasonal upkeep, sent straight to your inbox. No spam, just useful tips from people who actually garden for a living.",
     "emailLabel": "Email address",
     "emailPlaceholder": "Enter your email here ...",
     "submit": "Submit"
   },
   "workingProcessPage": {
     "metaTitle": "Our Working Process | Mahraj Landscaping",
-    "metaDescription": "See how Mahraj Landscaping plans, plants, and finishes gardens in Riyadh — a clear process from consultation to lasting garden care."
+    "metaDescription": "See how Mahraj Landscaping plans, plants, and finishes gardens in Riyadh — a clear process from consultation to lasting garden care.",
+    "hero": {
+      "eyebrow": "The Garden Journey",
+      "title": "See How We Shape Every Space",
+      "description": "From the first walk through your yard to the final plant going in, here's exactly how we take your space from plain to something worth stepping outside for."
+    },
+    "quote": "A garden doesn't grow overnight, and neither does a good process. Every step we take is slow on purpose, because the ones done right are the ones that last.",
+    "steps": [
+      {
+        "title": "First Conversation, Real Understanding",
+        "description": "Every project starts with a real conversation, not a sales pitch. We visit your site, check the soil, measure the space, and ask how you actually want to use it. We note sunlight, drainage, and existing greenery, so our recommendations are grounded in your reality, not a generic template. This step sets the foundation for everything that follows, and we never skip it."
+      },
+      {
+        "title": "Concept, Plants & Honest Costing",
+        "description": "Once we understand your space, we put together a concept that fits it, with plant choices suited to the climate, a layout that makes sense for daily life, and a clear cost breakdown with no hidden surprises. You will see sketches, material options, and a realistic timeline before anything is approved, so you always know what you are signing up for from the very start."
+      },
+      {
+        "title": "Hands-On Building, Start To Finish",
+        "description": "Our own crew handles the work from start to finish, no outside subcontractors are passed between jobs. We prep the ground, install irrigation where needed, lay hardscaping, and plant everything by hand with care. You will get regular updates as work progresses, and we stick to the agreed schedule closely, keeping disruption to your daily routine to a minimum."
+      },
+      {
+        "title": "Support That Doesn't End At Handover",
+        "description": "A garden does not stop needing attention once it is planted. We check in after handover, offer maintenance plans for pruning, feeding, and seasonal upkeep, and stand behind our plant choices with a genuine guarantee. If something is not thriving the way it should, we come back and fix it, because a garden that struggles after we leave is not a job we consider finished."
+      }
+    ],
+    "siteCta": {
+      "title": "NOW YOU KNOW HOW WE WORK. LET’S START YOURS.",
+      "insightsEyebrow": "Behind The Scenes",
+      "insightsTitle": "See How Projects Really Unfold",
+      "insightsBody": "Get real project walkthroughs, honest lessons from the field, and practical garden advice, sent straight to your inbox."
+    }
   },
   "categoriesPage": {
     "notFoundTitle": "Category Not Found | Mahraj Landscaping",
@@ -496,8 +526,24 @@
       },
       "vegetables": {
         "label": "Vegetables",
-        "tagline": "From Garden to Table",
-        "description": "Grow fresh, healthy produce at home with vegetable plants and seedlings suited to local growing conditions."
+        "tagline": "Fresh From The Garden",
+        "description": "Grow a garden that gives back. Explore fresh vegetable plants for home growing, from kitchen favorites to seasonal picks, and turn your space into a rewarding harvest.",
+        "stats": [
+          { "value": "200+", "label": "Vegetable Gardens Built" },
+          { "value": "50+", "label": "Vegetable Varieties Grown" },
+          { "value": "95%", "label": "Fresh Harvest Success Rate" },
+          { "value": "5+", "label": "Years of Growing Experience" }
+        ],
+        "listing": {
+          "title": "Choose What You'll Love To Grow",
+          "description": "Explore fresh vegetable varieties picked for different gardens and growing spaces. Find the plants that match your taste, space, and plans for a rewarding harvest."
+        },
+        "siteCta": {
+          "title": "READY TO GROW YOUR OWN FRESH VEGETABLES?",
+          "insightsEyebrow": "Your Next Harvest Starts Here",
+          "insightsTitle": "Tips For A Healthier Vegetable Garden",
+          "insightsBody": "Get simple tips on growing, watering, and harvesting your own vegetables, sent straight to your inbox, made for real home gardeners."
+        }
       }
     }
   },
@@ -790,114 +836,114 @@
   },
   "privacyPage": {
     "metaTitle": "Privacy Policy | Mahraj Landscaping",
-    "metaDescription": "How Mahraj Landscaping collects, uses, and protects your personal information when you shop plants or request landscaping services.",
+    "metaDescription": "A clear look at how your information is gathered, used, and protected when you buy plants or book a landscaping project with us.",
     "hero": {
       "eyebrow": "Legal Information",
       "title": "Privacy Policy",
-      "description": "How we collect, use, and protect your personal information when you shop plants or request landscaping services with Mahraj Landscaping."
+      "description": "A clear look at how your information is gathered, used, and protected when you buy plants or book a landscaping project with us."
     },
-    "intro": "At Mahraj Landscaping, your trust matters as much as healthy greenery. This Privacy Policy explains what information we collect on mahrajlandscaping.com, why we collect it, and how we keep it safe when you browse, order plants, or request garden services.",
-    "lastUpdated": "Last updated: 25 August 2026",
+    "intro": "Taking care of your privacy is part of how we do business, just like caring for the plants we grow. This page walks you through what we collect on mahrajlandscaping.com, the reasons behind it, and the steps we take to keep it protected while you browse our shop, place an order, or request a landscaping service.",
+    "lastUpdated": "Last Updated: 17 September 2026",
     "sections": [
       {
-        "title": "1. Who We Are",
+        "title": "1. About Mahraj Landscaping",
         "paragraphs": [
-          "Mahraj Landscaping is a plant nursery and landscaping business based in Riyadh, Saudi Arabia. We supply indoor and outdoor plants, trees, garden products, and full landscaping services."
+          "We're a Riyadh based nursery and landscaping company, offering indoor and outdoor plants, trees, garden supplies, and complete landscaping solutions."
         ],
         "lines": [
-          "Mahraj Agriculture Co, Office No 9, 1st Floor, 5207, AlMalqa, Riyadh",
-          "WhatsApp / Phone: +966 55 689 1877",
+          "Nursery: Heet, Old Al Kharj Road, Riyadh, KSA",
+          "WhatsApp/Phone: +966 55 689 1877",
           "Email: landscape@mahraj.com"
         ]
       },
       {
-        "title": "2. Information We Collect",
+        "title": "2. What Information We Gather",
         "paragraphs": [
-          "We only collect information needed to serve you well:"
+          "We keep this simple and only ask for what actually helps us serve you:"
         ],
         "bullets": [
-          "Details you share with us — name, phone number, email, delivery or project address, and your message when you contact us, place an order, book a consultation, or chat on WhatsApp.",
-          "Order & project details — plants or packages you choose, landscaping preferences, appointment notes, and payment records needed to complete your request.",
-          "Website usage data — basic technical details such as browser type, device type, pages visited, and general site activity, often through cookies."
+          "What you tell us directly: Your name, contact number, email, project or delivery address, and any message you send us through the website, a phone call, or WhatsApp.",
+          "Order and project information: The plants or services you request, garden preferences, appointment details, and payment records tied to your purchase.",
+          "General site activity: Technical details like your device, browser, and the pages you visit, mostly gathered through cookies to help us understand how the site is used."
         ]
       },
       {
-        "title": "3. How We Use Your Information",
+        "title": "3. Why We Collect It",
         "paragraphs": [
-          "We use your information to:"
+          "Your information helps us to:"
         ],
         "bullets": [
-          "Reply to inquiries and offer plant or landscaping advice",
-          "Process orders, deliveries, installations, and garden maintenance",
-          "Confirm appointments, invoices, and service updates",
-          "Improve our website, products, and customer experience",
-          "Share offers or tips only when allowed, or when you have opted in",
-          "Meet legal requirements and protect our business and customers"
+          "Answer your questions and give plant or landscaping recommendations",
+          "Handle orders, deliveries, installations, and ongoing garden care",
+          "Confirm bookings, send invoices, and share service updates",
+          "Make our website and services better over time",
+          "Send occasional tips or offers, but only if you've agreed to receive them",
+          "Stay compliant with the law and keep both our customers and business protected"
         ]
       },
       {
-        "title": "4. Cookies",
+        "title": "4. Cookies On Our Site",
         "paragraphs": [
-          "Our website may use cookies to remember preferences, understand how visitors use the site, and improve performance. You can block or delete cookies in your browser settings. Some features may work less smoothly if cookies are disabled."
+          "Cookies help our website remember your settings and understand visitor patterns so we can keep improving. You're free to turn cookies off through your browser at any time, just know that a few features might not run as smoothly without them."
         ]
       },
       {
-        "title": "5. Sharing Your Information",
+        "title": "5. Who We Share Information With",
         "paragraphs": [
-          "We do not sell your personal information. We may share it only when needed with:"
+          "Your personal details are never sold. We only pass them along when it's genuinely necessary, such as with:"
         ],
         "bullets": [
-          "Trusted partners who help with payments, delivery, hosting, or technical support",
-          "Professionals or authorities when the law requires it",
-          "Teams involved in completing your plant order or landscaping project"
+          "Partners who support payments, deliveries, hosting, or technical operations",
+          "Authorities or professionals, if legally required",
+          "Team members directly involved in completing your order or project"
         ]
       },
       {
-        "title": "6. How Long We Keep Data",
+        "title": "6. How Long We Hold On To It",
         "paragraphs": [
-          "We keep personal information only as long as needed for service delivery, records, legal compliance, or resolving questions. When it is no longer needed, we delete or anonymize it where practical."
+          "We hold your information only for as long as it's genuinely useful, whether that's completing your order, keeping records, meeting legal obligations, or resolving a question. Once it's no longer needed, we remove or anonymize it wherever we reasonably can."
         ]
       },
       {
-        "title": "7. Keeping Your Data Safe",
+        "title": "7. Protecting Your Information",
         "paragraphs": [
-          "We take reasonable steps to protect your information. No online system is perfectly secure, so we encourage you to share only what is needed and contact us if you notice anything unusual."
+          "We take reasonable precautions to keep your data safe from misuse or unauthorized access. That said, no online system is completely foolproof, so we recommend sharing only what's necessary and letting us know right away if something seems off."
         ]
       },
       {
-        "title": "8. Your Choices & Rights",
+        "title": "8. Your Rights & Choices",
         "paragraphs": [
-          "Depending on applicable law, you may ask us to access, update, or delete your personal information, or stop marketing messages. To make a request, message us on WhatsApp or email landscape@mahraj.com."
+          "Depending on the law that applies to you, you may be able to request access to, updates on, or deletion of your personal data or opt out of promotional messages. Just reach out on WhatsApp or email us at landscape@mahraj.com to get started."
         ]
       },
       {
-        "title": "9. Third-Party Links",
+        "title": "9. Links To Other Sites",
         "paragraphs": [
-          "Our site may link to WhatsApp, social media, or other external services. Their privacy practices are separate from ours, so please review their policies before sharing information there."
+          "You may come across links to WhatsApp, our social pages, or other outside platforms on our site. Once you leave our site, their own privacy rules apply, so it's worth checking those before sharing any personal details."
         ]
       },
       {
-        "title": "10. Children's Privacy",
+        "title": "10. Privacy for Children",
         "paragraphs": [
-          "Our services are intended for adults and business customers. We do not knowingly collect personal information from children. If you believe a child has shared data with us, contact us and we will remove it."
+          "Our website and services are built for adults and business clients. We don't intentionally gather information from children. If you think a child has shared personal details with us, please let us know, and we'll remove it right away."
         ]
       },
       {
-        "title": "11. Updates to This Policy",
+        "title": "11. Changes To This Policy",
         "paragraphs": [
-          "We may update this Privacy Policy from time to time. The latest version will always appear on this page with a new \"Last updated\" date."
+          "This policy may be updated occasionally as our business grows. Whenever that happens, the newest version will be posted here, along with an updated \"Last updated\" date."
         ]
       },
       {
-        "title": "12. Contact Us",
+        "title": "12. Get In Touch",
         "paragraphs": [
-          "Questions about privacy? We're happy to help."
+          "Have a question about how we handle your privacy? We're always happy to help, just reach out anytime."
         ],
         "boxed": true,
         "lines": [
           "Mahraj Landscaping",
-          "Mahraj Agriculture Co, Office No 9, 1st Floor, 5207, AlMalqa, Riyadh",
-          "WhatsApp: +966 55 689 1877",
+          "Nursery: Heet, Old Al Kharj Road, Riyadh, KSA",
+          "WhatsApp/Phone: +966 55 689 1877",
           "Email: landscape@mahraj.com",
           "Web: mahrajlandscaping.com"
         ]
@@ -906,111 +952,111 @@
   },
   "termsPage": {
     "metaTitle": "Terms & Conditions | Mahraj Landscaping",
-    "metaDescription": "Clear guidelines for using our website, ordering plants, and booking landscaping services with Mahraj Landscaping.",
+    "metaDescription": "The simple rules for browsing our site, ordering plants, and working with us on your landscaping project.",
     "hero": {
       "eyebrow": "Legal Information",
       "title": "Terms & Conditions",
-      "description": "Clear guidelines for using our website, ordering plants, and booking landscaping services with Mahraj Landscaping."
+      "description": "The simple rules for browsing our site, ordering plants, and working with us on your landscaping project."
     },
-    "intro": "Welcome to Mahraj Landscaping. These Terms & Conditions explain how our website, plant sales, and landscaping services work. By using mahrajlandscaping.com or hiring our team, you agree to the terms below.",
-    "lastUpdated": "Last updated: 25 August 2026",
+    "intro": "Thanks for stopping by Mahraj Landscaping. Before you order plants, book a service, or explore mahrajlandscaping.com, here's what you're agreeing to. Using our site or hiring our team means you're on board with the points below.",
+    "lastUpdated": "Last updated: 17 September 2026",
     "sections": [
       {
-        "title": "1. About Mahraj Landscaping",
+        "title": "1. Who's Behind This Site",
         "paragraphs": [
-          "We provide indoor and outdoor plants, trees, garden supplies, landscape design, installation, irrigation, and garden care from our nursery in Riyadh."
+          "We run a nursery and landscaping business out of Riyadh, offering everything from potted plants and trees to full garden design, irrigation, and upkeep."
         ],
         "lines": [
-          "Mahraj Agriculture Co, Office No 9, 1st Floor, 5207, AlMalqa, Riyadh",
-          "WhatsApp / Phone: +966 55 689 1877",
+          "Nursery: Heet, Old Al Kharj Road, Riyadh, KSA",
+          "WhatsApp/Phone: +966 55 689 1877",
           "Email: landscape@mahraj.com"
         ]
       },
       {
-        "title": "2. Using Our Website",
+        "title": "2. Browsing Our Site",
         "paragraphs": [
-          "Please use our website respectfully and lawfully. Do not attempt to disrupt the site, misuse content, or access private systems. We may update website information at any time."
+          "Feel free to explore, just keep it lawful and respectful. Don't try to break, exploit, or hack into any part of our website or systems. We may tweak or refresh the content here whenever needed, without prior notice."
         ]
       },
       {
-        "title": "3. Plants, Products & Services",
+        "title": "3. About Our Plants & Services",
         "paragraphs": [
-          "Photos and descriptions are a helpful guide. Because plants are living products, size, color, and shape can vary naturally.",
-          "Landscaping plans and prices depend on your space, goals, and site conditions. Final scope is confirmed in a quote or agreement.",
-          "We may update, limit, or discontinue products or packages when needed."
+          "Photos give you a general idea, but plants are living things, so slight differences in size, shape, or color are completely normal and not a flaw.",
+          "Landscaping quotes are built around your specific site and goals, and the final scope gets locked in once we send a written quote or agreement.",
+          "We reserve the right to adjust, pause, or retire any product or service package as our offerings evolve."
         ]
       },
       {
-        "title": "4. Orders, Quotes & Payments",
+        "title": "4. Orders, Pricing & Payment",
         "paragraphs": [
-          "An order or accepted quote is a request to purchase, subject to availability and our confirmation.",
-          "Prices are those shown or quoted at confirmation, unless we agree otherwise in writing.",
-          "Payment details appear at checkout, on your invoice, or in your service agreement.",
-          "For custom landscaping, a deposit or staged payments may be required before work starts or continues."
+          "Placing an order or accepting a quote is a request on your end, and it's only confirmed once we accept it and stock or scheduling allows.",
+          "The price you pay is whatever's shown or quoted when we confirm your order, unless we've agreed otherwise in writing beforehand.",
+          "Payment terms will always be clear, whether at checkout, on your invoice, or spelled out in your service agreement.",
+          "Larger landscaping jobs may need a deposit or payments split across stages before or during the work."
         ]
       },
       {
-        "title": "5. Delivery, Installation & Site Access",
+        "title": "5. Getting Plants To You & On-Site Work",
         "paragraphs": [
-          "Delivery and installation dates are estimates unless confirmed in writing.",
-          "Please provide clear access, parking details, and any permissions needed for safe work.",
-          "Weather, access issues, supply delays, or events beyond our control may affect timing."
+          "Any delivery or installation date we mention is a rough estimate unless we've confirmed it in writing.",
+          "To keep things moving smoothly, please make sure our team has clear access, somewhere to park, and any permissions needed to work safely on your property.",
+          "Things like weather, blocked access, delayed supplies, or other events outside our control can shift the timeline, and we'll keep you posted if that happens."
         ]
       },
       {
-        "title": "6. Cancellations & Changes",
+        "title": "6. If Plans Change Or You Need To Cancel",
         "paragraphs": [
-          "Tell us as early as possible if you need to cancel or change an order. Fees may apply if plants are already reserved, materials purchased, or work has begun. Completed custom landscaping work is generally non-refundable except where required by law."
+          "The sooner you tell us about a cancellation or change, the easier it is to sort out. Some fees may apply if plants have already been set aside, materials have been bought, or work has already started. Custom landscaping that's already finished usually can't be refunded, except where the law says otherwise."
         ]
       },
       {
-        "title": "7. Plant Health & Care",
+        "title": "7. Plant Health & What's Covered",
         "paragraphs": [
-          "We aim to supply healthy plants. Any guarantee offered will be explained at purchase or in your agreement and usually depends on proper watering and care.",
-          "Guarantees typically do not cover neglect, incorrect watering, pests after delivery, extreme weather, or changes made by others.",
-          "If a plant arrives damaged or unhealthy, contact us quickly so we can help with a fair solution."
+          "We do our best to hand over healthy, well-cared-for plants. If we offer any kind of guarantee, we'll explain exactly what it covers at the time of purchase or in your agreement, and it usually assumes you're watering and caring for the plant properly.",
+          "Guarantees generally won't cover things like neglect, poor watering habits, pests that show up after delivery, extreme weather, or changes made by someone else after we've handed the plant over.",
+          "If something arrives damaged or looking unwell, reach out right away so we can sort out a fair fix."
         ]
       },
       {
-        "title": "8. Website Content & Branding",
+        "title": "8. Our Content & Branding",
         "paragraphs": [
-          "Text, images, logos, and designs on our website belong to Mahraj Landscaping or our licensors. Please do not copy or reuse them without written permission."
+          "Everything you see on our site, text, photos, logos, and design, belongs to Mahraj Landscaping or the people we've licensed it from. Please don't copy, reuse, or repost any of it without asking us first."
         ]
       },
       {
-        "title": "9. Limitation of Liability",
+        "title": "9. Where Our Responsibility Ends",
         "paragraphs": [
-          "To the fullest extent allowed by law, we are not responsible for indirect or consequential losses. For any claim related to a product or service, our responsibility is limited to the amount you paid for that specific item or service."
+          "As far as the law allows, we're not liable for indirect or knock-on losses tied to our products or services. If something does go wrong with a specific order or job, our responsibility is capped at whatever you paid for that particular item or service."
         ]
       },
       {
-        "title": "10. Privacy",
+        "title": "10. Your Privacy",
         "paragraphs": [
-          "How we handle personal information is explained in our Privacy Policy."
+          "Curious how we handle your personal information? That's covered separately in our Privacy Policy."
         ]
       },
       {
-        "title": "11. Governing Law",
+        "title": "11. Which Laws Apply",
         "paragraphs": [
-          "These Terms are governed by the laws of the Kingdom of Saudi Arabia. Disputes are handled by the competent courts in Riyadh, unless applicable law requires otherwise."
+          "These terms follow the laws of the Kingdom of Saudi Arabia, and any disputes go through the relevant courts in Riyadh, unless local law says otherwise applies."
         ]
       },
       {
-        "title": "12. Changes to These Terms",
+        "title": "12. When These Terms Change",
         "paragraphs": [
-          "We may update these Terms & Conditions when needed. The latest version will be posted on this page. Continued use of our website or services after an update means you accept the revised Terms."
+          "We may revise these terms from time to time as things evolve. Whenever we do, the newest version will be right here on this page. If you keep using our site or services after an update, that means you're okay with the changes."
         ]
       },
       {
-        "title": "13. Contact Us",
+        "title": "13. Reach Out Anytime",
         "paragraphs": [
-          "Need clarity on anything in these Terms? Reach out anytime."
+          "Got a question about anything in these terms? We're glad to walk you through it. Just get in touch whenever works for you."
         ],
         "boxed": true,
         "lines": [
           "Mahraj Landscaping",
-          "Mahraj Agriculture Co, Office No 9, 1st Floor, 5207, AlMalqa, Riyadh",
-          "WhatsApp: +966 55 689 1877",
+          "Nursery: Heet, Old Al Kharj Road, Riyadh, KSA",
+          "WhatsApp/Phone: +966 55 689 1877",
           "Email: landscape@mahraj.com",
           "Web: mahrajlandscaping.com"
         ]

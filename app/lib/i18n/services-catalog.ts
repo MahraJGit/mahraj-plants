@@ -5,7 +5,8 @@ import servicesAr from "@/messages/services.ar.json";
 
 export type ServicesMessages = typeof servicesEn;
 
-type ServiceCopy = ServicesMessages["landscape-design-planning"];
+type ServiceCopy = ServicesMessages["landscaping-services"];
+export type ServiceHighlightCopy = ServiceCopy["featureHighlights"][number];
 
 const catalogs: Record<Locale, ServicesMessages> = {
     en: servicesEn,
@@ -13,12 +14,12 @@ const catalogs: Record<Locale, ServicesMessages> = {
 };
 
 const SERVICE_SLUGS = [
-    "landscape-design-planning",
-    "irrigation-drainage-solutions",
-    "green-maintenance-packages",
-    "hardscaping-lighting",
-    "gardening-plant-upgrade",
-    "outdoor-maintenance-finishing",
+    "landscaping-services",
+    "nursery-plant-services",
+    "specialized-green-services",
+    "ongoing-care-maintenance",
+    "outdoor-plants",
+    "flowering-plants",
 ] as const;
 
 export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
@@ -92,6 +93,13 @@ export function localizeHighlightCopy<T extends { title: string; description: st
         title: highlights[index]?.title ?? item.title,
         description: highlights[index]?.description ?? item.description,
     }));
+}
+
+export function getServiceHighlights(
+    slug: string,
+    locale: Locale,
+): ServiceHighlightCopy[] | undefined {
+    return getServiceCopy(slug, locale)?.featureHighlights;
 }
 
 export function localizeFeatureLabels(

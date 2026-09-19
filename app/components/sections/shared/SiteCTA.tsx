@@ -14,6 +14,7 @@ import { useTranslations } from "@/app/lib/i18n";
 
 export type SiteCTACopy = {
     title?: string;
+    consultation?: string;
     insightsEyebrow?: string;
     insightsTitle?: string;
     insightsBody?: string;
@@ -69,7 +70,7 @@ export default function SiteCTA({ copy }: SiteCTAProps) {
                                 rel="noopener noreferrer"
                                 className="rounded-lg px-8 py-3.5"
                             >
-                                {t("consultation")}
+                                {copy?.consultation ?? t("consultation")}
                             </Button>
 
                             <a
