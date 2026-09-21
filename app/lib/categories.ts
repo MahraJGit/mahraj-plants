@@ -72,7 +72,7 @@ const categoryHeroCopy: Record<
     "garden-tools": {
         tagline: "Tools for Every Gardener",
         description:
-            "Durable hand tools and garden equipment to make planting, pruning, and maintenance easier.",
+            "Find durable garden tools made for planting, pruning, digging, and everyday care, helping you work with ease and keep your garden thriving.",
     },
     "garden-supplies": {
         tagline: "Everything Your Garden Needs",

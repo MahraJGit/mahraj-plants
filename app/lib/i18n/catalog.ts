@@ -3,6 +3,9 @@ import type { CategoryListingItem, PlantCategory } from "@/app/lib/categories";
 import type { Locale } from "./config";
 import catalogEn from "@/messages/catalog.en.json";
 import catalogAr from "@/messages/catalog.ar.json";
+import gardenToolsCopy from "@/data/garden-tools-copy.json";
+import indoorPlantsCopy from "@/data/indoor-plants-copy.json";
+import outdoorPlantsCopy from "@/data/outdoor-plants-copy.json";
 
 type CatalogEntry = {
     title: string;
@@ -31,7 +34,23 @@ export function getCatalogEntry(
     slug: string,
     locale: Locale,
 ): CatalogEntry | undefined {
-    return catalogs[locale]?.[slug] ?? catalogs.en[slug];
+    const entry = catalogs[locale]?.[slug] ?? catalogs.en[slug];
+    const gardenToolsEntry = gardenToolsCopy[slug as keyof typeof gardenToolsCopy];
+    const indoorPlantsEntry =
+        indoorPlantsCopy[slug as keyof typeof indoorPlantsCopy];
+    const outdoorPlantsEntry =
+        outdoorPlantsCopy[slug as keyof typeof outdoorPlantsCopy];
+    const categoryEntry =
+        gardenToolsEntry ?? indoorPlantsEntry ?? outdoorPlantsEntry;
+
+    if (!entry || !categoryEntry) {
+        return entry;
+    }
+
+    return {
+        ...entry,
+        ...categoryEntry,
+    };
 }
 
 export function localizeProduct(product: Product, locale: Locale): Product {
@@ -63,6 +82,7 @@ export function localizeListingItem(
 export type CategoryPageCopy = {
     label: string;
     tagline: string;
+    title?: string;
     description: string;
     stats?: { value: string; label: string }[];
     listing?: {
@@ -83,13 +103,14 @@ export function localizeCategory(
     locale: Locale,
 ): PlantCategory {
     const label = copy?.label ?? category.label;
+    const title = copy?.title ?? label;
 
     return {
         ...category,
         label,
         hero: {
             tagline: copy?.tagline ?? category.hero.tagline,
-            title: label,
+            title,
             description: copy?.description ?? category.hero.description,
         },
         listings: category.listings.map((item) =>

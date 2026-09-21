@@ -502,17 +502,103 @@
       "garden-tools": {
         "label": "Garden Tools",
         "tagline": "Tools for Every Gardener",
-        "description": "Durable hand tools and garden equipment to make planting, pruning, and maintenance easier."
+        "description": "Find durable garden tools made for planting, pruning, digging, and everyday care, helping you work with ease and keep your garden thriving.",
+        "stats": [
+          {
+            "value": "100+",
+            "label": "Garden Tools Available"
+          },
+          {
+            "value": "50+",
+            "label": "Quality Tool Types"
+          },
+          {
+            "value": "95%",
+            "label": "Customer Satisfaction"
+          },
+          {
+            "value": "5+",
+            "label": "Years of Expertise"
+          }
+        ],
+        "listing": {
+          "title": "Find Your Perfect Garden Companion",
+          "description": "Whether you're planting something new or caring for what already grows, discover tools designed to make every garden task simpler."
+        },
+        "siteCta": {
+          "title": "READY TO GEAR UP FOR YOUR NEXT PROJECT?",
+          "insightsEyebrow": "Tools & Tips, Together",
+          "insightsTitle": "Stay Sharp, Stay Ready",
+          "secondaryTitle": "Stay In The Green",
+          "insightsBody": "Get tool care tips, seasonal must haves, and smart picks for every garden job, delivered straight to your inbox."
+        }
       },
       "indoor-plants": {
         "label": "Indoor Plants",
         "tagline": "Bring Nature Indoors",
-        "description": "Refresh your space with beautiful indoor plants that bring life, freshness, and style to every room."
+        "description": "Turn everyday rooms into fresh, inviting spaces with indoor plants that add natural beauty, soft greenery, and a lively touch to your home or office.",
+        "stats": [
+          {
+            "value": "100+",
+            "label": "Indoor Plant Varieties"
+          },
+          {
+            "value": "50+",
+            "label": "Greenery Options"
+          },
+          {
+            "value": "500+",
+            "label": "Plants Delivered"
+          },
+          {
+            "value": "98%",
+            "label": "Customer Satisfaction"
+          }
+        ],
+        "listing": {
+          "title": "Find Your Indoor Favorites",
+          "description": "Discover a variety of indoor plants chosen to add fresh greenery, natural beauty, and a welcoming feel to homes, offices, and everyday spaces."
+        },
+        "siteCta": {
+          "title": "READY TO BRING MORE GREEN INTO YOUR SPACE?",
+          "insightsEyebrow": "A Greener Way To Live",
+          "insightsTitle": "Ideas For Your Indoor Garden",
+          "insightsBody": "Find easy plant care advice, fresh decorating ideas, and simple ways to enjoy more greenery at home or work. Get useful inspiration delivered straight to your inbox."
+        }
       },
       "outdoor-plants": {
         "label": "Outdoor Plants",
-        "tagline": "Grow Outdoors with Confidence",
-        "description": "Hardy outdoor plants selected to thrive in sun, shade, and seasonal weather across Saudi gardens."
+        "tagline": "Let Your Garden Come Alive",
+        "title": "Bring More Life to the Outdoors",
+        "description": "Give your outdoor spaces a lively new look with plants chosen for patios, balconies, gardens, and open areas that deserve more natural color and character.",
+        "stats": [
+          {
+            "value": "500+",
+            "label": "Plant Varieties"
+          },
+          {
+            "value": "100+",
+            "label": "Outdoor Choices"
+          },
+          {
+            "value": "50+",
+            "label": "Seasonal Favorites"
+          },
+          {
+            "value": "98%",
+            "label": "Happy Customers"
+          }
+        ],
+        "listing": {
+          "title": "Find the Right Green for Your Space",
+          "description": "From leafy plants that add texture to colorful varieties that brighten open areas, discover greenery that fits beautifully into your garden, patio, balcony, or outdoor setting."
+        },
+        "siteCta": {
+          "title": "READY TO GIVE YOUR OUTDOOR SPACE A NEW LOOK?",
+          "insightsEyebrow": "Bring Your Garden To Life",
+          "insightsTitle": "Create a Space You’ll Love",
+          "insightsBody": "Discover fresh ways to style your outdoor space, choose plants that suit your setting, and create garden corners you will love spending time in."
+        }
       },
       "pots-and-planters": {
         "label": "Pots and Planters",

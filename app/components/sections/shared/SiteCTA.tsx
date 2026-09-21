@@ -17,6 +17,7 @@ export type SiteCTACopy = {
     consultation?: string;
     insightsEyebrow?: string;
     insightsTitle?: string;
+    secondaryTitle?: string;
     insightsBody?: string;
 };
 
@@ -126,6 +127,12 @@ export default function SiteCTA({ copy }: SiteCTAProps) {
                         <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
                             {copy?.insightsTitle ?? t("insightsTitle")}
                         </h3>
+
+                        {copy?.secondaryTitle && (
+                            <p className="mt-2 text-xl font-semibold text-white/95 sm:text-2xl">
+                                {copy.secondaryTitle}
+                            </p>
+                        )}
 
                         <p className="mt-4 max-w-md text-sm leading-relaxed text-white/80 sm:text-[15px]">
                             {copy?.insightsBody ?? t("insightsBody")}

@@ -1,0 +1,115 @@
+{
+  "aerator": {
+    "hero": {
+      "eyebrow": "Let Your Soil Breathe",
+      "title": "Loosen The Soil, Grow Stronger Roots",
+      "description": "Break up hard soil with this easy aerator so air, water, and nutrients reach the roots. Keep lawns and garden beds healthy with less effort."
+    },
+    "siteCta": {
+      "title": "READY TO GIVE YOUR SOIL ROOM TO BREATHE?",
+      "insightsEyebrow": "Better Soil, Better Lawns",
+      "insightsTitle": "Your Guide To Healthier Grass",
+      "insightsBody": "Not sure how often to aerate or what tools to use? We'll send you easy steps, best times to aerate, and simple lawn care tricks, straight to your inbox."
+    }
+  },
+  "auger": {
+    "hero": { "eyebrow": "Power Up Your Planting", "title": "Dig Deep Without The Struggle", "description": "Take the hard work out of digging. Our auger helps you create neat holes quickly, making planting and outdoor projects much easier." },
+    "siteCta": { "title": "READY TO DIG IN THE EASY WAY?", "insightsEyebrow": "Start Strong From The Soil", "insightsTitle": "Prepare The Ground For Growth", "insightsBody": "Find practical advice for digging, planting, and garden preparation, helping you work smarter and get better results from your outdoor space." }
+  },
+  "backpack-sprayer": {
+    "hero": { "eyebrow": "More Coverage, Less Effort", "title": "Make Every Spray Count", "description": "Keep plant care simple with a convenient backpack design that makes spraying larger areas easier, more comfortable, and more efficient." },
+    "siteCta": { "title": "READY FOR EASIER SPRAYING EVERY TIME?", "insightsEyebrow": "Spray Smarter, Not Harder", "insightsTitle": "Care Tips That Save Time", "insightsBody": "Get simple tips on mixing sprays, best times to apply, and getting the most out of your sprayer, straight to your inbox." }
+  },
+  "broadfork-u-fork-or-grelinette": {
+    "hero": { "eyebrow": "Loosen, Lift, Grow", "title": "Give Your Soil Room To Breathe", "description": "Turn and loosen deep soil without a tiller, break up compaction, and give plant roots plenty of room to grow strong the natural, easy way." },
+    "siteCta": { "title": "READY TO TRANSFORM YOUR OUTDOOR SPACE?", "insightsEyebrow": "Dig Less, Grow More", "insightsTitle": "Real Soil Advice, No Fluff", "insightsBody": "Wondering how deep to fork or how to keep hard soil under control? We'll send real answers and easy garden tricks straight to your inbox." }
+  },
+  "bulb-planter": {
+    "hero": { "eyebrow": "One Push, Perfect Hole", "title": "Plant Bulbs Without The Guesswork", "description": "No more uneven digging or sore knees. This bulb planter cuts a clean, exact hole every time, so your bulbs go in at the right depth and come up looking their best." },
+    "siteCta": { "title": "READY TO PLANT YOUR NEXT ROOM?", "insightsEyebrow": "Plant Today, Bloom Tomorrow", "insightsTitle": "Your Guide To Better Blooms", "insightsBody": "Learn when and how to plant bulbs, prepare the soil, and care for new growth for a garden full of color." }
+  },
+  "compost-fork": {
+    "hero": { "eyebrow": "Built For The Job", "title": "Compost That Breaks Down Faster", "description": "Keep your compost pile active and well mixed. This practical fork makes turning easier while improving airflow for richer compost over time." },
+    "siteCta": { "title": "READY TO MAKE COMPOST TURNING EASY?", "insightsEyebrow": "Turn It Into Something Good", "insightsTitle": "Composting Tips That Actually Work", "insightsBody": "Get simple tips on turning compost right, what to add, and how to keep your pile healthy, straight to your inbox." }
+  },
+  "cultivator": {
+    "hero": { "eyebrow": "Wake Up Your Soil", "title": "Give Your Garden A Fresh Start", "description": "Break through hard soil, loosen compacted surfaces, and prepare your beds for planting with a cultivator made for quick, easy garden work." },
+    "siteCta": { "title": "TIRED SOIL? LET’S FIX THAT TOO.", "insightsEyebrow": "Grow Smarter", "insightsTitle": "Better Soil Starts Here", "insightsBody": "Get simple soil care tips, practical planting advice, and easy garden ideas to help your plants grow stronger and your outdoor space thrive." }
+  },
+  "dibber": {
+    "hero": { "eyebrow": "Plant With Confidence", "title": "Small Tool, Better Planting", "description": "Create neat planting holes with ease, helping seeds and seedlings sit at the right depth for a more organized start." },
+    "siteCta": { "title": "READY TO GIVE YOUR OUTDOOR SPACE A NEW LIFE?", "insightsEyebrow": "Fresh Ideas For Better Gardens", "insightsTitle": "Get Garden Tips Worth Growing", "insightsBody": "Receive practical gardening advice, seasonal ideas, planting tips, and simple ways to care for your outdoor space, delivered straight to your inbox." }
+  },
+  "garden-fork": {
+    "hero": { "eyebrow": "Work Deep, Grow Better", "title": "A Better Way To Work Your Soil", "description": "From turning garden beds to lifting roots and moving compost, this garden fork gives you the control and leverage needed for demanding garden tasks." },
+    "siteCta": { "title": "HAVE A GARDEN IDEA IN MIND? LET’S MAKE IT REAL.", "insightsEyebrow": "Grow With Better Ideas", "insightsTitle": "Garden Inspiration, Delivered", "insightsBody": "Get practical planting tips, seasonal advice, garden care ideas, and useful insights to help you create and maintain a greener, healthier outdoor space." }
+  },
+  "garden-hose-or-watering-can": {
+    "hero": { "eyebrow": "Water Where It Counts", "title": "Every Drop Goes Where It Should", "description": "Whether it's a full garden bed or a single potted plant, this watering can gives you gentle, controlled watering without the drips, spills, or wasted effort." },
+    "siteCta": { "title": "ARE YOU READY TO KEEP YOUR GARDEN GROWING?", "insightsEyebrow": "Water Wisely, Grow Better", "insightsTitle": "Simple Tips For Healthier Plants", "insightsBody": "Get practical watering advice, seasonal garden tips, and easy ways to give your plants the moisture they need without wasting water." }
+  },
+  "garden-scissors": {
+    "hero": { "eyebrow": "Small Tool, Sharp Purpose", "title": "Clean Cuts Keep Plants Happy", "description": "Keep your garden looking neat with simple, precise trimming. These scissors are handy for shaping plants, harvesting herbs, and removing small growth." },
+    "siteCta": { "title": "READY TO GIVE YOUR GARDEN THE CARE IT DESERVES?", "insightsEyebrow": "Grow Better, One Cut At A Time", "insightsTitle": "Fresh Tips For Happier Plants", "insightsBody": "Get simple pruning advice, plant care tips, seasonal gardening ideas, and practical ways to keep your garden neat, healthy, and full of life." }
+  },
+  "garden-stakes-plant-supports": {
+    "hero": { "eyebrow": "Backup For Your Blooms", "title": "Stand Tall, Even On Windy Days", "description": "Help your plants grow in the right direction with simple, sturdy stakes made to support stems, blooms, and climbing growth as they develop." },
+    "siteCta": { "title": "READY TO HELP YOUR GARDEN GROW STRONG?", "insightsEyebrow": "Support Better Growth", "insightsTitle": "Tips For Stronger, Healthier Plants", "insightsBody": "Get practical plant support ideas, growing tips, seasonal care advice, and simple ways to keep flowers, vegetables, and vines growing beautifully." }
+  },
+  "hand-trowel": {
+    "hero": { "eyebrow": "Small Tool, Big Help", "title": "Made For The Little Jobs That Matter", "description": "From planting seedlings to shaping soil around roots, a hand trowel gives you the control to work neatly in pots, beds, borders, and tight spaces." },
+    "siteCta": { "title": "READY TO GET YOUR HANDS IN THE SOIL?", "insightsEyebrow": "Small Hand, Big Job", "insightsTitle": "Simple Digging Made Easier", "insightsBody": "Get quick tips on transplanting, potting, and digging in tight spaces the right way, straight to your inbox." }
+  },
+  "hoe": {
+    "hero": { "eyebrow": "Shape. Clear. Cultivate.", "title": "Put Your Garden Beds Back In Shape", "description": "Loosen the topsoil, clear unwanted growth, and shape planting beds with a hoe that gives you steady control over everyday garden work." },
+    "siteCta": { "title": "READY TO CLEAR THE WAY FOR NEW GROWTH?", "insightsEyebrow": "Clear Ground, Clear Mind", "insightsTitle": "Weed Free Tips, Straight To You", "insightsBody": "Get simple tips on weeding, row prep, and keeping your beds clear, straight to your inbox." }
+  },
+  "lawn-mower": {
+    "hero": { "eyebrow": "Cut Clean, Look Sharp", "title": "Give Your Lawn A Fresh Finish", "description": "Keep grass neat and even with a lawn mower built to make regular cutting easier, faster, and more controlled across your outdoor space." },
+    "siteCta": { "title": "READY FOR A LAWN THAT LOOKS ITS BEST?", "insightsEyebrow": "A Better Lawn Starts Here", "insightsTitle": "Tips For A Greener Lawn", "insightsBody": "Get practical advice on cutting, feeding, watering, and seasonal lawn care to help your grass stay fresh, even, and healthy all year round." }
+  },
+  "lopper": {
+    "hero": { "eyebrow": "Cut Above The Rest", "title": "For Branches Your Scissors Can't Touch", "description": "Take control of thick, overgrown branches with a lopper that delivers extra reach and cutting power for cleaner pruning and better shaped trees and shrubs." },
+    "siteCta": { "title": "READY TO TACKLE THOSE THICK BRANCHES?", "insightsEyebrow": "Cut Above The Rest", "insightsTitle": "Pruning Tips That Actually Help", "insightsBody": "Get simple tips on when to prune, how to cut clean, and keeping branches healthy, straight to your inbox." }
+  },
+  "pruner-shears": {
+    "hero": { "eyebrow": "Shape With Confidence", "title": "Trim Smart, Grow Stronger", "description": "A good trim can do more for your plants than you'd expect. These pruners & shears give you sharp, controlled cuts that help branches heal fast and grow back fuller." },
+    "siteCta": { "title": "READY FOR CLEANER, HEALTHIER CUTS?", "insightsEyebrow": "Precision In Your Palm", "insightsTitle": "Trimming Tips For Healthier Plants", "insightsBody": "Get simple tips on pruning technique, best times to trim, and keeping cuts clean and straight to your inbox." }
+  },
+  "rake": {
+    "hero": { "eyebrow": "Clear It, Level It, Love It", "title": "The Tool That Tidies Everything Up", "description": "Gather fallen leaves, loose grass, and garden debris with ease. A reliable rake helps you clear open areas, tidy planting beds, and leave your outdoor space looking neat." },
+    "siteCta": { "title": "READY FOR A TIDIER GARDEN IN MINUTES?", "insightsEyebrow": "More Garden, Less Mess", "insightsTitle": "Get Fresh Ideas For Easier Garden Care", "insightsBody": "Receive practical cleanup tips, seasonal gardening advice, planting ideas, and simple ways to make everyday outdoor maintenance feel easier." }
+  },
+  "seed-drill": {
+    "hero": { "eyebrow": "Even Rows, Every Time", "title": "Say Goodbye To Uneven Planting", "description": "No more crowded seeds or empty gaps. This seed drill spaces and plants your seeds evenly in one smooth pass, so every row comes up strong and consistent." },
+    "siteCta": { "title": "READY FOR EVEN ROWS EVERY TIME?", "insightsEyebrow": "Even Rows, Every Time", "insightsTitle": "Planting Tips For Better Yields", "insightsBody": "Get simple tips on seed spacing, planting depth, and getting stronger rows, straight to your inbox." }
+  },
+  "shovel": {
+    "hero": { "eyebrow": "Where Every Project Begins", "title": "Dig Deep, Build Bigger", "description": "From planting trees to moving soil, this shovel handles the heavy lifting. Sturdy, dependable, and built for real work, it's the tool every serious project starts with." },
+    "siteCta": { "title": "READY TO DIG INTO YOUR NEXT BIG PROJECT?", "insightsEyebrow": "Where Every Project Begins", "insightsTitle": "Heavy Duty Tips For Bigger Jobs", "insightsBody": "Get practical tips on digging technique, soil moving, and getting more done with less strain, straight to your inbox." }
+  },
+  "soil-ph-moisture-tester": {
+    "hero": { "eyebrow": "Know Your Soil", "title": "See What Your Plants Are Growing In", "description": "Check soil conditions before you water, feed, or plant. A soil pH moisture tester helps you understand moisture levels and soil acidity so you can make more informed garden care decisions." },
+    "siteCta": { "title": "READY TO KNOW WHAT YOUR SOIL REALLY NEEDS?", "insightsEyebrow": "Know Before You Grow", "insightsTitle": "Reading Your Soil The Right Way", "insightsBody": "Get simple tips on understanding pH levels, moisture readings, and what your plants are really telling you, straight to your inbox." }
+  },
+  "spade": {
+    "hero": { "eyebrow": "Sharp Edge, Clean Lines", "title": "For Cuts That Actually Look Intentional", "description": "Flat, sharp, and built for precision, this spade slices through turf and soil cleanly, perfect for edging beds, cutting straight lines, and digging where accuracy actually matters." },
+    "siteCta": { "title": "READY FOR CLEANER LINES IN YOUR GARDEN?", "insightsEyebrow": "Sharp Edge, Clean Lines", "insightsTitle": "Edging Tips For A Tidier Yard", "insightsBody": "Get simple tips on edging beds, cutting straight lines, and keeping your garden looking sharp and straight to your inbox." }
+  },
+  "sprayer": {
+    "hero": { "eyebrow": "Reach Every Leaf", "title": "Make Plant Care Easier To Cover", "description": "Apply water, plant treatments, and other garden solutions with better control. A practical sprayer helps you reach plants evenly and handle routine care without unnecessary effort." },
+    "siteCta": { "title": "READY FOR QUICK, HASSLE FREE SPRAYING?", "insightsEyebrow": "Grow With Better Tips", "insightsTitle": "Get Smarter Ways To Care For Your Garden", "insightsBody": "Stay up to date with practical watering ideas, plant care tips, seasonal advice, and simple techniques to make everyday gardening easier." }
+  },
+  "string-trimmer": {
+    "hero": { "eyebrow": "Tidy Every Edge", "title": "Give Your Lawn A Cleaner Finish", "description": "Reach the spots your mower cannot with a string trimmer that makes it easier to cut around edges, borders, trees, and tight spaces for a more polished lawn." },
+    "siteCta": { "title": "READY FOR THAT FULLY FINISHED LOOK?", "insightsEyebrow": "Keep Growing, Keep Learning", "insightsTitle": "Fresh Ideas For A Better Kept Garden", "insightsBody": "Get practical lawn care advice, seasonal maintenance tips, trimming ideas, and simple ways to keep your outdoor space looking neat throughout the year." }
+  },
+  "tiller": {
+    "hero": { "eyebrow": "Start Fresh, Start Strong", "title": "Turn Hard Ground Into New Beginnings", "description": "Before anything grows, the ground has to be ready. This tiller breaks up hard, compacted soil fast, turning tough earth into a loose, planting ready bed in no time." },
+    "siteCta": { "title": "READY TO START A NEW BED THE EASY WAY?", "insightsEyebrow": "Grow From The Ground Up", "insightsTitle": "Get Practical Soil & Garden Tips", "insightsBody": "Receive useful advice on soil preparation, planting, seasonal garden care, and simple ways to get more from your outdoor space." }
+  },
+  "wheelbarrow": {
+    "hero": { "eyebrow": "Carry More, Trip Less", "title": "The Quiet Hero of Every Garden Job", "description": "Soil, mulch, tools, and plants, this wheelbarrow hauls it all in one trip instead of ten. It is sturdy, easy to steer, and built for real garden work, day after day." },
+    "siteCta": { "title": "READY TO HAUL MORE IN FEWER TIPS?", "insightsEyebrow": "Better Tools, Easier Gardening", "insightsTitle": "Get Tips That Make Garden Work Simpler", "insightsBody": "Receive useful advice on planting, landscaping, garden maintenance, tool care, and seasonal tasks to help you spend less time struggling and more time enjoying your outdoor space." }
+  }
+}
