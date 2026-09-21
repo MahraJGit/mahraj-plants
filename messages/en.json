@@ -516,13 +516,69 @@
       },
       "pots-and-planters": {
         "label": "Pots and Planters",
-        "tagline": "Style Meets Function",
-        "description": "Browse decorative pots and planters in ceramic, terracotta, and modern finishes for every space."
+        "tagline": "A Home for Every Plant",
+        "description": "Give every plant a beautiful place to grow. Explore pots and planters in different shapes, sizes, and finishes to bring a fresh touch to your home, patio, balcony, or garden.",
+        "stats": [
+          {
+            "value": "30+",
+            "label": "Planter Finishes"
+          },
+          {
+            "value": "500+",
+            "label": "Happy Customers"
+          },
+          {
+            "value": "50+",
+            "label": "Sizes & Shapes"
+          },
+          {
+            "value": "98%",
+            "label": "Customer Satisfaction"
+          }
+        ],
+        "listing": {
+          "title": "Explore Our Pots & Planters",
+          "description": "Discover pots and planters in a range of shapes, sizes, and styles. Find the right match for your plants and create a space that feels fresh, green, and beautifully put together."
+        },
+        "siteCta": {
+          "title": "READY TO GIVE YOUR PLANTS A BEAUTIFUL HOME?",
+          "insightsEyebrow": "Gardening Insights",
+          "insightsTitle": "Simple Tips, Better Gardens",
+          "insightsBody": "Get practical gardening tips, plant care ideas, seasonal advice, and easy ways to keep your plants healthy and your outdoor spaces looking their best."
+        }
       },
       "seasonal-flowers": {
         "label": "Seasonal Flowers",
-        "tagline": "Colour for Every Season",
-        "description": "Discover rotating seasonal blooms that keep your garden fresh, fragrant, and full of life all year."
+        "tagline": "Let Every Season Bloom",
+        "description": "Bring fresh color to your garden with flowering plants suited to each season. Discover new blooms as the year changes and keep your outdoor space bright and inviting.",
+        "stats": [
+          {
+            "value": "150+",
+            "label": "Flower Varieties"
+          },
+          {
+            "value": "4+",
+            "label": "Seasonal Collections"
+          },
+          {
+            "value": "1000+",
+            "label": "Plants Supplied"
+          },
+          {
+            "value": "5+",
+            "label": "Years of Garden Experience"
+          }
+        ],
+        "listing": {
+          "title": "Meet Your Next Favorite Bloom",
+          "description": "Explore a changing selection of seasonal flowers chosen to bring fresh color, texture, and character to your outdoor space. Find blooms that fit your garden and the season ahead."
+        },
+        "siteCta": {
+          "title": "READY TO BRING MORE COLOR INTO YOUR GARDEN?",
+          "insightsEyebrow": "A New Bloom, A New Mood",
+          "insightsTitle": "Ideas To Keep Your Garden In Bloom",
+          "insightsBody": "Discover seasonal flower ideas, simple planting tips, care advice, and fresh inspiration to help you create beautiful garden displays throughout the year."
+        }
       },
       "vegetables": {
         "label": "Vegetables",

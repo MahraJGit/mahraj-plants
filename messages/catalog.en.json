@@ -331,15 +331,48 @@
   },
   "calendula": {
     "title": "Calendula",
-    "description": "Calendula adds a splash of bright, daisy‑like color to any garden during the warm months, making it a perfect addition to your seasonal flower collection; enjoy its cheerful blooms and let nature’s simple beauty brighten your outdoor space."
+    "description": "Calendula brings a cheerful burst of warm color to garden beds, borders, and containers. Its bright blooms add a lively touch to outdoor spaces and work beautifully in seasonal displays. Give it a suitable spot, regular care, and enough light, then enjoy its fresh flowers as they brighten your garden through the growing season and brighten your garden.",
+    "hero": {
+      "eyebrow": "A Sunny Touch of Nature",
+      "title": "Bring Cheer To Your Garden",
+      "description": "Give your garden a fresh pop of color with calendula, a lively flowering plant that looks beautiful in beds, borders, and containers."
+    },
+    "siteCta": {
+      "title": "READY TO ADD A BURST OF CALENDULA TO YOUR GARDEN?",
+      "insightsEyebrow": "Let Your Garden Glow",
+      "insightsTitle": "Fresh Ideas For Beautiful Blooms",
+      "insightsBody": "Get simple flower care tips, seasonal planting ideas, and easy ways to keep your calendula and other garden blooms looking fresh and beautiful."
+    }
   },
   "catharanthus-roseus": {
-    "title": "Catharanthus roseus",
-    "description": "Catharanthus roseus, a vibrant seasonal flower, brings cheerful colors to any garden; this hardy, easy‑care bloom thrives in sunny spots and adds a burst of natural beauty throughout the growing season."
+    "title": "Catharanthus Roseus",
+    "description": "Bring a lively mix of color and greenery to your outdoor space with catharanthus roseus. Its cheerful flowers suit sunny garden spots and containers, making it easy to add a fresh, welcoming touch. With suitable soil, light, and regular watering, this beautiful plant can brighten your garden throughout the growing season and pair well with other blooms.",
+    "hero": {
+      "eyebrow": "Color That Loves The Sun",
+      "title": "A Bright Touch For Warm Spaces",
+      "description": "Add a burst of lasting color with catharanthus roseus. Its cheerful blooms and fresh green foliage bring lively charm to garden beds, borders, and containers."
+    },
+    "siteCta": {
+      "title": "READY TO BRING MORE COLOR TO YOUR GARDEN?",
+      "insightsEyebrow": "Grow Something Beautiful",
+      "insightsTitle": "Simple Tips For Better Blooms",
+      "insightsBody": "Get seasonal planting ideas, easy flower care tips, and practical garden advice to help your blooms stay fresh, colorful, and full of life."
+    }
   },
   "chrysanthemum": {
     "title": "Chrysanthemum",
-    "description": "Chrysanthemum – a timeless seasonal flower that brings elegant beauty to any garden."
+    "description": "Chrysanthemums bring a rich, full look to seasonal gardens with their layered blooms and lively colors. They work beautifully in flower beds, borders, and containers, adding depth wherever they grow. With suitable light, well-drained soil, and regular care, these flowers can become a standout part of your garden display throughout the season.",
+    "hero": {
+      "eyebrow": "A Garden Full Of Character",
+      "title": "Bring Rich Color To Your Outdoor Space",
+      "description": "Add beautiful depth to your garden with chrysanthemums, known for their full blooms and vibrant colors that make seasonal displays feel lively, warm, and inviting."
+    },
+    "siteCta": {
+      "title": "READY TO GIVE YOUR GARDEN A FULLER, BRIGHTER LOOK?",
+      "insightsEyebrow": "More Blooms, More Beauty",
+      "insightsTitle": "Make Every Season A Garden Moment",
+      "insightsBody": "Get seasonal flower ideas, simple growing tips, and practical care advice to help you choose, grow, and enjoy beautiful blooms in your outdoor space."
+    }
   },
   "perlite-soil": {
     "title": "Perlite Soil",
@@ -358,7 +391,18 @@
   },
   "petunia": {
     "title": "Petunia",
-    "description": "Petunia – a popular seasonal flower that brings color to your garden during spring and summer."
+    "description": "Petunias are a simple way to bring more color and personality to your garden. Their soft, trumpet shaped flowers look beautiful in pots, borders, hanging displays, and garden beds. Place them where they get suitable light, water them regularly, and remove faded blooms to keep your display fresh, neat, and cheerful throughout the flowering season ahead.",
+    "hero": {
+      "eyebrow": "Let Your Garden Show Off",
+      "title": "Petunias Made For A Colorful Display",
+      "description": "Fill your outdoor space with the soft, cheerful beauty of Petunias. Their eye catching blooms bring charm to pots, borders, and garden beds, making every corner feel more alive."
+    },
+    "siteCta": {
+      "title": "READY TO FILL YOUR GARDEN WITH PETUNIA BLOOMS?",
+      "insightsEyebrow": "Bloom Beyond The Basics",
+      "insightsTitle": "Grow Petunias Like a Pro",
+      "insightsBody": "Get easy care tips, seasonal blooming advice, and simple tricks to keep your petunias full, colorful, and thriving all season long."
+    }
   },
   "sweet-soil": {
     "title": "Sweet Soil",
@@ -377,27 +421,93 @@
   },
   "tagetes": {
     "title": "Tagetes",
-    "description": "Tagetes brings bright, sunny blooms to your garden this season, offering the classic orange‑yellow hue and lively texture that make it a favorite for summer planting; it’s easy to grow, attracts pollinators, and provides a cheerful splash of color that lasts throughout the growing months."
+    "description": "Tagetes adds a cheerful burst of warm color to your garden with its bright, full blooms and fresh green foliage. It works beautifully in flower beds, borders, and containers, making outdoor spaces feel more lively. Give it suitable sunlight, well-drained soil, and regular care to enjoy a beautiful seasonal display. It adds cheerful charm to your garden.",
+    "hero": {
+      "eyebrow": "Bright Blooms, Bold Charm",
+      "title": "Bring A Sunny Feel To Your Garden",
+      "description": "Add cheerful Tagetes to your outdoor space for warm color, lively blooms, and a fresh garden feel. Perfect for borders, beds, and containers, they make simple spaces feel more inviting."
+    },
+    "siteCta": {
+      "title": "READY TO BRIGHTEN YOUR GARDEN WITH TAGETES?",
+      "insightsEyebrow": "Garden Ideas In Bloom",
+      "insightsTitle": "Get Fresh Flower Inspiration",
+      "insightsBody": "Discover seasonal flower ideas, easy planting tips, simple care advice, and creative ways to add more color and character to your garden throughout the year."
+    }
   },
   "ceramic-pot": {
-    "title": "Ceramic pot",
-    "description": "A charming ceramic pot perfect for adding a touch of handcrafted style to any garden or indoor space."
+    "title": "Ceramic Pot",
+    "description": "Add a refined touch to your greenery with this ceramic pot. Its smooth look and clean shape fit beautifully into modern or classic spaces, making it easy to display your favorite plants. Place it on a shelf, table, patio, or garden corner to create a simple yet inviting setting that feels fresh and well cared for.",
+    "hero": {
+      "eyebrow": "Simple Beauty, Made to Shine",
+      "title": "Bring More Charm to Your Green Space",
+      "description": "Give your greenery a beautiful place to shine with a timeless design that adds warmth, character, and a polished touch to any space."
+    },
+    "siteCta": {
+      "title": "READY TO GIVE YOUR SPACE A FRESH NEW LOOK?",
+      "insightsEyebrow": "Plant Care Ideas",
+      "insightsTitle": "Fresh Ideas for Greener Spaces",
+      "insightsBody": "Stay inspired with helpful plant care tips, seasonal ideas, and simple ways to make the most of your greenery. Get practical advice to keep your plants healthy and your space looking fresh."
+    }
   },
   "fiber-pot": {
-    "title": "Fiber pot",
-    "description": "The Fiber Pot from our Pots and Planters collection offers a simple, elegant solution for planting herbs, succulents, or small shrubs, adding a natural fiber texture that complements any garden or indoor space."
+    "title": "Fiber Pot",
+    "description": "Give your plants a fresh place to grow with the fiber pot. Its clean shape and lightweight design make it easy to move, style, and place wherever your greenery needs a lift. Perfect for balconies, patios, gardens, or indoor corners, it adds a neat and natural touch while keeping your plants beautifully displayed.",
+    "hero": {
+      "eyebrow": "Lightweight Style, Lasting Charm",
+      "title": "Bring Personality to Every Plant Corner",
+      "description": "Add an easy touch of style to your space with a durable fiber pot, made to showcase plants beautifully indoors, outdoors, and in cozy garden corners."
+    },
+    "siteCta": {
+      "title": "READY TO GIVE YOUR PLANTS A FRESH NEW HOME?",
+      "insightsEyebrow": "Grow With Confidence",
+      "insightsTitle": "Ideas That Keep Your Greenery Thriving",
+      "insightsBody": "Discover simple plant care tips, seasonal ideas, and useful advice to help you care for your plants and create greener spaces with ease."
+    }
   },
   "planter-box": {
     "title": "Planter Box",
-    "description": "The Planter Box offers a simple, functional solution for arranging your potted plants and adding structure to any garden area."
+    "description": "Bring plants together in a neat, stylish display with the planter box. Its spacious shape is ideal for creating grouped arrangements of flowers, herbs, or greenery while adding clean structure to patios, balconies, entrances, and garden spaces. A simple way to make your plants feel organized, inviting, and full of life while making empty corners more welcoming.",
+    "hero": {
+      "eyebrow": "Grow More, Enjoy More",
+      "title": "Create a Garden That Stands Out",
+      "description": "Make room for more greenery with a stylish planter box that brings plants together beautifully, adding structure and charm to any outdoor space."
+    },
+    "siteCta": {
+      "title": "READY TO GIVE YOUR GARDEN MORE SHAPE AND STYLE?",
+      "insightsEyebrow": "Green Living, Made Simple",
+      "insightsTitle": "Little Tips for Happier Plants",
+      "insightsBody": "Discover easy plant care ideas, seasonal inspiration, and useful tips to help you enjoy healthier greenery and make every garden space feel more alive."
+    }
   },
   "plastic-pot": {
-    "title": "Plastic pot",
-    "description": "A versatile Plastic pot perfect for seedlings, herbs, or small shrubs, this sturdy container offers easy drainage and a sleek modern look. Its lightweight design makes it simple to move around your garden or indoor space, while the durable plastic ensures long‑lasting use. Ideal for adding a touch of organization into any Pots and Planters collection, it fits seamlessly into a variety of décor styles."
+    "title": "Plastic Pot",
+    "description": "Give your plants a simple, practical home with the plastic pot. Its lightweight design makes moving and arranging plants easy, while its clean look fits naturally into balconies, patios, shelves, and garden spaces. Whether you are growing flowers, herbs, or leafy plants, it helps you create an organized display without adding extra fuss to your daily plant care.",
+    "hero": {
+      "eyebrow": "Light, Practical, Plant Ready",
+      "title": "Make Space for More Greenery",
+      "description": "Add effortless style to your plant collection with a practical plastic pot that is easy to place, move, and enjoy in any indoor or outdoor space."
+    },
+    "siteCta": {
+      "title": "READY TO MAKE ROOM FOR MORE PLANTS?",
+      "insightsEyebrow": "Plant Inspiration",
+      "insightsTitle": "Simple Ideas for Greener Spaces",
+      "insightsBody": "Discover fresh plant ideas, useful care tips, and seasonal inspiration to help you create beautiful green corners and enjoy your plants with ease."
+    }
   },
   "terracotta-pot": {
-    "title": "Terracotta pot",
-    "description": "The Terracotta pot is a classic, earthenware container perfect for herbs, seedlings, or small flowering plants, adding a warm, natural look to any garden space; its sturdy shape makes it suitable for both indoor windowsills and"
+    "title": "Terracotta Pot",
+    "description": "Give your plants a classic home with the terracotta pot. Its warm, earthy look adds natural character to your space and pairs beautifully with flowers, herbs, and leafy plants. Place it on a balcony, patio, shelf, or garden corner to create a welcoming display that feels simple, relaxed, and full of charm. It is a lovely choice for everyday greenery today.",
+    "hero": {
+      "eyebrow": "Earthy Charm, Naturally Beautiful",
+      "title": "Bring Warmth to Your Plant Display",
+      "description": "Add a warm, natural feel to your greenery with a terracotta pot that brings earthy character and timeless charm to patios, gardens, and home spaces."
+    },
+    "siteCta": {
+      "title": "READY TO ADD A NATURAL TOUCH TO YOUR PLANT DISPLAY?",
+      "insightsEyebrow": "For Every Plant Lover",
+      "insightsTitle": "Make Room for More Green",
+      "insightsBody": "Explore helpful plant care ideas, seasonal inspiration, and easy ways to bring more life into your surroundings. Simple guidance to help you enjoy your plants every day."
+    }
   },
   "agave": {
     "title": "Agave",
