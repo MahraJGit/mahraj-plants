@@ -62,7 +62,7 @@ export default function RelatedProducts({
                                     alt={product.title}
                                     fill
                                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                                    className="object-contain transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105"
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105"
                                 />
                                 <div
                                     className={cn(

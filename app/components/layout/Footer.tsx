@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
     FaFacebookF,
-    FaGooglePlusG,
     FaInstagram,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -26,7 +25,6 @@ const socialLinks = [
     { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true },
     { label: "Twitter", href: X_HREF, Icon: FaXTwitter, external: true },
     { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true },
-    { label: "Google Plus", href: "#", Icon: FaGooglePlusG, external: true },
 ];
 
 type FooterLink = {

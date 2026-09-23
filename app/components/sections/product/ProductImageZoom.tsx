@@ -51,7 +51,7 @@ export default function ProductImageZoom({ src, alt }: ProductImageZoomProps) {
                 priority
                 sizes="384px"
                 className={cn(
-                    "object-contain will-change-transform",
+                    "object-cover will-change-transform",
                     "transition-transform duration-200 ease-out motion-reduce:transition-none",
                 )}
                 style={{

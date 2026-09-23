@@ -267,7 +267,7 @@ export default function WhyUs() {
                             </div>
 
                             <Link
-                                href="/contact-us"
+                                href="/contact-us#contact-form"
                                 className="w-full cursor-pointer rounded-lg bg-primary px-6 py-3.5 text-sm font-medium text-white transition hover:bg-primary/90 sm:mt-auto"
                             >
                                 {tCommon("freeQuote")}

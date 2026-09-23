@@ -182,7 +182,7 @@ export default function Hero() {
                         <p
                             dir={locale === "ar" ? "rtl" : "ltr"}
                             className={cn(
-                                "text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg",
+                                "p-3 text-justify text-sm leading-relaxed text-white/90 sm:p-4 sm:text-base lg:text-lg",
                                 slide.align === "center"
                                     ? "max-w-2xl"
                                     : "max-w-lg",

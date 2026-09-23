@@ -319,31 +319,34 @@
     "legalNavLabel": "روابط قانونية",
     "services": [
       {
-        "label": "تصميم وتخطيط المناظر الطبيعية",
-        "href": "/our-services/landscape-design-planning"
+        "label": "خدمات تنسيق الحدائق",
+        "href": "/our-services/landscaping-services"
       },
       {
-        "label": "حلول الري والصرف",
-        "href": "/our-services/irrigation-drainage-solutions"
+        "label": "خدمات المشاتل والنباتات",
+        "href": "/our-services/nursery-plant-services"
       },
       {
-        "label": "باقات الصيانة الخضراء",
-        "href": "/our-services/green-maintenance-packages"
+        "label": "الخدمات الخضراء المتخصصة",
+        "href": "/our-services/specialized-green-services"
       },
       {
-        "label": "التشجير الصلب والإضاءة",
-        "href": "/our-services/hardscaping-lighting"
+        "label": "العناية والصيانة المستمرة",
+        "href": "/our-services/ongoing-care-maintenance"
       },
       {
-        "label": "البستنة وترقية النباتات",
-        "href": "/our-services/gardening-plant-upgrade"
+        "label": "النباتات الخارجية",
+        "href": "/our-services/outdoor-plants"
+      },
+      {
+        "label": "النباتات المزهرة",
+        "href": "/our-services/flowering-plants"
       }
     ],
     "usefulLinks": [
       {
         "label": "الرئيسية",
-        "href": "/#hero",
-        "highlighted": true
+        "href": "/#hero"
       },
       {
         "label": "من نحن",
@@ -356,14 +359,6 @@
       {
         "label": "أبرز المشاريع",
         "href": "/projects"
-      },
-      {
-        "label": "المعرض",
-        "href": "/projects"
-      },
-      {
-        "label": "باقات الأسعار",
-        "href": "/#consultation"
       }
     ],
     "legalLinks": [

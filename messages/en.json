@@ -319,31 +319,34 @@
     "legalNavLabel": "Legal links",
     "services": [
       {
-        "label": "Landscape Design & Planning",
-        "href": "/our-services/landscape-design-planning"
+        "label": "Landscaping Services",
+        "href": "/our-services/landscaping-services"
       },
       {
-        "label": "Irrigation & Drainage Solutions",
-        "href": "/our-services/irrigation-drainage-solutions"
+        "label": "Nursery & Plant Services",
+        "href": "/our-services/nursery-plant-services"
       },
       {
-        "label": "Green Maintenance Packages",
-        "href": "/our-services/green-maintenance-packages"
+        "label": "Specialized Green Services",
+        "href": "/our-services/specialized-green-services"
       },
       {
-        "label": "Hardscaping & Lighting",
-        "href": "/our-services/hardscaping-lighting"
+        "label": "Ongoing Care & Maintenance",
+        "href": "/our-services/ongoing-care-maintenance"
       },
       {
-        "label": "Gardening & Plant Upgrade",
-        "href": "/our-services/gardening-plant-upgrade"
+        "label": "Outdoor Plants",
+        "href": "/our-services/outdoor-plants"
+      },
+      {
+        "label": "Flowering Plants",
+        "href": "/our-services/flowering-plants"
       }
     ],
     "usefulLinks": [
       {
         "label": "Home",
-        "href": "/#hero",
-        "highlighted": true
+        "href": "/#hero"
       },
       {
         "label": "About us",
@@ -356,14 +359,6 @@
       {
         "label": "Feature Projects",
         "href": "/projects"
-      },
-      {
-        "label": "Gallery",
-        "href": "/projects"
-      },
-      {
-        "label": "Pricing Packages",
-        "href": "/#consultation"
       }
     ],
     "legalLinks": [
@@ -530,7 +525,6 @@
           "title": "READY TO GEAR UP FOR YOUR NEXT PROJECT?",
           "insightsEyebrow": "Tools & Tips, Together",
           "insightsTitle": "Stay Sharp, Stay Ready",
-          "secondaryTitle": "Stay In The Green",
           "insightsBody": "Get tool care tips, seasonal must haves, and smart picks for every garden job, delivered straight to your inbox."
         }
       },
@@ -570,7 +564,7 @@
       "outdoor-plants": {
         "label": "Outdoor Plants",
         "tagline": "Let Your Garden Come Alive",
-        "title": "Bring More Life to the Outdoors",
+        "title": "Outdoor Plants",
         "description": "Give your outdoor spaces a lively new look with plants chosen for patios, balconies, gardens, and open areas that deserve more natural color and character.",
         "stats": [
           {
