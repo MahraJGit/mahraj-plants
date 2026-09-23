@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/app/lib/utils";
+import { useTranslations } from "@/app/lib/i18n";
 
 export type Service = {
     slug?: string;
@@ -42,6 +45,7 @@ export default function ServiceCard({
     href,
     className,
 }: ServiceCardProps) {
+    const { t } = useTranslations("common");
     const targetHref = href || (service.slug ? `/our-services/${service.slug}` : "#");
 
     return (
@@ -101,7 +105,7 @@ export default function ServiceCard({
                     <div className="mt-2 border-t border-dashed border-primary/20 pt-5">
                         <div className="flex items-center justify-between gap-4">
                             <span className="text-sm font-medium text-primary transition-colors group-hover/card:text-secondary">
-                                Read More
+                                {t("readMore")}
                             </span>
                             <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary text-white transition-transform group-hover/card:scale-105 rtl:rotate-180">
                                 <svg

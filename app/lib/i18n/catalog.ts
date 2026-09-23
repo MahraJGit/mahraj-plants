@@ -47,10 +47,20 @@ export function getCatalogEntry(
         return entry;
     }
 
-    return {
-        ...entry,
+    const localizedEntry = {
         ...categoryEntry,
+        ...entry,
     };
+
+    if (locale === "ar") {
+        return {
+            ...localizedEntry,
+            hero: entry.hero,
+            siteCta: entry.siteCta,
+        };
+    }
+
+    return localizedEntry;
 }
 
 export function localizeProduct(product: Product, locale: Locale): Product {

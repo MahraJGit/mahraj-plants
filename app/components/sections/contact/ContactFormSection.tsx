@@ -6,10 +6,10 @@ import { FormEvent, useState } from "react";
 import {
     FaFacebookF,
     FaInstagram,
-    FaLinkedinIn,
     FaPhoneAlt,
     FaStar,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import {
     HiChevronRight,
     HiOutlineClock,
@@ -21,6 +21,7 @@ import { cn } from "@/app/lib/utils";
 import {
     FACEBOOK_HREF,
     INSTAGRAM_HREF,
+    X_HREF,
     EMAIL_DISPLAY,
     EMAIL_HREF,
     PHONE_DISPLAY,
@@ -31,7 +32,7 @@ import { useTodayHours } from "@/app/lib/i18n/use-operating-hours";
 const socialLinks = [
     { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true },
     { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true },
-    { label: "LinkedIn", href: "#", Icon: FaLinkedinIn, external: true },
+    { label: "Twitter", href: X_HREF, Icon: FaXTwitter, external: true },
 ] as const;
 
 const inputClassName =

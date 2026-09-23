@@ -36,7 +36,7 @@ export const products: Product[] = [
     title: `Patio Umbrella`,
     description:
       `Add a cool, comfy shade to your outdoor space with this Patio Umbrella, a stylish and sturdy pick made for garden days. Great for dining outside, relaxing in the sun, or hosting friends, it sets up easily and stands strong in any weather. Choose this simple, practical addition to enjoy your patio in comfort, rain or shine, all season long.`,
-    image: `/products/garden-supplies/patio-umbrella.webp`,
+    image: `/products/garden-supplies/stone-path.webp`,
     category_id: `3c2dd32a-e053-51e7-b840-6f75ae2e63cb`,
   },
   {
@@ -72,7 +72,7 @@ export const products: Product[] = [
     title: `Stepping Stone`,
     description:
       `A path can change the whole feel of your garden. These stepping stones are simple to lay, easy to walk on, and strong enough to handle daily use outdoors. Great for lawns, flower beds, or quiet corners, they add a clean, natural look to any space. Pick this easy upgrade and give your garden a path that lasts.`,
-    image: `/products/garden-supplies/stepping-stone.webp`,
+    image: `/products/garden-supplies/patio-umbrella.webp`,
     category_id: `3c2dd32a-e053-51e7-b840-6f75ae2e63cb`,
   },
   {

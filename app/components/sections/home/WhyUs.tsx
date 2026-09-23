@@ -266,12 +266,12 @@ export default function WhyUs() {
                                 </a>
                             </div>
 
-                            <button
-                                type="button"
+                            <Link
+                                href="/contact-us"
                                 className="w-full cursor-pointer rounded-lg bg-primary px-6 py-3.5 text-sm font-medium text-white transition hover:bg-primary/90 sm:mt-auto"
                             >
                                 {tCommon("freeQuote")}
-                            </button>
+                            </Link>
                         </article>
                     </div>
                 </div>

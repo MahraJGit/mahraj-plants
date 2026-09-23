@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { adminBlogToRow } from "@/app/lib/blogs/types";
 import { createClient } from "@/app/lib/supabase/server";
-import type { AdminBlog } from "@/app/lib/admin/schema";
+import type { AdminBlog, BlogStatus } from "@/app/lib/admin/schema";
 import { validateBlog } from "@/app/lib/admin/validation";
 
 export type BlogSaveResult = {
@@ -69,10 +69,12 @@ export async function saveBlogAction(
         revalidateBlogPaths(blog.slug);
     }
 
-    redirect(`/admin/blogs/${payload.slug}`);
+    redirect("/admin/blogs");
 }
 
-export async function deleteBlogAction(id: string, slug: string) {
+export async function deleteBlogAction(formData: FormData) {
+    const id = String(formData.get("id") ?? "");
+    const slug = String(formData.get("slug") ?? "");
     const supabase = await createClient();
     const {
         data: { user },
@@ -83,6 +85,29 @@ export async function deleteBlogAction(id: string, slug: string) {
     }
 
     await supabase.from("blogs").delete().eq("id", id);
+    revalidateBlogPaths(slug);
+    redirect("/admin/blogs");
+}
+
+export async function setBlogStatusAction(formData: FormData) {
+    const id = String(formData.get("id") ?? "");
+    const slug = String(formData.get("slug") ?? "");
+    const status = formData.get("status");
+
+    if (!id || !slug || !["draft", "published", "archived"].includes(String(status))) {
+        redirect("/admin/blogs");
+    }
+
+    const supabase = await createClient();
+    const {
+        data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) {
+        redirect("/admin");
+    }
+
+    await supabase.from("blogs").update({ status: status as BlogStatus }).eq("id", id);
     revalidateBlogPaths(slug);
     redirect("/admin/blogs");
 }

@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/app/lib/utils";
+import { useTranslations } from "@/app/lib/i18n";
 
 export type Category = {
     title: string;
@@ -19,6 +22,8 @@ export default function CategoryCard({
     category,
     className,
 }: CategoryCardProps) {
+    const { locale, t } = useTranslations("common");
+
     return (
         <Link
             href={category.href}
@@ -60,12 +65,15 @@ export default function CategoryCard({
             </p>
 
             <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-secondary opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 [@media(hover:none)]:opacity-100">
-                View collection
+                {t("viewCollection")}
                 <svg
                     viewBox="0 0 16 16"
                     fill="none"
                     aria-hidden
-                    className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5"
+                    className={cn(
+                        "size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5",
+                        locale === "ar" && "rotate-180",
+                    )}
                 >
                     <path
                         d="M3 8h10M9 4l4 4-4 4"

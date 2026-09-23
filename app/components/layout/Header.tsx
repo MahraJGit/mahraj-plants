@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
     FaFacebookF,
-    FaGooglePlusG,
     FaInstagram,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -26,7 +25,6 @@ const socialLinks = [
     { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF, external: true, target: "_blank" },
     { label: "Twitter", href: X_HREF, Icon: FaXTwitter, external: true, target: "_blank" },
     { label: "Instagram", href: INSTAGRAM_HREF, Icon: FaInstagram, external: true, target: "_blank" },
-    { label: "Google Plus", href: "#", Icon: FaGooglePlusG, external: true, target: "_blank" },
 ];
 
 const languages = [
