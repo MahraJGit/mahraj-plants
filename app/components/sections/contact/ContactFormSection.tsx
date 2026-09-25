@@ -43,6 +43,9 @@ export default function ContactFormSection() {
     const { t: tNav } = useTranslations("nav");
     const { t: tHours } = useTranslations("operatingHours");
     const todayHours = useTodayHours();
+    const [submissionStatus, setSubmissionStatus] = useState<
+        "idle" | "submitting" | "success" | "error"
+    >("idle");
     const [form, setForm] = useState({
         name: "",
         address: "",
@@ -87,15 +90,40 @@ export default function ContactFormSection() {
         },
     ] as const;
 
-    function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        setForm({
-            name: "",
-            address: "",
-            email: "",
-            phone: "",
-            message: "",
-        });
+        setSubmissionStatus("submitting");
+
+        const payload = new FormData(event.currentTarget);
+        payload.append(
+            "access_key",
+            process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "",
+        );
+        payload.append("subject", "New contact form submission");
+        payload.append("from_name", "Mahraj Landscaping website");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: payload,
+            });
+            const result = (await response.json()) as { success?: boolean };
+
+            if (!response.ok || !result.success) {
+                throw new Error("Web3Forms submission failed");
+            }
+
+            setSubmissionStatus("success");
+            setForm({
+                name: "",
+                address: "",
+                email: "",
+                phone: "",
+                message: "",
+            });
+        } catch {
+            setSubmissionStatus("error");
+        }
     }
 
     return (
@@ -359,19 +387,29 @@ export default function ContactFormSection() {
                                 />
 
                                 <div className="mt-auto flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-                                    <p className="flex items-center gap-2 text-sm italic text-white/85">
+                                    <p
+                                        aria-live="polite"
+                                        className="flex items-center gap-2 text-sm italic text-white/85"
+                                    >
                                         <FaStar
                                             aria-hidden
                                             className="size-3.5 shrink-0 text-white"
                                         />
-                                        {t("form.privacy")}
+                                        {submissionStatus === "success"
+                                            ? t("form.success")
+                                            : submissionStatus === "error"
+                                              ? t("form.error")
+                                              : t("form.privacy")}
                                     </p>
 
                                     <button
                                         type="submit"
+                                        disabled={submissionStatus === "submitting"}
                                         className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#E8C84A] to-[#C4A035] px-6 py-3.5 text-sm font-semibold text-primary transition hover:brightness-105 sm:px-7 sm:text-base"
                                     >
-                                        {t("form.submit")}
+                                        {submissionStatus === "submitting"
+                                            ? t("form.submitting")
+                                            : t("form.submit")}
                                         <HiChevronRight
                                             aria-hidden
                                             className="size-5"

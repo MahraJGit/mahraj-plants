@@ -731,7 +731,10 @@
       "message": "Message",
       "messagePlaceholder": "Your Message Here...",
       "privacy": "Your information stays safe with us.",
-      "submit": "Submit Now"
+      "submit": "Submit Now",
+      "submitting": "Sending...",
+      "success": "Thanks, your message has been sent.",
+      "error": "We could not send your message. Please try again."
     },
     "map": {
       "ariaLabel": "Mahraj Landscaping nursery location map",
