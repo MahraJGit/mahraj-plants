@@ -102,6 +102,20 @@ export default function BlogEditorForm({
                                 patch({ excerpt: event.target.value })
                             }
                         />
+
+                        <AdminTextarea
+                            id="blog-meta-description"
+                            label="Meta description"
+                            rows={3}
+                            maxLength={160}
+                            value={blog.metaDescription}
+                            error={errors.metaDescription}
+                            hint={`${blog.metaDescription.length}/160 characters. This is the snippet search engines show. Leave it blank to use the short description.`}
+                            placeholder="A sentence for Google and other search results"
+                            onChange={(event) =>
+                                patch({ metaDescription: event.target.value })
+                            }
+                        />
                     </div>
                 </section>
 

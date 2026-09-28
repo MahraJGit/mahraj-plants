@@ -29,6 +29,7 @@ export function createEmptyAdminBlog(): AdminBlog {
         slug: "",
         title: "",
         excerpt: "",
+        metaDescription: "",
         image: "",
         alt: "",
         day: String(new Date().getDate()).padStart(2, "0"),

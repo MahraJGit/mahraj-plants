@@ -49,10 +49,11 @@ export async function generateMetadata({
 
     const localized = localizeBlog(article, locale);
     const publishedTime = blogDateIso(article);
+    const description = localized.metaDescription.trim() || localized.excerpt;
 
     return buildPageMetadata({
         title: messages.detail.metaTitle.replace("{blog}", localized.title),
-        description: localized.excerpt,
+        description,
         path: `/blogs/${slug}`,
         locale,
         image: localized.image,
@@ -77,6 +78,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     const localized = localizeBlog(article, locale);
     const latestPosts = await getLatestPublishedBlogs(3);
     const title = messages.detail.metaTitle.replace("{blog}", localized.title);
+    const description = localized.metaDescription.trim() || localized.excerpt;
 
     return (
         <>
@@ -86,10 +88,10 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     websiteJsonLd(),
                     webPageJsonLd({
                         title,
-                        description: localized.excerpt,
+                        description,
                         path: `/blogs/${slug}`,
                     }),
-                    articleJsonLd(localized, localized.excerpt),
+                    articleJsonLd(localized, description),
                     breadcrumbJsonLd([
                         { name: dictionary.nav.home, path: "/" },
                         { name: dictionary.nav.blogs, path: "/blogs" },

@@ -17,6 +17,7 @@ import {
     INSTAGRAM_HREF,
     getWhatsAppHref,
 } from "@/app/lib/contact";
+import { expandHtmlSnippets } from "@/app/lib/blogs/html-snippet";
 
 const shareLinks = [
     { label: "Facebook", href: FACEBOOK_HREF, Icon: FaFacebookF },
@@ -50,7 +51,7 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
 
             <div
                 className="blog-article-body mt-8 sm:mt-10"
-                dangerouslySetInnerHTML={{ __html: localized.content }}
+                dangerouslySetInnerHTML={{ __html: expandHtmlSnippets(localized.content) }}
             />
 
             <footer className="mt-10 flex flex-col gap-5 border-t border-dashed border-primary/15 pt-6 sm:flex-row sm:items-center sm:justify-between">

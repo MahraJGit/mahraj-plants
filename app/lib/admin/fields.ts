@@ -49,6 +49,13 @@ export const BLOG_FIELD_DEFS: AdminFieldDef[] = [
         required: true,
     },
     {
+        key: "metaDescription",
+        label: "Meta description",
+        group: "identity",
+        surfaces: ["detail-hero"],
+        input: "textarea",
+    },
+    {
         key: "image",
         label: "Cover image",
         group: "media",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
@@ -8,11 +8,15 @@ import Link from "@tiptap/extension-link";
 import Placeholder from "@tiptap/extension-placeholder";
 import Underline from "@tiptap/extension-underline";
 import {
+    HiOutlineCode,
     HiOutlineLink,
     HiOutlinePhotograph,
 } from "react-icons/hi";
 import { cn } from "@/app/lib/utils";
+import { sanitizeHtmlSnippet } from "@/app/lib/blogs/html-snippet";
+import AdminButton from "@/app/components/admin/ui/AdminButton";
 import { readImageFiles } from "./AdminMedia";
+import { HtmlSnippet } from "./HtmlSnippet";
 
 type RichTextEditorProps = {
     value: string;
@@ -31,6 +35,10 @@ export default function RichTextEditor({
     onChange,
 }: RichTextEditorProps) {
     const imageInputRef = useRef<HTMLInputElement>(null);
+    const [snippetOpen, setSnippetOpen] = useState(false);
+    const [snippetDraft, setSnippetDraft] = useState("");
+    const [snippetError, setSnippetError] = useState("");
+    const [snippetExisting, setSnippetExisting] = useState(false);
 
     const editor = useEditor({
         immediatelyRender: false,
@@ -46,6 +54,7 @@ export default function RichTextEditor({
                 placeholder: "Write your article…",
             }),
             Image.configure({ allowBase64: true }),
+            HtmlSnippet,
         ],
         content: value,
         onUpdate: ({ editor: instance }) => onChange(instance.getHTML()),
@@ -64,6 +73,83 @@ export default function RichTextEditor({
         });
     }
 
+    useEffect(() => {
+        if (!editor) return;
+        editor.storage.htmlSnippet.openEditor = (html, existing) => {
+            setSnippetDraft(html);
+            setSnippetExisting(existing);
+            setSnippetError("");
+            setSnippetOpen(true);
+        };
+    }, [editor]);
+
+    useEffect(() => {
+        if (!snippetOpen) return;
+        function onKeyDown(event: KeyboardEvent) {
+            if (event.key === "Escape") setSnippetOpen(false);
+        }
+        window.addEventListener("keydown", onKeyDown);
+        return () => window.removeEventListener("keydown", onKeyDown);
+    }, [snippetOpen]);
+
+    function openHtmlSnippet() {
+        if (!editor) return;
+        const existing = editor.isActive("htmlSnippet");
+        editor.storage.htmlSnippet.openEditor(
+            existing ? String(editor.getAttributes("htmlSnippet").html ?? "") : "",
+            existing,
+        );
+    }
+
+    function saveHtmlSnippet() {
+        if (!editor) return;
+        const clean = sanitizeHtmlSnippet(snippetDraft);
+        if (!clean) {
+            setSnippetError("Paste HTML, such as a table.");
+            return;
+        }
+
+        if (snippetExisting && editor.isActive("htmlSnippet")) {
+            editor.chain().focus().updateAttributes("htmlSnippet", { html: clean }).run();
+        } else {
+            editor
+                .chain()
+                .focus()
+                .insertContent({ type: "htmlSnippet", attrs: { html: clean } })
+                .run();
+        }
+
+        setSnippetOpen(false);
+    }
+
+    function removeHtmlSnippet() {
+        if (!editor) return;
+        editor.chain().focus().deleteSelection().run();
+        setSnippetOpen(false);
+    }
+
+    function applyHeading(level: 1 | 2 | 3) {
+        if (!editor) return;
+
+        if (editor.isActive("codeBlock")) {
+            const text = editor.state.selection.$from.parent.textContent.trim();
+            const wrapped = text.match(/^<h[1-6]>([\s\S]*)<\/h[1-6]>$/i);
+            editor.chain().focus().toggleCodeBlock().run();
+            if (wrapped) {
+                const from = editor.state.selection.$from.start();
+                const to = editor.state.selection.$from.end();
+                editor.chain().focus().insertContentAt({ from, to }, wrapped[1]).run();
+            }
+        }
+
+        if (editor.isActive("heading", { level })) {
+            editor.chain().focus().setParagraph().run();
+            return;
+        }
+
+        editor.chain().focus().setHeading({ level }).run();
+    }
+
     function addLink() {
         if (!editor) return;
         const previous = editor.getAttributes("link").href as string | undefined;
@@ -79,12 +165,12 @@ export default function RichTextEditor({
     return (
         <section
             className={cn(
-                "flex flex-col overflow-hidden rounded-[1.5rem] border bg-white",
-                fill && "h-full min-h-[28rem]",
+                "flex flex-col rounded-[1.5rem] border bg-white",
+                fill && "min-h-[28rem] flex-1",
                 error ? "border-red-400" : "border-primary/8",
             )}
         >
-            <div className="flex flex-wrap items-center gap-1 border-b border-primary/8 px-5 py-2.5">
+            <div className="sticky top-4 z-20 flex flex-wrap items-center gap-1 rounded-t-[1.5rem] border-b border-primary/8 bg-white px-5 py-2.5">
                 <ToolbarButton
                     label="Bold"
                     active={editor?.isActive("bold")}
@@ -107,20 +193,23 @@ export default function RichTextEditor({
                     U
                 </ToolbarButton>
                 <ToolbarButton
+                    label="Heading 1"
+                    active={editor?.isActive("heading", { level: 1 })}
+                    onClick={() => applyHeading(1)}
+                >
+                    H1
+                </ToolbarButton>
+                <ToolbarButton
                     label="Heading 2"
                     active={editor?.isActive("heading", { level: 2 })}
-                    onClick={() =>
-                        editor?.chain().focus().toggleHeading({ level: 2 }).run()
-                    }
+                    onClick={() => applyHeading(2)}
                 >
                     H2
                 </ToolbarButton>
                 <ToolbarButton
                     label="Heading 3"
                     active={editor?.isActive("heading", { level: 3 })}
-                    onClick={() =>
-                        editor?.chain().focus().toggleHeading({ level: 3 }).run()
-                    }
+                    onClick={() => applyHeading(3)}
                 >
                     H3
                 </ToolbarButton>
@@ -144,6 +233,21 @@ export default function RichTextEditor({
                     onClick={() => editor?.chain().focus().toggleBlockquote().run()}
                 >
                     “
+                </ToolbarButton>
+                <ToolbarButton
+                    label="Code"
+                    active={editor?.isActive("codeBlock")}
+                    onClick={() => editor?.chain().focus().toggleCodeBlock().run()}
+                >
+                    <HiOutlineCode aria-hidden className="size-4" />
+                </ToolbarButton>
+                <ToolbarButton
+                    label="Insert HTML snippet"
+                    active={editor?.isActive("htmlSnippet")}
+                    onClick={openHtmlSnippet}
+                    className="w-auto px-2"
+                >
+                    <span className="text-[10px] tracking-tight">HTML</span>
                 </ToolbarButton>
                 <button type="button" aria-label="Insert link" onClick={addLink} className={toolbarBtn}>
                     <HiOutlineLink aria-hidden className="size-4" />
@@ -170,13 +274,28 @@ export default function RichTextEditor({
                 }}
             />
 
-            <div className={cn("admin-rte", fill && "min-h-0 flex-1")}>
+            <div className={cn("admin-rte overflow-hidden rounded-b-[1.5rem]", fill && "min-h-0 flex-1")}>
                 <EditorContent editor={editor} />
             </div>
             {error ? (
                 <p className="border-t border-red-100 px-5 py-2 text-xs text-red-600">
                     {error}
                 </p>
+            ) : null}
+
+            {snippetOpen ? (
+                <HtmlSnippetDialog
+                    value={snippetDraft}
+                    error={snippetError}
+                    existing={snippetExisting}
+                    onChange={(value) => {
+                        setSnippetDraft(value);
+                        setSnippetError("");
+                    }}
+                    onClose={() => setSnippetOpen(false)}
+                    onSave={saveHtmlSnippet}
+                    onRemove={removeHtmlSnippet}
+                />
             ) : null}
         </section>
     );
@@ -187,20 +306,117 @@ function ToolbarButton({
     label,
     active,
     onClick,
+    className,
 }: {
     children: React.ReactNode;
     label: string;
     active?: boolean;
     onClick: () => void;
+    className?: string;
 }) {
     return (
         <button
             type="button"
             aria-label={label}
             onClick={onClick}
-            className={cn(toolbarBtn, active && "bg-cream text-primary")}
+            className={cn(toolbarBtn, active && "bg-cream text-primary", className)}
         >
             {children}
         </button>
+    );
+}
+
+const snippetPlaceholder = `<table>
+  <thead>
+    <tr><th>Plant</th><th>Water</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Rose</td><td>Twice a week</td></tr>
+  </tbody>
+</table>`;
+
+function HtmlSnippetDialog({
+    value,
+    error,
+    existing,
+    onChange,
+    onClose,
+    onSave,
+    onRemove,
+}: {
+    value: string;
+    error: string;
+    existing: boolean;
+    onChange: (value: string) => void;
+    onClose: () => void;
+    onSave: () => void;
+    onRemove: () => void;
+}) {
+    const preview = sanitizeHtmlSnippet(value);
+
+    return (
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-primary/40 p-4 sm:items-center">
+            <button
+                type="button"
+                aria-label="Close HTML snippet"
+                className="absolute inset-0 cursor-default"
+                onClick={onClose}
+            />
+            <div
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="html-snippet-title"
+                className="relative z-10 flex max-h-[min(40rem,calc(100vh-2rem))] w-full max-w-2xl flex-col overflow-hidden rounded-[1.5rem] bg-white shadow-[0_20px_60px_rgba(10,37,14,0.18)]"
+            >
+                <div className="border-b border-primary/8 px-5 py-4">
+                    <h2 id="html-snippet-title" className="text-lg font-bold text-primary">
+                        Custom HTML
+                    </h2>
+                    <p className="mt-1 text-sm text-primary/60">
+                        Paste a table or any other HTML. It is rendered on the article. The code button still shows code as text.
+                    </p>
+                </div>
+                <div className="grid min-h-0 flex-1 gap-4 overflow-y-auto px-5 py-4">
+                    <label className="block">
+                        <span className="mb-2 block text-xs font-semibold text-primary">HTML</span>
+                        <textarea
+                            value={value}
+                            onChange={(event) => onChange(event.target.value)}
+                            placeholder={snippetPlaceholder}
+                            rows={8}
+                            className="w-full resize-y rounded-2xl border border-primary/10 bg-cream/40 px-3 py-3 font-mono text-xs leading-5 text-primary outline-none focus:border-secondary"
+                            autoFocus
+                        />
+                    </label>
+                    {error ? <p className="text-xs text-red-600">{error}</p> : null}
+                    {preview ? (
+                        <div>
+                            <p className="mb-2 text-xs font-semibold text-primary">Preview</p>
+                            <div
+                                className="blog-custom-html rounded-2xl border border-primary/8 bg-white p-3"
+                                dangerouslySetInnerHTML={{ __html: preview }}
+                            />
+                        </div>
+                    ) : null}
+                </div>
+                <div className="flex flex-wrap items-center justify-between gap-3 border-t border-primary/8 px-5 py-4">
+                    {existing ? (
+                        <AdminButton variant="danger" size="sm" onClick={onRemove}>
+                            Remove
+                        </AdminButton>
+                    ) : (
+                        <span />
+                    )}
+                    <div className="flex items-center gap-2">
+                        <AdminButton variant="ghost" size="sm" onClick={onClose}>
+                            Cancel
+                        </AdminButton>
+                        <AdminButton size="sm" onClick={onSave}>
+                            {existing ? "Update" : "Insert"}
+                        </AdminButton>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 }

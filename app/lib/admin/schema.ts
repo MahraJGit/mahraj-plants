@@ -94,6 +94,7 @@ export type AdminBlog = BlogCardFields & {
     year: number;
     publishedAt: string;
     content: string;
+    metaDescription: string;
     body: BlogBodyFields;
     commentsList: AdminBlogComment[];
     createdAt: string;
