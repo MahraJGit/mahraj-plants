@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import FillImage from "@/app/components/ui/FillImage";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useMemo } from "react";
@@ -164,10 +165,9 @@ export default function BlogSidebar({
                                 className="group flex gap-3 outline-none"
                             >
                                 <div className="relative size-16 shrink-0 overflow-hidden rounded-xl">
-                                    <Image
+                                    <FillImage
                                         src={post.image}
                                         alt={post.alt}
-                                        fill
                                         sizes="64px"
                                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                                     />

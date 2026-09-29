@@ -5,6 +5,7 @@ import type { AdminBlog } from "@/app/lib/admin/schema";
 import { saveBlogAction } from "@/app/lib/admin/blog-actions";
 import { datePartsFromIso } from "@/app/lib/admin/dates";
 import { slugify, validateBlog } from "@/app/lib/admin/validation";
+import { replaceEmbeddedImages } from "@/app/lib/blogs/upload-image";
 import AdminNotice from "@/app/components/admin/ui/AdminNotice";
 import { AdminInput, AdminTextarea } from "@/app/components/admin/ui/AdminField";
 import BlogEditorSidebar from "./BlogEditorSidebar";
@@ -50,10 +51,20 @@ export default function BlogEditorForm({
         if (Object.keys(nextErrors).length > 0) return;
 
         startTransition(async () => {
-            const result = await saveBlogAction(blog, mode);
-            if (result && !result.ok) {
-                setFormError(result.message);
-                if (result.errors) setErrors(result.errors);
+            try {
+                const ready = await replaceEmbeddedImages(blog);
+                setBlog(ready);
+                const result = await saveBlogAction(ready, mode);
+                if (result && !result.ok) {
+                    setFormError(result.message);
+                    if (result.errors) setErrors(result.errors);
+                }
+            } catch (error) {
+                setFormError(
+                    error instanceof Error
+                        ? error.message
+                        : "The image could not be uploaded. Try again.",
+                );
             }
         });
     }

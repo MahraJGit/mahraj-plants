@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import FillImage from "@/app/components/ui/FillImage";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
@@ -86,10 +86,9 @@ export default function BlogsTable({ blogs }: BlogsTableProps) {
                                         className="flex items-center gap-3"
                                     >
                                         <span className="relative size-14 shrink-0 overflow-hidden rounded-xl">
-                                            <Image
+                                            <FillImage
                                                 src={blog.image}
                                                 alt={blog.alt}
-                                                fill
                                                 sizes="56px"
                                                 className="object-cover"
                                             />

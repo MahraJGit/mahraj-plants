@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import FillImage from "@/app/components/ui/FillImage";
 import {
     FaFacebookF,
     FaInstagram,
@@ -39,10 +39,9 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
     return (
         <article className="min-w-0">
             <div className="relative aspect-[16/10] overflow-hidden rounded-[1.75rem]">
-                <Image
+                <FillImage
                     src={localized.image}
                     alt={localized.alt}
-                    fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 70vw"
                     className="object-cover"

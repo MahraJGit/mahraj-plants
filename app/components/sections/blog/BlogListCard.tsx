@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import FillImage from "@/app/components/ui/FillImage";
 import Link from "next/link";
 import type { BlogArticle } from "@/app/lib/blogs/types";
 import {
@@ -27,10 +28,9 @@ export default function BlogListCard({ post }: BlogListCardProps) {
                 className="block p-4 outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 sm:p-5"
             >
                 <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
-                    <Image
+                    <FillImage
                         src={post.image}
                         alt={post.alt}
-                        fill
                         sizes="(max-width: 1024px) 100vw, 66vw"
                         className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                     />

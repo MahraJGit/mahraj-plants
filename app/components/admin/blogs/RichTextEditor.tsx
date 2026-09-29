@@ -16,7 +16,7 @@ import { HiOutlineListBullet, HiOutlineNumberedList } from "react-icons/hi2";
 import { cn } from "@/app/lib/utils";
 import { sanitizeHtmlSnippet } from "@/app/lib/blogs/html-snippet";
 import AdminButton from "@/app/components/admin/ui/AdminButton";
-import { readImageFiles } from "./AdminMedia";
+import { uploadBlogImage } from "@/app/lib/blogs/upload-image";
 import { HtmlSnippet } from "./HtmlSnippet";
 
 type RichTextEditorProps = {
@@ -40,6 +40,7 @@ export default function RichTextEditor({
     const [snippetDraft, setSnippetDraft] = useState("");
     const [snippetError, setSnippetError] = useState("");
     const [snippetExisting, setSnippetExisting] = useState(false);
+    const [imageError, setImageError] = useState("");
 
     const editor = useEditor({
         immediatelyRender: false,
@@ -68,10 +69,19 @@ export default function RichTextEditor({
 
     async function insertImages(files: FileList | null) {
         if (!files?.length || !editor) return;
-        const sources = await readImageFiles(files);
-        sources.forEach((src) => {
-            editor.chain().focus().setImage({ src }).run();
-        });
+        setImageError("");
+        for (const file of Array.from(files)) {
+            try {
+                const src = await uploadBlogImage(file);
+                editor.chain().focus().setImage({ src }).run();
+            } catch (error) {
+                setImageError(
+                    error instanceof Error
+                        ? error.message
+                        : "The image could not be uploaded. Try again.",
+                );
+            }
+        }
     }
 
     useEffect(() => {
@@ -272,6 +282,12 @@ export default function RichTextEditor({
                     event.target.value = "";
                 }}
             />
+
+            {imageError ? (
+                <p className="border-b border-red-100 px-5 py-2 text-xs text-red-600">
+                    {imageError}
+                </p>
+            ) : null}
 
             <div className={cn("admin-rte overflow-hidden rounded-b-[1.5rem]", fill && "min-h-0 flex-1")}>
                 <EditorContent editor={editor} />

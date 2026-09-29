@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { FieldShell, controlClass } from "@/app/components/admin/ui/AdminField";
-import AdminMedia, { readImageFiles } from "./AdminMedia";
+import { uploadBlogImage } from "@/app/lib/blogs/upload-image";
+import AdminMedia from "./AdminMedia";
 
 type FeaturedImageFieldProps = {
     src: string;
@@ -21,11 +22,26 @@ export default function FeaturedImageField({
     onChange,
 }: FeaturedImageFieldProps) {
     const inputRef = useRef<HTMLInputElement>(null);
+    const [uploading, setUploading] = useState(false);
+    const [uploadError, setUploadError] = useState("");
 
     async function onFileChange(files: FileList | null) {
-        if (!files?.length) return;
-        const [image] = await readImageFiles(files);
-        if (image) onChange({ image });
+        const file = files?.[0];
+        if (!file) return;
+        setUploading(true);
+        setUploadError("");
+        try {
+            const image = await uploadBlogImage(file);
+            onChange({ image });
+        } catch (error) {
+            setUploadError(
+                error instanceof Error
+                    ? error.message
+                    : "The image could not be uploaded. Try again.",
+            );
+        } finally {
+            setUploading(false);
+        }
     }
 
     return (
@@ -58,6 +74,11 @@ export default function FeaturedImageField({
                         </span>
                     </span>
                 )}
+                {uploading ? (
+                    <span className="absolute inset-0 flex items-center justify-center bg-primary/45 text-sm font-medium text-white">
+                        Uploading…
+                    </span>
+                ) : null}
             </button>
 
             <input
@@ -72,8 +93,8 @@ export default function FeaturedImageField({
             />
 
             <div className="space-y-3 px-5 pb-5">
-                {error ? (
-                    <p className="text-xs text-red-600">{error}</p>
+                {error || uploadError ? (
+                    <p className="text-xs text-red-600">{error || uploadError}</p>
                 ) : null}
                 <FieldShell label="Image alt text" error={altError} htmlFor="featured-alt">
                     <input

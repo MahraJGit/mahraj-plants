@@ -1,7 +1,9 @@
 export const blogCategories = [
     "Garden Supplies",
     "Garden Tools",
+    "Gardening",
     "Indoor Plants",
+    "Landscaping",
     "Outdoor Plants",
     "Pots and Planters",
     "Seasonal Flowers",
