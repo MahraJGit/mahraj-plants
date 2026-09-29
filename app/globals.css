@@ -211,7 +211,27 @@
 .admin-rte .tiptap ul,
 .admin-rte .tiptap ol {
   margin: 0.7rem 0;
-  padding-left: 1.4rem;
+  padding-left: 1.5rem;
+}
+
+.admin-rte .tiptap ul {
+  list-style: disc;
+}
+
+.admin-rte .tiptap ol {
+  list-style: decimal;
+}
+
+.admin-rte .tiptap li {
+  margin: 0.25rem 0;
+}
+
+.admin-rte .tiptap li p {
+  margin: 0;
+}
+
+.admin-rte .tiptap li::marker {
+  color: var(--color-primary);
 }
 
 .admin-rte .tiptap blockquote {
@@ -349,6 +369,10 @@
 .blog-article-body li {
   margin: 0.4rem 0;
   padding-left: 0.2rem;
+}
+
+.blog-article-body li > p {
+  margin: 0;
 }
 
 .blog-article-body li::marker {

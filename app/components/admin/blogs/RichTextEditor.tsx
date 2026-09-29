@@ -12,6 +12,7 @@ import {
     HiOutlineLink,
     HiOutlinePhotograph,
 } from "react-icons/hi";
+import { HiOutlineListBullet, HiOutlineNumberedList } from "react-icons/hi2";
 import { cn } from "@/app/lib/utils";
 import { sanitizeHtmlSnippet } from "@/app/lib/blogs/html-snippet";
 import AdminButton from "@/app/components/admin/ui/AdminButton";
@@ -218,14 +219,14 @@ export default function RichTextEditor({
                     active={editor?.isActive("bulletList")}
                     onClick={() => editor?.chain().focus().toggleBulletList().run()}
                 >
-                    ••
+                    <HiOutlineListBullet aria-hidden className="size-4" />
                 </ToolbarButton>
                 <ToolbarButton
                     label="Numbered list"
                     active={editor?.isActive("orderedList")}
                     onClick={() => editor?.chain().focus().toggleOrderedList().run()}
                 >
-                    1.
+                    <HiOutlineNumberedList aria-hidden className="size-4" />
                 </ToolbarButton>
                 <ToolbarButton
                     label="Quote"
@@ -235,31 +236,29 @@ export default function RichTextEditor({
                     “
                 </ToolbarButton>
                 <ToolbarButton
-                    label="Code"
+                    label="Code block"
                     active={editor?.isActive("codeBlock")}
                     onClick={() => editor?.chain().focus().toggleCodeBlock().run()}
                 >
                     <HiOutlineCode aria-hidden className="size-4" />
                 </ToolbarButton>
                 <ToolbarButton
-                    label="Insert HTML snippet"
+                    label="Custom HTML"
                     active={editor?.isActive("htmlSnippet")}
                     onClick={openHtmlSnippet}
                     className="w-auto px-2"
                 >
                     <span className="text-[10px] tracking-tight">HTML</span>
                 </ToolbarButton>
-                <button type="button" aria-label="Insert link" onClick={addLink} className={toolbarBtn}>
+                <ToolbarButton label="Insert link" onClick={addLink}>
                     <HiOutlineLink aria-hidden className="size-4" />
-                </button>
-                <button
-                    type="button"
-                    aria-label="Insert image"
+                </ToolbarButton>
+                <ToolbarButton
+                    label="Insert image"
                     onClick={() => imageInputRef.current?.click()}
-                    className={toolbarBtn}
                 >
                     <HiOutlinePhotograph aria-hidden className="size-4" />
-                </button>
+                </ToolbarButton>
             </div>
 
             <input
@@ -319,9 +318,20 @@ function ToolbarButton({
             type="button"
             aria-label={label}
             onClick={onClick}
-            className={cn(toolbarBtn, active && "bg-cream text-primary", className)}
+            className={cn(
+                toolbarBtn,
+                "group relative",
+                active && "bg-cream text-primary",
+                className,
+            )}
         >
             {children}
+            <span
+                role="tooltip"
+                className="pointer-events-none absolute top-full left-1/2 z-30 mt-1.5 hidden -translate-x-1/2 whitespace-nowrap rounded-md bg-primary px-2 py-1 text-[11px] font-medium tracking-normal text-white normal-case shadow-sm group-hover:block"
+            >
+                {label}
+            </span>
         </button>
     );
 }
