@@ -49,10 +49,13 @@ export async function generateMetadata({
 
     const localized = localizeBlog(article, locale);
     const publishedTime = blogDateIso(article);
+    const title =
+        localized.metaTitle.trim() ||
+        messages.detail.metaTitle.replace("{blog}", localized.title);
     const description = localized.metaDescription.trim() || localized.excerpt;
 
     return buildPageMetadata({
-        title: messages.detail.metaTitle.replace("{blog}", localized.title),
+        title,
         description,
         path: `/blogs/${slug}`,
         locale,
@@ -77,7 +80,9 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     const messages = getBlogsMessages(locale);
     const localized = localizeBlog(article, locale);
     const latestPosts = await getLatestPublishedBlogs(3);
-    const title = messages.detail.metaTitle.replace("{blog}", localized.title);
+    const title =
+        localized.metaTitle.trim() ||
+        messages.detail.metaTitle.replace("{blog}", localized.title);
     const description = localized.metaDescription.trim() || localized.excerpt;
 
     return (

@@ -6,7 +6,7 @@ import { saveBlogAction } from "@/app/lib/admin/blog-actions";
 import { datePartsFromIso } from "@/app/lib/admin/dates";
 import { slugify, validateBlog } from "@/app/lib/admin/validation";
 import AdminNotice from "@/app/components/admin/ui/AdminNotice";
-import { AdminTextarea } from "@/app/components/admin/ui/AdminField";
+import { AdminInput, AdminTextarea } from "@/app/components/admin/ui/AdminField";
 import BlogEditorSidebar from "./BlogEditorSidebar";
 import FeaturedImageField from "./FeaturedImageField";
 import RichTextEditor from "./RichTextEditor";
@@ -100,6 +100,19 @@ export default function BlogEditorForm({
                             placeholder="A brief summary shown on cards and previews"
                             onChange={(event) =>
                                 patch({ excerpt: event.target.value })
+                            }
+                        />
+
+                        <AdminInput
+                            id="blog-meta-title"
+                            label="Meta title"
+                            maxLength={60}
+                            value={blog.metaTitle}
+                            error={errors.metaTitle}
+                            hint={`${blog.metaTitle.length}/60 characters. This is the title search engines show. Leave it blank to use the post title.`}
+                            placeholder="Search result title"
+                            onChange={(event) =>
+                                patch({ metaTitle: event.target.value })
                             }
                         />
 

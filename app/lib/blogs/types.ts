@@ -8,6 +8,7 @@ export type BlogArticle = {
     title: string;
     excerpt: string;
     content: string;
+    metaTitle: string;
     metaDescription: string;
     image: string;
     alt: string;
@@ -30,6 +31,7 @@ export type BlogRow = {
     title: string;
     excerpt: string;
     content: string;
+    meta_title: string;
     meta_description: string;
     featured_image: string;
     featured_image_alt: string;
@@ -52,6 +54,7 @@ export function mapBlogRow(row: BlogRow): BlogArticle {
         title: row.title,
         excerpt: row.excerpt,
         content: row.content,
+        metaTitle: row.meta_title ?? "",
         metaDescription: row.meta_description ?? "",
         image: row.featured_image,
         alt: row.featured_image_alt,
@@ -75,6 +78,7 @@ export function toAdminBlog(article: BlogArticle): AdminBlog {
         slug: article.slug,
         title: article.title,
         excerpt: article.excerpt,
+        metaTitle: article.metaTitle,
         metaDescription: article.metaDescription,
         image: article.image,
         alt: article.alt,
@@ -101,6 +105,7 @@ export function adminBlogToRow(blog: AdminBlog) {
         title: blog.title.trim(),
         excerpt: blog.excerpt.trim(),
         content: blog.content,
+        meta_title: blog.metaTitle.trim(),
         meta_description: blog.metaDescription.trim(),
         featured_image: blog.image,
         featured_image_alt: blog.alt.trim(),

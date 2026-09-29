@@ -8,7 +8,7 @@ import {
 import type { BlogStatus } from "@/app/lib/admin/schema";
 
 const BLOG_COLUMNS =
-    "id, slug, title, excerpt, content, meta_description, featured_image, featured_image_alt, author, category, tags, status, published_at, created_at, updated_at";
+    "id, slug, title, excerpt, content, meta_title, meta_description, featured_image, featured_image_alt, author, category, tags, status, published_at, created_at, updated_at";
 
 export async function listPublishedBlogs(): Promise<BlogArticle[]> {
     const supabase = createPublicClient();

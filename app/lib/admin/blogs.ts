@@ -29,6 +29,7 @@ export function createEmptyAdminBlog(): AdminBlog {
         slug: "",
         title: "",
         excerpt: "",
+        metaTitle: "",
         metaDescription: "",
         image: "",
         alt: "",
