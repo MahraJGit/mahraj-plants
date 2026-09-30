@@ -19,6 +19,7 @@ import {
     articleJsonLd,
     blogDateIso,
     breadcrumbJsonLd,
+    faqJsonLd,
     graphJsonLd,
     organizationJsonLd,
     webPageJsonLd,
@@ -53,6 +54,10 @@ export async function generateMetadata({
         localized.metaTitle.trim() ||
         messages.detail.metaTitle.replace("{blog}", localized.title);
     const description = localized.metaDescription.trim() || localized.excerpt;
+    const keywords = [
+        localized.focusKeyword.trim(),
+        ...localized.tags,
+    ].filter(Boolean);
 
     return buildPageMetadata({
         title,
@@ -64,6 +69,7 @@ export async function generateMetadata({
         type: "article",
         publishedTime,
         modifiedTime: article.updatedAt,
+        keywords: keywords.length > 0 ? keywords : undefined,
     });
 }
 
@@ -97,6 +103,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                         path: `/blogs/${slug}`,
                     }),
                     articleJsonLd(localized, description),
+                    faqJsonLd(localized.faqs),
                     breadcrumbJsonLd([
                         { name: dictionary.nav.home, path: "/" },
                         { name: dictionary.nav.blogs, path: "/blogs" },

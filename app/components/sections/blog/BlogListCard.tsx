@@ -27,12 +27,12 @@ export default function BlogListCard({ post }: BlogListCardProps) {
                 )}
                 className="block p-4 outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 sm:p-5"
             >
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+                <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-cream">
                     <FillImage
                         src={post.image}
                         alt={post.alt}
                         sizes="(max-width: 1024px) 100vw, 66vw"
-                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                        className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                     />
 
                     <div className="absolute bottom-4 left-0 flex max-w-[calc(100%-5.5rem)] flex-wrap items-center gap-x-4 gap-y-1 rounded-r-full bg-secondary/95 py-2.5 pr-5 pl-4 text-xs text-white sm:gap-x-5 sm:text-sm">

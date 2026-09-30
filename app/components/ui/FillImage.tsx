@@ -12,7 +12,7 @@ export default function FillImage({
     src,
     alt,
     sizes,
-    className = "object-cover",
+    className = "object-cover object-center",
     priority = false,
 }: FillImageProps) {
     if (!src) return null;

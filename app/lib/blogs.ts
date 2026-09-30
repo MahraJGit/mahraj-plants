@@ -1,5 +1,7 @@
 export type { BlogArticle, BlogRow } from "@/app/lib/blogs/types";
+export type { BlogFaq } from "@/app/lib/blogs/faqs";
 export { mapBlogRow, toAdminBlog, adminBlogToRow } from "@/app/lib/blogs/types";
+export { normalizeFaqs } from "@/app/lib/blogs/faqs";
 export { blogCategories, blogTags } from "@/app/lib/blogs/constants";
 
 export {

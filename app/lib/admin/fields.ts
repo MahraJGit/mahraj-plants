@@ -63,6 +63,20 @@ export const BLOG_FIELD_DEFS: AdminFieldDef[] = [
         input: "textarea",
     },
     {
+        key: "focusKeyword",
+        label: "Focus keyword",
+        group: "identity",
+        surfaces: ["detail-hero"],
+        input: "text",
+    },
+    {
+        key: "faqs",
+        label: "FAQs",
+        group: "seo",
+        surfaces: ["detail-article"],
+        input: "list",
+    },
+    {
         key: "image",
         label: "Cover image",
         group: "media",

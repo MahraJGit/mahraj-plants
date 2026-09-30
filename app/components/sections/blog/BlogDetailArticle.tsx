@@ -17,6 +17,7 @@ import {
     INSTAGRAM_HREF,
     getWhatsAppHref,
 } from "@/app/lib/contact";
+import BlogDetailFAQ from "./BlogDetailFAQ";
 import { expandHtmlSnippets } from "@/app/lib/blogs/html-snippet";
 
 const shareLinks = [
@@ -38,19 +39,25 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
 
     return (
         <article className="min-w-0">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-[1.75rem]">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-[1.75rem] bg-cream">
                 <FillImage
                     src={localized.image}
                     alt={localized.alt}
                     priority
                     sizes="(max-width: 1024px) 100vw, 70vw"
-                    className="object-cover"
+                    className="object-cover object-center"
                 />
             </div>
 
             <div
                 className="blog-article-body mt-8 sm:mt-10"
                 dangerouslySetInnerHTML={{ __html: expandHtmlSnippets(localized.content) }}
+            />
+
+            <BlogDetailFAQ
+                title={messages.detail.faqTitle}
+                description={messages.detail.faqDescription}
+                faqs={localized.faqs}
             />
 
             <footer className="mt-10 flex flex-col gap-5 border-t border-dashed border-primary/15 pt-6 sm:flex-row sm:items-center sm:justify-between">

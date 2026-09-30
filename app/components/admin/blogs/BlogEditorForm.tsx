@@ -10,6 +10,8 @@ import AdminNotice from "@/app/components/admin/ui/AdminNotice";
 import { AdminInput, AdminTextarea } from "@/app/components/admin/ui/AdminField";
 import BlogEditorSidebar from "./BlogEditorSidebar";
 import FeaturedImageField from "./FeaturedImageField";
+import FocusKeywordField from "./FocusKeywordField";
+import BlogFaqsEditor from "./BlogFaqsEditor";
 import RichTextEditor from "./RichTextEditor";
 
 type BlogEditorFormProps = {
@@ -140,6 +142,14 @@ export default function BlogEditorForm({
                                 patch({ metaDescription: event.target.value })
                             }
                         />
+
+                        <FocusKeywordField
+                            blog={blog}
+                            error={errors.focusKeyword}
+                            onChange={(focusKeyword) =>
+                                patch({ focusKeyword })
+                            }
+                        />
                     </div>
                 </section>
 
@@ -151,6 +161,12 @@ export default function BlogEditorForm({
                         onChange={(content) => patch({ content })}
                     />
                 </div>
+
+                <BlogFaqsEditor
+                    faqs={blog.faqs}
+                    errors={errors}
+                    onChange={(faqs) => patch({ faqs })}
+                />
 
                 <FeaturedImageField
                     src={blog.image}

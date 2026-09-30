@@ -3,7 +3,11 @@
 import { useRef, useState } from "react";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { FieldShell, controlClass } from "@/app/components/admin/ui/AdminField";
-import { uploadBlogImage } from "@/app/lib/blogs/upload-image";
+import {
+    FEATURED_IMAGE_HEIGHT,
+    FEATURED_IMAGE_WIDTH,
+    uploadFeaturedBlogImage,
+} from "@/app/lib/blogs/upload-image";
 import AdminMedia from "./AdminMedia";
 
 type FeaturedImageFieldProps = {
@@ -31,7 +35,7 @@ export default function FeaturedImageField({
         setUploading(true);
         setUploadError("");
         try {
-            const image = await uploadBlogImage(file);
+            const image = await uploadFeaturedBlogImage(file);
             onChange({ image });
         } catch (error) {
             setUploadError(
@@ -46,8 +50,16 @@ export default function FeaturedImageField({
 
     return (
         <section className="overflow-hidden rounded-[1.5rem] border border-primary/8 bg-white">
-            <div className="flex items-center justify-between px-5 py-4">
-                <h2 className="text-sm font-semibold text-primary">Featured image</h2>
+            <div className="flex items-center justify-between gap-3 px-5 py-4">
+                <div>
+                    <h2 className="text-sm font-semibold text-primary">
+                        Featured image
+                    </h2>
+                    <p className="mt-1 text-xs text-primary/50">
+                        Required size {FEATURED_IMAGE_WIDTH}×{FEATURED_IMAGE_HEIGHT}.
+                        Images are cropped to fit this frame.
+                    </p>
+                </div>
                 {src ? (
                     <button
                         type="button"
@@ -67,16 +79,19 @@ export default function FeaturedImageField({
                 {src ? (
                     <AdminMedia src={src} alt={alt || "Featured image preview"} />
                 ) : (
-                    <span className="flex h-full flex-col items-center justify-center gap-2 text-primary/45">
+                    <span className="flex h-full flex-col items-center justify-center gap-2 px-4 text-center text-primary/45">
                         <HiOutlinePhotograph aria-hidden className="size-8" />
                         <span className="text-sm font-medium">
                             Set featured image
+                        </span>
+                        <span className="text-xs">
+                            {FEATURED_IMAGE_WIDTH}×{FEATURED_IMAGE_HEIGHT} · 16:9
                         </span>
                     </span>
                 )}
                 {uploading ? (
                     <span className="absolute inset-0 flex items-center justify-center bg-primary/45 text-sm font-medium text-white">
-                        Uploading…
+                        Preparing 1920×1080…
                     </span>
                 ) : null}
             </button>

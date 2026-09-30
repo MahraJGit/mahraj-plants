@@ -101,6 +101,11 @@ export function articleJsonLd(
     description: string,
     date = blogDateIso(article),
 ): JsonLd {
+    const keywords = [article.focusKeyword, ...article.tags]
+        .map((value) => value.trim())
+        .filter(Boolean)
+        .join(", ");
+
     return {
         "@type": "Article",
         headline: article.title,
@@ -115,7 +120,7 @@ export function articleJsonLd(
         publisher: { "@id": `${absoluteUrl("/")}/#organization` },
         mainEntityOfPage: absoluteUrl(`/blogs/${article.slug}`),
         articleSection: article.category,
-        keywords: article.tags.join(", "),
+        ...(keywords ? { keywords } : {}),
     };
 }
 

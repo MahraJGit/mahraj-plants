@@ -31,6 +31,8 @@ export function createEmptyAdminBlog(): AdminBlog {
         excerpt: "",
         metaTitle: "",
         metaDescription: "",
+        focusKeyword: "",
+        faqs: [],
         image: "",
         alt: "",
         day: String(new Date().getDate()).padStart(2, "0"),

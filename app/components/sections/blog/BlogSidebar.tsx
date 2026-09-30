@@ -169,7 +169,7 @@ export default function BlogSidebar({
                                         src={post.image}
                                         alt={post.alt}
                                         sizes="64px"
-                                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                        className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
                                     />
                                 </div>
                                 <div className="min-w-0">

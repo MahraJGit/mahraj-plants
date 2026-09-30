@@ -1,6 +1,7 @@
 import { datePartsFromIso } from "@/app/lib/admin/dates";
 import type { AdminBlog, BlogStatus } from "@/app/lib/admin/schema";
 import { createDefaultBody } from "@/app/lib/admin/blogs-body";
+import { normalizeFaqs, type BlogFaq } from "@/app/lib/blogs/faqs";
 
 export type BlogArticle = {
     id: string;
@@ -10,6 +11,8 @@ export type BlogArticle = {
     content: string;
     metaTitle: string;
     metaDescription: string;
+    focusKeyword: string;
+    faqs: BlogFaq[];
     image: string;
     alt: string;
     day: string;
@@ -33,6 +36,8 @@ export type BlogRow = {
     content: string;
     meta_title: string;
     meta_description: string;
+    focus_keyword: string;
+    faqs: unknown;
     featured_image: string;
     featured_image_alt: string;
     author: string;
@@ -56,6 +61,8 @@ export function mapBlogRow(row: BlogRow): BlogArticle {
         content: row.content,
         metaTitle: row.meta_title ?? "",
         metaDescription: row.meta_description ?? "",
+        focusKeyword: row.focus_keyword ?? "",
+        faqs: normalizeFaqs(row.faqs),
         image: row.featured_image,
         alt: row.featured_image_alt,
         day: parts.day,
@@ -80,6 +87,8 @@ export function toAdminBlog(article: BlogArticle): AdminBlog {
         excerpt: article.excerpt,
         metaTitle: article.metaTitle,
         metaDescription: article.metaDescription,
+        focusKeyword: article.focusKeyword,
+        faqs: article.faqs.map((faq) => ({ ...faq })),
         image: article.image,
         alt: article.alt,
         day: article.day,
@@ -107,6 +116,8 @@ export function adminBlogToRow(blog: AdminBlog) {
         content: blog.content,
         meta_title: blog.metaTitle.trim(),
         meta_description: blog.metaDescription.trim(),
+        focus_keyword: blog.focusKeyword.trim(),
+        faqs: normalizeFaqs(blog.faqs),
         featured_image: blog.image,
         featured_image_alt: blog.alt.trim(),
         author: blog.author.trim() || "mahrajplant",

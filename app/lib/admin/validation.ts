@@ -1,4 +1,5 @@
 import type { AdminBlog, LoginPayload } from "./schema";
+import { validateFaqs } from "@/app/lib/blogs/faqs";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -29,6 +30,9 @@ export function validateBlog(blog: AdminBlog): Record<string, string> {
     }
 
     if (!blog.excerpt.trim()) errors.excerpt = "Short description is required.";
+    if (blog.focusKeyword.trim().length > 100) {
+        errors.focusKeyword = "Keep the focus keyword under 100 characters.";
+    }
     if (isBlankHtml(blog.content)) {
         errors.content = "Write the article in the editor.";
     }
@@ -40,6 +44,8 @@ export function validateBlog(blog: AdminBlog): Record<string, string> {
     if (!blog.publishedAt || Number.isNaN(new Date(blog.publishedAt).getTime())) {
         errors.publishedAt = "Choose a publish date and time.";
     }
+
+    Object.assign(errors, validateFaqs(blog.faqs));
 
     return errors;
 }

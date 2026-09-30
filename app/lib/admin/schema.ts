@@ -1,4 +1,7 @@
 import { blogCategories, blogTags } from "@/app/lib/blogs/constants";
+import type { BlogFaq } from "@/app/lib/blogs/faqs";
+
+export type { BlogFaq };
 
 export const BLOG_STATUSES = ["draft", "published", "archived"] as const;
 export type BlogStatus = (typeof BLOG_STATUSES)[number];
@@ -96,6 +99,8 @@ export type AdminBlog = BlogCardFields & {
     content: string;
     metaTitle: string;
     metaDescription: string;
+    focusKeyword: string;
+    faqs: BlogFaq[];
     body: BlogBodyFields;
     commentsList: AdminBlogComment[];
     createdAt: string;
@@ -121,6 +126,7 @@ export const BLOG_FIELD_GROUPS = [
     { id: "publish", label: "Publishing" },
     { id: "taxonomy", label: "Taxonomy" },
     { id: "engagement", label: "Engagement" },
+    { id: "seo", label: "SEO" },
     { id: "body", label: "Article body" },
 ] as const;
 

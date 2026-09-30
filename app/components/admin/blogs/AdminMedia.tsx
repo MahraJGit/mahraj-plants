@@ -15,14 +15,24 @@ export default function AdminMedia({
 
     if (isPublicImage(src)) {
         return (
-            <Image src={src} alt={alt} fill sizes="420px" className="object-cover" />
+            <Image
+                src={src}
+                alt={alt}
+                fill
+                sizes="420px"
+                className="object-cover object-center"
+            />
         );
     }
 
     return (
         // Local file previews are data URLs and cannot use next/image.
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt} className="absolute inset-0 size-full object-cover" />
+        <img
+            src={src}
+            alt={alt}
+            className="absolute inset-0 size-full object-cover object-center"
+        />
     );
 }
 
