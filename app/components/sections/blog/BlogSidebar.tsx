@@ -28,6 +28,7 @@ type BlogSidebarProps = {
     onTagChange: (tag: string | null) => void;
     /** `filter` = interactive filters on listing. `links` = navigate to /blogs (detail pages). */
     variant?: "filter" | "links";
+    sticky?: boolean;
 };
 
 function SidebarWidget({
@@ -67,6 +68,7 @@ export default function BlogSidebar({
     activeTag,
     onTagChange,
     variant = "filter",
+    sticky = true,
 }: BlogSidebarProps) {
     const router = useRouter();
     const { locale } = useLocale();
@@ -87,7 +89,10 @@ export default function BlogSidebar({
     return (
         <aside
             aria-label={messages.sidebar.ariaLabel}
-            className="space-y-6 lg:sticky lg:top-28 lg:self-start"
+            className={cn(
+                "space-y-6",
+                sticky && "lg:sticky lg:top-28 lg:self-start",
+            )}
         >
             <SidebarWidget title={messages.sidebar.search}>
                 <form onSubmit={handleSearchSubmit}>

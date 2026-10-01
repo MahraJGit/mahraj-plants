@@ -312,6 +312,12 @@
   margin: 0.9rem 0;
 }
 
+.blog-article-body h1,
+.blog-article-body h2,
+.blog-article-body h3 {
+  scroll-margin-top: 6.5rem;
+}
+
 .blog-article-body h1 {
   margin: 0 0 1rem;
   color: var(--color-primary);

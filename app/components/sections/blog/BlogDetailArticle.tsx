@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import FillImage from "@/app/components/ui/FillImage";
 import {
     FaFacebookF,
@@ -27,15 +28,23 @@ const shareLinks = [
 
 type BlogDetailArticleProps = {
     article: BlogArticle;
+    contentHtml?: string;
+    toc?: ReactNode;
 };
 
-export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
+export default function BlogDetailArticle({
+    article,
+    contentHtml,
+    toc,
+}: BlogDetailArticleProps) {
     const { locale } = useLocale();
     const messages = getBlogsMessages(locale);
     const localized = localizeBlog(article, locale);
     const whatsappShare = getWhatsAppHref(
         messages.detail.whatsappShare.replace("{title}", localized.title),
     );
+    const html =
+        contentHtml ?? expandHtmlSnippets(localized.content);
 
     return (
         <article className="min-w-0">
@@ -49,9 +58,11 @@ export default function BlogDetailArticle({ article }: BlogDetailArticleProps) {
                 />
             </div>
 
+            {toc}
+
             <div
                 className="blog-article-body mt-8 sm:mt-10"
-                dangerouslySetInnerHTML={{ __html: expandHtmlSnippets(localized.content) }}
+                dangerouslySetInnerHTML={{ __html: html }}
             />
 
             <BlogDetailFAQ
