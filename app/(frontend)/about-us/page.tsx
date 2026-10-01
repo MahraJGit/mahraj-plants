@@ -8,6 +8,7 @@ import AboutCounters from "@/app/components/sections/about/AboutCounters";
 import AboutWhyChooseUs from "@/app/components/sections/about/AboutWhyChooseUs";
 import AboutTeam from "@/app/components/sections/about/AboutTeam";
 import AboutFeatures from "@/app/components/sections/about/AboutFeatures";
+import AboutCertification from "@/app/components/sections/about/AboutCertification";
 import SiteCTA from "@/app/components/sections/shared/SiteCTA";
 import JsonLd from "@/app/components/seo/JsonLd";
 import { getDictionary } from "@/app/lib/i18n/get-dictionary";
@@ -60,6 +61,7 @@ export default async function AboutPage() {
             <AboutFeatures />
             <AboutQuote />
             <AboutWhoWeAre />
+            <AboutCertification />
             <AboutGallery />
             <AboutExpertise />
             <AboutCounters />

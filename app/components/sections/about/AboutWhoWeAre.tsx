@@ -38,7 +38,7 @@ export default function AboutWhoWeAre() {
         <section
             id="who-we-are"
             aria-labelledby="who-we-are-heading"
-            className="bg-white pb-28 pt-10 sm:pb-32 sm:pt-12 lg:pb-36 lg:pt-14"
+            className="bg-white"
         >
             <div className="section-container">
                 <div className="overflow-hidden rounded-[1.75rem] bg-cream/40 sm:rounded-[2rem] lg:rounded-[2.5rem]">
